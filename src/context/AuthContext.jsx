@@ -8,17 +8,17 @@ const AuthContext = createContext()
 export default AuthContext;
 
 export const AuthProvider = ({ children }) => {
-    let [authTokens, setAuthTokens] = useState(
+    const [authTokens, setAuthTokens] = useState(
         localStorage.getItem('authTokens') ?
         JSON.parse(localStorage.getItem('authTokens')) :
         null
     )
-    let [user, setUser] = useState(
+    const [user, setUser] = useState(
         localStorage.getItem('user') ?
         JSON.parse(localStorage.getItem('user')).access :
         null
     )
-    let [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true)
     
     if(localStorage.getItem('authTokens')){
         axios.defaults.headers.common["Authorization"] 
@@ -59,7 +59,6 @@ export const AuthProvider = ({ children }) => {
     }
 
     let loginUser = (e) => {
-        alert(axios.defaults.baseURL)
         e.preventDefault()
         let api = axios.create({ baseURL: axios.defaults.baseURL + "/user/login/", })
         let fd = new FormData()
