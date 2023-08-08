@@ -12,8 +12,7 @@ import reactLogo from '../assets/react.svg'
 
 
 function NavBar() {
-    let {user, logoutUser} = useContext(AuthContext);
-
+    let {user, logoutUser} = useContext(AuthContext)
 
     return(
         <div>
