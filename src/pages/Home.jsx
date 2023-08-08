@@ -2,9 +2,9 @@
 
 function Home(){
     return(
-        <body>
+        <div>
             <h1>This is the Home Page!</h1>
-        </body>
+        </div>
     )
 }
 
