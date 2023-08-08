@@ -1,62 +1,51 @@
+// Library Imports
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 import { createBrowserRouter, createRoutesFromElements, Route, Link, Outlet, RouterProvider } from 'react-router-dom'
+import axios from 'axios'
+
+// Component Imports
 import Home from './pages/Home'
 import Login from './pages/Login'
+import NavBar from './components/NavBar'
+import { AuthProvider } from './context/AuthContext'
+
+// Asset Imports
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+
+// Style Imports
+import './App.css'
+
+// Server API address
+axios.defaults.baseURL = "http://127.0.0.1:8000"
+// axios.defaults.baseURL = "http://202.92.144.124:8000/";
 
 function App() {
   const [count, setCount] = useState(0)
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<Root />}>
-        <Route index element={<Home />} />
-        <Route path="/login" element={<Login />} />
-      </Route>
+        <Route path="/" element={<Root />}>
+          <Route index element={<Home />} />
+          <Route path="/login" element={<Login />} />
+        </Route>
+      
     )
   )
 
   return (
     <>
       <RouterProvider router={router} />
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR cringe
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
 
 const Root = () => {
   return (
-    <>
-      <div>
-        <Link to="/">Home</Link>
-        <Link to="/login">Login</Link>
-      </div>
-
-      <div>
-        <Outlet />
-      </div>
-    </>
+    <AuthProvider>
+      <NavBar />
+      <Outlet />
+    </AuthProvider>
   )
 }
 
