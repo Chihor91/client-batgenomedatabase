@@ -8,6 +8,7 @@ import Home from './pages/Home/Home'
 import Login from './pages/Login/Login'
 import NavBar from './components/NavBar/NavBar'
 import SideBar from './components/SideBar/SideBar'
+import DomainTable from './pages/Taxonomy/Domain/DomainTable'
 import { AuthProvider } from './context/AuthContext'
 
 // Asset Imports
@@ -29,6 +30,7 @@ function App() {
         <Route path="/" element={<Root />}>
           <Route index element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/taxonomy/domain" element={<DomainTable />} />
         </Route>
       
     )
