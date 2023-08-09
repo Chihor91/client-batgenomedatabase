@@ -16,9 +16,9 @@ function NavBar(props) {
     let navigate = useNavigate()
     
     return(
-        <div class="navbar">
+        <nav class="navbar">
             <div class="left">
-                <button onClick={() => props.toggleSidebar(true)}>&#9776;</button>
+                <button class="menu-btn" onClick={() => props.toggleSidebar(true)}>&#9776;</button>
                 <button class="home-btn" onClick={() => navigate("/")}>
                     <img  src={reactLogo} alt="React logo" />
                 </button>
@@ -27,7 +27,7 @@ function NavBar(props) {
                 <div class="right">
                 </div>
             }
-        </div>
+        </nav>
     )
 }
 
