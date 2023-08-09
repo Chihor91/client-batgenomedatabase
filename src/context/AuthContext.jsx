@@ -44,11 +44,11 @@ export const AuthProvider = ({ children }) => {
 
             api.post("/", {
                 'refresh': authTokens.refresh,
-            }).then((response) => {
-                if(response.status === 200){
+            }).then((res) => {
+                if(res.status === 200){
                     let tokens = {
-                        access: response.data.access,
-                        refresh: response.data.refresh
+                        access: res.data.access,
+                        refresh: res.data.refresh
                     }
                     
                     setAuthTokens(tokens)
@@ -74,16 +74,16 @@ export const AuthProvider = ({ children }) => {
         fd.append("username", e.target.username.value);
         fd.append("password", e.target.password.value);
 
-        api.post("/", fd).then((response) => {
-            if(response.status === 200){
+        api.post("/", fd).then((res) => {
+            if(res.status === 200){
                 let tokens = {
-                    access: response.data.access,
-                    refresh: response.data.refresh
+                    access: res.data.access,
+                    refresh: res.data.refresh
                 }
                 setAuthTokens(tokens)
-                setUser(response.data.user)
+                setUser(res.data.user)
                 localStorage.setItem('authTokens', JSON.stringify(tokens))
-                localStorage.setItem('user', JSON.stringify(response.data.user))
+                localStorage.setItem('user', JSON.stringify(res.data.user))
                 navigate("/")
             }else{
                 alert("Error while trying to log in!")
