@@ -22,6 +22,21 @@
     background-color:cadetblue;
 }
 
+.routes .tax-bar {
+    
+    max-height: 0;
+    transition: max-height 0.5s ease-out;
+    overflow: hidden;
+    background-color: #242424;
+}
+
+.routes:hover .tax-bar {
+    max-height: 5000px;
+    transition: max-height 0.5s ease-in;
+}
+
+
+
 .close-btn {
     margin-bottom: 18px;
 }
@@ -32,8 +47,5 @@
     height: 100%;
     background-color:brown;
     clear: both;
-    list-style-type: none;
-    padding: 0px;
-    margin: 0px;
     overflow-x: hidden;
 }
