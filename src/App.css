@@ -11,6 +11,10 @@
   left: 200px;
 }
 
+.main-sidebar-active .menu-btn {
+  display: none;
+}
+
 .main-sidebar-inactive {
   transition: .5s;
   position: fixed;
