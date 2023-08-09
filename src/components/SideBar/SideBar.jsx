@@ -16,6 +16,7 @@ function SideBar(props) {
     let {user, logoutUser} = useContext(AuthContext)
     let navigate = useNavigate()
     const [sidebarActive, setSidebarActive] = useState("sidebar-inactive");
+    
     useEffect(() => {
 
         props.sidebar ?
@@ -34,6 +35,16 @@ function SideBar(props) {
                     user ?
                     <>
                         <li onClick={() => navigate("/profile")}>Profile</li>
+                        <li>Taxonomy</li>
+                        <ul class="tax-bar">
+                            <li>Domain</li>
+                            <li>Phylum</li>
+                            <li>Class</li>
+                            <li>Order</li>
+                            <li>Family</li>
+                            <li>Genus</li>
+                            <li>Species</li>
+                        </ul>
                         <li onClick={logoutUser}>Logout</li>
                     </>
                     :
