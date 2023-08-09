@@ -37,7 +37,7 @@ function SideBar(props) {
                         <li onClick={() => navigate("/profile")}>Profile</li>
                         <li>Taxonomy</li>
                         <ul class="tax-bar">
-                            <li>Domain</li>
+                            <li onClick={() => navigate("/taxonomy/domain")}>Domain</li>
                             <li>Phylum</li>
                             <li>Class</li>
                             <li>Order</li>
