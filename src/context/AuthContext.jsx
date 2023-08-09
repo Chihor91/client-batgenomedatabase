@@ -60,6 +60,9 @@ export const AuthProvider = ({ children }) => {
                 }
 
                 if(loading) {setLoading(false)}
+            }).catch((err) => {
+                console.error(err)
+                logoutUser()
             })
         }
     }
