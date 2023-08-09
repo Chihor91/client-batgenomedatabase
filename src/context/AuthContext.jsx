@@ -20,6 +20,12 @@ export const AuthProvider = ({ children }) => {
     )
     const [loading, setLoading] = useState(true)
     
+    useEffect(() => {
+        localStorage.getItem('authTokens') && setAuthTokens(JSON.parse(localStorage.getItem('authTokens')))
+        localStorage.getItem('user') && setUser(JSON.parse(localStorage.getItem('user')))
+        setLoading(true)
+    }, [])
+    
     if(localStorage.getItem('authTokens')){
         axios.defaults.headers.common["Authorization"] 
             = 'Bearer ' + JSON.parse(localStorage.getItem('authTokens')).access
