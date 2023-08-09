@@ -1,12 +1,13 @@
 // Library Imports
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { createBrowserRouter, createRoutesFromElements, Route, Link, Outlet, RouterProvider } from 'react-router-dom'
 import axios from 'axios'
 
 // Component Imports
-import Home from './pages/Home'
-import Login from './pages/Login'
-import NavBar from './components/NavBar'
+import Home from './pages/Home/Home'
+import Login from './pages/Login/Login'
+import NavBar from './components/NavBar/NavBar'
+import SideBar from './components/SideBar/SideBar'
 import { AuthProvider } from './context/AuthContext'
 
 // Asset Imports
@@ -41,10 +42,23 @@ function App() {
 }
 
 const Root = () => {
+  const [sidebar, toggleSidebar] = useState(false)
+  const [sidebarActive, setSidebarActive] = useState('main-sidebar-inactive')
+  useEffect(() => {
+    sidebar ?
+    setSidebarActive('main-sidebar-active') :
+    setSidebarActive('main-sidebar-inactive')
+  }, [sidebar])
+
   return (
     <AuthProvider>
-      <NavBar />
-      <Outlet />
+      <SideBar sidebar={sidebar} toggleSidebar={toggleSidebar} />
+      <div class={sidebarActive}>
+        <NavBar sidebar={sidebar} toggleSidebar={toggleSidebar} />
+        <div class="content">
+          <Outlet />
+        </div>
+      </div>
     </AuthProvider>
   )
 }
