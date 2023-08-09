@@ -1,8 +1,9 @@
 // Library Imports
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 
 // Component Imports
 import AuthContext from "../context/AuthContext"
+import { useNavigate } from "react-router-dom"
 
 // Asset Imports
 
@@ -10,6 +11,11 @@ import AuthContext from "../context/AuthContext"
 
 function Login() {
     let { loginUser } = useContext(AuthContext)
+    let navigate = useNavigate()
+
+    useEffect(() => {
+        localStorage.getItem('authTokens') && navigate("/")
+    }, [])
 
     return (
         <div>
