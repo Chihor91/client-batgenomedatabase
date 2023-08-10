@@ -1,45 +1,19 @@
 import axios from "axios";
 import { useState, useEffect } from "react"
 import { createColumnHelper, flexRender, getCoreRowModel, useReactTable, getPaginationRowModel  } from "@tanstack/react-table";
-import data from "./data.json"
+
 const columnHelper = createColumnHelper()
-const columns = [
-    {
-        accessorKey: 'id',
-        header: 'ID',
-    },
-    {
-        accessorKey: 'category_name',
-        header: 'Name'
-    },
-    {
-        accessorKey: 'scientific_name',
-        header: 'Scientific Name'
-    }
-]
 
-function DomainTable() {
-    // const data = [
-    //     {
-    //         "id": 0,
-    //         "category_name": "nerd",
-    //         "scientific_name": "nerd?"
-    //     },
-    //     {
-    //         'id': 2,
-    //         "category_name": "nerd",
-    //         "scientific_name": "nerd?"
-    //     },
-    // ]
-    // const [data, setData] = useState([]);
+function Table({ category, columns }) {
+    const [data, setData] = useState([]);
 
-    // useEffect(() => {
-    //     axios.get(axios.defaults.baseURL + "/tax/domain/")
-    //     .then((res) => {
-    //         console.log(res.data)
-    //         setData(res.data)
-    //     })
-    // }, [])
+    useEffect(() => {
+        axios.get(axios.defaults.baseURL + "/tax/"+ category + "/")
+        .then((res) => {
+            console.log(res.data)
+            setData(res.data)
+        })
+    }, [])
     console.log(data)
     const table = useReactTable({
         data,
@@ -85,4 +59,4 @@ function DomainTable() {
     )
 }
 
-export default DomainTable
+export default Table

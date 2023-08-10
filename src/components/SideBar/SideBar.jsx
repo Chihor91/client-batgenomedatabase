@@ -38,12 +38,12 @@ function SideBar(props) {
                         <li>Taxonomy</li>
                         <ul class="tax-bar">
                             <li onClick={() => navigate("/taxonomy/domain")}>Domain</li>
-                            <li>Phylum</li>
-                            <li>Class</li>
-                            <li>Order</li>
-                            <li>Family</li>
-                            <li>Genus</li>
-                            <li>Species</li>
+                            <li onClick={() => navigate("/taxonomy/phylum")}>Phylum</li>
+                            <li onClick={() => navigate("/taxonomy/class")}>Class</li>
+                            <li onClick={() => navigate("/taxonomy/order")}>Order</li>
+                            <li onClick={() => navigate("/taxonomy/family")}>Family</li>
+                            <li onClick={() => navigate("/taxonomy/genus")}>Genus</li>
+                            <li onClick={() => navigate("/taxonomy/species")}>Species</li>
                         </ul>
                         <li onClick={logoutUser}>Logout</li>
                     </>
