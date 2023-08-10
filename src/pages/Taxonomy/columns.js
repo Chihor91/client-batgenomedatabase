@@ -1,4 +1,4 @@
-export default columns = {
+export const columns = {
     domain: [
         {
             accessorKey: 'id',
@@ -97,4 +97,8 @@ export default columns = {
             header: 'Scientific Name'
         }
     ],
+}
+
+export default {
+    columns,
 }

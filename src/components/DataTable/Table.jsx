@@ -4,17 +4,7 @@ import { createColumnHelper, flexRender, getCoreRowModel, useReactTable, getPagi
 
 const columnHelper = createColumnHelper()
 
-function Table({ category, columns }) {
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        axios.get(axios.defaults.baseURL + "/tax/"+ category + "/")
-        .then((res) => {
-            console.log(res.data)
-            setData(res.data)
-        })
-    }, [])
-    console.log(data)
+function Table({ data, columns }) {
     const table = useReactTable({
         data,
         columns,
