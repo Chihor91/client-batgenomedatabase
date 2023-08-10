@@ -32,7 +32,7 @@ function App() {
           <Route path="/taxonomy/phylum" element={<Taxonomy category={"phylum"} />} />
           <Route path="/taxonomy/class" element={<Taxonomy category={"class"} />} />
           <Route path="/taxonomy/order" element={<Taxonomy category={"order"} />} />
-          <Route path="/taxonomy/family" element-={<Taxonomy category={"family"} />} />
+          <Route path="/taxonomy/family" element={<Taxonomy category={"family"} />} />
           <Route path="/taxonomy/genus" element={<Taxonomy category={"genus"} />} />
           <Route path="/taxonomy/species" element={<Taxonomy category={"species"} />} />
         </Route>
@@ -59,9 +59,9 @@ const Root = () => {
   return (
     <AuthProvider>
       <SideBar sidebar={sidebar} toggleSidebar={toggleSidebar} />
-      <div class={sidebarActive}>
+      <div className={sidebarActive}>
         <NavBar sidebar={sidebar} toggleSidebar={toggleSidebar} />
-        <div class="content">
+        <div className="content">
           <Outlet />
         </div>
       </div>

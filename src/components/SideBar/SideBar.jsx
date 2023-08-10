@@ -26,17 +26,17 @@ function SideBar(props) {
     }, [props.sidebar])
 
     return(
-        <div class={sidebarActive}>
-            <button class="close-btn" onClick={() => props.toggleSidebar(false)}>
+        <div className={sidebarActive}>
+            <button className="close-btn" onClick={() => props.toggleSidebar(false)}>
                 &times;
             </button>
-            <ul class="routes">
+            <ul className="routes">
                 {
                     user ?
                     <>
                         <li onClick={() => navigate("/profile")}>Profile</li>
                         <li>Taxonomy</li>
-                        <ul class="tax-bar">
+                        <ul className="tax-bar">
                             <li onClick={() => navigate("/taxonomy/domain")}>Domain</li>
                             <li onClick={() => navigate("/taxonomy/phylum")}>Phylum</li>
                             <li onClick={() => navigate("/taxonomy/class")}>Class</li>
