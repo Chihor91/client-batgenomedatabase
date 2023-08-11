@@ -9,6 +9,7 @@ import Login from './pages/Login/Login'
 import NavBar from './components/NavBar/NavBar'
 import SideBar from './components/SideBar/SideBar'
 import { AuthProvider } from './context/AuthContext'
+import { ThemeProvider } from './components/ui/theme-provider'
 
 // Asset Imports
 import reactLogo from './assets/react.svg'
@@ -49,23 +50,24 @@ function App() {
 
 const Root = () => {
   const [sidebar, toggleSidebar] = useState(false)
-  const [sidebarActive, setSidebarActive] = useState('main-sidebar-inactive')
-  useEffect(() => {
-    sidebar ?
-    setSidebarActive('main-sidebar-active') :
-    setSidebarActive('main-sidebar-inactive')
-  }, [sidebar])
+  const [showSidebar, setShowSidebar] = useState(false)
 
   return (
+    <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
     <AuthProvider>
-      <SideBar sidebar={sidebar} toggleSidebar={toggleSidebar} />
-      <div className={sidebarActive}>
-        <NavBar sidebar={sidebar} toggleSidebar={toggleSidebar} />
+      <SideBar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+      <div className={`fixed transition-all ${
+        showSidebar ? 
+        "left-[200px]" :
+        "left-0"
+      }`}>
+        <NavBar showSideBar={showSidebar} />
         <div className="content">
           <Outlet />
         </div>
       </div>
     </AuthProvider>
+    </ThemeProvider>
   )
 }
 
