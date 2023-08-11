@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Table from "../../components/DataTable/Table";
+import DataTable from "../../components/DataTable/DataTable";
 import { columns } from "./columns"
 
 function Taxonomy({ category }) {
@@ -15,7 +15,9 @@ function Taxonomy({ category }) {
     return(
         <>
         <h1>{category}</h1>
-        <Table data={data} columns={columns[category]} />
+        <div className="container mx-auto py-10">
+            <DataTable data={data} columns={columns[category]} />
+        </div>
         </>
     )
 }
