@@ -1,32 +1,24 @@
 //Library Imports
 import { useNavigate } from 'react-router-dom'
-import { useContext, useEffect, useState } from 'react'
 
-// Component Imports
-import AuthContext from '../../context/AuthContext'
 
 // Asset Imports
-import reactLogo from '../../assets/react.svg'
+import reactLogo from '@/assets/react.svg'
 
 // Style Imports
-import './NavBar.css'
+import { Button } from '@/components/ui/button'
 
 
-function NavBar(props) {
+function NavBar({showSideBar}) {
     let navigate = useNavigate()
     
     return(
-        <nav className="navbar">
-            <div className="left">
-                <button className="menu-btn" onClick={() => props.toggleSidebar(true)}>&#9776;</button>
-                <button className="home-btn" onClick={() => navigate("/")}>
-                    <img  src={reactLogo} alt="React logo" />
-                </button>
+        <nav className="bg-accent flex items-left justify-between w-[100%] h-[96px] fixed top-0">
+            <div className="flex bg-destructive justify-center items-center">
+                <Button variant="ghost" size="lg" className="bg-destructive left-[200px] fixed" onClick={() => navigate("/")}>
+                    <img className='scale-125'  src={reactLogo} alt="React logo" />
+                </Button>
             </div>
-            {
-                <div className="right">
-                </div>
-            }
         </nav>
     )
 }

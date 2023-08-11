@@ -10,26 +10,26 @@ import reactLogo from '../../assets/react.svg'
 
 // Style Imports
 import "./SideBar.css"
+import { Button } from '@/components/ui/button'
 
 
-function SideBar(props) {
+function SideBar({showSidebar, setShowSidebar}) {
     let {user, logoutUser} = useContext(AuthContext)
     let navigate = useNavigate()
-    const [sidebarActive, setSidebarActive] = useState("sidebar-inactive");
-    
-    useEffect(() => {
-
-        props.sidebar ?
-        setSidebarActive("sidebar-active") :
-        setSidebarActive("sidebar-inactive")
-
-    }, [props.sidebar])
-
     return(
-        <div className={sidebarActive}>
-            <button className="close-btn" onClick={() => props.toggleSidebar(false)}>
-                &times;
-            </button>
+        <div className={`top-0 left-0 h-full transition-all bg-accent fixed z-40 ${
+            showSidebar ? "w-[200px]" : "w-0"
+        }`}>
+            <div className='flex h-[96px] pt-[24px] pl-[48px]'>
+                {   showSidebar ? 
+                    <Button variant="ghost" size='lg' className="text-4xl text-primary font-black" onClick={() => setShowSidebar(!showSidebar)}>
+                        &times;
+                    </Button> :
+                    <Button variant="ghost" size='lg' className="text-4xl text-primary font-black" onClick={() => setShowSidebar(!showSidebar)}>
+                        &#9776;
+                    </Button>
+                }
+            </div>
             <ul className="routes">
                 {
                     user ?
