@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 // Asset Imports
-import reactLogo from '@/assets/react.svg'
+import reactLogo from '@/assets/logo.png'
 
 // Style Imports
 import { Button } from '@/components/ui/button'
@@ -14,11 +14,9 @@ function NavBar({showSideBar}) {
     
     return(
         <nav className="bg-accent flex items-left justify-between w-[100%] h-[96px] fixed top-0">
-            <div className="flex bg-destructive justify-center items-center">
-                <Button variant="ghost" size="lg" className="bg-destructive left-[200px] fixed" onClick={() => navigate("/")}>
-                    <img className='scale-125'  src={reactLogo} alt="React logo" />
-                </Button>
-            </div>
+                <img className={`scale-[100%] transition-all cursor-pointer ${
+                    !showSideBar && "ml-[200px]"
+                }`}  src={reactLogo} alt="React logo"  onClick={() => navigate("/")} />
         </nav>
     )
 }
