@@ -3,20 +3,20 @@ import axios from "axios";
 import DataTable from "../../components/DataTable/DataTable";
 import { columns } from "./columns"
 
-function Taxonomy({ category }) {
+function Taxonomy({ rank }) {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get(axios.defaults.baseURL + "/tax/"+ category + "/")
+        axios.get(axios.defaults.baseURL + "/tax/"+ rank + "/")
         .then((res) => {
             setData(res.data)
         })
-    }, [category])
+    }, [rank])
     return(
         <>
-        <h1>{category}</h1>
+        <h1>{rank}</h1>
         <div className="container mx-auto py-10">
-            <DataTable data={data} columns={columns[category]} />
+            <DataTable data={data} columns={columns[rank]} rank={rank} />
         </div>
         </>
     )

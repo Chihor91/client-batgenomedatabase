@@ -2,8 +2,10 @@ import { flexRender, getSortedRowModel, getCoreRowModel, useReactTable, getPagin
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
-function DataTable({ data, columns }) {
+function DataTable({ data, columns, rank }) {
+    let navigate = useNavigate()
     const [sorting, setSorting] = useState([])
 
     const table = useReactTable({
@@ -50,7 +52,11 @@ function DataTable({ data, columns }) {
                                     data-state={row.getIsSelected() && 'selected'}>
                                         {row.getVisibleCells().map((cell) => (
                                             <TableCell className='text-left' key={cell.id}>
-                                                {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                                {
+                                                    cell.column.id === "category_name" ?
+                                                    <a href={`/taxonomy/${rank}/${row.getValue("id")}`}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</a> : 
+                                                    flexRender(cell.column.columnDef.cell, cell.getContext())
+                                                }
                                             </TableCell>
                                         ))}
 
