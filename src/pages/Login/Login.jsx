@@ -21,12 +21,8 @@ function Login() {
         <div>
             <form onSubmit={loginUser}>
                 <h1>Login</h1>
-                <div>
-                    <input type="text" name="username" placeholder="Enter username" />
-                </div>
-                <div>
-                    <input type="password" name="password" placeholder="Enter password" />
-                </div>
+                <input class='text-black' type="text" name="username" placeholder="Enter username" />
+                <input class='text-black' type="password" name="password" placeholder="Enter password" />
                 <button type="submit">Login</button>
             </form>
         </div>
