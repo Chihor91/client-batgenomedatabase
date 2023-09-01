@@ -21,10 +21,6 @@ export const columns = {
             accessorKey: 'name',
             header: 'Name'
         },
-        {
-            accessorKey: 'scientific_name',
-            header: 'Scientific Name'
-        }
     ],
     phylum: [
         {
@@ -35,10 +31,6 @@ export const columns = {
             accessorKey: 'name',
             header: 'Name'
         },
-        {
-            accessorKey: 'scientific_name',
-            header: 'Scientific Name'
-        }
     ],
     class: [
         {
@@ -49,10 +41,6 @@ export const columns = {
             accessorKey: 'name',
             header: 'Name'
         },
-        {
-            accessorKey: 'scientific_name',
-            header: 'Scientific Name'
-        }
     ],
     order: [
         {
@@ -63,10 +51,6 @@ export const columns = {
             accessorKey: 'name',
             header: 'Name'
         },
-        {
-            accessorKey: 'scientific_name',
-            header: 'Scientific Name'
-        }
     ],
     family: [
         {
@@ -77,10 +61,6 @@ export const columns = {
             accessorKey: 'name',
             header: 'Name'
         },
-        {
-            accessorKey: 'scientific_name',
-            header: 'Scientific Name'
-        }
     ],
     genus: [
         {
@@ -91,10 +71,6 @@ export const columns = {
             accessorKey: 'name',
             header: 'Name'
         },
-        {
-            accessorKey: 'scientific_name',
-            header: 'Scientific Name'
-        }
     ],
     species: [
         {
@@ -105,10 +81,6 @@ export const columns = {
             accessorKey: 'name',
             header: 'Name'
         },
-        {
-            accessorKey: 'scientific_name',
-            header: 'Scientific Name'
-        }
     ],
 }
 
