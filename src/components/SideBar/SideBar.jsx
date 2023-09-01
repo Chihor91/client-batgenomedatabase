@@ -1,7 +1,7 @@
 //Library Imports
 import { useNavigate } from 'react-router-dom'
 import { useContext, useEffect, useState } from 'react'
-
+import { Button } from '@/components/ui/button'
 // Component Imports
 import AuthContext from '../../context/AuthContext'
 
@@ -10,7 +10,6 @@ import reactLogo from '../../assets/react.svg'
 
 // Style Imports
 import "./SideBar.css"
-import { Button } from '@/components/ui/button'
 
 
 function SideBar({showSidebar, setShowSidebar}) {
@@ -22,33 +21,32 @@ function SideBar({showSidebar, setShowSidebar}) {
         }`}>
             <div className='flex h-[96px] pt-[24px] pl-[48px]'>
                 {   showSidebar ? 
-                    <Button variant="ghost" size='lg' className="text-4xl text-primary font-black" onClick={() => setShowSidebar(!showSidebar)}>
+                    <Button variant="ghost" size='lg' className="text-4xl text-primary font-primary-foreground" onClick={() => setShowSidebar(!showSidebar)}>
                         &times;
                     </Button> :
-                    <Button variant="ghost" size='lg' className="text-4xl text-primary font-black" onClick={() => setShowSidebar(!showSidebar)}>
+                    <Button variant="ghost" size='lg' className="text-4xl text-primary font-secondary-foreground" onClick={() => setShowSidebar(!showSidebar)}>
                         &#9776;
                     </Button>
                 }
             </div>
-            <ul className="routes">
+            <ul className="h-full clear-both overflow-x-hidden">
                 {
                     user ?
                     <>
-                        <li onClick={() => navigate("/profile")}>Profile</li>
-                        <li>Taxonomy</li>
-                        <ul className="tax-bar">
-                            <li onClick={() => navigate("/taxonomy/domain")}>Domain</li>
-                            <li onClick={() => navigate("/taxonomy/phylum")}>Phylum</li>
-                            <li onClick={() => navigate("/taxonomy/class")}>Class</li>
-                            <li onClick={() => navigate("/taxonomy/order")}>Order</li>
-                            <li onClick={() => navigate("/taxonomy/family")}>Family</li>
-                            <li onClick={() => navigate("/taxonomy/genus")}>Genus</li>
-                            <li onClick={() => navigate("/taxonomy/species")}>Species</li>
-                        </ul>
-                        <li onClick={logoutUser}>Logout</li>
+                        <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/profile")}>Profile</Button>
+                        <div className="max-h-full">
+                            <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/taxonomy/domain")}>Domain</Button>
+                            <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/taxonomy/phylum")}>Phylum</Button>
+                            <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/taxonomy/class")}>Class</Button>
+                            <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/taxonomy/order")}>Order</Button>
+                            <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/taxonomy/family")}>Family</Button>
+                            <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/taxonomy/genus")}>Genus</Button>
+                            <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/taxonomy/species")}>Species</Button>
+                        </div>
+                        <Button className="w-full text-lg" variant="outline" onClick={logoutUser}>Logout</Button>
                     </>
                     :
-                    <li onClick={() => navigate("/login")}>Login</li>
+                    <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/login")}>Login</Button>
                 }
             </ul>
         </div>

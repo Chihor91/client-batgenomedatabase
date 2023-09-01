@@ -54,7 +54,6 @@ function App() {
 }
 
 const Root = () => {
-  const [sidebar, toggleSidebar] = useState(false)
   const [showSidebar, setShowSidebar] = useState(false)
 
   return (

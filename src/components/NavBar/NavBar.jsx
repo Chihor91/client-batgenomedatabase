@@ -13,7 +13,7 @@ function NavBar({showSideBar}) {
     let navigate = useNavigate()
     
     return(
-        <nav className="bg-accent flex items-left justify-between w-[100%] h-[96px] fixed top-0">
+        <nav className="bg-secondary flex items-left justify-between w-[100%] h-[96px] fixed top-0">
                 <img className={`scale-[100%] transition-all cursor-pointer ${
                     !showSideBar && "ml-[200px]"
                 }`}  src={reactLogo} alt="React logo"  onClick={() => navigate("/")} />
