@@ -19,6 +19,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Taxonomy from './pages/Taxonomy/Taxonomy'
 import TaxEntry from './pages/Taxonomy/TaxEntry'
+import PrivateRoutes from './utils/PrivateRoutes'
 
 // Server API address
 axios.defaults.baseURL = "http://127.0.0.1:8000"
@@ -30,14 +31,16 @@ function App() {
         <Route path="/" element={<Root />}>
           <Route index element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/taxonomy/domain" element={<Taxonomy rank={"domain"} />} />
-          <Route path="/taxonomy/phylum" element={<Taxonomy rank={"phylum"} />} />
-          <Route path="/taxonomy/class" element={<Taxonomy rank={"class"} />} />
-          <Route path="/taxonomy/order" element={<Taxonomy rank={"order"} />} />
-          <Route path="/taxonomy/family" element={<Taxonomy rank={"family"} />} />
-          <Route path="/taxonomy/genus" element={<Taxonomy rank={"genus"} />} />
-          <Route path="/taxonomy/species" element={<Taxonomy rank={"species"} />} />
-          <Route path="/taxonomy/:rank/:id" element={<TaxEntry/>} />
+          <Route element={<PrivateRoutes />}>
+            <Route path="/taxonomy/domain" element={<Taxonomy rank={"domain"} />} />
+            <Route path="/taxonomy/phylum" element={<Taxonomy rank={"phylum"} />} />
+            <Route path="/taxonomy/class" element={<Taxonomy rank={"class"} />} />
+            <Route path="/taxonomy/order" element={<Taxonomy rank={"order"} />} />
+            <Route path="/taxonomy/family" element={<Taxonomy rank={"family"} />} />
+            <Route path="/taxonomy/genus" element={<Taxonomy rank={"genus"} />} />
+            <Route path="/taxonomy/species" element={<Taxonomy rank={"species"} />} />
+            <Route path="/taxonomy/:rank/:id" element={<TaxEntry/>} />
+          </Route>
         </Route>
       
     )
