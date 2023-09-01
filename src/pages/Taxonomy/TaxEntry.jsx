@@ -19,10 +19,7 @@ const TaxEntry = () => {
                 ID: {entry.id}
             </h1>
             <h1>
-                Name: {entry.category_name}
-            </h1>
-            <h1>
-                Scientific Name: {entry.scientific_name}
+                Name: {entry.name}
             </h1>
         </div>
     )
