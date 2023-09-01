@@ -18,7 +18,7 @@ export const columns = {
             },
         },
         {
-            accessorKey: 'category_name',
+            accessorKey: 'name',
             header: 'Name'
         },
         {
@@ -32,7 +32,7 @@ export const columns = {
             header: 'ID',
         },
         {
-            accessorKey: 'category_name',
+            accessorKey: 'name',
             header: 'Name'
         },
         {
@@ -46,7 +46,7 @@ export const columns = {
             header: 'ID',
         },
         {
-            accessorKey: 'category_name',
+            accessorKey: 'name',
             header: 'Name'
         },
         {
@@ -60,7 +60,7 @@ export const columns = {
             header: 'ID',
         },
         {
-            accessorKey: 'category_name',
+            accessorKey: 'name',
             header: 'Name'
         },
         {
@@ -74,7 +74,7 @@ export const columns = {
             header: 'ID',
         },
         {
-            accessorKey: 'category_name',
+            accessorKey: 'name',
             header: 'Name'
         },
         {
@@ -88,7 +88,7 @@ export const columns = {
             header: 'ID',
         },
         {
-            accessorKey: 'category_name',
+            accessorKey: 'name',
             header: 'Name'
         },
         {
@@ -102,7 +102,7 @@ export const columns = {
             header: 'ID',
         },
         {
-            accessorKey: 'category_name',
+            accessorKey: 'name',
             header: 'Name'
         },
         {
