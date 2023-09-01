@@ -29,7 +29,7 @@ const TaxForm = ({rank}) => {
     }
 
     return(
-        <form onSubmit={submit} className="flex w-1/2">
+        <form onSubmit={submit} className="flex w-full space-x-8">
             <Input type="text" name="name" placeholder="Name"/>
             { rank !== "domain" && <ParentList rank={rank} /> }
             <Button type="submit" variant="outline">Add</Button>

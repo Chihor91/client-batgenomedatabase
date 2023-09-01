@@ -18,10 +18,10 @@ function Taxonomy({ rank }) {
 
     return(
         <>
-        { user.is_superuser === true && <TaxForm rank={rank} /> }
-        <div className="container mx-auto py-10">
-            <DataTable data={data} columns={columns[rank]} rank={rank} />
-        </div>
+            <div className="container mx-auto py-10 space-y-3">
+                { user.is_superuser === true && <TaxForm rank={rank} /> }
+                <DataTable data={data} columns={columns[rank]} rank={rank} />
+            </div>
         </>
     )
 }
