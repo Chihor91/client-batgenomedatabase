@@ -33,6 +33,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route element={<PrivateRoutes />}>
             <Route path="/taxonomy/domain" element={<Taxonomy rank={"domain"} />} />
+            <Route path="/taxonomy/kingdom" element={<Taxonomy rank={"kingdom"} />} />
             <Route path="/taxonomy/phylum" element={<Taxonomy rank={"phylum"} />} />
             <Route path="/taxonomy/class" element={<Taxonomy rank={"class"} />} />
             <Route path="/taxonomy/order" element={<Taxonomy rank={"order"} />} />

@@ -22,6 +22,16 @@ export const columns = {
             header: 'Name'
         },
     ],
+    kingdom: [
+        {
+            accessorKey: 'id',
+            header: 'ID',
+        },
+        {
+            accessorKey: 'name',
+            header: 'Name'
+        },
+    ],
     phylum: [
         {
             accessorKey: 'id',

@@ -41,7 +41,8 @@ const ParentList = ({ rank }) => {
     const [options, setOptions] = useState([])
 
     const parents = {
-        phylum: 'domain',
+        kingdom: 'domain',
+        phylum: 'kingdom',
         class: 'phlyum',
         order: 'class',
         family: 'order',
