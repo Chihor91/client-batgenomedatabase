@@ -32,15 +32,15 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route element={<PrivateRoutes />}>
-            <Route path="/taxonomy/domain" element={<Taxonomy rank={"domain"} />} />
-            <Route path="/taxonomy/kingdom" element={<Taxonomy rank={"kingdom"} />} />
-            <Route path="/taxonomy/phylum" element={<Taxonomy rank={"phylum"} />} />
-            <Route path="/taxonomy/class" element={<Taxonomy rank={"class"} />} />
-            <Route path="/taxonomy/order" element={<Taxonomy rank={"order"} />} />
-            <Route path="/taxonomy/family" element={<Taxonomy rank={"family"} />} />
-            <Route path="/taxonomy/genus" element={<Taxonomy rank={"genus"} />} />
-            <Route path="/taxonomy/species" element={<Taxonomy rank={"species"} />} />
-            <Route path="/taxonomy/:rank/:id" element={<TaxEntry/>} />
+            <Route path="/domain" element={<Taxonomy rank={"domain"} />} />
+            <Route path="/kingdom" element={<Taxonomy rank={"kingdom"} />} />
+            <Route path="/phylum" element={<Taxonomy rank={"phylum"} />} />
+            <Route path="/class" element={<Taxonomy rank={"class"} />} />
+            <Route path="/order" element={<Taxonomy rank={"order"} />} />
+            <Route path="/family" element={<Taxonomy rank={"family"} />} />
+            <Route path="/genus" element={<Taxonomy rank={"genus"} />} />
+            <Route path="/species" element={<Taxonomy rank={"species"} />} />
+            <Route path="/:rank/:id" element={<TaxEntry/>} />
           </Route>
         </Route>
       
