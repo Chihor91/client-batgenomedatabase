@@ -33,23 +33,24 @@ function SideBar({showSidebar, setShowSidebar}) {
                 {
                     user ?
                     <>
-                        <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/profile")}>Profile</Button>
+                        <Button className="w-full text-lg hover:bg-black" variant="ghost" onClick={() => navigate("/bookmarks")}>Bookmarks</Button>
+                        <Button className="w-full text-lg hover:bg-black" variant="ghost" onClick={() => navigate("/dashboard")}>Dashboard</Button>
                         
                         <div className="max-h-10 overflow-hidden hover:max-h-full transition-all">
                         <Button className="w-full text-lg" variant="ghost">Taxonomy</Button>
-                            <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/domain")}>Domain</Button>
-                            <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/kingdom")}>Kingdom</Button>
-                            <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/phylum")}>Phylum</Button>
-                            <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/class")}>Class</Button>
-                            <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/order")}>Order</Button>
-                            <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/family")}>Family</Button>
-                            <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/genus")}>Genus</Button>
-                            <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/species")}>Species</Button>
+                            <Button className="w-full text-lg hover:bg-black" variant="ghost" onClick={() => navigate("/domain")}>Domain</Button>
+                            <Button className="w-full text-lg hover:bg-black" variant="ghost" onClick={() => navigate("/kingdom")}>Kingdom</Button>
+                            <Button className="w-full text-lg hover:bg-black" variant="ghost" onClick={() => navigate("/phylum")}>Phylum</Button>
+                            <Button className="w-full text-lg hover:bg-black" variant="ghost" onClick={() => navigate("/class")}>Class</Button>
+                            <Button className="w-full text-lg hover:bg-black" variant="ghost" onClick={() => navigate("/order")}>Order</Button>
+                            <Button className="w-full text-lg hover:bg-black" variant="ghost" onClick={() => navigate("/family")}>Family</Button>
+                            <Button className="w-full text-lg hover:bg-black" variant="ghost" onClick={() => navigate("/genus")}>Genus</Button>
+                            <Button className="w-full text-lg hover:bg-black" variant="ghost" onClick={() => navigate("/species")}>Species</Button>
                         </div>
-                        <Button className="w-full text-lg" variant="outline" onClick={logoutUser}>Logout</Button>
+                        <Button className="w-full text-lg hover:bg-black" variant="ghost" onClick={logoutUser}>Logout</Button>
                     </>
                     :
-                    <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/login")}>Login</Button>
+                    <Button className="w-full text-lg hover:bg-black" variant="ghost" onClick={() => navigate("/login")}>Login</Button>
                 }
             </ul>
         </div>
