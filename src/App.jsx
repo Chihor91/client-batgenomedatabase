@@ -6,6 +6,7 @@ import axios from 'axios'
 // Component Imports
 import Home from './pages/Home/Home'
 import Login from './pages/Login/Login'
+import Project from './pages/Project'
 import NavBar from './components/NavBar/NavBar'
 import SideBar from './components/SideBar/SideBar'
 import { AuthProvider } from './context/AuthContext'
@@ -32,6 +33,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route element={<PrivateRoutes />}>
+            <Route path="/project" element={<Project />} />
             <Route path="/domain" element={<Taxonomy rank={"domain"} />} />
             <Route path="/kingdom" element={<Taxonomy rank={"kingdom"} />} />
             <Route path="/phylum" element={<Taxonomy rank={"phylum"} />} />
