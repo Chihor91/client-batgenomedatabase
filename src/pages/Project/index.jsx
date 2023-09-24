@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import DataTable from "@/components/DataTable/ProjectTable";
 import { columns } from "./columns";
-import ProjectForm from "./ProjectForm";
+import ProjectForm from "@/components/Forms/ProjectForm";
 
 function Project() {
     const [data, setData] = useState([]);
