@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { Dialog, DialogActions, DialogTitle } from "@mui/material";
 import axios from "axios";
-import { Input } from "../ui/input";
+import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 
 
