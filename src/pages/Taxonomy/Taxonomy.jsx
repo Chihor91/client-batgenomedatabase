@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import DataTable from "../../components/DataTable/DataTable";
+import DataTable from "@/components/DataTable/TaxTable";
 import TaxForm from "./TaxForm";
 import { columns } from "./columns"
 import AuthContext from "@/context/AuthContext";
