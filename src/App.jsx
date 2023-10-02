@@ -43,7 +43,7 @@ function App() {
 
   return (
     <>
-      <RouterProvider router={router} />
+    <RouterProvider router={router} /> 
     </>
   )
 }
@@ -57,11 +57,15 @@ const Root = () => {
       <SideBar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
       <div className={`fixed transition-all ${
         showSidebar ? 
-        "left-[200px]" :
+        "left-[200px] w-[calc(100%-200px)]" :
         "left-0"
       }`}>
         <NavBar showSideBar={showSidebar} />
-        <div className="content">
+        <div className={`mt-[64px] h-full transition-all ${
+          showSidebar ?
+          "w-[calc(100vw-200px)]" :
+          "w-[100vw]"
+        }`} onClick={() => setShowSidebar(false)}>
           <Outlet />
         </div>
       </div>

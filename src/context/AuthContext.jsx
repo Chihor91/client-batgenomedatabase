@@ -62,7 +62,10 @@ export const AuthProvider = ({ children }) => {
                 if(loading) {setLoading(false)}
             }).catch((err) => {
                 console.error(err)
-                logoutUser()
+                setAuthTokens(null)
+                setUser(null)
+                localStorage.removeItem('authTokens')
+                localStorage.removeItem('user')
             })
         }
     }
