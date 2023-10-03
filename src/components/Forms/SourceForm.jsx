@@ -8,7 +8,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { cn } from "@/lib/utils"
 import { Command, CommandInput, CommandItem } from "@/components/ui/command"
 import { CommandEmpty, CommandGroup } from "cmdk"
-
+import { ProjectFormModal } from "./ProjectForm"
 
 function BasicInfo({form}) {
 
@@ -42,15 +42,19 @@ function BasicInfo({form}) {
     )
 }
 
-function ProjectInfo({form}) {
+function ProjectInfo({form, modalOpen, setModalOpen}) {
     const [projects, setProjects] = useState([])
     
+    
+    async function fetchData() {
+        const { data } = await axios.get(axios.defaults.baseURL + "/source/project/")
+
+        setProjects(data)
+    }
+
     useEffect(() => {
-        axios.get(axios.defaults.baseURL + "/source/project/")
-        .then((res) => {
-            setProjects(res.data)
-        })
-    })
+        fetchData()
+    }, [modalOpen])
 
     return (
         <section className="space-y-2">
@@ -81,7 +85,9 @@ function ProjectInfo({form}) {
                             <PopoverContent className="w-[200px] p-0">
                                     <Command>
                                         <CommandInput placeholder="Search project..." />
-                                        <CommandEmpty>Project not found.</CommandEmpty>
+                                        <CommandEmpty>
+                                            <button className="w-full rounded-sm px-2 py-1.5 text-sm outline-none hover:bg-accent" onClick={() => setModalOpen(true)}>Add new project</button>
+                                        </CommandEmpty>
                                         <CommandGroup>
                                             {projects.map((project) => (
                                                 <CommandItem
@@ -93,6 +99,7 @@ function ProjectInfo({form}) {
                                             ))
 
                                             }
+                                            <CommandItem onClick={() => setModalOpen(true)}>Add new project</CommandItem>
                                         </CommandGroup>
                                     </Command>
                             </PopoverContent>
@@ -115,6 +122,7 @@ function HostInfo({register}) {
 export default function SourceForm() {
     const form = useForm({})
     const [page, setPage] = useState(1)
+    const [projectModal, setProjectModal] = useState(false)
 
     const previous = () => {
         setPage(curPage => curPage - 1)
@@ -135,7 +143,7 @@ export default function SourceForm() {
             <h1>POG</h1>
             <form className="container mx-auto py-10 space-y-3" onSubmit={form.handleSubmit(onSubmit)}>
                 { page === 1 && <BasicInfo form={form} /> }
-                { page === 2 && <ProjectInfo form={form} /> }
+                { page === 2 && <ProjectInfo form={form} modalOpen={projectModal} setModalOpen={setProjectModal} /> }
                 { page === 3 && <HostInfo form={form} /> }
                 
                 <div>
@@ -157,6 +165,7 @@ export default function SourceForm() {
                     }
                 </div>
             </form>
+            <ProjectFormModal open={projectModal} handleClose={() => setProjectModal(false)} />
             <pre>{JSON.stringify(form.watch(), null, 2)}</pre>
         </div>
     )
