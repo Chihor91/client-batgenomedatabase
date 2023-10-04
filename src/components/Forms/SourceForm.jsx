@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { Controller, useForm } from "react-hook-form"
 import { Select, SelectTrigger, SelectContent, SelectValue, SelectGroup, SelectItem } from "@/components/ui/select"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
@@ -10,7 +10,19 @@ import { Command, CommandInput, CommandItem } from "@/components/ui/command"
 import { CommandEmpty, CommandGroup } from "cmdk"
 import { ProjectFormModal } from "./ProjectForm"
 
-function BasicInfo({form}) {
+function BasicInfo({form, modalOpen, setModalOpen}) {
+    const [projects, setProjects] = useState([])
+    
+    
+    async function fetchData() {
+        const { data } = await axios.get(axios.defaults.baseURL + "/source/project/")
+
+        setProjects(data)
+    }
+
+    useEffect(() => {
+        fetchData()
+    }, [modalOpen])
 
     return (
         <section className="space-y-2">
@@ -38,27 +50,6 @@ function BasicInfo({form}) {
                     )
                 }}
             />
-        </section>
-    )
-}
-
-function ProjectInfo({form, modalOpen, setModalOpen}) {
-    const [projects, setProjects] = useState([])
-    
-    
-    async function fetchData() {
-        const { data } = await axios.get(axios.defaults.baseURL + "/source/project/")
-
-        setProjects(data)
-    }
-
-    useEffect(() => {
-        fetchData()
-    }, [modalOpen])
-
-    return (
-        <section className="space-y-2">
-            <label>Project</label>
             <Controller
                 control={form.control}
                 name="project"
@@ -70,7 +61,7 @@ function ProjectInfo({form, modalOpen, setModalOpen}) {
                                     variant="outline"
                                     role="combobox"
                                     className={cn(
-                                        "w-[200px] justify-between",
+                                        "w-full justify-between",
                                         !field.value && "text-muted-foreground"
                                     )}
                                 >
@@ -82,7 +73,7 @@ function ProjectInfo({form, modalOpen, setModalOpen}) {
                                     } 
                                 </Button>
                             </PopoverTrigger>
-                            <PopoverContent className="w-[200px] p-0">
+                            <PopoverContent className="w-full p-0">
                                     <Command>
                                         <CommandInput placeholder="Search project..." />
                                         <CommandEmpty>
@@ -111,9 +102,92 @@ function ProjectInfo({form, modalOpen, setModalOpen}) {
     )
 }
 
-function HostInfo({register}) {
+function HostInfo({form, modalOpen, setModalOpen}) {
+    const [host, setHost] = useState(null)
+    const hostSampleTypes = {
+        "" : [
+            { name: "Water", value: "WATER" }
+        ],
+        BAT : [
+            { name: "Bat Gut", value: "GUT" },
+            { name: "Bat Rinse", value: "BAT_RINSE" },
+            { name: "Guano", value: "GUANO" },
+            { name: "Fresh Guano", value: "FRESH_GUANO" },
+        ]
+    }
+
+    const host_type = form.watch("host_type")
+
+    useEffect(() => {
+        setHost(host_type)
+        form.setValue("host_species", undefined)
+        form.setValue("sample_type", "")
+
+    }, [host_type])
+
+
+
     return (
-        <section>Host Info</section>
+        <section className="space-y-2">
+            Host Info
+            <Controller
+                control={form.control}
+                name="host_type"
+                render={({field}) => {
+                    return (
+                        <Select onValueChange={field.onChange} {...field}>
+                            <SelectTrigger>
+                                <SelectValue placeholder="Select a host type" />
+                            </SelectTrigger>
+                            
+                            <SelectContent>
+                                <SelectGroup>
+                                    <SelectItem value="">None</SelectItem>
+                                    <SelectItem value="BAT">Bat</SelectItem>
+                                </SelectGroup>
+                            </SelectContent>
+                        </Select>
+                    )
+                }}
+            />
+            { host_type  && <Input {...form.register("host_species")} type="text" placeholder="Host Species" /> }
+            { (host_type || host_type === "") &&
+                <Controller
+                    control={form.control}
+                    name="sample_type"
+                    render={({field}) => {
+                        return (
+                            <Select key={host_type} onValueChange={field.onChange} {...field}>
+                                <SelectTrigger>
+                                    <SelectValue placeholder="Select a sample type" />
+                                </SelectTrigger>
+                                
+                                <SelectContent>
+                                    <SelectGroup>
+                                        <SelectItem disabled value="">Select a sample type</SelectItem>
+                                        { hostSampleTypes[form.watch("host_type")]
+                                            .map((sampleType, key) => 
+                                                <SelectItem 
+                                                    key={key} 
+                                                    value={sampleType.value}
+                                                >
+                                                    {sampleType.name}
+                                                </SelectItem>) 
+                                        }
+                                    </SelectGroup>
+                                </SelectContent>
+                            </Select>
+                        )
+                    }}
+                />
+            }
+        </section>
+    )
+}
+
+function LocationInfo({form}) {
+    return (
+        <section>Location Info</section>
     )
 }
 
@@ -142,9 +216,9 @@ export default function SourceForm() {
         <div>
             <h1>POG</h1>
             <form className="container mx-auto py-10 space-y-3" onSubmit={form.handleSubmit(onSubmit)}>
-                { page === 1 && <BasicInfo form={form} /> }
-                { page === 2 && <ProjectInfo form={form} modalOpen={projectModal} setModalOpen={setProjectModal} /> }
-                { page === 3 && <HostInfo form={form} /> }
+                { page === 1 && <BasicInfo form={form} modalOpen={projectModal} setModalOpen={setProjectModal} /> }
+                { page === 2 && <HostInfo form={form} modalOpen={projectModal} setModalOpen={setProjectModal} /> }
+                { page === 3 && <LocationInfo form={form} /> }
                 
                 <div>
                     <Button 
