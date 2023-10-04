@@ -186,6 +186,22 @@ function HostInfo({form, modalOpen, setModalOpen}) {
 }
 
 function LocationInfo({form}) {
+    const [locations, setLocations] = useState([])
+    const [caves, setCaves] = useState([])
+    const [points, setPoints] = useState([])
+    const [locID, setLocID] = useState(null)
+    const [caveID, setCaveID] = useState(null)
+
+    async function fetchLocation() {
+        const { data } = await axios.get(axios.defaults.baseURL + "/location/location/")
+
+        setProjects(data)
+    }
+
+    async function fetchCaves() {
+        const { data } = await axios.get(axios.defaults.baseURL + "/location/caves/")
+    }
+
     return (
         <section>Location Info</section>
     )
