@@ -192,18 +192,77 @@ function LocationInfo({form}) {
     const [locID, setLocID] = useState(null)
     const [caveID, setCaveID] = useState(null)
 
-    async function fetchLocation() {
+    async function fetchLocations() {
         const { data } = await axios.get(axios.defaults.baseURL + "/location/location/")
-
-        setProjects(data)
+        setLocations(data)
     }
 
-    async function fetchCaves() {
-        const { data } = await axios.get(axios.defaults.baseURL + "/location/caves/")
+    async function fetchCaves(location) {
+        const { data } = await axios.get(axios.defaults.baseURL + "/location/cave/?location=" + location)
+        setCaves(data)
     }
+
+    async function fetchPoints(cave) {
+        const { data } = await axios.get(axios.defaults.baseURL + "/location/point/?cave=" + cave)
+        setPoints(data)
+    }
+
+    useEffect(() => {
+        fetchLocations()
+    }, [])
+
 
     return (
-        <section>Location Info</section>
+        <section>Location Info
+            <Select onValueChange={(value) => {setLocID(value); fetchCaves(value)}}>
+                <SelectTrigger>
+                    <SelectValue placeholder="Select a location" />
+                </SelectTrigger>
+                <SelectContent>
+                    <SelectGroup>
+                    {
+                        locations.map((location) => <SelectItem value={location.id.toString()}>{location.abbr}</SelectItem>)
+                    }
+                    </SelectGroup>
+                </SelectContent>
+            </Select>
+
+            <Select disabled={!locID} onValueChange={(value) => {setCaveID(value); fetchPoints(value)}}>
+                <SelectTrigger>
+                    <SelectValue placeholder="Select a cave" />
+                </SelectTrigger>
+                <SelectContent>
+                    <SelectGroup>
+                    {
+                        caves.map((cave) => <SelectItem value={cave.id.toString()}>{cave.abbr}</SelectItem>)
+                    }
+                    </SelectGroup>
+                </SelectContent>
+            </Select>
+            
+            <Controller
+                control={form.control}
+                name="sampling_point"
+                render={({field}) => {
+                    return(
+                        <Select disabled={!caveID} onValueChange={field.onChange} {...field}>
+                            <SelectTrigger>
+                                <SelectValue placeholder="Select a sampling point" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectGroup>
+                                    {
+                                        points.map((point) => <SelectItem value={point.id.toString()}>{point.point_number.toString()}</SelectItem>)
+                                    }
+                                </SelectGroup>
+                            </SelectContent>
+                        </Select>
+                    )
+                }}
+            />
+                    
+
+        </section>
     )
 }
 
@@ -243,9 +302,10 @@ export default function SourceForm() {
                         onClick={previous} 
                         variant="outline"
                     >Previous</Button>
-                    { page === 3 ?
+                    { page === 3 &&
                         <Button type="submit" variant="outline">Add Source</Button>
-                        :
+                    }
+                    { page != 3 &&
                         <Button 
                             disabled={page >= 3} 
                             type="button" 
