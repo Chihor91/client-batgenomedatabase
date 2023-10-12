@@ -31,27 +31,6 @@ function BasicInfo({form, modalOpen, setModalOpen}) {
             <Input {...form.register("institution")} type="text" placeholder="Institution" />
             <Controller
                 control={form.control}
-                name="type"
-                render={({field}) => {
-                    return (
-                        <Select onValueChange={field.onChange} {...field}>
-                            <SelectTrigger>
-                                <SelectValue placeholder="Select a type" />
-                            </SelectTrigger>
-                            
-                            <SelectContent>
-                                <SelectGroup>
-                                    <SelectItem value="0">Bacteria</SelectItem>
-                                    <SelectItem value="1">Yeast</SelectItem>
-                                    <SelectItem value="2">Mold</SelectItem>
-                                </SelectGroup>
-                            </SelectContent>
-                        </Select>
-                    )
-                }}
-            />
-            <Controller
-                control={form.control}
                 name="project"
                 render={({field}) => {
                     return (
@@ -289,7 +268,6 @@ export default function SourceForm() {
 
     return (
         <div>
-            <h1>POG</h1>
             <form className="container mx-auto py-10 space-y-3" onSubmit={form.handleSubmit(onSubmit)}>
                 { page === 1 && <BasicInfo form={form} modalOpen={projectModal} setModalOpen={setProjectModal} /> }
                 { page === 2 && <HostInfo form={form} modalOpen={projectModal} setModalOpen={setProjectModal} /> }
@@ -316,7 +294,7 @@ export default function SourceForm() {
                 </div>
             </form>
             <ProjectFormModal open={projectModal} handleClose={() => setProjectModal(false)} />
-            <pre>{JSON.stringify(form.watch(), null, 2)}</pre>
+            {/* <pre>{JSON.stringify(form.watch(), null, 2)}</pre> */}
         </div>
     )
 }
