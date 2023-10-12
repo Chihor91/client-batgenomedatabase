@@ -4,6 +4,8 @@ import { useContext, useEffect } from "react"
 // Component Imports
 import AuthContext from "@/context/AuthContext"
 import { useNavigate } from "react-router-dom"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
 
 // Asset Imports
 
@@ -19,11 +21,11 @@ function Login() {
 
     return (
         <div>
-            <form onSubmit={loginUser}>
-                <h1>Login</h1>
-                <input className='text-black' type="text" name="username" placeholder="Enter username" />
-                <input className='text-black' type="password" name="password" placeholder="Enter password" />
-                <button type="submit">Login</button>
+            <form className="container w-1/2 space-y-2" onSubmit={loginUser}>
+                <h1 className="font-medium text-lg">Login</h1>
+                <Input type="text" name="username" placeholder="Enter username" />
+                <Input type="password" name="password" placeholder="Enter password" />
+                <Button variant="outline" type="submit">Submit</Button>
             </form>
         </div>
     )
