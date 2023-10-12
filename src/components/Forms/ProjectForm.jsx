@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 
 
-function FormModal({open, handleClose}) {
+function ProjectFormModal({open, handleClose}) {
     const form = useForm({})
 
     const { register, handleSubmit } = form
@@ -15,7 +15,8 @@ function FormModal({open, handleClose}) {
 
         axios.post("source/project/", data)
         .then((res) => {
-            window.location.reload(false)
+            console.log(res.data)
+            handleClose()
         })
     }
 
@@ -34,7 +35,7 @@ function FormModal({open, handleClose}) {
     )
 }
 
-export default function ProjectForm() {
+function ProjectForm() {
     const [open, setOpen] = useState(false)
 
     const handleOpen = () => {
@@ -47,8 +48,10 @@ export default function ProjectForm() {
 
     return(
         <>
-            <Button variant="outline" onClick={handleOpen}>Add New Project</Button>
-            <FormModal open={open} handleClose={handleClose} />
+            <Button variant="outline" onClick={() => setOpen(true)}>Add New Project</Button>
+            <ProjectFormModal open={open} handleClose={() => setOpen(false)} />
         </>
     )
 }
+
+export {ProjectForm, ProjectFormModal}

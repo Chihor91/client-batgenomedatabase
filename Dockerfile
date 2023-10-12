@@ -1,12 +1,26 @@
-FROM node:18.17.1
-
+# BUILD STAGE
+FROM node:18.17.1 AS BUILD_IMAGE
 WORKDIR /app
 
 COPY package.json .
-COPY package-lock.json .
-RUN npm i
+
+RUN npm install
+
 COPY . .
 
-EXPOSE 3000
+RUN npm run build
 
-CMD ["npm", "run", "dev"]
+# PRODUCTION STAGE
+FROM node:18.17.1 AS PROD_IMAGE
+WORKDIR /app
+
+COPY --from=BUILD_IMAGE /app/dist/ /app/dist/
+
+COPY package.json .
+COPY vite.config.js .
+
+RUN npm install
+
+EXPOSE 8080
+
+CMD ["npm", "run", "preview"]
