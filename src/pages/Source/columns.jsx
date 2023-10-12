@@ -16,8 +16,4 @@ export const columns = [
             )
         },
     },
-    {
-        accessorKey: 'accession_no',
-        header: 'Accession No.'
-    },
 ]
