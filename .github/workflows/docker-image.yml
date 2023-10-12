@@ -22,6 +22,6 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: docker build
       run: |
-        docker build -t cave-microbiome-frontend:latest .
+        docker build -t chihor91/cave-microbiome-frontend:latest .
     - name: docker push
-      run: docker push cave-microbiome-frontend:latest
+      run: docker push chihor91/cave-microbiome-frontend:latest
