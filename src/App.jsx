@@ -9,6 +9,8 @@ import Login from '@/pages/Login/Login'
 import Project from '@/pages/Project'
 import Source from '@/pages/Source'
 import AddSource from '@/pages/Source/AddSource'
+import Isolate from '@/pages/Isolate'
+import AddIsolate from '@/pages/Isolate/AddIsolate'
 import NavBar from '@/components/NavBar/NavBar'
 import SideBar from '@/components/SideBar/SideBar'
 import { AuthProvider } from '@/context/AuthContext'
@@ -20,6 +22,7 @@ import { ThemeProvider } from '@/components/ui/theme-provider'
 import './App.css'
 import PrivateRoutes from '@/utils/PrivateRoutes'
 import AdminRoutes from '@/utils/AdminRoutes'
+
 
 // Server API address
 axios.defaults.baseURL = "http://127.0.0.1:8000"
@@ -35,6 +38,8 @@ function App() {
             <Route path="/project" element={<Project />} />
             <Route path="/source" element={<Source />} />
             <Route path="/source/add" element={<AddSource />} />
+            <Route path="/isolate" element={<Isolate />} />
+            <Route path="/isolate/add" element={<AddIsolate />} />
           </Route>
         </Route>
       
