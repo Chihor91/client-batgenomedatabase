@@ -19,7 +19,7 @@ jobs:
         DOCKER_USER: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PW }}
       run: |
-        echo ${{secrets.DOCKER_PW }}| docker login -u $DOCKER_USERNAME --password-stdin
+        echo "$DOCKER_PASSWORD" | docker login -u $DOCKER_USERNAME --password-stdin
     - name: docker build
       run: |
         docker build -t chihor91/cave-microbiome-frontend:latest .
