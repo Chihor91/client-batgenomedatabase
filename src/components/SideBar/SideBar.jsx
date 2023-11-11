@@ -5,12 +5,6 @@ import { Button } from '@/components/ui/button'
 // Component Imports
 import AuthContext from '../../context/AuthContext'
 
-// Asset Imports
-import reactLogo from '../../assets/react.svg'
-
-// Style Imports
-import "./SideBar.css"
-
 
 function SideBar({showSidebar, setShowSidebar}) {
     let {user, logoutUser} = useContext(AuthContext)
