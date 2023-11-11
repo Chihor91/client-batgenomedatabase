@@ -53,7 +53,7 @@ function IsolateTable({ data, columns }) {
                                         {row.getVisibleCells().map((cell) => (
                                             <TableCell className='text-left' key={cell.id}>
                                                 {cell.column.id === 'actions' ?
-                                                    <Button variant="outline" onClick={() => navigate("/isolate?id=" + row.id)}>View</Button>
+                                                    <Button variant="outline" onClick={() => navigate("/isolate?id=" + data[row.id].id)}>View</Button>
                                                     :
                                                     flexRender(cell.column.columnDef.cell, cell.getContext())
                                                 }
