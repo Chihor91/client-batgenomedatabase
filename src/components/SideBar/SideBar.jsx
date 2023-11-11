@@ -29,6 +29,7 @@ function SideBar({showSidebar, setShowSidebar}) {
                     <>
                         <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/project")}>Project</Button>
                         <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/source")}>Source</Button>
+                        <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/isolate")}>Isolate</Button>
                         <Button className="w-full text-lg" variant="outline" onClick={logoutUser}>Logout</Button>
                     </>
                     :

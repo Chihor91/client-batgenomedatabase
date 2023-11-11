@@ -16,4 +16,8 @@ export const columns = [
             )
         },
     },
+    {
+        accessorKey: 'actions',
+        header: ''
+    }
 ]

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
-function DataTable({ data, columns }) {
+function IsolateTable({ data, columns }) {
     let navigate = useNavigate()
     const [sorting, setSorting] = useState([])
 
@@ -52,12 +52,14 @@ function DataTable({ data, columns }) {
                                     data-state={row.getIsSelected() && 'selected'}>
                                         {row.getVisibleCells().map((cell) => (
                                             <TableCell className='text-left' key={cell.id}>
-                                                {
+                                                {cell.column.id === 'actions' ?
+                                                    <Button variant="outline" onClick={() => navigate("/isolate?id=" + row.id)}>View</Button>
+                                                    :
                                                     flexRender(cell.column.columnDef.cell, cell.getContext())
                                                 }
                                             </TableCell>
                                         ))}
-
+                                        
                                 </TableRow>
                             ))
                         ) : (
@@ -93,4 +95,4 @@ function DataTable({ data, columns }) {
     )
 }
 
-export default DataTable
+export default IsolateTable
