@@ -16,7 +16,7 @@ function SideBar({showSidebar, setShowSidebar}) {
     let {user, logoutUser} = useContext(AuthContext)
     let navigate = useNavigate()
     return(
-        <div className={`top-0 left-0 h-full transition-all bg-accent fixed z-40 ${
+        <div className={`top-0 left-0 h-full transition-all bg-muted fixed z-40 ${
             showSidebar ? "w-[200px]" : "w-0"
         }`}>
             <div className='flex h-[96px] pt-[24px] pl-[48px]'>
