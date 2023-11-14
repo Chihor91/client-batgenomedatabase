@@ -8,8 +8,8 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import IsolatePage from "../IsolatePage";
 
 function Isolate() {
-    const [searchInput] = useSearchParams();
-    const [data, setData] = useState([]);
+    const [searchInput] = useSearchParams()
+    const [data, setData] = useState([])
     let navigate = useNavigate()
 
     useEffect(() => {
