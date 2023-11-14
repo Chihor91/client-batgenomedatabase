@@ -1,5 +1,13 @@
+import {
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleTrigger,
+} from "@/components/ui/collapsible"
 import axios from "axios";
 import { useEffect, useState } from "react"
+import { BasicInfo, HostInfo, SamplingInfo } from "./Sections";
+
+
 
 export default function SourcePage({id}) {
     const [data, setData] = useState(null);
@@ -8,19 +16,18 @@ export default function SourcePage({id}) {
         axios.get(axios.defaults.baseURL + "/source/source/" + id)
         .then((res) => {
             setData(res.data)
-            console.log(res.data)
         })
     }, [])
 
     return (
         <>
             {data &&
-                <div>
-                    {
-                        JSON.stringify(data)
-                    }
-                </div>
-                
+                <div className="space-y-3">
+                    <div className="font-extrabold text-4xl">{data.human_readable_id}</div>
+                    <BasicInfo data={data} />
+                    <HostInfo data={data} />
+                    <SamplingInfo data={data} />
+                </div>     
             }
         </>
     )
