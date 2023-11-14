@@ -16,4 +16,12 @@ export const columns = [
             )
         },
     },
+    {
+        accessorKey: 'host_species',
+        header: 'Species'
+    },
+    {
+        accessorKey: 'actions',
+        header: ''
+    }
 ]
