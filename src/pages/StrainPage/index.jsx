@@ -2,14 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 import { BasicInfo, HostInfo } from "./Sections";
 
-export default function IsolatePage({id}) {
+export default function StrainPage({id}) {
     const [data, setData] = useState(null);
     
     useEffect(() => {
-        axios.get(axios.defaults.baseURL + "/source/isolate/" + id)
+        axios.get(axios.defaults.baseURL + "/source/strain/" + id)
         .then((res) => {
             setData(res.data)
-            console.log(res.data)
         })
     }, [])
 

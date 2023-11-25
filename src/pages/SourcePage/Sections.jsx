@@ -2,8 +2,8 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@/component
 import axios from "axios"
 import { ChevronDown } from "lucide-react"
 import { useEffect, useState } from "react"
-import IsolateTable from "@/pages/Isolate/IsolateTable"
-import { columns }  from "@/pages/Isolate/columns"
+import StrainTable from "@/pages/Strain/StrainTable"
+import { columns }  from "@/pages/Strain/columns"
 
 const collapsibleStyle = "border mx-5 text-start"
 const colTriggerStyle = "flex border bg-muted w-full text-start text-2xl font-extrabold p-2"
@@ -90,7 +90,7 @@ function Strains ({data}) {
         <Collapsible className={collapsibleStyle}>
             <CollapsibleTrigger className={colTriggerStyle}><ChevronDown strokeWidth={5} className="m-1"  />Strains</CollapsibleTrigger>
             <CollapsibleContent className={colContentStyle}>
-                <IsolateTable data={strains} columns={columns}/>
+                <StrainTable data={strains} columns={columns}/>
             </CollapsibleContent>
         </Collapsible>
     )

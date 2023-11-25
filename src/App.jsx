@@ -7,10 +7,13 @@ import axios from 'axios'
 import Home from '@/pages/Home/Home'
 import Login from '@/pages/Login/Login'
 import Project from '@/pages/Project'
+
 import Source from '@/pages/Source'
-import AddSource from '@/pages/Source/AddSource'
-import Isolate from '@/pages/Isolate'
-import AddIsolate from '@/pages/Isolate/AddIsolate'
+import SourceForm from '@/pages/Source/SourceForm'
+
+import Isolate from '@/pages/Strain'
+import StrainForm from '@/pages/Strain/StrainForm'
+
 import NavBar from '@/components/NavBar/NavBar'
 import SideBar from '@/components/SideBar/SideBar'
 import { AuthProvider } from '@/context/AuthContext'
@@ -22,6 +25,7 @@ import { ThemeProvider } from '@/components/ui/theme-provider'
 import './App.css'
 import PrivateRoutes from '@/utils/PrivateRoutes'
 import AdminRoutes from '@/utils/AdminRoutes'
+
 
 
 // Server API address
@@ -37,9 +41,9 @@ function App() {
           <Route element={<PrivateRoutes />}>
             <Route path="/project" element={<Project />} />
             <Route path="/source" element={<Source />} />
-            <Route path="/source/add" element={<AddSource />} />
+            <Route path="/source/add" element={<SourceForm />} />
             <Route path="/isolate" element={<Isolate />} />
-            <Route path="/isolate/add" element={<AddIsolate />} />
+            <Route path="/isolate/add" element={<StrainForm />} />
           </Route>
         </Route>
       

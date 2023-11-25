@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
-function IsolateTable({ data, columns }) {
+export default function StrainTable({ data, columns }) {
     let navigate = useNavigate()
     const [sorting, setSorting] = useState([])
 
@@ -94,5 +94,3 @@ function IsolateTable({ data, columns }) {
         </div>
     )
 }
-
-export default IsolateTable

@@ -1,11 +1,10 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import DataTable from "./IsolateTable";
+import StrainTable from "./StrainTable";
 import { columns } from "./columns";
 import { Button } from "@/components/ui/button";
-import IsolateForm from "@/components/Forms/IsolateForm";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import IsolatePage from "../IsolatePage";
+import StrainPage from "../StrainPage";
 
 function Isolate() {
     const [searchInput] = useSearchParams()
@@ -13,7 +12,7 @@ function Isolate() {
     let navigate = useNavigate()
 
     useEffect(() => {
-            axios.get(axios.defaults.baseURL + "/source/isolate/")
+            axios.get(axios.defaults.baseURL + "/source/strain/")
             .then((res) => {
                 setData(res.data)
             })
@@ -25,10 +24,10 @@ function Isolate() {
                 searchInput.get("id")===null ?
                 <div className="container mx-auto py-10 space-y-3">
                     <Button variant="outline" onClick={() => navigate("/isolate/add")}>Add New Strain</Button>
-                    <DataTable data={data} columns={columns} />
+                    <StrainTable data={data} columns={columns} />
                 </div>
                 :
-                <IsolatePage id={searchInput.get("id")} />
+                <StrainPage id={searchInput.get("id")} />
             }
         </>
     )
