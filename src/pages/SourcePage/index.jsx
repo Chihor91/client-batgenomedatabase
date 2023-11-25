@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
-import { BasicInfo, HostInfo, SamplingInfo, Isolates } from "./Sections";
+import { BasicInfo, HostInfo, SamplingInfo, Strains } from "./Sections";
 
 
 
@@ -22,7 +22,7 @@ export default function SourcePage({id}) {
                     <BasicInfo data={data} />
                     <HostInfo data={data} />
                     <SamplingInfo data={data} />
-                    <Isolates data={data} />
+                    <Strains data={data} />
                 </div>     
             }
         </>

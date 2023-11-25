@@ -19,6 +19,7 @@ function BasicInfo ({data}) {
                 <ul className={listStyle}>
                     <li className="flex"><div className={label}>Collection:</div>{data.collection}</li>
                     <li className="flex"><div className={label}>Institution:</div>{data.institution}</li>
+                    <li className="flex"><div className={label}>Project:</div>{data.project_name}</li>
                 </ul>
             </CollapsibleContent>
         </Collapsible>
@@ -75,13 +76,13 @@ function SamplingInfo ({data}) {
     )
 }
 
-function Isolates ({data}) {
-    const [isolates, setIsolates] = useState([])
+function Strains ({data}) {
+    const [strains, setStrains] = useState([])
     
     useEffect(() => {
-        axios.get(axios.defaults.baseURL + "/source/isolate/?source=" + data.id)
+        axios.get(axios.defaults.baseURL + "/source/strain/?source=" + data.id)
         .then((res) => {
-            setIsolates(res.data)
+            setStrains(res.data)
         })
     }, [])
 
@@ -89,10 +90,10 @@ function Isolates ({data}) {
         <Collapsible className={collapsibleStyle}>
             <CollapsibleTrigger className={colTriggerStyle}><ChevronDown strokeWidth={5} className="m-1"  />Strains</CollapsibleTrigger>
             <CollapsibleContent className={colContentStyle}>
-                <IsolateTable data={isolates} columns={columns}/>
+                <IsolateTable data={strains} columns={columns}/>
             </CollapsibleContent>
         </Collapsible>
     )
 }
 
-export { BasicInfo, HostInfo, SamplingInfo, Isolates }
+export { BasicInfo, HostInfo, SamplingInfo, Strains }
