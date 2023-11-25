@@ -23,17 +23,17 @@ function SideBar({showSidebar, setShowSidebar}) {
                     </Button>
                 }
             </div>
-            <ul className="h-full clear-both overflow-x-hidden">
+            <ul className="h-full clear-both space-y-2 overflow-x-hidden">
                 {
                     user ?
                     <>
-                        <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/project")}>Project</Button>
-                        <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/source")}>Source</Button>
-                        <Button className="w-full text-lg" variant="outline" onClick={() => navigate("/isolate")}>Isolate</Button>
-                        <Button className="w-full text-lg" variant="outline" onClick={logoutUser}>Logout</Button>
+                        <Button className="w-full text-lg bg-muted-foreground border-border" variant="outline" onClick={() => navigate("/project")}>Project</Button>
+                        <Button className="w-full text-lg bg-muted-foreground border-border" variant="outline" onClick={() => navigate("/source")}>Source</Button>
+                        <Button className="w-full text-lg bg-muted-foreground border-border" variant="outline" onClick={() => navigate("/isolate")}>Strains</Button>
+                        <Button className="w-full text-lg bg-muted-foreground border-border" variant="outline" onClick={logoutUser}>Logout</Button>
                     </>
                     :
-                    <Button className="w-full text-lg hover:bg-black" variant="ghost" onClick={() => navigate("/login")}>Login</Button>
+                    <Button className="w-full text-lg bg-muted-foreground border-border" variant="outline" onClick={() => navigate("/login")}>Login</Button>
                 }
             </ul>
         </div>

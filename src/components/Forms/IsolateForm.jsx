@@ -26,7 +26,7 @@ function BasicInfo({form, navigate}) {
 
     return (
         <section className="space-y-2">
-            Basic Info
+            <div className="font-extrabold text-3xl">Basic Info</div>
             <Controller
                 control={form.control}
                 name="project"
@@ -39,7 +39,7 @@ function BasicInfo({form, navigate}) {
                                     role="combobox"
                                     className={cn(
                                         "w-full justify-between",
-                                        !field.value && "text-muted-foreground"
+                                        !field.value && "text-primary"
                                     )}
                                 >
                                     {field.value
@@ -82,7 +82,7 @@ function BasicInfo({form, navigate}) {
                     return (
                         <Select onValueChange={field.onChange} {...field}>
                             <SelectTrigger>
-                                <SelectValue placeholder="Select a isolate type" />
+                                <SelectValue placeholder="Select a strain type" />
                             </SelectTrigger>
                             
                             <SelectContent>
@@ -99,171 +99,6 @@ function BasicInfo({form, navigate}) {
         </section>
     )
 }
-
-// function HostInfo({form, modalOpen, setModalOpen}) {
-//     const [host, setHost] = useState(null)
-//     const hostSampleTypes = {
-//         "" : [
-//             { name: "Water", value: "WATER" }
-//         ],
-//         BAT : [
-//             { name: "Bat Gut", value: "GUT" },
-//             { name: "Bat Rinse", value: "BAT_RINSE" },
-//             { name: "Guano", value: "GUANO" },
-//             { name: "Fresh Guano", value: "FRESH_GUANO" },
-//         ]
-//     }
-
-//     const host_type = form.watch("host_type")
-
-//     useEffect(() => {
-//         setHost(host_type)
-//         form.setValue("host_species", undefined)
-//         form.setValue("sample_type", "")
-
-//     }, [host_type])
-
-
-
-//     return (
-//         <section className="space-y-2">
-//             Host Info
-//             <Controller
-//                 control={form.control}
-//                 name="host_type"
-//                 render={({field}) => {
-//                     return (
-//                         <Select onValueChange={field.onChange} {...field}>
-//                             <SelectTrigger>
-//                                 <SelectValue placeholder="Select a host type" />
-//                             </SelectTrigger>
-                            
-//                             <SelectContent>
-//                                 <SelectGroup>
-//                                     <SelectItem value="">None</SelectItem>
-//                                     <SelectItem value="BAT">Bat</SelectItem>
-//                                 </SelectGroup>
-//                             </SelectContent>
-//                         </Select>
-//                     )
-//                 }}
-//             />
-//             { host_type  && <Input {...form.register("host_species")} type="text" placeholder="Host Species" /> }
-//             { (host_type || host_type === "") &&
-//                 <Controller
-//                     control={form.control}
-//                     name="sample_type"
-//                     render={({field}) => {
-//                         return (
-//                             <Select key={host_type} onValueChange={field.onChange} {...field}>
-//                                 <SelectTrigger>
-//                                     <SelectValue placeholder="Select a sample type" />
-//                                 </SelectTrigger>
-                                
-//                                 <SelectContent>
-//                                     <SelectGroup>
-//                                         <SelectItem disabled value="">Select a sample type</SelectItem>
-//                                         { hostSampleTypes[form.watch("host_type")]
-//                                             .map((sampleType, key) => 
-//                                                 <SelectItem 
-//                                                     key={key} 
-//                                                     value={sampleType.value}
-//                                                 >
-//                                                     {sampleType.name}
-//                                                 </SelectItem>) 
-//                                         }
-//                                     </SelectGroup>
-//                                 </SelectContent>
-//                             </Select>
-//                         )
-//                     }}
-//                 />
-//             }
-//         </section>
-//     )
-// }
-
-// function LocationInfo({form}) {
-//     const [locations, setLocations] = useState([])
-//     const [caves, setCaves] = useState([])
-//     const [points, setPoints] = useState([])
-//     const [locID, setLocID] = useState(null)
-//     const [caveID, setCaveID] = useState(null)
-
-//     async function fetchLocations() {
-//         const { data } = await axios.get(axios.defaults.baseURL + "/location/location/")
-//         setLocations(data)
-//     }
-
-//     async function fetchCaves(location) {
-//         const { data } = await axios.get(axios.defaults.baseURL + "/location/cave/?location=" + location)
-//         setCaves(data)
-//     }
-
-//     async function fetchPoints(cave) {
-//         const { data } = await axios.get(axios.defaults.baseURL + "/location/point/?cave=" + cave)
-//         setPoints(data)
-//     }
-
-//     useEffect(() => {
-//         fetchLocations()
-//     }, [])
-
-
-//     return (
-//         <section>Location Info
-//             <Select onValueChange={(value) => {setLocID(value); fetchCaves(value)}}>
-//                 <SelectTrigger>
-//                     <SelectValue placeholder="Select a location" />
-//                 </SelectTrigger>
-//                 <SelectContent>
-//                     <SelectGroup>
-//                     {
-//                         locations.map((location) => <SelectItem value={location.id.toString()}>{location.abbr}</SelectItem>)
-//                     }
-//                     </SelectGroup>
-//                 </SelectContent>
-//             </Select>
-
-//             <Select disabled={!locID} onValueChange={(value) => {setCaveID(value); fetchPoints(value)}}>
-//                 <SelectTrigger>
-//                     <SelectValue placeholder="Select a cave" />
-//                 </SelectTrigger>
-//                 <SelectContent>
-//                     <SelectGroup>
-//                     {
-//                         caves.map((cave) => <SelectItem value={cave.id.toString()}>{cave.abbr}</SelectItem>)
-//                     }
-//                     </SelectGroup>
-//                 </SelectContent>
-//             </Select>
-            
-//             <Controller
-//                 control={form.control}
-//                 name="sampling_point"
-//                 render={({field}) => {
-//                     return(
-//                         <Select disabled={!caveID} onValueChange={field.onChange} {...field}>
-//                             <SelectTrigger>
-//                                 <SelectValue placeholder="Select a sampling point" />
-//                             </SelectTrigger>
-//                             <SelectContent>
-//                                 <SelectGroup>
-//                                     {
-//                                         points.map((point) => <SelectItem value={point.id.toString()}>{point.point_number.toString()}</SelectItem>)
-//                                     }
-//                                 </SelectGroup>
-//                             </SelectContent>
-//                         </Select>
-//                     )
-//                 }}
-//             />
-                    
-
-//         </section>
-//     )
-// }
-
 
 
 export default function IsolateForm() {
@@ -301,7 +136,7 @@ export default function IsolateForm() {
                         variant="outline"
                     >Previous</Button> */}
                     {/* { page === 3 && */}
-                        <Button type="submit" variant="outline">Add Source</Button>
+                        <Button type="submit" variant="outline">Add Isolate</Button>
                     {/* }
                     { page != 3 &&
                         <Button 

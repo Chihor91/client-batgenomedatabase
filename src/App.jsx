@@ -57,7 +57,7 @@ const Root = () => {
   const [showSidebar, setShowSidebar] = useState(false)
 
   return (
-    <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
+    <ThemeProvider defaultTheme='light' storageKey='vite-ui-theme'>
     <AuthProvider>
       <SideBar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
       <div className={`fixed transition-all ${
@@ -66,13 +66,13 @@ const Root = () => {
         "left-0"
       }`}>
         <NavBar showSideBar={showSidebar} />
-        <div className={`mt-[64px] h-full transition-all ${
+        <body className={`w-[100%] overflow-y-scroll transition-all pt-[96px] h-[100vh] ${
           showSidebar ?
           "w-[calc(100vw-200px)]" :
           "w-[100vw]"
         }`} onClick={() => setShowSidebar(false)}>
           <Outlet />
-        </div>
+        </body>
       </div>
     </AuthProvider>
     </ThemeProvider>

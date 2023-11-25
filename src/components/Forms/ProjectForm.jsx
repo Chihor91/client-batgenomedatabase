@@ -21,9 +21,9 @@ function ProjectFormModal({open, handleClose}) {
     }
 
     return (
-        <Dialog fullWidth={true} maxWidth="md" open={open} onClose={handleClose}>
-            <DialogTitle>Add New Project</DialogTitle>
-            <form onSubmit={handleSubmit(onSubmit)} className="m-10 space-y-3 w-auto text-gray-100">
+        <Dialog fullWidth={true} PaperProps={{style: {backgroundColor: 'black', borderRadius: "20px", borderWidth: "5px"}}} maxWidth="md" open={open} onClose={handleClose}>
+            <DialogTitle style={{fontWeight: "800", fontSize: "1.5rem", color: "white"}}>Add New Project</DialogTitle>
+            <form onSubmit={handleSubmit(onSubmit)} className="m-5 space-y-3 w-auto text-primary">
                 <Input {...register("name")} type="text" placeholder="Project Name" />
                 <Input {...register("abbr")} type="text"  placeholder="Project Abbr." />
                 <DialogActions>

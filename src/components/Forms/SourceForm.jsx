@@ -26,7 +26,7 @@ function BasicInfo({form, modalOpen, setModalOpen}) {
 
     return (
         <section className="space-y-2">
-            Basic Info
+            <div className="font-extrabold text-3xl">Basic Info</div>
             <Input {...form.register("collection", { required: true, maxLength: 30 })} type="text" placeholder="Collection" />
             <Input {...form.register("institution")} type="text" placeholder="Institution" />
             <Controller
@@ -41,7 +41,7 @@ function BasicInfo({form, modalOpen, setModalOpen}) {
                                     role="combobox"
                                     className={cn(
                                         "w-full justify-between",
-                                        !field.value && "text-muted-foreground"
+                                        !field.value && "text-primary"
                                     )}
                                 >
                                     {field.value
@@ -108,7 +108,7 @@ function HostInfo({form, modalOpen, setModalOpen}) {
 
     return (
         <section className="space-y-2">
-            Host Info
+            <div className="font-extrabold text-3xl">Host Info</div>
             <Controller
                 control={form.control}
                 name="host_type"
@@ -192,7 +192,8 @@ function LocationInfo({form}) {
 
 
     return (
-        <section>Location Info
+        <section className="space-y-2">
+            <div className="font-extrabold text-3xl">Location Info</div>
             <Select onValueChange={(value) => {setLocID(value); fetchCaves(value)}}>
                 <SelectTrigger>
                     <SelectValue placeholder="Select a location" />
@@ -273,7 +274,7 @@ export default function SourceForm() {
                 { page === 2 && <HostInfo form={form} modalOpen={projectModal} setModalOpen={setProjectModal} /> }
                 { page === 3 && <LocationInfo form={form} /> }
                 
-                <div>
+                <div className="space-x-5">
                     <Button 
                         disabled={page <= 1} 
                         type="button" 

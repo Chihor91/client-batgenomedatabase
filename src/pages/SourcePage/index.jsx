@@ -1,11 +1,6 @@
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleTrigger,
-} from "@/components/ui/collapsible"
 import axios from "axios";
 import { useEffect, useState } from "react"
-import { BasicInfo, HostInfo, SamplingInfo } from "./Sections";
+import { BasicInfo, HostInfo, SamplingInfo, Isolates } from "./Sections";
 
 
 
@@ -27,6 +22,7 @@ export default function SourcePage({id}) {
                     <BasicInfo data={data} />
                     <HostInfo data={data} />
                     <SamplingInfo data={data} />
+                    <Isolates data={data} />
                 </div>     
             }
         </>

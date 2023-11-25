@@ -17,8 +17,12 @@ function BasicInfo ({data}) {
             <CollapsibleTrigger className={colTriggerStyle}><ChevronDown strokeWidth={5} className="m-1" /><div>Basic Information</div></CollapsibleTrigger>
             <CollapsibleContent className={colContentStyle}>
                 <ul className={listStyle}>
-                    <li className="flex"><div className={label}>Collection:</div>{data.collection}</li>
-                    <li className="flex"><div className={label}>Institution:</div>{data.institution}</li>
+                    <li className="flex"><div className={label}>Accession Number:</div> {data.accession_no}</li>
+                    <li className="flex"><div className={label}>Type:</div> 
+                        {data.type === 1 && " Bacteria"} 
+                        {data.type === 2 && " Yeast"}
+                        {data.type === 3 && " Mold"}
+                    </li>
                 </ul>
             </CollapsibleContent>
         </Collapsible>
@@ -26,15 +30,23 @@ function BasicInfo ({data}) {
 }
 
 function HostInfo ({data}) {
+    const [host, setHost] = useState(null)
+
+    useEffect(() => {
+        axios.get(axios.defaults.baseURL + "/source/source/" + data.source)
+        .then((res) => {
+            setHost(res.data)
+        })
+    }, [])
 
     return (
         <Collapsible className={collapsibleStyle}>
-            <CollapsibleTrigger className={colTriggerStyle}><ChevronDown strokeWidth={5} className="m-1" />Host Information</CollapsibleTrigger>
+            <CollapsibleTrigger className={colTriggerStyle}><ChevronDown strokeWidth={5} className="m-1" />Source Information</CollapsibleTrigger>
             <CollapsibleContent className={colContentStyle}>
                 <ul className={listStyle}>
-                    <li className="flex"><div className={label}>Host Type:</div>{data.host_type==="" ? "N/A" : data.host_type}</li>
-                    <li className="flex"><div className={label}>Host Species:</div>{data.host_species==="" ? "N/A" : data.host_species}</li>
-                    <li className="flex"><div className={label}>Sample Type:</div>{data.sample_type}</li>
+                    <li className="flex"><div className={label}>Source ID:</div>{host ? host.human_readable_id : "N/A"}</li>
+                    <li className="flex"><div className={label}>Source Type:</div>{host ? host.host_type : "N/A"}</li>
+                    <li className="flex"><div className={label}>Source Species:</div>{host ? host.host_species : "N/A"}</li>
                 </ul>
             </CollapsibleContent>
         </Collapsible>
@@ -66,9 +78,9 @@ function SamplingInfo ({data}) {
             <CollapsibleTrigger className={colTriggerStyle}><ChevronDown strokeWidth={5} className="m-1"  />Sampling Information</CollapsibleTrigger>
             <CollapsibleContent className={colContentStyle}>
                 <ul className={listStyle}>
-                    <li className="flex"><div className={label}>Location:</div>{location ? location.town + ", " + location.province : "N/A"}</li>
-                    <li className="flex"><div className={label}>Cave:</div>{cave ? cave.name + " (" + cave.abbr + ")" : "N/A"}</li>
-                    <li className="flex"><div className={label}>Sampling Point:</div>{samplingPoint ? samplingPoint.point_number : "N/A"}</li>
+                    <li>Location: {location ? location.town + ", " + location.province : "N/A"}</li>
+                    <li>Cave: {cave ? cave.name + " (" + cave.abbr + ")" : "N/A"}</li>
+                    <li>Sampling Point: {samplingPoint ? samplingPoint.point_number : "N/A"}</li>
                 </ul>
             </CollapsibleContent>
         </Collapsible>
@@ -87,7 +99,7 @@ function Isolates ({data}) {
 
     return (
         <Collapsible className={collapsibleStyle}>
-            <CollapsibleTrigger className={colTriggerStyle}><ChevronDown strokeWidth={5} className="m-1"  />Strains</CollapsibleTrigger>
+            <CollapsibleTrigger className={colTriggerStyle}><ChevronDown strokeWidth={5} className="m-1"  />Isolates</CollapsibleTrigger>
             <CollapsibleContent className={colContentStyle}>
                 <IsolateTable data={isolates} columns={columns}/>
             </CollapsibleContent>

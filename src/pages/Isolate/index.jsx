@@ -24,7 +24,7 @@ function Isolate() {
             {
                 searchInput.get("id")===null ?
                 <div className="container mx-auto py-10 space-y-3">
-                    <Button variant="outline" onClick={() => navigate("/isolate/add")}>Add New Isolate</Button>
+                    <Button variant="outline" onClick={() => navigate("/isolate/add")}>Add New Strain</Button>
                     <DataTable data={data} columns={columns} />
                 </div>
                 :

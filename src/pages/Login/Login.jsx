@@ -22,7 +22,7 @@ function Login() {
     return (
         <div>
             <form className="container w-1/2 space-y-2" onSubmit={loginUser}>
-                <h1 className="font-medium text-lg">Login</h1>
+                <h1 className="font-extrabold text-3xl">Login</h1>
                 <Input type="text" name="username" placeholder="Enter username" />
                 <Input type="password" name="password" placeholder="Enter password" />
                 <Button variant="outline" type="submit">Submit</Button>

@@ -3,7 +3,7 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 
 const Table = React.forwardRef(({ className, ...props }, ref) => (
-  <div className="w-full overflow-auto">
+  <div className="w-full overflow-auto border">
     <table
       ref={ref}
       className={cn("w-full caption-bottom text-sm", className)}
@@ -48,7 +48,7 @@ const TableHead = React.forwardRef(({ className, ...props }, ref) => (
   <th
     ref={ref}
     className={cn(
-      "h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0",
+      "h-12 px-4 text-left align-middle bg-muted font-medium text-primary [&:has([role=checkbox])]:pr-0",
       className
     )}
     {...props} />
