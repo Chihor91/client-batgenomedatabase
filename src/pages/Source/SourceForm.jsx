@@ -4,6 +4,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { Controller, useForm } from "react-hook-form"
 import { Select, SelectTrigger, SelectContent, SelectValue, SelectGroup, SelectItem } from "@/components/ui/select"
+import { CaveFormModal, LocationFormModal, PointFormModal } from "@/components/Forms/LocationForms"
 function BasicInfo({form}) {
 
     return (
@@ -104,8 +105,13 @@ function LocationInfo({form}) {
     const [locations, setLocations] = useState([])
     const [caves, setCaves] = useState([])
     const [points, setPoints] = useState([])
+
     const [locID, setLocID] = useState(null)
     const [caveID, setCaveID] = useState(null)
+
+    const [locOpen, setLocOpen] = useState(false)
+    const [caveOpen, setCaveOpen] = useState(false)
+    const [pointOpen, setPointOpen] = useState(false)
 
     async function fetchLocations() {
         const { data } = await axios.get(axios.defaults.baseURL + "/location/location/")
@@ -124,55 +130,69 @@ function LocationInfo({form}) {
 
     useEffect(() => {
         fetchLocations()
-    }, [])
+    }, [locOpen])
 
 
     return (
         <section className="space-y-2">
-            <div className="font-extrabold text-3xl">Location Info</div>
-            <Select onValueChange={(value) => {setLocID(value); fetchCaves(value)}}>
-                <SelectTrigger>
-                    <SelectValue placeholder="Select a location" />
-                </SelectTrigger>
-                <SelectContent>
-                    <SelectGroup>
-                    {
-                        locations.map((location) => <SelectItem value={location.id.toString()}>{location.abbr}</SelectItem>)
-                    }
-                    </SelectGroup>
-                </SelectContent>
-            </Select>
-
-            <Select disabled={!locID} onValueChange={(value) => {setCaveID(value); fetchPoints(value)}}>
-                <SelectTrigger>
-                    <SelectValue placeholder="Select a cave" />
-                </SelectTrigger>
-                <SelectContent>
-                    <SelectGroup>
-                    {
-                        caves.map((cave) => <SelectItem value={cave.id.toString()}>{cave.abbr}</SelectItem>)
-                    }
-                    </SelectGroup>
-                </SelectContent>
-            </Select>
             
+            <LocationFormModal open={locOpen} handleClose={() => setLocOpen(false)} />
+            <CaveFormModal open={caveOpen} handleClose={() => {setCaveOpen(false); fetchCaves(locID)}} locID={locID} />
+            <PointFormModal open={pointOpen} handleClose={() => {setPointOpen(false); fetchPoints(caveID)}} caveID={caveID} />
+            
+            <div className="font-extrabold text-3xl">Location Info</div>
+            <div className="flex flex-row space-x-1">
+                <Select onValueChange={(value) => {setLocID(value); fetchCaves(value)}}>
+                    <SelectTrigger>
+                        <SelectValue placeholder="Select a location" />
+                    </SelectTrigger>
+                    <SelectContent>
+                        <SelectGroup>
+                        {
+                            locations.map((location) => <SelectItem key={location.id} value={location.id.toString()}>{location.abbr}</SelectItem>)
+                        }
+                        </SelectGroup>
+                    </SelectContent>
+                </Select>
+                <Button type="button" variant="outline" className="w-[10em]" onClick={() => setLocOpen(true)}>Add Location</Button>
+            </div>
+
+            <div className="flex flex-row space-x-1">
+                <Select disabled={!locID} onValueChange={(value) => {setCaveID(value); fetchPoints(value)}}>
+                    <SelectTrigger>
+                        <SelectValue placeholder="Select a cave" />
+                    </SelectTrigger>
+                    <SelectContent>
+                        <SelectGroup>
+                        {
+                            caves.map((cave) => <SelectItem key={cave.id} value={cave.id.toString()}>{cave.abbr}</SelectItem>)
+                        }
+                        </SelectGroup>
+                    </SelectContent>
+                </Select>
+                <Button type="button" disabled={!locID} variant="outline" className="w-[10em]" onClick={() => setCaveOpen(true)}>Add Cave</Button>
+            </div>
+
             <Controller
                 control={form.control}
                 name="sampling_point"
                 render={({field}) => {
                     return(
-                        <Select disabled={!caveID} onValueChange={field.onChange} {...field}>
-                            <SelectTrigger>
-                                <SelectValue placeholder="Select a sampling point" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectGroup>
-                                    {
-                                        points.map((point) => <SelectItem value={point.id.toString()}>{point.point_number.toString()}</SelectItem>)
-                                    }
-                                </SelectGroup>
-                            </SelectContent>
-                        </Select>
+                        <div className="flex flex-row space-x-1">
+                            <Select disabled={!caveID} onValueChange={field.onChange} {...field}>
+                                <SelectTrigger>
+                                    <SelectValue placeholder="Select a sampling point" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectGroup>
+                                        {
+                                            points.map((point) => <SelectItem key={point.key} value={point.id.toString()}>{point.point_number.toString()}</SelectItem>)
+                                        }
+                                    </SelectGroup>
+                                </SelectContent>
+                            </Select>
+                            <Button disabled={!caveID} type="button" variant="outline" className="w-[10em]" onClick={() => setPointOpen(true)}>Add Sampling Point</Button>
+                        </div>
                     )
                 }}
             />
