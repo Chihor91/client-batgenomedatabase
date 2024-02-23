@@ -67,7 +67,7 @@ function BasicInfo({form, navigate}) {
                                             ))
 
                                             }
-                                            <CommandItem onClick={() => navigate("/source/add")}>Add new source</CommandItem>
+                                            <CommandItem onSelect={() => navigate("/source/add")}>Add new source</CommandItem>
                                         </CommandGroup>
                                     </Command>
                             </PopoverContent>
