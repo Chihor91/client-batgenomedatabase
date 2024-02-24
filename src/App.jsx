@@ -21,7 +21,6 @@ import SourceForm from '@/pages/Source/SourceForm'
 import Isolate from '@/pages/Strain'
 import StrainForm from '@/pages/Strain/StrainForm'
 
-import NavBar from '@/components/NavBar/NavBar'
 import SideBar from '@/components/SideBar/SideBar'
 import { AuthProvider } from '@/context/AuthContext'
 import { ThemeProvider } from '@/components/ui/theme-provider'
@@ -69,12 +68,11 @@ const Root = () => {
 			<AuthProvider>
 				<SideBar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
 				<div
-					className={`fixed transition-all ${
+					className={`fixed transition-all  ${
 						showSidebar ? 'left-[200px] w-[calc(100%-200px)]' : 'left-0'
 					}`}>
-					<NavBar showSideBar={showSidebar} />
 					<body
-						className={`w-[100%] overflow-y-scroll transition-all pt-[96px] h-[100vh] ${
+						className={`w-[100%] overflow-y-scroll  transition-all pt-[96px] h-[100vh] ${
 							showSidebar ? 'w-[calc(100vw-200px)]' : 'w-[100vw]'
 						}`}
 						onClick={() => setShowSidebar(false)}>
