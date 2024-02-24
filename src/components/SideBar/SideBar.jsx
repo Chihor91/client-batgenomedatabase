@@ -97,14 +97,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 							<div>{showSidebar ? <DarkLightModeToggle /> : null}</div>
 						</div>
 					</>
-				) : (
-					<Button
-						className={`w-[80%] self-center text-lg bg-muted-foreground `}
-						variant='outline'
-						onClick={() => navigate('/login')}>
-						Login
-					</Button>
-				)}
+				) : null}
 			</ul>
 		</div>
 	)
