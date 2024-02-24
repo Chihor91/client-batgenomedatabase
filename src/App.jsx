@@ -31,6 +31,7 @@ import { ThemeProvider } from '@/components/ui/theme-provider'
 import './App.css'
 import PrivateRoutes from '@/utils/PrivateRoutes'
 import AdminRoutes from '@/utils/AdminRoutes'
+import { SectionWrapper } from './hoc'
 
 // Server API address
 axios.defaults.baseURL = 'http://127.0.0.1:8000'

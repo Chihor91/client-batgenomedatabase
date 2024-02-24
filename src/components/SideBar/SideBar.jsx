@@ -23,9 +23,6 @@ function SideBar({ showSidebar, setShowSidebar }) {
 		setShowSidebar(false)
 	}
 
-	console.log('Current theme:', theme)
-
-	console.log(theme)
 	return (
 		<div
 			style={{

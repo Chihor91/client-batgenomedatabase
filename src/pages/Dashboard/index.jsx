@@ -16,7 +16,6 @@ export default function Dashboard() {
 			<h1 className='text-[100px] font-medium'>Dashboard</h1>
 			<h1 className='text-[100px] font-medium'>Dashboard</h1>
 			<h1 className='text-[100px] font-medium'>Dashboard</h1>
-			<h1 className='text-[100px] font-medium'>Dashboard</h1>
 		</div>
 	)
 }
