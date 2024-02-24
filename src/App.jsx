@@ -70,11 +70,11 @@ const Root = () => {
 				<SideBar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
 				<div
 					className={`fixed transition-all  ${
-						showSidebar ? 'left-[200px] w-[calc(100%-200px)]' : 'left-0'
+						showSidebar ? 'left-[200px] w-[calc(100%-200px)]' : 'left-[100px] w-[calc(100%-100px)]'
 					}`}>
 					<body
-						className={`w-[100%] overflow-y-scroll  transition-all pt-[96px] h-[100vh] ${
-							showSidebar ? 'w-[calc(100vw-200px)]' : 'w-[100vw]'
+						className={`w-[100%] overflow-y-scroll  transition-all  h-[100vh] ${
+							showSidebar ? 'w-[calc(100vw-200px)]' : 'w-[calc(100vw-100px)]'
 						}`}
 						onClick={() => setShowSidebar(false)}>
 						<Outlet />

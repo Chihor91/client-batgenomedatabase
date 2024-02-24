@@ -28,7 +28,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 	return (
 		<div
 			style={{
-				backgroundColor: theme.theme === 'light' ? 'rgba(192, 229, 242)' : '#0F252F',
+				backgroundColor: theme.theme === 'light' ? '#c0e5f2' : '#0F252F',
 			}}
 			className={`top-0 left-0 h-screen overflow-hidden  transition-all fixed z-40 ${
 				showSidebar ? 'w-[200px]' : 'w-[100px]'
@@ -51,10 +51,10 @@ function SideBar({ showSidebar, setShowSidebar }) {
 					CAVES
 				</h1>
 			</div>
-
-			<ul className='h-[90%]  flex flex-col justify-between py-12   overflow-x-hidden overflow-y-scroll'>
-				{user ? (
-					<>
+			{/* FOR AUTHENTICATED USERS */}
+			{user && (
+				<>
+					<ul className='h-[90%]  flex flex-col justify-between py-12   overflow-x-hidden overflow-y-scroll'>
 						<div className='space-y-4 '>
 							<CustomButton
 								imgSrc={Images.ic_dashboard}
@@ -110,9 +110,51 @@ function SideBar({ showSidebar, setShowSidebar }) {
 							</div>
 							<div className='py-20'>{showSidebar ? <DarkLightModeToggle /> : null}</div>
 						</div>
-					</>
-				) : null}
-			</ul>
+					</ul>
+				</>
+			)}
+			{/* FOR NON-AUTHENTICATED USERS */}
+			<section className='flex flex-col gap-6 pt-6'>
+				<div>
+					<CustomButton
+						imgSrc={Images.ic_login}
+						className={`w-[80%]  bg-transparent`}
+						variant='outline'
+						width={30}
+						showSidebar={showSidebar}
+						onClick={() => {
+							navigate('login')
+						}}>
+						Login
+					</CustomButton>
+				</div>
+				<div>
+					<CustomButton
+						imgSrc={Images.ic_logout}
+						className={`w-[80%]  bg-transparent`}
+						variant='outline'
+						width={30}
+						showSidebar={showSidebar}
+						onClick={() => {
+							navigate('login')
+						}}>
+						Login
+					</CustomButton>
+				</div>
+				<div>
+					<CustomButton
+						imgSrc={Images.ic_logout}
+						className={`w-[80%]  bg-transparent`}
+						variant='outline'
+						width={30}
+						showSidebar={showSidebar}
+						onClick={() => {
+							navigate('login')
+						}}>
+						Login
+					</CustomButton>
+				</div>
+			</section>
 		</div>
 	)
 }
