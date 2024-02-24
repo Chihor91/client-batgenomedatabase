@@ -29,7 +29,7 @@
 		--secondary-foreground: 186, 65%, 36%;
 
 		/* BLACK */
-		--accent: 0, 0%, 0%;
+		--accent: 195, 65%, 65%;
 		/* GREY */
 		--accent-foreground: 0, 0%, 50%;
 
@@ -53,7 +53,7 @@
 		/* WHITE */
 		--destructive-foreground: 0, 0%, 100%;
 
-		--border: 50 5.9% 70%;
+		--border: 195, 65%, 65%;
 		--input: 50 5.9% 90%;
 		--ring: 50 10% 3.9%;
 
@@ -101,7 +101,7 @@
 		/* #218D99 */
 		--destructive-foreground: 0 0% 98%;
 
-		--border: 240 3.7% 15.9%;
+		--border: 195°, 65%, 55%;
 		--input: 240 3.7% 15.9%;
 		--ring: 240 4.9% 83.9%;
 	}
@@ -130,7 +130,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #ccf1f5;
+	background: #e6f9ff;
 	border-radius: 4px;
 }
 

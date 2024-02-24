@@ -23,28 +23,42 @@ function SideBar({ showSidebar, setShowSidebar }) {
 		setShowSidebar(false)
 	}
 
+	const logoWidth = showSidebar ? '70px' : '60px'
+
 	return (
 		<div
 			style={{
-				backgroundColor: theme.theme === 'light' ? '#C0E5F2' : '#0F252F',
+				backgroundColor: theme.theme === 'light' ? 'rgba(192, 229, 242)' : '#0F252F',
 			}}
-			className={`top-0 left-0 h-screen overflow-hidden transition-all fixed z-40 ${
+			className={`top-0 left-0 h-screen overflow-hidden  transition-all fixed z-40 ${
 				showSidebar ? 'w-[200px]' : 'w-[100px]'
 			} `}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}>
-			<div className='flex flex-col h-[96px] pt-[24px] justify-center items-center '>
-				<img width={60} src={Images.ic_caves} alt='caves-logo' />
-				<h1 className=' font-black text-lg text-secondary'>CAVES</h1>
+			<div
+				className={`flex flex-col   h-[120px] p-[24px] justify-center    items-center ${
+					theme.theme === 'light' ? 'bg-[#9DD9EE]' : 'bg-[#164555]'
+				} `}>
+				<img
+					width={logoWidth}
+					src={theme.theme === 'light' ? Images.ic_caves : Images.ic_light_caves}
+					alt='caves-logo'
+				/>
+				<h1
+					className={`font-black text-lg  ${
+						theme.theme === 'light' ? 'text-[#0F5860]' : 'text-[#C6EDFB]'
+					}`}>
+					CAVES
+				</h1>
 			</div>
 
-			<ul className='h-[90%]  flex flex-col justify-between py-12 overflow-x-hidden overflow-y-scroll'>
+			<ul className='h-[90%]  flex flex-col justify-between py-12   overflow-x-hidden overflow-y-scroll'>
 				{user ? (
 					<>
 						<div className='space-y-4 '>
 							<CustomButton
 								imgSrc={Images.ic_dashboard}
-								className={`w-[80%] bg-transparent`}
+								className={`w-[80%] bg-transparent `}
 								variant='outline'
 								width={30}
 								showSidebar={showSidebar}
@@ -82,7 +96,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 							</CustomButton>
 						</div>
 
-						<div className='space-y-80'>
+						<div className='space-y-40'>
 							<div>
 								<CustomButton
 									imgSrc={Images.ic_logout}
@@ -94,7 +108,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 									Logout
 								</CustomButton>
 							</div>
-							<div>{showSidebar ? <DarkLightModeToggle /> : null}</div>
+							<div className='py-20'>{showSidebar ? <DarkLightModeToggle /> : null}</div>
 						</div>
 					</>
 				) : null}
