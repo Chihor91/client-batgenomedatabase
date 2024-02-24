@@ -1,6 +1,7 @@
 import ic_sun from '@/assets/svg/ic_sun.svg'
 import ic_moon from '@/assets/svg/ic_moon.svg'
 import ic_logout from '@/assets/svg/ic_logout.svg'
+import ic_login from '@/assets/svg/ic_login.svg'
 import ic_project from '@/assets/svg/ic_project.svg'
 import ic_dashboard from '@/assets/svg/ic_dashboard.svg'
 import ic_source from '@/assets/svg/ic_source.svg'
@@ -17,6 +18,7 @@ const Images = {
 	ic_strains: ic_strains,
 	ic_caves: ic_caves,
 	ic_light_caves: ic_light_caves,
+	ic_login: ic_login,
 }
 
 export default Images
