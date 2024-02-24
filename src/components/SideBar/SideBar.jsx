@@ -35,7 +35,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 			onMouseLeave={handleMouseLeave}>
 			<div className='flex flex-col h-[96px] pt-[24px] justify-center items-center '>
 				<img width={60} src={Images.ic_caves} alt='caves-logo' />
-				<h1 className=' font-extralight text-lg text-foreground'>Caves</h1>
+				<h1 className=' font-black text-lg text-secondary'>CAVES</h1>
 			</div>
 
 			<ul className='h-[90%]  flex flex-col justify-between py-12 overflow-x-hidden overflow-y-scroll'>
