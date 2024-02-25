@@ -121,10 +121,10 @@ export default function IsolateForm() {
         axios.post('source/isolate/', data)
         .then((res) => {
             alert("Isolate " + res.data.human_readable_id + " successfully created.")
-            navigate("/isolate")
+            navigate('/isolate')
         }).catch((err) => {
             alert(JSON.stringify(err.response.data.message))
-            navigate("/isolate")
+            navigate('/isolate')
         })
     }
 
