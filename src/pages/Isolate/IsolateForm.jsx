@@ -67,7 +67,7 @@ function BasicInfo({form, navigate}) {
                                             ))
 
                                             }
-                                            <CommandItem onClick={() => navigate("/source/add")}>Add new source</CommandItem>
+                                            <CommandItem onSelect={() => navigate("/source/add")}>Add new source</CommandItem>
                                         </CommandGroup>
                                     </Command>
                             </PopoverContent>
@@ -115,7 +115,7 @@ export default function IsolateForm() {
     // }
 
     const onSubmit = (data) => {
-        axios.post("source/isolate/", data)
+        axios.post('source/isolate/', data)
         .then((res) => {
             console.log(res)
         })
@@ -148,8 +148,6 @@ export default function IsolateForm() {
                     } */}
                 </div>
             </form>
-            {/* <ProjectFormModal open={projectModal} handleClose={() => setProjectModal(false)} /> */}
-            {/* <pre>{JSON.stringify(form.watch(), null, 2)}</pre> */}
         </div>
     )
 }
