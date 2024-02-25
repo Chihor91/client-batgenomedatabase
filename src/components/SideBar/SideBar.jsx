@@ -94,7 +94,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 								width={30}
 								showSidebar={showSidebar}
 								onClick={() => handleButtonClick('Source')}>
-								Source
+								Sources
 							</CustomButton>
 							<CustomButton
 								imgSrc={Images.ic_strains}
@@ -105,7 +105,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 								width={30}
 								showSidebar={showSidebar}
 								onClick={() => handleButtonClick('Isolate')}>
-								{showSidebar ? 'Strains' : null}
+								Isolates
 							</CustomButton>
 						</div>
 
@@ -130,15 +130,15 @@ function SideBar({ showSidebar, setShowSidebar }) {
 			<section className='flex flex-col gap-6 pt-6'>
 				<div>
 					<CustomButton
-						imgSrc={Images.ic_login}
+						imgSrc={Images.ic_dashboard}
 						className={`w-[80%]  bg-transparent`}
 						variant='outline'
 						width={30}
 						showSidebar={showSidebar}
 						onClick={() => {
-							navigate('login')
+							navigate('/')
 						}}>
-						Login
+						Dashboard
 					</CustomButton>
 				</div>
 				<div>
@@ -149,7 +149,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 						width={30}
 						showSidebar={showSidebar}
 						onClick={() => {
-							navigate('/')
+							navigate('login')
 						}}>
 						Login
 					</CustomButton>

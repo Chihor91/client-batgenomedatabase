@@ -18,8 +18,8 @@ import Project from '@/pages/Project'
 import Source from '@/pages/Source'
 import SourceForm from '@/pages/Source/SourceForm'
 
-import Isolate from '@/pages/Strain'
-import StrainForm from '@/pages/Strain/StrainForm'
+import Isolate from '@/pages/Isolate'
+import IsolateForm from '@/pages/Isolate/IsolateForm'
 
 import SideBar from '@/components/SideBar/SideBar'
 import { AuthProvider } from '@/context/AuthContext'
@@ -48,7 +48,7 @@ function App() {
 					<Route path='/source' element={<Source />} />
 					<Route path='/source/add' element={<SourceForm />} />
 					<Route path='/isolate' element={<Isolate />} />
-					<Route path='/isolate/add' element={<StrainForm />} />
+					<Route path='/isolate/add' element={<IsolateForm />} />
 				</Route>
 			</Route>,
 		),
