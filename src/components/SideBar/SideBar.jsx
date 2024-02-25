@@ -15,6 +15,8 @@ function SideBar({ showSidebar, setShowSidebar }) {
 	const theme = useTheme()
 	const navigate = useNavigate()
 
+	const [activeButton, setActiveButton] = useState(null)
+
 	const handleMouseEnter = () => {
 		setShowSidebar(true)
 	}
@@ -23,12 +25,17 @@ function SideBar({ showSidebar, setShowSidebar }) {
 		setShowSidebar(false)
 	}
 
+	const handleButtonClick = (buttonName) => {
+		setActiveButton(buttonName)
+		navigate(`/${buttonName.toLowerCase()}`)
+	}
+
 	const logoWidth = showSidebar ? '70px' : '60px'
 
 	return (
 		<div
 			style={{
-				backgroundColor: theme.theme === 'light' ? '#c0e5f2' : '#0F252F',
+				backgroundColor: 'rgba(33, 141, 153,.1)',
 			}}
 			className={`top-0 left-0 h-screen overflow-hidden  transition-all fixed z-40 ${
 				showSidebar ? 'w-[200px]' : 'w-[100px]'
@@ -37,16 +44,16 @@ function SideBar({ showSidebar, setShowSidebar }) {
 			onMouseLeave={handleMouseLeave}>
 			<div
 				className={`flex flex-col   h-[120px] p-[24px] justify-center    items-center ${
-					theme.theme === 'light' ? 'bg-[#9DD9EE]' : 'bg-[#164555]'
+					theme.theme === 'light' ? 'bg-primary' : 'bg-primary'
 				} `}>
 				<img
 					width={logoWidth}
-					src={theme.theme === 'light' ? Images.ic_caves : Images.ic_light_caves}
+					src={theme.theme === 'light' ? Images.ic_light_caves : Images.ic_caves}
 					alt='caves-logo'
 				/>
 				<h1
-					className={`font-black text-lg  ${
-						theme.theme === 'light' ? 'text-[#0F5860]' : 'text-[#C6EDFB]'
+					className={`font-semibold text-lg  ${
+						theme.theme === 'light' ? 'text-background' : 'text-background'
 					}`}>
 					CAVES
 				</h1>
@@ -58,40 +65,46 @@ function SideBar({ showSidebar, setShowSidebar }) {
 						<div className='space-y-4 '>
 							<CustomButton
 								imgSrc={Images.ic_dashboard}
-								className={`w-[80%] bg-transparent `}
+								className={`w-[80%]  ${activeButton === '' ? 'bg-background' : 'bg-transparent'}`}
 								variant='outline'
 								width={30}
 								showSidebar={showSidebar}
-								onClick={() => navigate('/')}>
+								onClick={() => handleButtonClick('')}>
 								Dashboard
 							</CustomButton>
 
 							<CustomButton
-								className={`w-[80%]  bg-transparent `}
+								className={`w-[80%]   ${
+									activeButton === 'Project' ? 'bg-background' : 'bg-transparent'
+								} `}
 								imgSrc={Images.ic_project}
 								variant='outline'
 								width={30}
 								showSidebar={showSidebar}
-								onClick={() => navigate('/project')}>
+								onClick={() => handleButtonClick('Project')}>
 								Project
 							</CustomButton>
 
 							<CustomButton
 								imgSrc={Images.ic_source}
-								className={`w-[80%]  bg-transparent `}
+								className={`w-[80%]   ${
+									activeButton === 'Source' ? 'bg-background' : 'bg-transparent'
+								}`}
 								variant='outline'
 								width={30}
 								showSidebar={showSidebar}
-								onClick={() => navigate('/source')}>
+								onClick={() => handleButtonClick('Source')}>
 								Source
 							</CustomButton>
 							<CustomButton
 								imgSrc={Images.ic_strains}
-								className={`w-[80%]  bg-transparent `}
+								className={`w-[80%]  ${
+									activeButton === 'Isolate' ? 'bg-background' : 'bg-transparent'
+								} `}
 								variant='outline'
 								width={30}
 								showSidebar={showSidebar}
-								onClick={() => navigate('/isolate')}>
+								onClick={() => handleButtonClick('Isolate')}>
 								{showSidebar ? 'Strains' : null}
 							</CustomButton>
 						</div>
@@ -130,26 +143,13 @@ function SideBar({ showSidebar, setShowSidebar }) {
 				</div>
 				<div>
 					<CustomButton
-						imgSrc={Images.ic_logout}
+						imgSrc={Images.ic_login}
 						className={`w-[80%]  bg-transparent`}
 						variant='outline'
 						width={30}
 						showSidebar={showSidebar}
 						onClick={() => {
-							navigate('login')
-						}}>
-						Login
-					</CustomButton>
-				</div>
-				<div>
-					<CustomButton
-						imgSrc={Images.ic_logout}
-						className={`w-[80%]  bg-transparent`}
-						variant='outline'
-						width={30}
-						showSidebar={showSidebar}
-						onClick={() => {
-							navigate('login')
+							navigate('/')
 						}}>
 						Login
 					</CustomButton>
