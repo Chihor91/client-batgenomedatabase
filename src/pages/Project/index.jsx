@@ -16,7 +16,7 @@ function Project() {
 
 	return (
 		<>
-			<div className='container mx-auto py-10 space-y-3'>
+			<div className='container mx-auto space-y-3'>
 				<ProjectForm />
 				<DataTable data={data} columns={columns} />
 			</div>

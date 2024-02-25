@@ -21,7 +21,7 @@ function Source() {
 	return (
 		<>
 			{searchInput.get('id') === null ? (
-				<div className='container mx-auto py-10 space-y-3'>
+				<div className='container mx-auto space-y-3'>
 					<Button variant='outline' onClick={() => navigate('/source/add')}>
 						Add New Source
 					</Button>
