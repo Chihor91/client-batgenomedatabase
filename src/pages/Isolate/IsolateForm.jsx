@@ -29,7 +29,7 @@ function BasicInfo({form, navigate}) {
             <div className="font-extrabold text-3xl">Basic Info</div>
             <Controller
                 control={form.control}
-                name="project"
+                name="source"
                 render={({field}) => {
                     return (
                         <Popover onValueChange={field.onChange} {...field}>
@@ -46,7 +46,7 @@ function BasicInfo({form, navigate}) {
                                         ? sources.find(
                                             (source) => source.id === field.value
                                         )?.human_readable_id
-                                        :   "Select Source"
+                                        :  "Select Source"
                                     } 
                                 </Button>
                             </PopoverTrigger>
@@ -57,13 +57,13 @@ function BasicInfo({form, navigate}) {
                                             <button className="w-full rounded-sm px-2 py-1.5 text-sm outline-none hover:bg-accent" onClick={() => navigate("/source/add")}>Add new source</button>
                                         </CommandEmpty>
                                         <CommandGroup>
-                                            {sources.map((source) => (
+                                            {sources.map((source, key) => (
                                                 <CommandItem
                                                     value={source.id}
-                                                    key={source.id}
+                                                    key={key}
                                                     onSelect = {() => {
                                                         form.setValue("source", source.id)
-                                                    }}>{source.human_readable_id}</CommandItem>
+                                                    }}>{key+1 + " " + source.human_readable_id}</CommandItem>
                                             ))
 
                                             }
@@ -103,9 +103,12 @@ function BasicInfo({form, navigate}) {
 
 export default function IsolateForm() {
     let navigate = useNavigate()
-    const form = useForm({})
+    const form = useForm({
+        source: ""
+    })
     const [page, setPage] = useState(1)
-    const [projectModal, setProjectModal] = useState(false)
+
+    const { watch } = form
 
     // const previous = () => {
     //     setPage(curPage => curPage - 1)
@@ -147,6 +150,7 @@ export default function IsolateForm() {
                         >Next</Button>
                     } */}
                 </div>
+                {JSON.stringify(watch(form))}
             </form>
         </div>
     )
