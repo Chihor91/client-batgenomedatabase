@@ -34,35 +34,60 @@ function Login() {
          '>
 			<motion.div
 				className={`flex w-full   `}
-				style={{ height: '80%' }}
+				style={{ height: '100%' }}
 				variants={fadeIn('left', 'spring', 0.1, 0.25)}>
 				<div
-					className={`w-1/2  justify-center  items-center $ hidden md:flex md:flex-col ${
-						theme.theme === 'light'
-							? 'bg-gradient-to-r from-[#15666f]/40  to-[#218D99]/40'
-							: 'bg-[#032125]'
-					} `}>
-					<img
-						width={100}
-						src={theme.theme === 'light' ? Images.ic_caves : Images.ic_light_caves}
-						alt='caves-logo'
-					/>
-					<h1
-						className={`hover:animate-pulse cursor-default font-extralight ${styles.heroHeadText} ${
-							theme.theme === 'light' ? 'text-foreground' : 'text-background'
-						} `}>
-						CAVES
-					</h1>
+					className={`w-1/2  rounded-bl-xl rounded-tl-xl justify-center  items-center  hidden md:flex md:flex-col ${
+						theme.theme === 'light' ? 'bg-card' : 'bg-[#218D99]/10'
+					}`}>
+					<div className=' w-[90%] h-[90%] flex flex-col justify-between'>
+						<div className='justify self-end '>
+							<img
+								className='hover:animate-spin'
+								width={60}
+								src={Images.ic_strains}
+								alt='caves-logo'
+							/>
+						</div>
+						<div className='flex flex-col  items-center gap-10'>
+							<img
+								width={200}
+								src={theme.theme === 'light' ? Images.ic_caves : Images.ic_caves}
+								alt='caves-logo'
+							/>
+							<h1
+								className={`cursor-default  ${styles.heroSubText}  ${
+									theme.theme === 'light'
+										? 'bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 to-green-700'
+										: 'text-foreground'
+								}`}>
+								WELCOME BACK TO CAVES!
+							</h1>
+						</div>
+
+						<p>
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+							has been the industrs standard dummy text ever since the 1500s, when an unknown
+							printer took a galley of type and scrambled it to make a type specimen book.
+						</p>
+					</div>
 				</div>
 
 				<div className='h-full w-full md:w-full lg:w-1/2'>
-					<div className='h-full w-full flex items-center justify-center'>
+					<div className='h-full w-full  flex items-center justify-center'>
 						<div
-							className={`h-full w-full ${theme.theme === 'light' ? 'bg-accent' : 'bg-[#032125]'}`}>
+							className={`h-full w-full  ${
+								theme.theme === 'light' ? 'bg-accent' : 'bg-[#032125]'
+							}`}>
 							<form
 								onSubmit={loginUser}
 								className='flex flex-col hover:blur-0 h-full bg-center bg-cover items-center justify-center w-full gap-5 '>
-								<h1 className={`my-6 ${styles.heroSubText} text-background `}>Login</h1>
+								<h1
+									className={`my-2 ${styles.heroSubText} ${
+										theme.theme === 'light' ? 'text-background' : 'text-foreground'
+									} `}>
+									Get Started
+								</h1>
 								<ul className='inline-flex items-center text-xl gap-10'>
 									{icons.map((_, index) => (
 										<li key={index}>
@@ -75,7 +100,7 @@ function Login() {
 										</li>
 									))}
 								</ul>
-								<p className='text-white text-right'>Use your email account</p>
+								<p className='text-white text-right'> </p>
 
 								<Input
 									className='w-[60%]'
@@ -90,7 +115,7 @@ function Login() {
 									placeholder='Enter password'
 								/>
 								<Button
-									className='px-6 py-2  rounde  hover:bg-card hover:text-background  text-foreground bg-background font-semibold transition-all hover:scale-110'
+									className='px-6 py-2  rounde  hover:bg-foreground hover:text-background  text-foreground bg-background font-semibold transition-all hover:scale-110'
 									type='submit '>
 									Submit
 								</Button>
