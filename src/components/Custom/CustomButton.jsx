@@ -13,7 +13,7 @@ const buttonVariants = cva(
 				default: 'bg-primary text-primary-foreground hover:bg-primary/90',
 				destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
 				outline:
-					'border-input  hover:bg-foreground text-foreground hover:shadow-lg hover:shadow-cyan-600/90 font-thin hover:font-bold hover:text-background text-md',
+					'border-input  hover:bg-background text-foreground hover:shadow-lg hover:shadow-[#007E10]/90 font-thin hover:font-bold hover:text-foreground ',
 				secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
 				ghost: 'hover:bg-accent hover:text-accent-foreground',
 				link: 'text-primary underline-offset-4 hover:underline',
@@ -47,7 +47,7 @@ const CustomButton = React.forwardRef(
 					{...props}>
 					<div className={`items-center w-full h-full grid grid-flow-col grid-cols-3`}>
 						<div className={`flex justify-center ${imageGridClass}`}>
-							{imgSrc && <img src={imgSrc} width={width} alt='' />}
+							{imgSrc && <img src={imgSrc} width={width} alt='logo' />}
 						</div>
 						{showSidebar && <div className={`col-start-2`}>{props.children}</div>}
 					</div>

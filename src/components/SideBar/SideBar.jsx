@@ -34,26 +34,25 @@ function SideBar({ showSidebar, setShowSidebar }) {
 
 	return (
 		<div
-			style={{
-				backgroundColor: 'rgba(33, 141, 153,.1)',
-			}}
-			className={`top-0 left-0 h-screen overflow-hidden  transition-all fixed z-40 ${
+			className={`${
+				theme.theme === 'light'
+					? 'bg-gradient-to-b from-[#C6FFC7] via-[#D2FFD2] to-[#94FF97]'
+					: 'bg-[#072931]'
+			} top-0 left-0 h-screen overflow-hidden  transition-all fixed z-40 ${
 				showSidebar ? 'w-[200px]' : 'w-[100px]'
 			} `}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}>
-			<div
-				className={`flex flex-col   h-[120px] p-[24px] justify-center    items-center ${
-					theme.theme === 'light' ? 'bg-primary' : 'bg-primary'
-				} `}>
-				<img
-					width={logoWidth}
-					src={theme.theme === 'light' ? Images.ic_light_caves : Images.ic_caves}
-					alt='caves-logo'
-				/>
+			<div className={`flex flex-col   h-[120px] p-[24px] justify-center    items-center `}>
+				{user && (
+					<img
+						width={logoWidth}
+						src={theme.theme === 'light' ? Images.ic_caves : Images.ic_caves}
+						alt='caves-logo'
+					/>
+				)}
 				<h1
-					className={`font-semibold text-lg  ${
-						theme.theme === 'light' ? 'text-background' : 'text-background'
+					className={`font-bold text-lg  
 					}`}>
 					CAVES
 				</h1>
@@ -127,7 +126,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 				</>
 			)}
 			{/* FOR NON-AUTHENTICATED USERS */}
-			<section className='flex flex-col gap-6 pt-6'>
+			<section className='flex flex-col gap-6 pt-6 '>
 				<div>
 					<CustomButton
 						imgSrc={Images.ic_login}
@@ -137,19 +136,6 @@ function SideBar({ showSidebar, setShowSidebar }) {
 						showSidebar={showSidebar}
 						onClick={() => {
 							navigate('login')
-						}}>
-						Login
-					</CustomButton>
-				</div>
-				<div>
-					<CustomButton
-						imgSrc={Images.ic_login}
-						className={`w-[80%]  bg-transparent`}
-						variant='outline'
-						width={30}
-						showSidebar={showSidebar}
-						onClick={() => {
-							navigate('/')
 						}}>
 						Login
 					</CustomButton>

@@ -1,7 +1,3 @@
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
-<svg fill="#218d99" width="100px" height="100px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon">
-<g id="SVGRepo_bgCarrier" stroke-width="0"/>
-<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-<g id="SVGRepo_iconCarrier"> <path d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zM368 744c0 4.4-3.6 8-8 8h-80c-4.4 0-8-3.6-8-8V280c0-4.4 3.6-8 8-8h80c4.4 0 8 3.6 8 8v464zm192-280c0 4.4-3.6 8-8 8h-80c-4.4 0-8-3.6-8-8V280c0-4.4 3.6-8 8-8h80c4.4 0 8 3.6 8 8v184zm192 72c0 4.4-3.6 8-8 8h-80c-4.4 0-8-3.6-8-8V280c0-4.4 3.6-8 8-8h80c4.4 0 8 3.6 8 8v256z"/> </g>
-</svg>
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M38.4 0H1.6C0.715 0 0 0.715 0 1.6V38.4C0 39.285 0.715 40 1.6 40H38.4C39.285 40 40 39.285 40 38.4V1.6C40 0.715 39.285 0 38.4 0ZM12.8 31.6C12.8 31.82 12.62 32 12.4 32H8.4C8.18 32 8 31.82 8 31.6V8.4C8 8.18 8.18 8 8.4 8H12.4C12.62 8 12.8 8.18 12.8 8.4V31.6ZM22.4 17.6C22.4 17.82 22.22 18 22 18H18C17.78 18 17.6 17.82 17.6 17.6V8.4C17.6 8.18 17.78 8 18 8H22C22.22 8 22.4 8.18 22.4 8.4V17.6ZM32 21.2C32 21.42 31.82 21.6 31.6 21.6H27.6C27.38 21.6 27.2 21.42 27.2 21.2V8.4C27.2 8.18 27.38 8 27.6 8H31.6C31.82 8 32 8.18 32 8.4V21.2Z" fill="#007E10"/>
+</svg>
