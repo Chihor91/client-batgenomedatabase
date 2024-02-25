@@ -99,6 +99,9 @@ function SourceTable({ data, columns }) {
             >
                 {"<"}
             </Button>
+			<div>
+                {"Page " + (table.options.state.pagination.pageIndex + 1)}
+            </div>
             <Button
                 variant="outline"
                 size="sm"
