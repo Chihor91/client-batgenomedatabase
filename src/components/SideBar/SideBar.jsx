@@ -47,7 +47,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 				{user && (
 					<img
 						width={logoWidth}
-						src={theme.theme === 'light' ? Images.ic_caves : Images.ic_caves}
+						src={theme.theme === 'light' ? Images.ic_gradient_caves : Images.ic_DM_cave}
 						alt='caves-logo'
 					/>
 				)}
@@ -63,7 +63,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 					<ul className='h-[90%]  flex flex-col justify-between py-12   overflow-x-hidden overflow-y-scroll'>
 						<div className='space-y-4 '>
 							<CustomButton
-								imgSrc={Images.ic_dashboard}
+								imgSrc={theme.theme === 'light' ? Images.ic_dashboard : Images.ic_DM_dashboard}
 								className={`w-[80%]  ${activeButton === '' ? 'bg-background' : 'bg-transparent'}`}
 								variant='outline'
 								width={30}
@@ -76,7 +76,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 								className={`w-[80%]   ${
 									activeButton === 'Project' ? 'bg-background' : 'bg-transparent'
 								} `}
-								imgSrc={Images.ic_project}
+								imgSrc={theme.theme === 'light' ? Images.ic_project : Images.ic_DM_project}
 								variant='outline'
 								width={30}
 								showSidebar={showSidebar}
@@ -85,7 +85,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 							</CustomButton>
 
 							<CustomButton
-								imgSrc={Images.ic_source}
+								imgSrc={theme.theme === 'light' ? Images.ic_source : Images.ic_DM_source}
 								className={`w-[80%]   ${
 									activeButton === 'Source' ? 'bg-background' : 'bg-transparent'
 								}`}
@@ -96,7 +96,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 								Sources
 							</CustomButton>
 							<CustomButton
-								imgSrc={Images.ic_strains}
+								imgSrc={theme.theme === 'light' ? Images.ic_isolate : Images.ic_DM_isolate}
 								className={`w-[80%]  ${
 									activeButton === 'Isolate' ? 'bg-background' : 'bg-transparent'
 								} `}
@@ -111,7 +111,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 						<div className='space-y-40'>
 							<div>
 								<CustomButton
-									imgSrc={Images.ic_logout}
+									imgSrc={theme.theme === 'light' ? Images.ic_logout : Images.ic_DM_logout}
 									className={`w-[80%]  bg-transparent`}
 									variant='outline'
 									width={30}
@@ -129,7 +129,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 			<section className='flex flex-col gap-6 pt-6 '>
 				<div>
 					<CustomButton
-						imgSrc={Images.ic_dashboard}
+						imgSrc={theme.theme === 'light' ? Images.ic_dashboard : Images.ic_DM_dashboard}
 						className={`w-[80%]  bg-transparent`}
 						variant='outline'
 						width={30}
@@ -142,7 +142,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 				</div>
 				<div>
 					<CustomButton
-						imgSrc={Images.ic_login}
+						imgSrc={theme.theme === 'light' ? Images.ic_login : Images.ic_DM_login}
 						className={`w-[80%]  bg-transparent`}
 						variant='outline'
 						width={30}
