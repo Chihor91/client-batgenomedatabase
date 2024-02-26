@@ -13,7 +13,7 @@ const AdminRoutes = () =>  {
         .catch((err) => {
             navigate('/login')
         })
-    })
+    }, [])
 
     return(
         loading ? 

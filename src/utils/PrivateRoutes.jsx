@@ -13,7 +13,7 @@ const PrivateRoutes = () =>  {
         .catch((err) => {
             navigate('/login')
         })
-    })
+    }, [])
 
     return(
         loading ? 
