@@ -32,7 +32,7 @@ import './App.css'
 import PrivateRoutes from '@/utils/PrivateRoutes'
 import AdminRoutes from '@/utils/AdminRoutes'
 import { SectionWrapper } from './hoc'
-import AdminPage from './pages/Admin'
+import AdminPage from '@/pages/Admin'
 
 // Server API address
 axios.defaults.baseURL = 'http://127.0.0.1:8000'
