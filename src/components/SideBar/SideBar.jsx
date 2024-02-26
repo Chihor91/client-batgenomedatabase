@@ -58,9 +58,9 @@ function SideBar({ showSidebar, setShowSidebar }) {
 				</h1>
 			</div>
 			{/* FOR AUTHENTICATED USERS */}
-			{user && (
-				<>
-					<ul className='h-[90%]  flex flex-col justify-between py-12   overflow-x-hidden overflow-y-scroll'>
+			<div className='h-[90%] flex flex-col justify-between'>
+			{user ? (
+				<ul className='flex flex-col justify-between py-12  overflow-x-hidden overflow-y-scroll'>
 						<div className='space-y-4 '>
 							<CustomButton
 								imgSrc={theme.theme === 'light' ? Images.ic_dashboard : Images.ic_DM_dashboard}
@@ -106,11 +106,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 								onClick={() => handleButtonClick('Isolate')}>
 								Isolates
 							</CustomButton>
-						</div>
-
-						<div className='space-y-40'>
-							<div>
-								<CustomButton
+							<CustomButton
 									imgSrc={theme.theme === 'light' ? Images.ic_logout : Images.ic_DM_logout}
 									className={`w-[80%]  bg-transparent`}
 									variant='outline'
@@ -119,41 +115,37 @@ function SideBar({ showSidebar, setShowSidebar }) {
 									onClick={logoutUser}>
 									Logout
 								</CustomButton>
-							</div>
-							<div className='py-20'>{showSidebar ? <DarkLightModeToggle /> : null}</div>
 						</div>
-					</ul>
-				</>
-			)}
-			{/* FOR NON-AUTHENTICATED USERS */}
+				</ul>
+			):
 			<section className='flex flex-col gap-6 pt-6 '>
-				<div>
-					<CustomButton
-						imgSrc={theme.theme === 'light' ? Images.ic_dashboard : Images.ic_DM_dashboard}
-						className={`w-[80%]  bg-transparent`}
-						variant='outline'
-						width={30}
-						showSidebar={showSidebar}
-						onClick={() => {
-							navigate('/')
-						}}>
-						Dashboard
-					</CustomButton>
-				</div>
-				<div>
-					<CustomButton
-						imgSrc={theme.theme === 'light' ? Images.ic_login : Images.ic_DM_login}
-						className={`w-[80%]  bg-transparent`}
-						variant='outline'
-						width={30}
-						showSidebar={showSidebar}
-						onClick={() => {
-							navigate('login')
-						}}>
-						Login
-					</CustomButton>
-				</div>
-			</section>
+				<CustomButton
+					imgSrc={theme.theme === 'light' ? Images.ic_dashboard : Images.ic_DM_dashboard}
+					className={`w-[80%]  bg-transparent`}
+					variant='outline'
+					width={30}
+					showSidebar={showSidebar}
+					onClick={() => {
+						navigate('/')
+					}}>
+					Dashboard
+				</CustomButton>
+				<CustomButton
+					imgSrc={theme.theme === 'light' ? Images.ic_login : Images.ic_DM_login}
+					className={`w-[80%]  bg-transparent`}
+					variant='outline'
+					width={30}
+					showSidebar={showSidebar}
+					onClick={() => {
+						navigate('login')
+					}}>
+					Login
+				</CustomButton>
+			</section>}
+			
+			<div className='py-10'>{showSidebar ? <DarkLightModeToggle /> : null}</div>
+			</div>
+			{/* FOR NON-AUTHENTICATED USERS */}
 		</div>
 	)
 }
