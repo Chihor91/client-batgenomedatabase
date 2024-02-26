@@ -132,7 +132,7 @@ function Strains({ data }) {
 	const [strains, setStrains] = useState([])
 	const theme = useTheme()
 	useEffect(() => {
-		axios.get(axios.defaults.baseURL + '/source/strain/?source=' + data.id).then((res) => {
+		axios.get('/source/isolate/?source=' + data.id).then((res) => {
 			setStrains(res.data)
 		})
 	}, [])
