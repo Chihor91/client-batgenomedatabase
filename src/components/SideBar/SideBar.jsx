@@ -9,6 +9,7 @@ import DarkLightModeToggle from '../Custom/DarkLightModeToggle'
 import { CustomButton } from '../Custom/CustomButton'
 import Images from '@/common/images'
 import { useTheme } from '@/components/ui/theme-provider'
+import axios from 'axios'
 
 function SideBar({ showSidebar, setShowSidebar }) {
 	const { user, logoutUser } = useContext(AuthContext)
@@ -16,6 +17,13 @@ function SideBar({ showSidebar, setShowSidebar }) {
 	const navigate = useNavigate()
 
 	const [activeButton, setActiveButton] = useState(null)
+	const [admin, setAdmin] = useState(false)
+
+	useEffect(() => {
+		axios.get('/user/isadmin/')
+		.then((res) => setAdmin(true))
+		.catch((err) => setAdmin(false))
+	}, [])
 
 	const handleMouseEnter = () => {
 		setShowSidebar(true)
@@ -72,17 +80,17 @@ function SideBar({ showSidebar, setShowSidebar }) {
 								Dashboard
 							</CustomButton>
 
-							<CustomButton
+							{admin && <CustomButton
 								className={`w-[80%]   ${
-									activeButton === 'Project' ? 'bg-background' : 'bg-transparent'
+									activeButton === 'Admin' ? 'bg-background' : 'bg-transparent'
 								} `}
 								imgSrc={theme.theme === 'light' ? Images.ic_project : Images.ic_DM_project}
 								variant='outline'
 								width={30}
 								showSidebar={showSidebar}
-								onClick={() => handleButtonClick('Project')}>
-								Project
-							</CustomButton>
+								onClick={() => handleButtonClick('Admin')}>
+								Admin
+							</CustomButton>}
 
 							<CustomButton
 								imgSrc={theme.theme === 'light' ? Images.ic_source : Images.ic_DM_source}
