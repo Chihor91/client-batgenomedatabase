@@ -45,14 +45,14 @@ function Login() {
 							<img
 								className='hover:animate-spin'
 								width={60}
-								src={Images.ic_isolate}
-								alt='caves-logo'
+								src={theme.theme === 'light' ? Images.ic_isolate : Images.ic_DM_isolate}
+								alt='isolate-logo'
 							/>
 						</div>
 						<div className='flex flex-col  items-center gap-10'>
 							<img
 								width={200}
-								src={theme.theme === 'light' ? Images.ic_gradient_caves : Images.ic_darkMode_cave}
+								src={theme.theme === 'light' ? Images.ic_gradient_caves : Images.ic_DM_cave}
 								alt='caves-logo'
 							/>
 							<h1
