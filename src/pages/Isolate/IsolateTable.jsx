@@ -77,18 +77,37 @@ export default function IsolateTable({ data, columns }) {
             <Button
                 variant="outline"
                 size="sm"
+                onClick={() => table.setPageIndex(0)}
+                disabled={!table.getCanPreviousPage()}
+            >
+                {"<<"}
+            </Button>
+            <Button
+                variant="outline"
+                size="sm"
                 onClick={() => table.previousPage()}
                 disabled={!table.getCanPreviousPage()}
             >
-                Previous
+                {"<"}
             </Button>
+            <div>
+                {"Page " + (table.options.state.pagination.pageIndex + 1)}
+            </div>
             <Button
                 variant="outline"
                 size="sm"
                 onClick={() => table.nextPage()}
                 disabled={!table.getCanNextPage()}
             >
-                Next
+                {">"}
+            </Button>
+            <Button
+                variant="outline"
+                size="sm"
+                onClick={() => table.setPageIndex(table.getPageCount() - 1)}
+                disabled={!table.getCanNextPage()}
+            >
+                {">>"}
             </Button>
             </div>
         </div>

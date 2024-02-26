@@ -120,7 +120,11 @@ export default function IsolateForm() {
     const onSubmit = (data) => {
         axios.post('source/isolate/', data)
         .then((res) => {
-            console.log(res)
+            alert("Isolate " + res.data.human_readable_id + " successfully created.")
+            navigate('/isolate')
+        }).catch((err) => {
+            alert(JSON.stringify(err.response.data.message))
+            navigate('/isolate')
         })
     }
 
@@ -150,7 +154,7 @@ export default function IsolateForm() {
                         >Next</Button>
                     } */}
                 </div>
-                {JSON.stringify(watch(form))}
+                {/* {JSON.stringify(watch(form))} */}
             </form>
         </div>
     )

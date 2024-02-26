@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 import { Controller, useForm } from "react-hook-form"
 import { Select, SelectTrigger, SelectContent, SelectValue, SelectGroup, SelectItem } from "@/components/ui/select"
 import { CaveFormModal, LocationFormModal, PointFormModal } from "@/components/Forms/LocationForms"
+import { useNavigate } from "react-router-dom"
 function BasicInfo({form}) {
 
     return (
@@ -207,6 +208,8 @@ function LocationInfo({form}) {
 export default function SourceForm() {
     const form = useForm({})
     const [page, setPage] = useState(1)
+    
+    let navigate = useNavigate()
 
     const previous = () => {
         setPage(curPage => curPage - 1)
@@ -216,9 +219,13 @@ export default function SourceForm() {
     }
 
     const onSubmit = (data) => {
-        axios.post("source/source/", data)
+        axios.post('source/source/', data)
         .then((res) => {
-            console.log(res)
+            alert("Source " + res.data.human_readable_id + " successfully created.")
+            navigate('/source')
+        }).catch((err) => {
+            alert(JSON.stringify(err.response.data.message))
+            navigate('/source')
         })
     }
 
