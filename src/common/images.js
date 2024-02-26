@@ -1,5 +1,5 @@
-import ic_sun from '@/assets/svg/ic_sun.svg'
-import ic_moon from '@/assets/svg/ic_moon.svg'
+// import ic_sun from '@/assets/svg/ic_sun.svg'
+// import ic_moon from '@/assets/svg/ic_moon.svg'
 import ic_logout from '@/assets/svg/ic_logout.svg'
 import ic_login from '@/assets/svg/ic_login.svg'
 import ic_project from '@/assets/svg/ic_project.svg'
@@ -17,8 +17,8 @@ import ic_DM_project from '@/assets/svg/ic_DM_projects.svg'
 import ic_DM_isolate from '@/assets/svg/ic_DM_isolate.svg'
 import ic_DM_source from '@/assets/svg/ic_DM_source.svg'
 const Images = {
-	ic_sun: ic_sun,
-	ic_moon: ic_moon,
+	// ic_sun: ic_sun,
+	// ic_moon: ic_moon,
 	ic_logout: ic_logout,
 	ic_project: ic_project,
 	ic_dashboard: ic_dashboard,
