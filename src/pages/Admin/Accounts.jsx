@@ -1,4 +1,4 @@
-import { Input, Paper, TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Dialog, DialogTitle, DialogActions } from "@mui/material";
+import { TextField, Paper, TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Dialog, DialogTitle, DialogActions } from "@mui/material";
 import { Button } from "@/components/ui/button"
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -7,7 +7,10 @@ import { useForm } from "react-hook-form";
 function AddAccount (open, handleClose) {
     const form = useForm({})
 
-    const { register, handleSubmit } = form
+    const { watch, register, handleSubmit, formState } = form
+    const { errors } = formState
+    const watchForm = watch(form)
+
     const onSubmit = (data) => {
 		axios.post('user/account/', data).then((res) => {
 			alert("Account successfully created.")
@@ -29,10 +32,44 @@ function AddAccount (open, handleClose) {
 			</DialogTitle>
 
             <form onSubmit={handleSubmit(onSubmit)} className='m-5 flex flex-col space-y-3 w-auto text-primary'>
-				<Input {...register('username')} type='text' placeholder='Userame' />
-				<Input {...register('email')} type='text' placeholder='Email Address' />
-				<Input {...register('password')} type='password' placeholder='Password' />
-				<Input {...register('password2')} type='password' placeholder='Repeat Password' />
+				<TextField
+                    size="small"
+                    {...register('username', { required: "Please fill out this field"})} 
+                    type='text' placeholder='Userame'
+                    error={errors.username}
+                    helperText={errors.username?.message}
+                />
+				<TextField
+                    size="small"
+                    {...register('email', {
+                        required: "Please fill out this field", 
+                        pattern: {
+                            value: /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$/,
+                            message: "Invalid email format"
+                        }
+                    })}
+                    type='text' placeholder='Email Address'
+                    error={errors.email}
+                    helperText={errors.email?.message}
+                />
+				<TextField
+                    size="small"
+                    {...register('password', { required: "Please fill out this field" })} 
+                    type='password' placeholder='Password'
+                    error={errors.password}
+                    helperText={errors.password?.message}
+                />
+				<TextField
+                    size="small"
+                    {...register('re_password', {
+                        validate: (fieldValue) => {
+                            return (fieldValue === watchForm.password || "Passwords do not match")
+                        }
+                    })}
+                    type='password' placeholder='Repeat Password'
+                    error={errors.re_password}
+                    helperText={errors.re_password?.message}
+                />
                 <DialogActions>
 					<Button type='button' variant='outline' onClick={handleClose}>
 						Cancel
