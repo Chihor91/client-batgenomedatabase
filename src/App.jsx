@@ -33,6 +33,7 @@ import PrivateRoutes from '@/utils/PrivateRoutes'
 import AdminRoutes from '@/utils/AdminRoutes'
 import { SectionWrapper } from './hoc'
 import AdminPage from '@/pages/Admin'
+import { SnackbarProvider } from 'notistack'
 
 // Server API address
 axios.defaults.baseURL = 'http://127.0.0.1:8000'
@@ -69,23 +70,28 @@ const Root = () => {
 	const [showSidebar, setShowSidebar] = useState(false)
 
 	return (
-		<ThemeProvider defaultTheme='light' storageKey='vite-ui-theme'>
-			<AuthProvider>
-				<SideBar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
-				<div
-					className={`fixed transition-all  ${
-						showSidebar ? 'left-[200px] w-[calc(100%-200px)]' : 'left-[100px] w-[calc(100%-100px)]'
-					}`}>
-					<body
-						className={`w-[100%] overflow-y-scroll  transition-all  h-[100vh] ${
-							showSidebar ? 'w-[calc(100vw-200px)]' : 'w-[calc(100vw-100px)]'
-						}`}
-						onClick={() => setShowSidebar(false)}>
-						<Outlet />
-					</body>
-				</div>
-			</AuthProvider>
-		</ThemeProvider>
+		<SnackbarProvider maxSnack={3}>
+			<ThemeProvider defaultTheme='light' storageKey='vite-ui-theme'>
+				<AuthProvider>
+					<SideBar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+
+					<div
+						className={`fixed transition-all  ${
+							showSidebar
+								? 'left-[200px] w-[calc(100%-200px)]'
+								: 'left-[100px] w-[calc(100%-100px)]'
+						}`}>
+						<body
+							className={`w-[100%] overflow-y-scroll  transition-all  h-[100vh] ${
+								showSidebar ? 'w-[calc(100vw-200px)]' : 'w-[calc(100vw-100px)]'
+							}`}
+							onClick={() => setShowSidebar(false)}>
+							<Outlet />
+						</body>
+					</div>
+				</AuthProvider>
+			</ThemeProvider>
+		</SnackbarProvider>
 	)
 }
 
