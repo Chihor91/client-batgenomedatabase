@@ -45,20 +45,20 @@ function Login() {
 							<img
 								className='hover:animate-spin'
 								width={60}
-								src={Images.ic_strains}
-								alt='caves-logo'
+								src={theme.theme === 'light' ? Images.ic_isolate : Images.ic_DM_isolate}
+								alt='isolate-logo'
 							/>
 						</div>
 						<div className='flex flex-col  items-center gap-10'>
 							<img
 								width={200}
-								src={theme.theme === 'light' ? Images.ic_caves : Images.ic_caves}
+								src={theme.theme === 'light' ? Images.ic_gradient_caves : Images.ic_DM_cave}
 								alt='caves-logo'
 							/>
 							<h1
 								className={`cursor-default  ${styles.heroSubText}  ${
 									theme.theme === 'light'
-										? 'bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 to-green-700'
+										? 'bg-clip-text text-transparent bg-gradient-to-r from-[#009112] to-[#007E10]'
 										: 'text-foreground'
 								}`}>
 								WELCOME BACK TO CAVES!
