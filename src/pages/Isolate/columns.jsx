@@ -9,6 +9,7 @@ export const columns = [
                 <Button
                 variant="ghost"
                 onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+                className="font-bold"
                 >
                 ID
                 <ArrowUpDown className="ml-2 h-4 w-4" />

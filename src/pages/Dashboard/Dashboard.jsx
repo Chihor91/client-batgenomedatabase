@@ -4,7 +4,7 @@ import Taxonomy from './Taxonomy'
 
 const Dashboard = () => {
 	return (
-		<div className='flex items-center space-x-10 mx-10 mt-[94px]'>
+		<div className='flex items-center space-x-10 mx-10'>
 			<Taxonomy />
 			<Morphology />
 		</div>
