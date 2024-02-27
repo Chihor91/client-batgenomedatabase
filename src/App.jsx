@@ -1,5 +1,5 @@
 // Library Imports
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import {
 	createBrowserRouter,
 	createRoutesFromElements,
@@ -24,16 +24,20 @@ import IsolateForm from '@/pages/Isolate/IsolateForm'
 import SideBar from '@/components/SideBar/SideBar'
 import { AuthProvider } from '@/context/AuthContext'
 import { ThemeProvider } from '@/components/ui/theme-provider'
+import MUIThemeProvider from '@/components/Custom/MuiThemeProvider'
 
 // Asset Imports
 
 // Style Imports
 import './App.css'
+
 import PrivateRoutes from '@/utils/PrivateRoutes'
 import AdminRoutes from '@/utils/AdminRoutes'
 import { SectionWrapper } from './hoc'
 import AdminPage from '@/pages/Admin'
 import { SnackbarProvider } from 'notistack'
+import BackgroundElement1 from './components/Custom/Background1'
+import BackgroundElement2 from './components/Custom/Background2'
 
 // Server API address
 axios.defaults.baseURL = 'http://127.0.0.1:8000'
@@ -61,7 +65,9 @@ function App() {
 
 	return (
 		<>
-			<RouterProvider router={router} />
+			<Suspense fallback={<div>Loading...</div>}>
+				<RouterProvider router={router} />
+			</Suspense>
 		</>
 	)
 }
@@ -70,28 +76,37 @@ const Root = () => {
 	const [showSidebar, setShowSidebar] = useState(false)
 
 	return (
-		<SnackbarProvider maxSnack={3}>
-			<ThemeProvider defaultTheme='light' storageKey='vite-ui-theme'>
-				<AuthProvider>
-					<SideBar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+		<>
+			<SnackbarProvider maxSnack={3}>
+				<MUIThemeProvider>
+					<ThemeProvider defaultTheme='light' storageKey='vite-ui-theme'>
+						<AuthProvider>
+							<BackgroundElement1 />
 
-					<div
-						className={`fixed transition-all  ${
-							showSidebar
-								? 'left-[200px] w-[calc(100%-200px)]'
-								: 'left-[100px] w-[calc(100%-100px)]'
-						}`}>
-						<body
-							className={`w-[100%] overflow-y-scroll  transition-all  h-[100vh] ${
-								showSidebar ? 'w-[calc(100vw-200px)]' : 'w-[calc(100vw-100px)]'
-							}`}
-							onClick={() => setShowSidebar(false)}>
-							<Outlet />
-						</body>
-					</div>
-				</AuthProvider>
-			</ThemeProvider>
-		</SnackbarProvider>
+							<SideBar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+
+							<div
+								className={`fixed transition-all  ${
+									showSidebar
+										? 'left-[200px] w-[calc(100%-200px)]'
+										: 'left-[100px] w-[calc(100%-100px)]'
+								}`}>
+								<body
+									className={`w-[100%]   transition-all  h-[100vh] ${
+										showSidebar ? 'w-[calc(100vw-200px)]' : 'w-[calc(100vw-100px)]'
+									}`}
+									onClick={() => setShowSidebar(false)}
+									style={{ position: 'relative', zIndex: 0, overflow: 'hidden' }}>
+									<Outlet />
+								</body>
+							</div>
+
+							<BackgroundElement2 />
+						</AuthProvider>
+					</ThemeProvider>
+				</MUIThemeProvider>
+			</SnackbarProvider>
+		</>
 	)
 }
 

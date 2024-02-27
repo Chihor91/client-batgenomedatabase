@@ -58,12 +58,15 @@ function AddAccount(open, handleClose) {
 
 			<form
 				onSubmit={handleSubmit(onSubmit)}
-				className='m-5 flex flex-col space-y-3 w-auto text-primary'>
+				className='m-5 flex flex-col space-y-4 w-auto text-primary '>
 				<TextField
 					size='small'
 					{...register('username', { required: 'Please fill out this field' })}
+					id='username'
 					type='text'
-					placeholder='Userame'
+					name='username'
+					label='Username'
+					variant='filled'
 					error={errors.username}
 					helperText={errors.username?.message}
 				/>
@@ -77,7 +80,11 @@ function AddAccount(open, handleClose) {
 						},
 					})}
 					type='text'
-					placeholder='Email Address'
+					id='email'
+					autoComplete='off'
+					name='email'
+					label='Email Address'
+					variant='filled'
 					error={errors.email}
 					helperText={errors.email?.message}
 				/>
@@ -85,7 +92,10 @@ function AddAccount(open, handleClose) {
 					size='small'
 					{...register('password', { required: 'Please fill out this field' })}
 					type='password'
-					placeholder='Password'
+					id='password'
+					name='password'
+					variant='filled'
+					label='Password'
 					error={errors.password}
 					helperText={errors.password?.message}
 				/>
@@ -97,7 +107,9 @@ function AddAccount(open, handleClose) {
 						},
 					})}
 					type='password'
-					placeholder='Repeat Password'
+					name='confirmPassword'
+					variant='filled'
+					label='Confirm Password'
 					error={errors.re_password}
 					helperText={errors.re_password?.message}
 				/>
