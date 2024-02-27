@@ -35,7 +35,7 @@ function AddAccount (open, handleClose) {
 				<TextField
                     size="small"
                     {...register('username', { required: "Please fill out this field"})} 
-                    type='text' placeholder='Userame'
+                    type='text' placeholder='Username'
                     error={errors.username}
                     helperText={errors.username?.message}
                 />

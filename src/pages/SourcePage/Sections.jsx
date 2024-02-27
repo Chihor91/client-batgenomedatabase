@@ -8,7 +8,7 @@ import { useTheme } from '@/components/ui/theme-provider'
 
 const collapsibleStyle = 'border mx-5 text-start'
 const colTriggerStyle = 'flex border bg-muted w-full text-start text-2xl font-extrabold p-2'
-const colContentStyle = 'm-3'
+const colContentStyle = 'p-3'
 const listStyle = 'space-y-1'
 const label = 'font-bold mr-1'
 
@@ -79,23 +79,7 @@ function HostInfo({ data }) {
 }
 
 function SamplingInfo({ data }) {
-	const [samplingPoint, setSamplingPoint] = useState(null)
-	const [cave, setCave] = useState(null)
-	const [location, setLocation] = useState(null)
 	const theme = useTheme()
-	useEffect(() => {
-		axios.get(axios.defaults.baseURL + '/location/point/' + data.sampling_point).then((res) => {
-			setSamplingPoint(res.data)
-			axios.get(axios.defaults.baseURL + '/location/cave/' + res.data.cave).then((res) => {
-				setCave(res.data)
-				axios
-					.get(axios.defaults.baseURL + '/location/location/' + res.data.location)
-					.then((res) => {
-						setLocation(res.data)
-					})
-			})
-		})
-	}, [])
 
 	return (
 		<Collapsible className={collapsibleStyle}>
@@ -112,15 +96,15 @@ function SamplingInfo({ data }) {
 				<ul className={listStyle}>
 					<li className='flex'>
 						<div className={label}>Location:</div>
-						{location ? location.town + ', ' + location.province : 'N/A'}
+						{data.loc_location ? data.loc_location : 'N/A'}
 					</li>
 					<li className='flex'>
-						<div className={label}>Cave:</div>
-						{cave ? cave.name + ' (' + cave.abbr + ')' : 'N/A'}
+						<div className={label}>Sampling Site:</div>
+						{data.loc_sampling_site ? data.loc_sampling_site + ' (' + data.loc_site_abbr + ')' : 'N/A'}
 					</li>
 					<li className='flex'>
 						<div className={label}>Sampling Point:</div>
-						{samplingPoint ? samplingPoint.point_number : 'N/A'}
+						{data.loc_sampling_point}
 					</li>
 				</ul>
 			</CollapsibleContent>
