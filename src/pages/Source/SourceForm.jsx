@@ -4,7 +4,6 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { Controller, useForm } from "react-hook-form"
 import { Select, SelectTrigger, SelectContent, SelectValue, SelectGroup, SelectItem } from "@/components/ui/select"
-import { CaveFormModal, LocationFormModal, PointFormModal } from "@/components/Forms/LocationForms"
 import { useNavigate } from "react-router-dom"
 import { TextField } from "@mui/material"
 function BasicInfo({form}) {
