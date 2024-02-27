@@ -12,21 +12,37 @@ import Images from '@/common/images'
 import { useTheme } from '@/components/ui/theme-provider'
 import { motion } from 'framer-motion'
 import { fadeIn } from '@/common/motion'
+import { TextField } from '@mui/material'
+import { useState } from 'react'
 
 // Asset Imports
+import { useForm } from 'react-hook-form'
+import { enqueueSnackbar } from 'notistack'
 
 // Style Imports
 
 function Login() {
-	let { loginUser } = useContext(AuthContext)
+	let { loginUser, loading, error } = useContext(AuthContext)
 	let navigate = useNavigate()
 	const theme = useTheme()
+	const [username, setUsername] = useState('')
+	const [password, setPassword] = useState('')
 
 	useEffect(() => {
 		localStorage.getItem('authTokens') && navigate('/')
 	}, [])
 
 	const icons = Array(3).fill(null)
+
+	const handleLogin = (e) => {
+		loginUser(e, { username, password })
+	}
+
+	const form = useForm({})
+
+	const { watch, register, handleSubmit, formState } = form
+	const { errors } = formState
+	const watchForm = watch(form)
 
 	return (
 		<div
@@ -80,10 +96,10 @@ function Login() {
 								theme.theme === 'light' ? 'bg-accent' : 'bg-[#032125]'
 							}`}>
 							<form
-								onSubmit={loginUser}
+								onSubmit={handleLogin}
 								className='flex flex-col hover:blur-0 h-full bg-center bg-cover items-center justify-center w-full gap-5 '>
 								<h1
-									className={`my-2 ${styles.heroSubText} ${
+									className={`my-2 ${styles.heroHeadText} ${
 										theme.theme === 'light' ? 'text-background' : 'text-foreground'
 									} `}>
 									Get Started
@@ -102,22 +118,32 @@ function Login() {
 								</ul>
 								<p className='text-white text-right'> </p>
 
-								<Input
-									className='w-[60%]'
+								<TextField
+									id='username'
 									type='text'
 									name='username'
-									placeholder='Enter username'
+									label='Username'
+									variant='outlined'
+									onChange={(e) => setUsername(e.target.value)}
 								/>
-								<Input
-									className='w-[60%]'
+								<TextField
+									id='password'
 									type='password'
 									name='password'
-									placeholder='Enter password'
+									label='Password'
+									variant='outlined'
+									onChange={(e) => setPassword(e.target.value)}
 								/>
+
+								{error && (
+									<p className='text-red-900 text-sm font-semibold text-center mt-2'>{error}</p>
+								)}
+
 								<Button
 									className='px-6 py-2  rounde  hover:bg-foreground hover:text-background  text-foreground bg-background font-semibold transition-all hover:scale-110'
-									type='submit '>
-									Submit
+									type='submit '
+									disabled={loading || !username || !password}>
+									{loading ? 'Loading...' : 'Submit'}
 								</Button>
 							</form>
 						</div>
