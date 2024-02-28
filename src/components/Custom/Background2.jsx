@@ -3,7 +3,7 @@ import React from 'react'
 const BackgroundElement2 = () => {
 	return (
 		<div
-			className='fixed pointer-events-none inset-x-0 top-[calc(50%-30rem)] z-10  blur-3xl sm:top-[calc(100%-30rem)]'
+			className='fixed pointer-events-none inset-x-0 top-[calc(50%-30rem)] -z-10  blur-3xl sm:top-[calc(100%-30rem)]'
 			aria-hidden='true'>
 			<div
 				className={`relative pointer-events-none right-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#007E10] to-yellow-300 opacity-70 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]`}
