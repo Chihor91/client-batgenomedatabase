@@ -3,7 +3,7 @@ import * as React from 'react'
 import { cn } from '@/lib/utils'
 
 const Table = React.forwardRef(({ className, ...props }, ref) => (
-	<div className='w-full overflow-auto '>
+	<div className='w-full'>
 		<table ref={ref} className={cn('w-full caption-bottom text-sm', className)} {...props} />
 	</div>
 ))
@@ -15,7 +15,7 @@ const TableHeader = React.forwardRef(({ className, ...props }, ref) => (
 TableHeader.displayName = 'TableHeader'
 
 const TableBody = React.forwardRef(({ className, ...props }, ref) => (
-	<tbody ref={ref} className={cn('[&_tr:last-child]:border-0', className)} {...props} />
+	<tbody ref={ref} className={cn('[&_tr:last-child]:border-0 w-full', className)} {...props} />
 ))
 TableBody.displayName = 'TableBody'
 
@@ -29,25 +29,16 @@ const TableFooter = React.forwardRef(({ className, ...props }, ref) => (
 TableFooter.displayName = 'TableFooter'
 
 const TableRow = React.forwardRef(({ className, ...props }, ref) => (
-	<tr
-		ref={ref}
-		className={cn(
-			'border-b transition-colors hover:bg-background data-[state=selected]:bg-muted',
-			className,
-		)}
-		{...props}
-	/>
+	<tr ref={ref} className={cn(' ', className)} {...props} />
 ))
 TableRow.displayName = 'TableRow'
 
 const TableHead = React.forwardRef(({ className, ...props }, ref) => (
 	<th
 		ref={ref}
-		className={cn(
-			'h-12 px-4 text-left align-middle bg-card font-medium text-foreground [&:has([role=checkbox])]:pr-0',
-			className,
-		)}
+		className={cn(' text-left text-foreground [&:has([role=checkbox])]:pr-0', className)}
 		{...props}
+		style={{ alignItems: 'center' }}
 	/>
 ))
 TableHead.displayName = 'TableHead'
