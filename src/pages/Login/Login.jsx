@@ -99,7 +99,7 @@ function Login() {
 								onSubmit={handleLogin}
 								className='flex flex-col hover:blur-0 h-full bg-center bg-cover items-center justify-center w-full gap-5 '>
 								<h1
-									className={`my-2 ${styles.heroHeadText} ${
+									className={`my-2 ${styles.heroSubText} ${
 										theme.theme === 'light' ? 'text-background' : 'text-foreground'
 									} `}>
 									Get Started
