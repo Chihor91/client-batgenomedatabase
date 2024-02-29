@@ -53,7 +53,7 @@ export default function IsolateTable({ data, columns }) {
 				<Table>
 					<TableHeader>
 						{table.getHeaderGroups().map((headerGroup) => (
-							<TableRow key={headerGroup.id}>
+							<TableRow className='bg-background' key={headerGroup.id}>
 								{headerGroup.headers.map((header) => {
 									return (
 										<TableHead key={header.id}>
@@ -71,11 +71,11 @@ export default function IsolateTable({ data, columns }) {
 							table.getRowModel().rows.map((row) => (
 								<TableRow
 									className='py-2 my-2 bg-white/10 hover:text-background  flex flex-row items-center justify-between relative after:absolute after:h-full after:bg-gradient-to-r from-foreground to-muted z-20 shadow-md rounded-sm after:-z-20 after:w-full after:inset-0    after:duration-500 transition-all hover:transition-all after:hover:transition-all hover:scale-105 after:hover:duration-1000 cursor-pointer overflow-hidden after:-translate-y-full after:hover:translate-y-0 [&amp;_p]:delay-200 [&amp;_p]:transition-all'
-									key={row.id}
-									data-state={row.getIsSelected() && 'selected'}
 									onClick={() => {
 										navigate('/isolate?id=' + data[row.id].id)
-									}}>
+									}}
+									key={row.id}
+									data-state={row.getIsSelected() && 'selected'}>
 									{row.getVisibleCells().map((cell) => (
 										<TableCell className='text-left ' key={cell.id}>
 											{cell.column.id === 'actions' ? (

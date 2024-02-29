@@ -36,7 +36,7 @@ function SourceTable({ data, columns }) {
 	const rowClassName =
 		'py-2 my-2 bg-white/10 hover:text-background scale-100  grid grid-cols-3 items-center justify-between relative after:absolute after:h-full after:bg-gradient-to-r from-foreground to-muted z-20 shadow-md rounded-sm after:-z-20 after:w-full after:inset-0  after:duration-500 transition-all hover:transition-all after:hover:transition-all hover:scale-105 after:hover:duration-1000 cursor-pointer overflow-hidden after:-translate-y-full after:hover:translate-y-0 [&amp;_p]:delay-200 [&amp;_p]:transition-all'
 	const rowHeaderClassName =
-		'justify-center self-center place-content-center items-center  grid grid-cols-3 relative  '
+		'justify-center self-center place-content-center items-center  grid grid-cols-3 relative bg-background '
 
 	const handleEditClick = (e) => {
 		e.stopPropagation()

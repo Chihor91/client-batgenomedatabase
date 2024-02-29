@@ -45,7 +45,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 		<div
 			className={`${
 				theme.theme === 'light'
-					? 'bg-gradient-to-b from-[#C6FFC7]/80 via-[#D2FFD2]/20 to-[#94FF97]/20'
+					? 'bg-gradient-to-b from-[#C6FFC7] via-[#D2FFD2] to-[#94FF97]'
 					: 'bg-[#072931]'
 			} top-0 left-0 h-screen overflow-hidden  transition-all fixed z-40 ${
 				showSidebar ? 'w-[200px]' : 'w-[100px]'

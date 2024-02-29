@@ -51,7 +51,7 @@ function Login() {
 			<motion.div
 				className={`flex w-full   `}
 				style={{ height: '100%' }}
-				variants={fadeIn('left', 'spring', 0.1, 0.25)}>
+				variants={fadeIn('left', 'spring', 0.1, 0.75)}>
 				<div
 					className={`w-1/2  rounded-bl-xl rounded-tl-xl justify-center  items-center  hidden md:flex md:flex-col ${
 						theme.theme === 'light' ? 'bg-card' : 'bg-[#218D99]/10'
