@@ -100,6 +100,31 @@ function BasicInfo({form, navigate}) {
     )
 }
 
+function TaxonomyInfo({form}) {
+    return (
+        <section className="space-y-2">
+            <div className="font-extrabold text-3xl">Taxonomic Classification</div>
+            <Input {...form.register('taxonomy.domain')} type="text" placeholder="Domain" />
+            <Input {...form.register('taxonomy.phylum')} type="text" placeholder="Phylum" />
+            <Input {...form.register('taxonomy.class')} type="text" placeholder="Class" />
+            <Input {...form.register('taxonomy.order')} type="text" placeholder="Order" />
+            <Input {...form.register('taxonomy.family')} type="text" placeholder="Family" />
+            <Input {...form.register('taxonomy.genus')} type="text" placeholder="Genus" />
+            <Input {...form.register('taxonomy.species')} type="text" placeholder="Species" />
+        </section>
+    )
+}
+
+function MorphologyInfo({form}) {
+    return (
+        <section className="space-y-2">
+            <div className="font-extrabold text-3xl">Morphology</div>
+            <Input {...form.register('morphology.gram_stain')} type="text" placeholder="Gram Stain" />
+            <Input {...form.register('morphology.cell_shape')} type="text" placeholder="Cell Shape" />
+            <Input {...form.register('morphology.motility')} type="text" placeholder="Motility" />
+        </section>
+    )
+}
 
 export default function IsolateForm() {
     let navigate = useNavigate()
@@ -110,12 +135,12 @@ export default function IsolateForm() {
 
     const { watch } = form
 
-    // const previous = () => {
-    //     setPage(curPage => curPage - 1)
-    // }
-    // const next = () => {
-    //     setPage(curPage => curPage + 1)
-    // }
+    const previous = () => {
+        setPage(curPage => curPage - 1)
+    }
+    const next = () => {
+        setPage(curPage => curPage + 1)
+    }
 
     const onSubmit = (data) => {
         axios.post('source/isolate/', data)
@@ -132,19 +157,19 @@ export default function IsolateForm() {
         <div>
             <form className="container mx-auto py-10 space-y-3" onSubmit={form.handleSubmit(onSubmit)}>
                 { page === 1 && <BasicInfo form={form} navigate={navigate} /> }
-                {/* { page === 2 && <HostInfo form={form} modalOpen={projectModal} setModalOpen={setProjectModal} /> }
-                { page === 3 && <LocationInfo form={form} /> } */}
+                { page === 2 && <TaxonomyInfo form={form} /> }
+                { page === 3 && <MorphologyInfo form={form} /> }
                 
-                <div>
-                    {/* <Button 
+                <div className="space-x-3">
+                    <Button 
                         disabled={page <= 1} 
                         type="button" 
                         onClick={previous} 
                         variant="outline"
-                    >Previous</Button> */}
-                    {/* { page === 3 && */}
+                    >Previous</Button>
+                    { page === 3 &&
                         <Button type="submit" variant="outline">Add Isolate</Button>
-                    {/* }
+                    }
                     { page != 3 &&
                         <Button 
                             disabled={page >= 3} 
@@ -152,9 +177,9 @@ export default function IsolateForm() {
                             onClick={next} 
                             variant="outline"
                         >Next</Button>
-                    } */}
+                    }
                 </div>
-                {/* {JSON.stringify(watch(form))} */}
+                {JSON.stringify(watch(form))}
             </form>
         </div>
     )
