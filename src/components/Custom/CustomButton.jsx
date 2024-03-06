@@ -45,7 +45,9 @@ const CustomButton = React.forwardRef(
 					className={`flex flex-row ${cn(buttonVariants({ variant, size, className }))}`}
 					ref={ref}
 					{...props}>
-					<div className={`items-center w-full h-full grid grid-flow-col grid-cols-3`}>
+					<div
+						className={`items-center w-full h-full grid grid-flow-col  
+					grid-cols-3`}>
 						<div className={`flex justify-center ${imageGridClass}`}>
 							{imgSrc && <img src={imgSrc} width={width} alt='logo' />}
 						</div>

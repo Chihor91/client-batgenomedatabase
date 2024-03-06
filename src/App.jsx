@@ -81,8 +81,6 @@ const Root = () => {
 				<MUIThemeProvider>
 					<ThemeProvider defaultTheme='light' storageKey='vite-ui-theme'>
 						<AuthProvider>
-							<BackgroundElement1 />
-
 							<SideBar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
 
 							<div
@@ -92,15 +90,16 @@ const Root = () => {
 										: 'left-[100px] w-[calc(100%-100px)]'
 								}`}>
 								<body
-									className={`w-[100%]   transition-all  h-[100vh] ${
+									className={`w-[100%] overflow-scroll transition-all  bg-yellow-100/20  h-[100vh] ${
 										showSidebar ? 'w-[calc(100vw-200px)]' : 'w-[calc(100vw-100px)]'
 									}`}
 									onClick={() => setShowSidebar(false)}
-									style={{ position: 'relative', zIndex: 0, overflow: 'hidden' }}>
+									style={{ position: 'relative', zIndex: 0 }}>
 									<Outlet />
 								</body>
 							</div>
 
+							<BackgroundElement1 />
 							<BackgroundElement2 />
 						</AuthProvider>
 					</ThemeProvider>
