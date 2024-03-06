@@ -2,17 +2,20 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
-const Input = React.forwardRef(({ className, type, ...props }, ref) => {
+const Input = React.forwardRef(({ className, error, helperText, type, ...props }, ref) => {
 	return (
-		<input
-			type={type}
-			className={cn(
-				'flex h-10 w-full rounded-md border border-foreground bg-background px-3 py-2 text-sm = file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-primary focus-visible:outline-none   focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
-				className,
-			)}
-			ref={ref}
-			{...props}
-		/>
+		<>
+			<input
+				type={type}
+				className={cn(
+					`flex h-10 w-full rounded-md border ${error ? 'border-red-500' : 'border-foreground'} bg-background px-3 py-2 text-sm = file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-primary focus-visible:outline-none   focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50`,
+					className,
+				)}
+				ref={ref}
+				{...props}
+			/>
+			{error && <span className='flex text-sm text-red-500'>{helperText}</span>}
+		</>
 	)
 })
 Input.displayName = 'Input'

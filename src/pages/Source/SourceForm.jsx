@@ -6,12 +6,17 @@ import { Controller, useForm } from "react-hook-form"
 import { Select, SelectTrigger, SelectContent, SelectValue, SelectGroup, SelectItem } from "@/components/ui/select"
 import { useNavigate } from "react-router-dom"
 import { TextField } from "@mui/material"
+
 function BasicInfo({form}) {
 
     return (
         <section className="space-y-2">
             <div className="font-extrabold text-3xl">Basic Info</div>
-            <Input {...form.register("collection", { required: true, maxLength: 30 })} type="text" placeholder="Collection" />
+            <Input {...form.register("collection", { required: "Please fill out this field", maxLength: 30 })} 
+                type="text" placeholder="Collection" 
+                error={form.formState.errors.collection} helperText={form.formState.errors.collection?.message}
+            />
+            {form.formState.errors.collection && <div></div>}
             <Input {...form.register("institution")} type="text" placeholder="Institution" />
             <Input {...form.register("project_name")} type="text" placeholder="Project Name" />
             <Input {...form.register("project_abbr")} type="text" placeholder="Project Abbreviation" />
@@ -105,31 +110,12 @@ function HostInfo({form}) {
 function LocationInfo({form}) {
     return (
         <section className="space-y-2">
-            <TextField
-                size="small"
-                {...form.register('loc_location')}
-                type="text" placeholder="Location"
-            />
-            <TextField
-                small="small"
-                {...form.register('loc_abbr')}
-                type="text" placeholder="Location Abbreviation"
-            />
-            <TextField
-                small="small"
-                {...form.register('loc_sampling_site')}
-                type="text" placeholder="Sampling Site"
-            />
-            <TextField
-                small="small"
-                {...form.register('loc_site_abbr')}
-                type="text" placeholder="Sampling Site Abbreviation"
-            />
-            <TextField
-                small="small"
-                {...form.register('loc_sampling_point')}
-                type="number" placeholder="Sampling Point"
-            />
+            <div className="font-extrabold text-3xl">Location Info</div>
+            <Input {...form.register('loc_location')} type="text" placeholder="Location" />
+            <Input {...form.register('loc_abbr')} type="text" placeholder="Location Abbreviation" />
+            <Input {...form.register('loc_sampling_site')} type="text" placeholder="Sampling Site" />
+            <Input {...form.register('loc_site_abbr')} type="text" placeholder="Sampling Site Abbreviation" />
+            <Input {...form.register('loc_sampling_point')} type="number" placeholder="Sampling Point" />
         </section>
     )
 }
@@ -144,6 +130,7 @@ export default function SourceForm() {
         setPage(curPage => curPage - 1)
     }
     const next = () => {
+        form.trigger()
         setPage(curPage => curPage + 1)
     }
 
@@ -165,7 +152,7 @@ export default function SourceForm() {
                 { page === 2 && <HostInfo form={form} /> }
                 { page === 3 && <LocationInfo form={form} /> }
                 
-                <div className="space-x-5">
+                <div className="space-x-3">
                     <Button 
                         disabled={page <= 1} 
                         type="button" 
