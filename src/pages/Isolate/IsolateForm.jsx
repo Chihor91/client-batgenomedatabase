@@ -16,8 +16,9 @@ import { cn } from '@/lib/utils'
 import { Command, CommandInput, CommandItem } from '@/components/ui/command'
 import { CommandEmpty, CommandGroup } from 'cmdk'
 import { useNavigate } from 'react-router-dom'
+import { Switch } from '@/components/ui/switch'
 
-function BasicInfo({ form, navigate }) {
+function Basic({ form, navigate }) {
 	const [sources, setSources] = useState([])
 	const [loading, setLoading] = useState(true)
 
@@ -115,7 +116,7 @@ function BasicInfo({ form, navigate }) {
 	)
 }
 
-function TaxonomyInfo({form}) {
+function Taxonomy({form}) {
     return (
         <section className="space-y-2">
             <div className="font-extrabold text-3xl">Taxonomic Classification</div>
@@ -130,15 +131,162 @@ function TaxonomyInfo({form}) {
     )
 }
 
-function MorphologyInfo({form}) {
+function Morphology({form}) {
     return (
         <section className="space-y-2">
             <div className="font-extrabold text-3xl">Morphology</div>
-            <Input {...form.register('morphology.gram_stain')} type="text" placeholder="Gram Stain" />
-            <Input {...form.register('morphology.cell_shape')} type="text" placeholder="Cell Shape" />
-            <Input {...form.register('morphology.motility')} type="text" placeholder="Motility" />
+			<Controller
+				control={form.control}
+				name='morphology.gram_stain'
+				render={({ field }) => {
+					return (
+						<div className='w-full bg-background flex justify-between border rounded-md p-2 text-sm'>
+							<span>Gram Stain</span>
+							<span>{field.value ? 'Positive' : 'Negative'}</span>
+							<Switch
+								checked={field.value}
+								onCheckedChange={field.onChange}
+							/>
+						</div>
+					)
+				}}
+			/>
+			<Controller
+				control={form.control}
+				name='morphology.cell_shape'
+				render={({ field }) => {
+					return (
+						<Select onValueChange={field.onChange} {...field}>
+							<SelectTrigger>
+								<SelectValue placeholder='Cell Shape' />
+							</SelectTrigger>
+
+							<SelectContent>
+								<SelectGroup>
+									<SelectItem value='coccus-shaped'>Coccus-shaped</SelectItem>
+									<SelectItem value='rod-shaped'>Rod-shaped</SelectItem>
+								</SelectGroup>
+							</SelectContent>
+						</Select>
+					)
+				}}
+			/>
+			<Controller
+				control={form.control}
+				name='morphology.motility'
+				render={({ field }) => {
+					return (
+						<div className='w-full bg-background flex justify-between border rounded-md p-2 text-sm'>
+							<span>Motility</span>
+							<span>{field.value ? 'Yes' : 'No'}</span>
+							<Switch
+								checked={field.value}
+								onCheckedChange={field.onChange}
+							/>
+						</div>
+					)
+				}}
+			/>
         </section>
     )
+}
+
+function CultureGrowth({form}) {
+    return (
+        <section className="space-y-2">
+            <div className="font-extrabold text-3xl">Culture and Growth Conditions</div>
+            <Input {...form.register('culture_growth.medium')} type="text" placeholder="Culture Medium" />
+            <Controller
+				control={form.control}
+				name='culture_growth.growth'
+				render={({ field }) => {
+					return (
+						<div className='w-full bg-background flex justify-between border rounded-md p-2 text-sm'>
+							<span>Growth</span>
+							<span>{field.value ? 'Yes' : 'No'}</span>
+							<Switch
+								checked={field.value}
+								onCheckedChange={field.onChange}
+							/>
+						</div>
+					)
+				}}
+			/>
+            <Input {...form.register('culture_growth.medium_composition')} type="text" placeholder="Culture Medium Composition" />
+
+			<Input {...form.register('culture_growth.culture_temp')} type="number" placeholder="Growth Temperature" />
+			<Input {...form.register('culture_growth.temp_range')} type="text" placeholder="Temperature Range" />
+        </section>
+    )
+}
+
+function Physiology({form}) {
+	return (
+		<section className='space-y-2'>
+			<div className="font-extrabold text-3xl">Physiology and Metabolism</div>
+			<Controller
+				control={form.control}
+				name='physiology_metabolism.oxygen_tolerance'
+				render={({ field }) => {
+					return (
+						<Select onValueChange={field.onChange} {...field}>
+							<SelectTrigger>
+								<SelectValue placeholder='Oxygen Tolerance' />
+							</SelectTrigger>
+
+							<SelectContent>
+								<SelectGroup>
+									<SelectItem value='aerobe'>Aerobe</SelectItem>
+									<SelectItem value='anaerobe'>Anaerobe</SelectItem>
+								</SelectGroup>
+							</SelectContent>
+						</Select>
+					)
+				}}
+			/>
+		</section>
+	)
+}
+
+function Safety({form}) {
+	return (
+		<section className='space-y-2'>
+			<div className="font-extrabold text-3xl">Safety Information</div>
+			<Controller
+				control={form.control}
+				name='safety_information.pathogenicity_human'
+				render={({ field }) => {
+					return (
+						<div className='w-full bg-background flex justify-between border rounded-md p-2 text-sm'>
+							<span>Pathogenicity (Human)</span>
+							<span>{field.value ? 'Yes' : 'No'}</span>
+							<Switch
+								checked={field.value}
+								onCheckedChange={field.onChange}
+							/>
+						</div>
+					)
+				}}
+			/>
+			<Controller
+				control={form.control}
+				name='safety_information.pathogenicity_animal'
+				render={({ field }) => {
+					return (
+						<div className='w-full bg-background flex justify-between border rounded-md p-2 text-sm'>
+							<span>Pathogenicity (Animal)</span>
+							<span>{field.value ? 'Yes' : 'No'}</span>
+							<Switch
+								checked={field.value}
+								onCheckedChange={field.onChange}
+							/>
+						</div>
+					)
+				}}
+			/>
+			<Input {...form.register('culture_growth.medium_composition')} type="number" placeholder="Biosafety Level" />
+		</section>
+	)
 }
 
 export default function IsolateForm() {
@@ -172,9 +320,12 @@ export default function IsolateForm() {
     return (
         <div>
             <form className="container mx-auto py-10 space-y-3" onSubmit={form.handleSubmit(onSubmit)}>
-                { page === 1 && <BasicInfo form={form} navigate={navigate} /> }
-                { page === 2 && <TaxonomyInfo form={form} /> }
-                { page === 3 && <MorphologyInfo form={form} /> }
+                { page === 1 && <Basic form={form} navigate={navigate} /> }
+                { page === 2 && <Taxonomy form={form} /> }
+                { page === 3 && <Morphology form={form} /> }
+				{ page === 4 && <CultureGrowth form={form} /> }
+				{ page === 5 && <Physiology form={form} /> }
+				{ page === 6 && <Safety form={form} /> }
                 
                 <div className="space-x-3">
                     <Button 
@@ -183,12 +334,12 @@ export default function IsolateForm() {
                         onClick={previous} 
                         variant="outline"
                     >Previous</Button>
-                    { page === 3 &&
+                    { page === 6 &&
                         <Button type="submit" variant="outline">Add Isolate</Button>
                     }
-                    { page != 3 &&
+                    { page != 6 &&
                         <Button 
-                            disabled={page >= 3} 
+                            disabled={page >= 6} 
                             type="button" 
                             onClick={next} 
                             variant="outline"
