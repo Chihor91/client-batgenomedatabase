@@ -73,7 +73,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 						<div className='space-y-4 '>
 							<CustomButton
 								imgSrc={theme.theme === 'light' ? Images.ic_dashboard : Images.ic_DM_dashboard}
-								className={`w-[80%]  ${activeButton === '' ? 'bg-background' : 'bg-transparent'}`}
+								className={`w-[80%]  ${activeButton === '' ? 'bg-background border' : 'bg-transparent'}`}
 								variant='outline'
 								width={30}
 								showSidebar={showSidebar}
@@ -84,7 +84,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 							{admin && (
 								<CustomButton
 									className={`w-[80%]   ${
-										activeButton === 'Admin' ? 'bg-background' : 'bg-transparent'
+										activeButton === 'Admin' ? 'bg-background border' : 'bg-transparent'
 									} `}
 									imgSrc={theme.theme === 'light' ? Images.ic_project : Images.ic_DM_project}
 									variant='outline'
@@ -98,7 +98,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 							<CustomButton
 								imgSrc={theme.theme === 'light' ? Images.ic_source : Images.ic_DM_source}
 								className={`w-[80%]   ${
-									activeButton === 'Source' ? 'bg-background' : 'bg-transparent'
+									activeButton === 'Source' ? 'bg-background border' : 'bg-transparent'
 								}`}
 								variant='outline'
 								width={30}
@@ -109,7 +109,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 							<CustomButton
 								imgSrc={theme.theme === 'light' ? Images.ic_isolate : Images.ic_DM_isolate}
 								className={`w-[80%]  ${
-									activeButton === 'Isolate' ? 'bg-background' : 'bg-transparent'
+									activeButton === 'Isolate' ? 'bg-background border' : 'bg-transparent'
 								} `}
 								variant='outline'
 								width={30}
