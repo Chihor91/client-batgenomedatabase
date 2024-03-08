@@ -53,13 +53,12 @@ function SideBar({ showSidebar, setShowSidebar }) {
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}>
 			<div className={`flex flex-col   h-[120px] p-[24px] justify-center    items-center `}>
-				{user && (
-					<img
-						width={logoWidth}
-						src={theme.theme === 'light' ? Images.ic_gradient_caves : Images.ic_DM_cave}
-						alt='caves-logo'
-					/>
-				)}
+
+				<img
+					width={logoWidth}
+					src={theme.theme === 'light' ? Images.ic_gradient_caves : Images.ic_DM_cave}
+					alt='caves-logo'
+				/>
 				<h1
 					className={`font-bold text-lg  
 					}`}>
@@ -140,6 +139,28 @@ function SideBar({ showSidebar, setShowSidebar }) {
 								navigate('/')
 							}}>
 							Dashboard
+						</CustomButton>
+						<CustomButton
+							imgSrc={theme.theme === 'light' ? Images.ic_source : Images.ic_DM_source}
+							className={`w-[80%]   ${
+								activeButton === 'Source' ? 'bg-background border' : 'bg-transparent'
+							}`}
+							variant='outline'
+							width={30}
+							showSidebar={showSidebar}
+							onClick={() => handleButtonClick('Source')}>
+							Sources
+						</CustomButton>
+						<CustomButton
+							imgSrc={theme.theme === 'light' ? Images.ic_isolate : Images.ic_DM_isolate}
+							className={`w-[80%]  ${
+								activeButton === 'Isolate' ? 'bg-background border' : 'bg-transparent'
+							} `}
+							variant='outline'
+							width={30}
+							showSidebar={showSidebar}
+							onClick={() => handleButtonClick('Isolate')}>
+							Isolates
 						</CustomButton>
 						<CustomButton
 							imgSrc={theme.theme === 'light' ? Images.ic_login : Images.ic_DM_login}
