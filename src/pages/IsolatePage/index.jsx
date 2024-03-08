@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { BasicInfo, HostInfo } from './Sections'
+import { CultureGrowth, HostInfo, Morphology, Taxonomy } from './Sections'
 
 export default function StrainPage({ id }) {
 	const [data, setData] = useState(null)
@@ -50,6 +50,20 @@ export default function StrainPage({ id }) {
 				<div className='h-[100vh] '>
 					{/* STRAIN ID */}
 					<div className='font-extrabold text-left  text-4xl'>{data.human_readable_id}</div>
+					<div className='flex flex-col'>
+						<div className='flex space-x-1'>
+							<span className='font-bold'>Accession Number:</span>
+							<span>{data.accession_no}</span>
+						</div>
+						<div className='flex space-x-1'>
+							<span className='font-bold'>Type:</span>
+							<span>
+								{data.type === 1 && ' Bacteria'}
+								{data.type === 2 && ' Yeast'}
+								{data.type === 3 && ' Mold'}
+							</span>
+						</div>
+					</div>
 
 					<main className='flex gap-10 w-full mt-20 flex-wrap sm:flex-nowrap'>
 						{/* IMAGE*/}
@@ -76,9 +90,12 @@ export default function StrainPage({ id }) {
 
 						{/* INFO */}
 						<section className='w-full space-y-6 '>
-							<BasicInfo data={data} />
+							<Taxonomy data={data} />
+							<Morphology data={data} />
+							<CultureGrowth data={data} />
 							<HostInfo data={data} />
 							<HostInfo data={data} />
+
 						</section>
 					</main>
 
