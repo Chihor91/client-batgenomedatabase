@@ -13,7 +13,6 @@ import axios from 'axios'
 // Component Imports
 import Home from '@/pages/Home/Home'
 import Login from '@/pages/Login/Login'
-import Project from '@/pages/Project'
 
 import Source from '@/pages/Source'
 import SourceForm from '@/pages/Source/SourceForm'
@@ -33,7 +32,6 @@ import './App.css'
 
 import PrivateRoutes from '@/utils/PrivateRoutes'
 import AdminRoutes from '@/utils/AdminRoutes'
-import { SectionWrapper } from './hoc'
 import AdminPage from '@/pages/Admin'
 import { SnackbarProvider } from 'notistack'
 import BackgroundElement1 from './components/Custom/Background1'
@@ -49,11 +47,10 @@ function App() {
 			<Route path='/' element={<Root />}>
 				<Route index element={<Home />} />
 				<Route path='/login' element={<Login />} />
+				<Route path='/source' element={<Source />} />
+				<Route path='/isolate' element={<Isolate />} />
 				<Route element={<PrivateRoutes />}>
-					<Route path='/project' element={<Project />} />
-					<Route path='/source' element={<Source />} />
 					<Route path='/source/add' element={<SourceForm />} />
-					<Route path='/isolate' element={<Isolate />} />
 					<Route path='/isolate/add' element={<IsolateForm />} />
 				</Route>
 				<Route element={<AdminRoutes />}>
