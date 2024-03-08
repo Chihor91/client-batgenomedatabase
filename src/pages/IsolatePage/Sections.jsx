@@ -5,30 +5,61 @@ import { useEffect, useState } from 'react'
 import IsolateTable from '@/pages/Isolate/IsolateTable'
 import { columns } from '@/pages/Isolate/columns'
 
-const collapsibleStyle = 'border w-full bg-white/10 shadow-md rounded-md  text-start'
+const sectionStyle = 'border w-full bg-white/10 shadow-md rounded-md  text-start'
 const colTriggerStyle = 'flex  w-full text-start text-2xl font-extrabold p-2'
 const colContentStyle = ''
 const listStyle = 'space-y-1 p-2'
-const label = 'font-bold mr-1'
+const label = 'font-bold mr-2'
 
-function BasicInfo({ data }) {
+function Taxonomy({ data }) {
 	return (
-		<Collapsible className={collapsibleStyle}>
-			<CollapsibleTrigger className={colTriggerStyle}>
-				<div>Basic Information</div>
-			</CollapsibleTrigger>
+		<div className={sectionStyle}>
+			<div className={colTriggerStyle}>Taxonomic Classification</div>
 			<ul className={listStyle}>
-				<li className='flex'>
-					<div className={label}>Accession Number:</div> {data.accession_no}
-				</li>
-				<li className='flex'>
-					<div className={label}>Type:</div>
-					{data.type === 1 && ' Bacteria'}
-					{data.type === 2 && ' Yeast'}
-					{data.type === 3 && ' Mold'}
-				</li>
+				{data.taxonomy.domain &&
+					<li className='flex'>
+						<div className={label}>Domain:</div>
+						{data.taxonomy.domain}
+					</li>
+				}
+				{data.taxonomy.phylum &&
+					<li className='flex'>
+						<div className={label}>Phylum:</div>
+						{data.taxonomy.phylum}
+					</li>
+				}
+				{data.taxonomy.class &&
+					<li className='flex'>
+						<div className={label}>Class:</div>
+						{data.taxonomy.class}
+					</li>
+				}
+				{data.taxonomy.order &&
+					<li className='flex'>
+						<div className={label}>Order:</div>
+						{data.taxonomy.order}
+					</li>
+				}
+				{data.taxonomy.family && 
+					<li className='flex'>
+						<div className={label}>Family:</div>
+						{data.taxonomy.family}
+					</li>
+				}
+				{data.taxonomy.genus && 
+					<li className='flex'>
+						<div className={label}>Genus:</div>
+						{data.taxonomy.genus}
+					</li>
+				}
+				{data.taxonomy.species && 
+					<li className='flex'>
+						<div className={label}>Species:</div>
+						{data.taxonomy.species}
+					</li>
+				}
 			</ul>
-		</Collapsible>
+		</div>
 	)
 }
 
@@ -42,7 +73,7 @@ function HostInfo({ data }) {
 	}, [])
 
 	return (
-		<Collapsible className={collapsibleStyle}>
+		<Collapsible className={sectionStyle}>
 			<CollapsibleTrigger className={colTriggerStyle}>Source Information</CollapsibleTrigger>
 			<ul className={listStyle}>
 				<li className='flex'>
@@ -62,39 +93,59 @@ function HostInfo({ data }) {
 	)
 }
 
-function SamplingInfo({ data }) {
-	const [samplingPoint, setSamplingPoint] = useState(null)
-	const [cave, setCave] = useState(null)
-	const [location, setLocation] = useState(null)
-
-	useEffect(() => {
-		axios.get(axios.defaults.baseURL + '/location/point/' + data.sampling_point).then((res) => {
-			setSamplingPoint(res.data)
-			axios.get(axios.defaults.baseURL + '/location/cave/' + res.data.cave).then((res) => {
-				setCave(res.data)
-				axios
-					.get(axios.defaults.baseURL + '/location/location/' + res.data.location)
-					.then((res) => {
-						setLocation(res.data)
-					})
-			})
-		})
-	}, [])
-
+function Morphology({data}) {
 	return (
-		<Collapsible className={collapsibleStyle}>
-			<CollapsibleTrigger className={colTriggerStyle}>
-				<ChevronDown strokeWidth={5} className='m-1' />
-				Sampling Information
-			</CollapsibleTrigger>
-			<CollapsibleContent className={colContentStyle}>
-				<ul className={listStyle}>
-					<li>Location: {location ? location.town + ', ' + location.province : 'N/A'}</li>
-					<li>Cave: {cave ? cave.name + ' (' + cave.abbr + ')' : 'N/A'}</li>
-					<li>Sampling Point: {samplingPoint ? samplingPoint.point_number : 'N/A'}</li>
-				</ul>
-			</CollapsibleContent>
-		</Collapsible>
+		<div className={sectionStyle}>
+			<div className={colTriggerStyle}>Morphology</div>
+			<ul className={listStyle}>
+				<li className='flex'>
+					<div className={label}>Gram Stain:</div>
+					{data.morphology.gram_stain ? 'Positive' : 'Negative'}
+				</li>
+				{data.morphology.cell_shape &&
+					<li className='flex'>
+						<div className={label}>Cell Shape:</div>
+						{data.morphology.cell_shape}
+					</li>
+				}
+				<li className='flex'>
+					<div className={label}>Motility:</div>
+					{data.morphology.motility ? 'Yes' : 'No'}
+				</li>
+			</ul>
+		</div>
+	)
+}
+
+function CultureGrowth({data}) {
+	return (
+		<div className={sectionStyle}>
+			<div className={colTriggerStyle}>Culture and Growth Conditions</div>
+			<ul className={listStyle}>
+				{data.culture_growth.medium &&
+					<li className='flex'>
+						<div className={label}>Culture Medium:</div>
+						{data.culture_growth.medium}
+					</li>
+				}
+				<li className='flex'>
+					<div className={label}>Culture Medium Growth:</div>
+					{data.culture_growth.growth ? 'Positive' : 'Negative'}
+				</li>
+				{data.culture_growth.medium_composition &&
+					<li className='flex'>
+						<div className={label}>Culture Medium Composition:</div>
+						{data.culture_growth.medium_composition}
+					</li>
+				}
+				{data.culture_growth.culture_temp &&
+					<li className='flex'>
+						<div className={label}>Culture Growth Temperature:</div>
+						{data.culture_growth.culture_temp + " °C"} 
+					</li>
+				}
+			</ul>
+		</div>
 	)
 }
 
@@ -108,7 +159,7 @@ function Isolates({ data }) {
 	}, [])
 
 	return (
-		<Collapsible className={collapsibleStyle}>
+		<Collapsible className={sectionStyle}>
 			<CollapsibleTrigger className={colTriggerStyle}>
 				<ChevronDown strokeWidth={5} className='m-1' />
 				Isolates
@@ -120,4 +171,4 @@ function Isolates({ data }) {
 	)
 }
 
-export { BasicInfo, HostInfo, SamplingInfo, Isolates }
+export { Taxonomy, Morphology, CultureGrowth, HostInfo, Isolates }
