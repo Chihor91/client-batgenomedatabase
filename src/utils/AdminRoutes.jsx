@@ -11,7 +11,7 @@ const AdminRoutes = () =>  {
             setLoading(false)
         })
         .catch((err) => {
-            navigate('/login')
+            navigate('/')
         })
     }, [])
 

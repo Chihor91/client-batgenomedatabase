@@ -1,17 +1,19 @@
+import AuthContext from "@/context/AuthContext";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useNavigate, Outlet } from "react-router-dom";
 
 const PrivateRoutes = () =>  {
-    let navigate = useNavigate()
+    const {logoutUser} = useContext(AuthContext)
     const [loading, setLoading] = useState(true)
+
     useEffect(() => {
         axios.get(axios.defaults.baseURL + "/user/isloggedin/")
         .then((res) => {
             setLoading(false)
         })
         .catch((err) => {
-            navigate('/login')
+            logoutUser()
         })
     }, [])
 
@@ -19,6 +21,7 @@ const PrivateRoutes = () =>  {
         loading ? 
         <h1>Loading</h1> :
         <Outlet />
+        
     )
 }
 
