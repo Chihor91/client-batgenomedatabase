@@ -284,7 +284,7 @@ function Safety({form}) {
 					)
 				}}
 			/>
-			<Input {...form.register('culture_growth.medium_composition')} type="number" placeholder="Biosafety Level" />
+			<Input {...form.register('safety_information.biosafety_level')} type="number" placeholder="Biosafety Level" />
 		</section>
 	)
 }
