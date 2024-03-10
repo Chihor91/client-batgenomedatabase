@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils'
 
 const Input = React.forwardRef(({ className, error, helperText, type, ...props }, ref) => {
 	return (
-		<>
+		<div>
 			<input
 				type={type}
 				className={cn(
@@ -15,7 +15,7 @@ const Input = React.forwardRef(({ className, error, helperText, type, ...props }
 				{...props}
 			/>
 			{error && <span className='flex text-sm text-red-500'>{helperText}</span>}
-		</>
+		</div>
 	)
 })
 Input.displayName = 'Input'

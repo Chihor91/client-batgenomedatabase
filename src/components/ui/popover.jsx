@@ -5,8 +5,22 @@ import { cn } from '@/lib/utils'
 
 const Popover = PopoverPrimitive.Root
 
-const PopoverTrigger = PopoverPrimitive.Trigger
-
+const PopoverTrigger = React.forwardRef(({ className, error, helperText, children, ...props }, ref) => (
+	<div className='border-red-600'>
+		<PopoverPrimitive.Trigger 
+			ref={ref}
+			className={cn(
+				`flex h-10 w-full items-center justify-between rounded-md border ${error ? 'border-red-500' : 'border-foreground'} bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50`,
+				className
+			)}
+			{...props}
+		>
+		{children}
+		</PopoverPrimitive.Trigger>
+		{error && <span className='flex text-sm text-red-500'>{helperText}</span>}
+	</div>	
+	
+),)
 const PopoverContent = React.forwardRef(
 	({ className, align = 'center', sideOffset = 4, ...props }, ref) => (
 		<PopoverPrimitive.Portal>
