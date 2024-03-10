@@ -1,6 +1,5 @@
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible'
 import axios from 'axios'
-import { ChevronDown } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import StrainTable from '@/pages/Isolate/IsolateTable'
 import { columns } from '@/pages/Isolate/columns'
@@ -13,17 +12,11 @@ const listStyle = 'space-y-1 p-2'
 const label = 'font-bold mr-1'
 
 function BasicInfo({ data }) {
-	const theme = useTheme()
 	return (
-		<Collapsible className={collapsibleStyle}>
-			<CollapsibleTrigger className={colTriggerStyle}>
-				<div
-					className={`flex flex-row ${
-						theme.theme === 'light' ? 'text-foreground' : 'text-background'
-					}`}>
-					Basic Information
-				</div>
-			</CollapsibleTrigger>
+		<div className={collapsibleStyle}>
+			<div className={colTriggerStyle}>
+				Basic Information
+			</div>
 			<ul className={listStyle}>
 				<li className='flex'>
 					<div className={label}>Collection:</div>
@@ -38,22 +31,16 @@ function BasicInfo({ data }) {
 					{data.project_name}
 				</li>
 			</ul>
-		</Collapsible>
+		</div>
 	)
 }
 
 function HostInfo({ data }) {
-	const theme = useTheme()
 	return (
-		<Collapsible className={collapsibleStyle}>
-			<CollapsibleTrigger className={colTriggerStyle}>
-				<div
-					className={`flex flex-row ${
-						theme.theme === 'light' ? 'text-foreground' : 'text-background'
-					}`}>
+		<div className={collapsibleStyle}>
+			<div className={colTriggerStyle}>
 					Host Information
-				</div>
-			</CollapsibleTrigger>
+			</div>
 			<ul className={listStyle}>
 				<li className='flex'>
 					<div className={label}>Host Type:</div>
@@ -68,23 +55,17 @@ function HostInfo({ data }) {
 					{data.sample_type}
 				</li>
 			</ul>
-		</Collapsible>
+		</div>
 	)
 }
 
 function SamplingInfo({ data }) {
-	const theme = useTheme()
 
 	return (
-		<Collapsible className={collapsibleStyle}>
-			<CollapsibleTrigger className={colTriggerStyle}>
-				<div
-					className={`flex flex-row ${
-						theme.theme === 'light' ? 'text-foreground' : 'text-background'
-					}`}>
-					Sampling Information
-				</div>
-			</CollapsibleTrigger>
+		<div className={collapsibleStyle}>
+			<div className={colTriggerStyle}>
+				Sampling Information
+			</div>
 
 			<ul className={listStyle}>
 				<li className='flex'>
@@ -102,7 +83,7 @@ function SamplingInfo({ data }) {
 					{data.loc_sampling_point}
 				</li>
 			</ul>
-		</Collapsible>
+		</div>
 	)
 }
 
@@ -117,10 +98,7 @@ function Strains({ data }) {
 
 	return (
 		<>
-			<div
-				className={`flex flex-row ${
-					theme.theme === 'light' ? 'text-foreground' : 'text-background'
-				}`}>
+			<div className={colTriggerStyle}>
 				Strains
 			</div>
 			<StrainTable data={strains} columns={columns} />

@@ -14,12 +14,14 @@ export default function SourcePage({ id }) {
 	return (
 		<>
 			{data && (
-				<div className='space-y-3'>
-					<div className='font-extrabold text-4xl'>{data.human_readable_id}</div>
-					<BasicInfo data={data} />
-					<HostInfo data={data} />
-					<SamplingInfo data={data} />
-					<Strains data={data} />
+				<div>
+					<div className='font-extrabold text-left text-4xl'>{data.human_readable_id}</div>
+					<div className='py-10 space-y-6'>
+						<BasicInfo data={data} />
+						<HostInfo data={data} />
+						<SamplingInfo data={data} />
+						<Strains data={data} />
+					</div>
 				</div>
 			)}
 		</>
