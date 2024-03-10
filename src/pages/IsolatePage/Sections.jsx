@@ -73,12 +73,12 @@ function HostInfo({ data }) {
 	}, [])
 
 	return (
-		<Collapsible className={sectionStyle}>
-			<CollapsibleTrigger className={colTriggerStyle}>Source Information</CollapsibleTrigger>
+		<div className={sectionStyle}>
+			<div className={colTriggerStyle}>Sample Source</div>
 			<ul className={listStyle}>
 				<li className='flex'>
 					<div className={label}>Source ID:</div>
-					{host ? host.human_readable_id : 'N/A'}
+					{host ? <a href={`/source?id=${data.source}`} className='underline hover:font-bold'>{host.human_readable_id}</a> : 'N/A'}
 				</li>
 				<li className='flex'>
 					<div className={label}>Source Type:</div>
@@ -89,7 +89,7 @@ function HostInfo({ data }) {
 					{host ? host.host_species : 'N/A'}
 				</li>
 			</ul>
-		</Collapsible>
+		</div>
 	)
 }
 
@@ -149,6 +149,46 @@ function CultureGrowth({data}) {
 	)
 }
 
+function PhysiologyMetabolism({data}) {
+	return (
+		<div className={sectionStyle}>
+			<div className={colTriggerStyle}>Physiology and Metabolism</div>
+			<ul className={listStyle}>
+				{data.physiology_metabolism.oxygen_tolerance &&
+					<li className='flex'>
+						<div className={label}>Oxygen Tolerance:</div>
+						{data.physiology_metabolism.oxygen_tolerance}
+					</li>
+				}
+			</ul>
+		</div>
+	)
+}
+
+function Safety({data}) {
+	return (
+		<div className={sectionStyle}>
+			<div className={colTriggerStyle}>Safety Information</div>
+			<ul className={listStyle}>
+				<li className='flex'>
+					<div className={label}>Pathogenicity (Human):</div>
+					{data.safety_information.pathogenicity_human ? "yes" : "no"}
+				</li>
+				<li className='flex'>
+					<div className={label}>Pathogenicity (Animal):</div>
+					{data.safety_information.pathogenicity_animal ? "yes" : "no"}
+				</li>
+				{data.safety_information.biosafety_level &&
+					<li className='flex'>
+						<div className={label}>Biosafety Level:</div>
+						{data.safety_information.biosafety_level}
+					</li>
+				}
+			</ul>
+		</div>
+	)
+}
+
 function Isolates({ data }) {
 	const [isolates, setIsolates] = useState([])
 
@@ -171,4 +211,4 @@ function Isolates({ data }) {
 	)
 }
 
-export { Taxonomy, Morphology, CultureGrowth, HostInfo, Isolates }
+export { Taxonomy, Morphology, CultureGrowth, PhysiologyMetabolism, Safety, HostInfo, Isolates }
