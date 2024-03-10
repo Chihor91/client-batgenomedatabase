@@ -1,7 +1,20 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { CultureGrowth, HostInfo, Morphology, Taxonomy } from './Sections'
-
+import { CultureGrowth, HostInfo, Morphology, PhysiologyMetabolism, Safety, Taxonomy } from './Sections'
+function jsonEmpty(data) {
+	var empty = true
+	try {
+		Object.keys(data).forEach(function (property) {
+			if (data[property] !== '') {
+				empty = false
+				throw new Error();
+			}
+		})
+	} catch{
+		
+	}
+	return empty
+}
 export default function StrainPage({ id }) {
 	const [data, setData] = useState(null)
 	const [isModalOpen, setIsModalOpen] = useState(false)
@@ -47,9 +60,9 @@ export default function StrainPage({ id }) {
 	return (
 		<>
 			{data && (
-				<div className='h-[100vh] '>
+				<div className='h-[100vh]'>
 					{/* STRAIN ID */}
-					<div className='font-extrabold text-left  text-4xl'>{data.human_readable_id}</div>
+					<div className='font-extrabold text-left text-4xl'>{data.human_readable_id}</div>
 					<div className='flex flex-col'>
 						<div className='flex space-x-1'>
 							<span className='font-bold'>Accession Number:</span>
@@ -65,39 +78,59 @@ export default function StrainPage({ id }) {
 						</div>
 					</div>
 
-					<main className='flex gap-10 w-full mt-20 flex-wrap sm:flex-nowrap'>
+					<div className='flex gap-10 w-full py-10 flex-wrap sm:flex-nowrap'>
 						{/* IMAGE*/}
-						<section className='w-full flex justify-center '>
-							<div className=' relative group cursor-pointer overflow-hidden duration-500  w-full h-full border rounded-sm text-gray-50 p-10'>
-								<div className=''>
-									<div className='bg-white/10 shadow-sm border ' onClick={openModal}>
-										<img
-											className='w-full max-w-full h-[400px] object-cover'
-											src={sampleImageSrc}
-											alt='some'
-										/>
+						<section className='w-full h-full flex flex-col space-y-3 justify-center '>
+							{/*TODO: image map function*/}
+							<div className=' relative group cursor-pointer overflow-hidden duration-500 border rounded-sm text-gray-50 p-10'>
+								<div className='bg-white/10 shadow-sm border ' onClick={openModal}>
+									<img
+										className='w-full max-w-full h-[400px] object-cover'
+										src={sampleImageSrc}
+										alt='some'
+									/>
+									<div className='absolute w-full flex flex-col text-left rounded-md text-sm text-foreground text-wrap left-0 p-2 -bottom-12 duration-500 group-hover:bg-background group-hover:opacity-100 group-hover:-translate-y-12 opacity-0'>
+										{data.human_readable_id}
 									</div>
-									<div className='absolute w-56 left-0 p-4 -bottom-16 duration-500 group-hover:-translate-y-12'>
-										<div className='absolute -z-10 left-0 w-64  h-28 opacity-0 duration-500 group-hover:opacity-100 hover:text-white group-hover:bg-primary'></div>
-										<span className='text-md text-primary font-bold '>Image information</span>
-										<p className='group-hover:opacity-100  pb-2 w-56 duration-500 opacity-0'>
-											{data.human_readable_id}
-										</p>
+								</div>
+							</div>
+							<div className=' relative group cursor-pointer overflow-hidden duration-500 border rounded-sm text-gray-50 p-10'>
+								<div className='bg-white/10 shadow-sm border ' onClick={openModal}>
+									<img
+										className='w-full max-w-full h-[400px] object-cover'
+										src={sampleImageSrc}
+										alt='some'
+									/>
+									<div className='absolute w-full flex flex-col text-left rounded-md text-sm text-foreground text-wrap left-0 p-2 -bottom-12 duration-500 group-hover:bg-background group-hover:opacity-100 group-hover:-translate-y-12 opacity-0'>
+										{data.human_readable_id}
+									</div>
+								</div>
+							</div>
+							<div className=' relative group cursor-pointer overflow-hidden duration-500 border rounded-sm text-gray-50 p-10'>
+								<div className='bg-white/10 shadow-sm border ' onClick={openModal}>
+									<img
+										className='w-full max-w-full h-[400px] object-cover'
+										src={sampleImageSrc}
+										alt='some'
+									/>
+									<div className='absolute w-full flex flex-col text-left rounded-md text-sm text-foreground text-wrap left-0 p-2 -bottom-12 duration-500 group-hover:bg-background group-hover:opacity-100 group-hover:-translate-y-12 opacity-0'>
+										{data.human_readable_id}
 									</div>
 								</div>
 							</div>
 						</section>
 
 						{/* INFO */}
-						<section className='w-full space-y-6 '>
-							<Taxonomy data={data} />
-							<Morphology data={data} />
-							<CultureGrowth data={data} />
+						<section className='w-full space-y-6'>
+							{ !jsonEmpty(data.taxonomy) && <Taxonomy data={data} /> }
 							<HostInfo data={data} />
-							<HostInfo data={data} />
+							{ !jsonEmpty(data.morphology) && <Morphology data={data} /> }
+							{ !jsonEmpty(data.culture_growth) && <CultureGrowth data={data} /> }
+							{ !jsonEmpty(data.physiology_metabolism) && <PhysiologyMetabolism data={data} /> }
+							{ !jsonEmpty(data.safety_information) && <Safety data={data} /> }
 
 						</section>
-					</main>
+					</div>
 
 					{/* MODAL */}
 					{isModalOpen && (
