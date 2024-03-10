@@ -20,7 +20,6 @@ import { Switch } from '@/components/ui/switch'
 
 function Basic({ form, navigate }) {
 	const [sources, setSources] = useState([])
-	const [loading, setLoading] = useState(true)
 
 	async function fetchData() {
 		try {
@@ -32,8 +31,6 @@ function Basic({ form, navigate }) {
 			}
 		} catch (error) {
 			console.error('Error during data fetch:', error)
-		} finally {
-			setLoading(false)
 		}
 	}
 
@@ -43,14 +40,20 @@ function Basic({ form, navigate }) {
 
 	return (
 		<section className='space-y-2'>
-			<div className='font-extrabold text-3xl'>Basic Info</div>
 			<Controller
 				control={form.control}
 				name='source'
+				rules={{
+					required: "Please select a source",
+				}}
 				render={({ field }) => {
 					return (
 						<Popover onValueChange={field.onChange} {...field}>
-							<PopoverTrigger asChild>
+							<PopoverTrigger 
+								error={(form.formState.errors.source && !field.value)} 
+								helperText={form.formState.errors.source?.message}
+								asChild
+							>
 								<Button
 									variant='outline'
 									role='combobox'
@@ -94,10 +97,16 @@ function Basic({ form, navigate }) {
 			<Controller
 				control={form.control}
 				name='type'
+				rules={{
+					required: "Please select a strain type"
+				}}
 				render={({ field }) => {
 					return (
 						<Select onValueChange={field.onChange} {...field}>
-							<SelectTrigger>
+							<SelectTrigger
+								error={form.formState.errors.type}
+								helperText={form.formState.errors.type?.message}
+							>
 								<SelectValue placeholder='Select a strain type' />
 							</SelectTrigger>
 
@@ -119,7 +128,6 @@ function Basic({ form, navigate }) {
 function Taxonomy({form}) {
     return (
         <section className="space-y-2">
-            <div className="font-extrabold text-3xl">Taxonomic Classification</div>
             <Input {...form.register('taxonomy.domain')} type="text" placeholder="Domain" />
             <Input {...form.register('taxonomy.phylum')} type="text" placeholder="Phylum" />
             <Input {...form.register('taxonomy.class')} type="text" placeholder="Class" />
@@ -134,15 +142,14 @@ function Taxonomy({form}) {
 function Morphology({form}) {
     return (
         <section className="space-y-2">
-            <div className="font-extrabold text-3xl">Morphology</div>
 			<Controller
 				control={form.control}
 				name='morphology.gram_stain'
 				render={({ field }) => {
 					return (
-						<div className='w-full bg-background flex justify-between border rounded-md p-2 text-sm'>
+						<div className={`w-full bg-background ${field.value === undefined && 'bg-transparent'}  flex justify-between border rounded-md p-2 text-sm`}>
 							<span>Gram Stain</span>
-							<span>{field.value ? 'Positive' : 'Negative'}</span>
+							<span>{field.value !== undefined && (field.value ? 'Positive' : 'Negative')}</span>
 							<Switch
 								checked={field.value}
 								onCheckedChange={field.onChange}
@@ -176,9 +183,9 @@ function Morphology({form}) {
 				name='morphology.motility'
 				render={({ field }) => {
 					return (
-						<div className='w-full bg-background flex justify-between border rounded-md p-2 text-sm'>
+						<div className={`w-full bg-background ${field.value === undefined && 'bg-transparent'}  flex justify-between border rounded-md p-2 text-sm`}>
 							<span>Motility</span>
-							<span>{field.value ? 'Yes' : 'No'}</span>
+							<span>{field.value !== undefined && (field.value ? 'Yes' : 'No')}</span>
 							<Switch
 								checked={field.value}
 								onCheckedChange={field.onChange}
@@ -194,16 +201,15 @@ function Morphology({form}) {
 function CultureGrowth({form}) {
     return (
         <section className="space-y-2">
-            <div className="font-extrabold text-3xl">Culture and Growth Conditions</div>
             <Input {...form.register('culture_growth.medium')} type="text" placeholder="Culture Medium" />
             <Controller
 				control={form.control}
 				name='culture_growth.growth'
 				render={({ field }) => {
 					return (
-						<div className='w-full bg-background flex justify-between border rounded-md p-2 text-sm'>
+						<div className={`w-full bg-background ${field.value === undefined && 'bg-transparent'}  flex justify-between border rounded-md p-2 text-sm`}>
 							<span>Growth</span>
-							<span>{field.value ? 'Yes' : 'No'}</span>
+							<span>{field.value !== undefined && (field.value ? 'Yes' : 'No')}</span>
 							<Switch
 								checked={field.value}
 								onCheckedChange={field.onChange}
@@ -223,7 +229,6 @@ function CultureGrowth({form}) {
 function Physiology({form}) {
 	return (
 		<section className='space-y-2'>
-			<div className="font-extrabold text-3xl">Physiology and Metabolism</div>
 			<Controller
 				control={form.control}
 				name='physiology_metabolism.oxygen_tolerance'
@@ -251,15 +256,14 @@ function Physiology({form}) {
 function Safety({form}) {
 	return (
 		<section className='space-y-2'>
-			<div className="font-extrabold text-3xl">Safety Information</div>
 			<Controller
 				control={form.control}
 				name='safety_information.pathogenicity_human'
 				render={({ field }) => {
 					return (
-						<div className='w-full bg-background flex justify-between border rounded-md p-2 text-sm'>
+						<div className={`w-full bg-background ${field.value === undefined && 'bg-transparent'}  flex justify-between border rounded-md p-2 text-sm`}>
 							<span>Pathogenicity (Human)</span>
-							<span>{field.value ? 'Yes' : 'No'}</span>
+							<span>{field.value !== undefined && (field.value ? 'Yes' : 'No')}</span>
 							<Switch
 								checked={field.value}
 								onCheckedChange={field.onChange}
@@ -273,9 +277,9 @@ function Safety({form}) {
 				name='safety_information.pathogenicity_animal'
 				render={({ field }) => {
 					return (
-						<div className='w-full bg-background flex justify-between border rounded-md p-2 text-sm'>
+						<div className={`w-full bg-background ${field.value === undefined && 'bg-transparent'}  flex justify-between border rounded-md p-2 text-sm`}>
 							<span>Pathogenicity (Animal)</span>
-							<span>{field.value ? 'Yes' : 'No'}</span>
+							<span>{field.value !== undefined && (field.value ? 'Yes' : 'No')}</span>
 							<Switch
 								checked={field.value}
 								onCheckedChange={field.onChange}
@@ -284,7 +288,9 @@ function Safety({form}) {
 					)
 				}}
 			/>
-			<Input {...form.register('safety_information.biosafety_level')} type="number" placeholder="Biosafety Level" />
+			<Input {...form.register('safety_information.biosafety_level')} 
+				type="number" placeholder="Biosafety Level" 
+			/>
 		</section>
 	)
 }
@@ -294,16 +300,15 @@ export default function IsolateForm() {
 	const form = useForm({
 		source: '',
 	})
-	const [page, setPage] = useState(1)
+
+	const [taxonomy, setTaxonomy] = useState(false)
+	const [morphology, setMorphology] = useState(false)
+	const [culture, setCulture] = useState(false)
+	const [physiology, setPhysiology] = useState(false)
+	const [safety, setSafety] = useState(false)
 
 	const { watch } = form
 
-    const previous = () => {
-        setPage(curPage => curPage - 1)
-    }
-    const next = () => {
-        setPage(curPage => curPage + 1)
-    }
 	const onSubmit = (data) => {
 		axios
 			.post('source/isolate/', data)
@@ -317,36 +322,77 @@ export default function IsolateForm() {
 			})
 	}
 
+	const toggleSection = (value, setter, field) => {
+		setter(value)
+		!value && form.unregister(field)
+		
+	}
+
     return (
         <div>
-            <form className="container mx-auto py-10 space-y-3" onSubmit={form.handleSubmit(onSubmit)}>
-                { page === 1 && <Basic form={form} navigate={navigate} /> }
-                { page === 2 && <Taxonomy form={form} /> }
-                { page === 3 && <Morphology form={form} /> }
-				{ page === 4 && <CultureGrowth form={form} /> }
-				{ page === 5 && <Physiology form={form} /> }
-				{ page === 6 && <Safety form={form} /> }
+            <form className="container mx-auto py-10 space-y-5" onSubmit={form.handleSubmit(onSubmit)}>
                 
-                <div className="space-x-3">
-                    <Button 
-                        disabled={page <= 1} 
-                        type="button" 
-                        onClick={previous} 
-                        variant="outline"
-                    >Previous</Button>
-                    { page === 6 &&
-                        <Button type="submit" variant="outline">Add Isolate</Button>
-                    }
-                    { page != 6 &&
-                        <Button 
-                            disabled={page >= 6} 
-                            type="button" 
-                            onClick={next} 
-                            variant="outline"
-                        >Next</Button>
-                    }
-                </div>
-                {JSON.stringify(watch(form))}
+				<div className='space-y-2 border p-3 rounded-md'>
+					<div className='font-extrabold text-3xl text-left'>Source Information</div>
+					<Basic form={form} navigate={navigate} />
+				</div>
+
+				<div className='space-y-2 border p-3 rounded-md'>
+					<div className='flex justify-between'>
+						<div className="font-extrabold text-3xl text-left">
+							Taxonomic Classification
+						</div>
+						<Switch className="mt-2" checked={taxonomy} onCheckedChange={() => toggleSection(!taxonomy, setTaxonomy, "taxonomy")} />
+					</div>
+					{taxonomy && <Taxonomy form={form} />}
+				</div>
+
+                <div className='space-y-2 border p-3 rounded-md'>
+					<div className='flex justify-between'>
+						<div className="font-extrabold text-3xl text-left">
+							Morphology
+						</div>
+						<Switch className="mt-2" checked={morphology} onCheckedChange={() => toggleSection(!morphology, setMorphology, "morphology")} />
+					</div>
+					{ morphology && <Morphology form={form} /> }
+				</div>
+
+				<div className='space-y-2 border p-3 rounded-md'>
+					<div className='flex justify-between'>
+						<div className="font-extrabold text-3xl text-left">
+							Culture and Growth Conditions
+						</div>
+						<Switch className="mt-2" checked={culture} onCheckedChange={() => toggleSection(!culture, setCulture, "culture_growth")} />
+						
+					</div>
+					{ culture && <CultureGrowth form={form} /> }
+				</div>
+
+				<div className='space-y-2 border p-3 rounded-md'>
+					<div className='flex justify-between'>
+						<div className="font-extrabold text-3xl text-left">
+							Physiology and Metabolism
+						</div>
+						<Switch className="mt-2" checked={physiology} onCheckedChange={() => toggleSection(!physiology, setPhysiology, "physiology_metabolism")} />
+						
+					</div>
+					{ physiology && <Physiology form={form} /> }
+				</div>
+
+				<div className='space-y-2 border p-3 rounded-md'>
+					<div className='flex justify-between'>
+						<div className="font-extrabold text-3xl text-left">
+							Safety Information
+						</div>
+						<Switch className="mt-2" checked={safety} onCheckedChange={() => toggleSection(!safety, setSafety, "safety_information")} />
+						
+					</div>
+					{ safety && <Safety form={form} /> }
+				</div>
+
+				<Button type="submit" variant="outline">Add Isolate</Button>
+
+                <div>{JSON.stringify(watch(form))}</div>
             </form>
         </div>
     )
