@@ -21,9 +21,12 @@ function Isolate() {
 	return (
 		<>
 			{searchInput.get('id') === null ? (
-				<div className='container mx-auto space-y-3 '>
+				<div className='container mx-auto space-y-3 space-x-2'>
 					<Button variant='outline' onClick={() => navigate('/isolate/add')}>
 						Add New Isolate
+					</Button>
+					<Button variant='outline' onClick={() => navigate('/isolate/add/multiple')}>
+						Add Multiple Isolates
 					</Button>
 					<IsolateTable data={data} columns={columns} />
 				</div>

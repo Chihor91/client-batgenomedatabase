@@ -19,6 +19,7 @@ import SourceForm from '@/pages/Source/SourceForm'
 
 import Isolate from '@/pages/Isolate'
 import IsolateForm from '@/pages/Isolate/IsolateForm'
+import MultipleIsolateForm from '@/pages/Isolate/MultipleIsolatesForm'
 
 import SideBar from '@/components/SideBar/SideBar'
 import { AuthProvider } from '@/context/AuthContext'
@@ -52,6 +53,7 @@ function App() {
 				<Route element={<PrivateRoutes />}>
 					<Route path='/source/add' element={<SourceForm />} />
 					<Route path='/isolate/add' element={<IsolateForm />} />
+					<Route path='/isolate/add/multiple' element={<MultipleIsolateForm />} />
 				</Route>
 				<Route element={<AdminRoutes />}>
 					<Route path='/admin' element={<AdminPage />} />
