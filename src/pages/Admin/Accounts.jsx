@@ -117,7 +117,6 @@ function AddAccount(open, handleClose) {
 						},
 					})}
 					type='password'
-					name='confirmPassword'
 					variant='filled'
 					label='Confirm Password'
 					error={errors.re_password}
