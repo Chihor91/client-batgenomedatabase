@@ -98,7 +98,7 @@ function Basic({ form, navigate }) {
 				control={form.control}
 				name='type'
 				rules={{
-					required: "Please select a strain type"
+					required: "Please select a isolate type"
 				}}
 				render={({ field }) => {
 					return (
@@ -107,7 +107,7 @@ function Basic({ form, navigate }) {
 								error={form.formState.errors.type}
 								helperText={form.formState.errors.type?.message}
 							>
-								<SelectValue placeholder='Select a strain type' />
+								<SelectValue placeholder='Select a isolate type' />
 							</SelectTrigger>
 
 							<SelectContent>
@@ -298,7 +298,9 @@ function Safety({form}) {
 export default function IsolateForm() {
 	let navigate = useNavigate()
 	const form = useForm({
-		source: '',
+		defaultValues: {
+			visibility: "Public"
+		}
 	})
 
 	const [taxonomy, setTaxonomy] = useState(false)
@@ -388,6 +390,36 @@ export default function IsolateForm() {
 						
 					</div>
 					{ safety && <Safety form={form} /> }
+				</div>
+
+				<div className='space-y-2 border p-3 rounded-md'>
+					<div className='flex justify-between'>
+						<div className="font-extrabold text-3xl text-left">
+							Visibility
+						</div>
+					</div>
+					<Controller
+						control={form.control}
+						name='visibility'
+						defaultValue={"Public"}
+						render={({ field }) => {
+							return (
+								<Select onValueChange={field.onChange} {...field}>
+									<SelectTrigger>
+										<SelectValue placeholder='Oxygen Tolerance' />
+									</SelectTrigger>
+
+									<SelectContent>
+										<SelectGroup>
+											<SelectItem value='Public'>Public</SelectItem>
+											<SelectItem value='Researchers Only'>Researchers Only</SelectItem>
+											<SelectItem value='Private'>Private</SelectItem>
+										</SelectGroup>
+									</SelectContent>
+								</Select>
+							)
+						}}
+					/>
 				</div>
 
 				<Button type="submit" variant="outline">Add Isolate</Button>
