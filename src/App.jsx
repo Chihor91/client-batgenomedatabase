@@ -39,7 +39,7 @@ import BackgroundElement1 from './components/Custom/Background1'
 import BackgroundElement2 from './components/Custom/Background2'
 
 // Server API address
-axios.defaults.baseURL = 'http://0.0.0.0:8000'
+axios.defaults.baseURL = 'http://172.16.7.5:8000'
 // axios.defaults.baseURL = "http://202.92.144.124:8000/";
 
 function App() {
