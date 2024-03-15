@@ -24,7 +24,7 @@ import MultipleIsolateForm from '@/pages/Isolate/MultipleIsolatesForm'
 import SideBar from '@/components/SideBar/SideBar'
 import { AuthProvider } from '@/context/AuthContext'
 import { ThemeProvider } from '@/components/ui/theme-provider'
-import MUIThemeProvider from '@/components/Custom/MuiThemeProvider'
+import MUIThemeProvider from '@/components/Custom/MUIThemeProvider'
 
 // Asset Imports
 
