@@ -1,5 +1,4 @@
-import { ModeToggle } from '@/components/ui/mode-toggle'
-import Dashboard from '../Dashboard'
+import Dashboard from '@/pages/Dashboard'
 
 function Home() {
 	return (
