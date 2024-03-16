@@ -1,10 +1,17 @@
+import { Grid } from "@mui/material";
+import Statistics from "./Statistics";
+
 export default function Dashboard() {
 	return (
-		<div className='flex flex-col justify-center items-center'>
-			<h1 className='text-[100px] font-medium'>Dashboard</h1>
-			{/* <h1 className="text-[32px] font-medium">
-                Coming soon :)
-            </h1> */}
+		<div className='px-10 py-20'>
+			<Grid container spacing={3}>
+				<Grid item xs={12}>
+					<h1 className='text-6xl font-bold'>Cave Microbiome Database</h1>
+				</Grid>
+				<Grid item xs={12}>
+					<Statistics />
+				</Grid>
+			</Grid>
 		</div>
 	)
 }
