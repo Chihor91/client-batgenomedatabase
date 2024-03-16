@@ -165,7 +165,7 @@ export default function SourceForm() {
     }
 
     const onSubmit = (data) => {
-        axios.post('source/add/', data)
+        axios.post('/source/add/', data)
         .then((res) => {
             alert("Source " + res.data.human_readable_id + " successfully created.")
             navigate('/source')
