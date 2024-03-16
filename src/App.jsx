@@ -39,7 +39,7 @@ import BackgroundElement1 from './components/Custom/Background1'
 import BackgroundElement2 from './components/Custom/Background2'
 
 // Server API address
-axios.defaults.baseURL = 'http://172.16.7.5:8000'
+axios.defaults.baseURL = 'http://127.0.0.1:8000'
 // axios.defaults.baseURL = "http://202.92.144.124:8000/";
 
 function App() {
@@ -89,7 +89,7 @@ const Root = () => {
 										: 'left-[100px] w-[calc(100%-100px)]'
 								}`}>
 								<body
-									className={`w-[100%] overflow-scroll transition-all  bg-yellow-100/20  h-[100vh] ${
+									className={`w-[100%] overflow-scroll transition-all  bg-background/20  h-[100vh] ${
 										showSidebar ? 'w-[calc(100vw-200px)]' : 'w-[calc(100vw-100px)]'
 									}`}
 									onClick={() => setShowSidebar(false)}

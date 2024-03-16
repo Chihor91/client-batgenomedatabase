@@ -63,9 +63,9 @@
 	}
 
 	.dark {
-		--background: 192, 48%, 11%;
+		--background: 192, 48%, 5%;
 
-		--foreground: 175, 87%, 42%;
+		--foreground: 175, 87%, 88%;
 
 		--primary: 150, 70%, 88%;
 
