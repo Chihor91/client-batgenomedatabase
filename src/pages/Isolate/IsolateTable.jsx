@@ -13,17 +13,21 @@ import {
 	TableHeader,
 	TableRow,
 } from '@/components/ui/table'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useNavigate } from 'react-router-dom'
+import AuthContext from '@/context/AuthContext'
+import axios from 'axios'
 
 export default function IsolateTable({ data, columns }) {
 	let navigate = useNavigate()
+	let {user, logoutUser} = useContext(AuthContext)
 	const [sorting, setSorting] = useState([])
 
 	const table = useReactTable({
 		data,
 		columns,
+		initialState: { pagination: { pageSize: 5 } },
 		getCoreRowModel: getCoreRowModel(),
 		getPaginationRowModel: getPaginationRowModel(),
 		onSortingChange: setSorting,
@@ -33,17 +37,21 @@ export default function IsolateTable({ data, columns }) {
 		},
 	})
 
-	const handleViewClick = () => {}
-
 	const handleEditClick = (e) => {
 		e.stopPropagation()
 		navigate('/')
 		console.log('Edit button clicked')
 	}
 
-	const handleDeleteClick = (e) => {
+	const handleDeleteClick = (e, id) => {
 		e.stopPropagation()
-		navigate('/')
+		axios.delete('/source/isolate/delete/' + id + '/')
+		.then((res) => {
+			location.reload()
+		})
+		// .catch((err) => {
+		// 	logoutUser()
+		// })
 		console.log('Delete button clicked')
 	}
 
@@ -70,7 +78,7 @@ export default function IsolateTable({ data, columns }) {
 						{table.getRowModel().rows?.length ? (
 							table.getRowModel().rows.map((row) => (
 								<TableRow
-									className='py-2 my-2 bg-white/10 hover:text-background  flex flex-row items-center justify-between relative after:absolute after:bg-gradient-to-r from-foreground to-background z-20 shadow-md rounded-sm after:-z-20 after:inset-0    after:duration-200 transition-all hover:transition-all after:hover:transition-all hover:scale-105 after:hover:duration-300 cursor-pointer overflow-hidden after:-translate-y-full after:hover:translate-y-0 [&amp;_p]:delay-200 [&amp;_p]:transition-all'
+									className='py-2 my-2 bg-white/10 hover:text-background  flex flex-row items-center justify-between relative after:absolute after:bg-gradient-to-r from-foreground to-background shadow-md rounded-sm after:-z-20 after:inset-0 cursor-pointer overflow-hidden after:-translate-y-full after:hover:translate-y-0'
 									key={row.id}
 									data-state={row.getIsSelected() && 'selected'}
 									onClick={() => {
@@ -80,20 +88,23 @@ export default function IsolateTable({ data, columns }) {
 										<TableCell className='text-left ' key={cell.id}>
 											{cell.column.id === 'actions' ? (
 												<>
-													<div className='gap-4 flex flex-row'>
-														<Button
-															variant='custom'
-															// EDIT LOGIC Only Visible Owner/Admin
-															onClick={handleEditClick}>
-															Edit
-														</Button>
-														<Button
-															variant='custom'
-															// DELETE LOGIC
-															onClick={handleDeleteClick}>
-															Delete
-														</Button>
-													</div>
+													{(user?.is_superuser | data[row.id].author === user?.username) ?
+														<div className='gap-4 flex flex-row'>
+															{/* <Button
+																variant='custom'
+																// EDIT LOGIC Only Visible Owner/Admin
+																onClick={handleEditClick}>
+																Edit
+															</Button> */}
+															<Button
+																variant='custom'
+																// DELETE LOGIC
+																onClick={(e) => handleDeleteClick(e, data[row.id].id)}>
+																Delete
+															</Button>
+														</div> :
+														<></>
+													}
 												</>
 											) : (
 												flexRender(cell.column.columnDef.cell, cell.getContext())
