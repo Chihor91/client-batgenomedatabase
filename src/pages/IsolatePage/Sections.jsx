@@ -170,7 +170,7 @@ function Safety({data}) {
 		<div className={sectionStyle}>
 			<div className={colTriggerStyle}>Safety Information</div>
 			<ul className={listStyle}>
-				{data.safety_information.pathogenicity_human !== undefined &&
+ 				{data.safety_information.pathogenicity_human !== undefined &&
 					<li className='flex'>
 						<div className={label}>Pathogenicity (Human):</div>
 						{data.safety_information.pathogenicity_human ? "yes" : "no"}
