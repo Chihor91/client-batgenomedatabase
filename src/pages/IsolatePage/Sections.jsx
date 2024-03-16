@@ -170,14 +170,18 @@ function Safety({data}) {
 		<div className={sectionStyle}>
 			<div className={colTriggerStyle}>Safety Information</div>
 			<ul className={listStyle}>
-				<li className='flex'>
-					<div className={label}>Pathogenicity (Human):</div>
-					{data.safety_information.pathogenicity_human ? "yes" : "no"}
-				</li>
-				<li className='flex'>
-					<div className={label}>Pathogenicity (Animal):</div>
-					{data.safety_information.pathogenicity_animal ? "yes" : "no"}
-				</li>
+				{data.safety_information.pathogenicity_human !== undefined &&
+					<li className='flex'>
+						<div className={label}>Pathogenicity (Human):</div>
+						{data.safety_information.pathogenicity_human ? "yes" : "no"}
+					</li>
+				}
+				{data.safety_information.pathogenicity_human !== undefined &&
+					<li className='flex'>
+						<div className={label}>Pathogenicity (Animal):</div>
+						{data.safety_information.pathogenicity_animal ? "yes" : "no"}
+					</li>
+				}
 				{data.safety_information.biosafety_level &&
 					<li className='flex'>
 						<div className={label}>Biosafety Level:</div>

@@ -70,7 +70,7 @@ export default function IsolateTable({ data, columns }) {
 						{table.getRowModel().rows?.length ? (
 							table.getRowModel().rows.map((row) => (
 								<TableRow
-									className='py-2 my-2 bg-white/10 hover:text-background  flex flex-row items-center justify-between relative after:absolute after:h-full after:bg-gradient-to-r from-foreground to-background z-20 shadow-md rounded-sm after:-z-20 after:w-full after:inset-0    after:duration-200 transition-all hover:transition-all after:hover:transition-all hover:scale-105 after:hover:duration-300 cursor-pointer overflow-hidden after:-translate-y-full after:hover:translate-y-0 [&amp;_p]:delay-200 [&amp;_p]:transition-all'
+									className='py-2 my-2 bg-white/10 hover:text-background  flex flex-row items-center justify-between relative after:absolute after:bg-gradient-to-r from-foreground to-background z-20 shadow-md rounded-sm after:-z-20 after:inset-0    after:duration-200 transition-all hover:transition-all after:hover:transition-all hover:scale-105 after:hover:duration-300 cursor-pointer overflow-hidden after:-translate-y-full after:hover:translate-y-0 [&amp;_p]:delay-200 [&amp;_p]:transition-all'
 									key={row.id}
 									data-state={row.getIsSelected() && 'selected'}
 									onClick={() => {

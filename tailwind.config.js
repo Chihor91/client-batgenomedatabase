@@ -8,6 +8,16 @@ module.exports = {
 		'./src/**/*.{js,jsx}',
 	],
 	theme: {
+		fontSize: {
+			sm: '1rem',
+			base: '1.25rem',
+			xl: '1.563rem',
+			'2xl': '1.953rem',
+			'3xl': '2.441rem',
+			'4xl': '3.052rem',
+			'5xl': '3.642rem',
+			'6xl': '4.202rem'
+		  },
 		container: {
 			center: true,
 			padding: '2rem',
