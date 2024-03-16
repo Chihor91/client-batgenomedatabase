@@ -13,7 +13,7 @@ function Source() {
 	let navigate = useNavigate()
 
 	useEffect(() => {
-		axios.get(axios.defaults.baseURL + '/source/source/').then((res) => {
+		axios.get(axios.defaults.baseURL + '/source/view/all/').then((res) => {
 			setData(res.data)
 		})
 	}, [])
@@ -21,7 +21,7 @@ function Source() {
 	return (
 		<>
 			{searchInput.get('id') === null ? (
-				<div className='container  mx-auto space-y-3'>
+				<div className='container mx-auto space-y-3'>
 					<Button variant='outline' onClick={() => navigate('/source/add')}>
 						Add New Source
 					</Button>

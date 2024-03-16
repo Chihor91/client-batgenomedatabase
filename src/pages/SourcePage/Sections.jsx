@@ -91,7 +91,7 @@ function Strains({ data }) {
 	const [strains, setStrains] = useState([])
 	const theme = useTheme()
 	useEffect(() => {
-		axios.get('/source/isolate/?source=' + data.id).then((res) => {
+		axios.get('/source/isolate/source/' + data.id + '/').then((res) => {
 			setStrains(res.data)
 		})
 	}, [])
@@ -99,7 +99,7 @@ function Strains({ data }) {
 	return (
 		<>
 			<div className={colTriggerStyle}>
-				Strains
+				Isolates
 			</div>
 			<StrainTable data={strains} columns={columns} />
 		</>

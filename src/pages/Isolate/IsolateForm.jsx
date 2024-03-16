@@ -23,7 +23,7 @@ function Basic({ form, navigate }) {
 
 	async function fetchData() {
 		try {
-			const response = await axios.get(axios.defaults.baseURL + '/source/source/')
+			const response = await axios.get(axios.defaults.baseURL + '/source/view/all/')
 			if (response.status === 200) {
 				setSources(response.data)
 			} else {
@@ -243,6 +243,7 @@ function Physiology({form}) {
 								<SelectGroup>
 									<SelectItem value='aerobe'>Aerobe</SelectItem>
 									<SelectItem value='anaerobe'>Anaerobe</SelectItem>
+									<SelectItem value='microaerophile'>Microaerophile</SelectItem>
 								</SelectGroup>
 							</SelectContent>
 						</Select>
@@ -313,7 +314,7 @@ export default function IsolateForm() {
 
 	const onSubmit = (data) => {
 		axios
-			.post('source/isolate/', data)
+			.post('source/isolate/add/', data)
 			.then((res) => {
 				alert('Isolate ' + res.data.human_readable_id + ' successfully created.')
 				navigate('/isolate')

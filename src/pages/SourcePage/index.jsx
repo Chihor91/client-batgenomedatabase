@@ -6,7 +6,7 @@ export default function SourcePage({ id }) {
 	const [data, setData] = useState(null)
 
 	useEffect(() => {
-		axios.get(axios.defaults.baseURL + '/source/source/' + id).then((res) => {
+		axios.get(axios.defaults.baseURL + '/source/view/id/' + id + '/').then((res) => {
 			setData(res.data)
 		})
 	}, [])

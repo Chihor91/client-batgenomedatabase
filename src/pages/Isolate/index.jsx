@@ -13,7 +13,7 @@ function Isolate() {
 	let navigate = useNavigate()
 
 	useEffect(() => {
-		axios.get('/source/isolate/').then((res) => {
+		axios.get('/source/isolate/view/all/').then((res) => {
 			setData(res.data)
 		})
 	}, [])

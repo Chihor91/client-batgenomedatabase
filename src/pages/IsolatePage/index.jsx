@@ -20,7 +20,7 @@ export default function StrainPage({ id }) {
 	const [isModalOpen, setIsModalOpen] = useState(false)
 
 	useEffect(() => {
-		axios.get('/source/isolate/' + id).then((res) => {
+		axios.get('/source/isolate/view/id/' + id + '/').then((res) => {
 			setData(res.data)
 		})
 	}, [])
@@ -55,7 +55,7 @@ export default function StrainPage({ id }) {
 
 	//Image from backend
 	const sampleImageSrc =
-		'https://images.unsplash.com/photo-1708757857789-2c7ba96bf644?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+		'https://cdn.dsmz.de/images/strain/11843/EM_DSM_2949_1.jpg'
 
 	return (
 		<>
@@ -85,8 +85,8 @@ export default function StrainPage({ id }) {
 							<div className=' relative group cursor-pointer overflow-hidden duration-500 border rounded-sm text-gray-50 p-10'>
 								<div className='bg-white/10 shadow-sm border ' onClick={openModal}>
 									<img
-										className='w-full max-w-full h-[400px] object-cover'
-										src={sampleImageSrc}
+										className='w-full max-w-full h-full max-h-[400px] object-contain'
+										src={"https://cdn.dsmz.de/images/strain/11843/EM_DSM_2949_2.jpg"}
 										alt='some'
 									/>
 									<div className='absolute w-full flex flex-col text-left rounded-md text-sm text-foreground text-wrap left-0 p-2 -bottom-12 duration-500 group-hover:bg-background group-hover:opacity-100 group-hover:-translate-y-12 opacity-0'>
@@ -97,8 +97,8 @@ export default function StrainPage({ id }) {
 							<div className=' relative group cursor-pointer overflow-hidden duration-500 border rounded-sm text-gray-50 p-10'>
 								<div className='bg-white/10 shadow-sm border ' onClick={openModal}>
 									<img
-										className='w-full max-w-full h-[400px] object-cover'
-										src={sampleImageSrc}
+										className='w-full max-w-full h-[400px] object-contain'
+										src={"https://cdn.dsmz.de/images/strain/11843/EM_DSM_2949_1.jpg"}
 										alt='some'
 									/>
 									<div className='absolute w-full flex flex-col text-left rounded-md text-sm text-foreground text-wrap left-0 p-2 -bottom-12 duration-500 group-hover:bg-background group-hover:opacity-100 group-hover:-translate-y-12 opacity-0'>
@@ -109,8 +109,8 @@ export default function StrainPage({ id }) {
 							<div className=' relative group cursor-pointer overflow-hidden duration-500 border rounded-sm text-gray-50 p-10'>
 								<div className='bg-white/10 shadow-sm border ' onClick={openModal}>
 									<img
-										className='w-full max-w-full h-[400px] object-cover'
-										src={sampleImageSrc}
+										className='w-full max-w-full h-[400px] object-contain'
+										src={"https://cdn.dsmz.de/images/strain/11843/EM_DSM_2949_3.jpg"}
 										alt='some'
 									/>
 									<div className='absolute w-full flex flex-col text-left rounded-md text-sm text-foreground text-wrap left-0 p-2 -bottom-12 duration-500 group-hover:bg-background group-hover:opacity-100 group-hover:-translate-y-12 opacity-0'>
@@ -140,7 +140,7 @@ export default function StrainPage({ id }) {
 							<div className=' max-w-4xl p-1  rounded-sm flex justify-center items-center'>
 								<img
 									className='w-full  object-fit-contain -auto object-fit-contain'
-									src={sampleImageSrc}
+									src={"https://cdn.dsmz.de/images/strain/11843/EM_DSM_2949_1.jpg"}
 									alt='some'
 									style={{ boxShadow: '0 0 20px rgba(255, 255,255,0.8' }}
 								/>
