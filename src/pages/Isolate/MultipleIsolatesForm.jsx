@@ -1,16 +1,48 @@
 import { Button } from "@/components/ui/button"
+import { Dialog, DialogContent, DialogFooter, DialogHeader } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import axios from "axios"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
+import { useNavigate } from "react-router-dom"
+
+function Results(results, open, setOpen) {
+    let navigate = useNavigate()
+
+    return (
+        <Dialog open={open} onOpenChange={() => navigate("/isolate")} onClo>
+            <DialogContent>
+                <DialogHeader className="text-xl font-semibold">
+                    Results
+                </DialogHeader>
+                <div>
+                {results.length > 0 &&
+                    results.map((result, key) => 
+                    <li key={key} className="flex justify-center space-x-2 text-base">
+
+                        <div className="font-bold">
+                        {"Row " + (key+1)}
+                        {result.success ?
+                            " Success:":
+                            " Fail:"
+                        }
+                        </div>
+                        <div>{result.message}</div>
+                    </li>
+                )}
+                </div>
+            </DialogContent>
+        </Dialog>
+    )
+}
 
 export default function MultipleIsolateForm() {
     const form = useForm({})
+    const [open, setOpen] = useState(false)
     const [results, setResults] = useState([])
     
     const onSubmit = (data) => {
         let form_data = new FormData()
-        console.log(data.isolates[0])
         form_data.append("isolates", data.isolates[0])
         axios.post(axios.defaults.baseURL + "/source/isolate/add/file/", form_data, {
             headers: {
@@ -18,7 +50,7 @@ export default function MultipleIsolateForm() {
             }
         }).then((res) => {
             setResults(res.data.results)
-            console.log(res.data)
+            setOpen(true)
         })
     }
     return (
@@ -27,19 +59,7 @@ export default function MultipleIsolateForm() {
                 <Input type="file" accept='.csv' {...form.register("isolates", { required: "This field is required" })} />
                 <Button type="submit" variant="outline">Upload File</Button>
             </form>
-                <ul>{results.length > 0 &&
-                    results.map((result, key) => 
-                        <li key={key} className="flex justify-center space-x-2">
-                            <div>
-                            {result.success ?
-                                "Success":
-                                "Fail"
-                            }
-                            </div>
-                            <div>{result.message}</div>
-                        </li>
-                    )
-                }</ul>
+            {Results(results, open, setOpen)}
        </div>
     )
 }
