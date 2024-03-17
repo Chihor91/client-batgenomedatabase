@@ -13,17 +13,21 @@ import {
 	TableHeader,
 	TableRow,
 } from '@/components/ui/table'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import AuthContext from '@/context/AuthContext'
 
 function SourceTable({ data, columns }) {
 	let navigate = useNavigate()
+	let {user, logoutUser} = useContext(AuthContext)
 	const [sorting, setSorting] = useState([])
 
 	const table = useReactTable({
 		data,
 		columns,
+		initialState: { pagination: { pageSize: 5 } },
 		getCoreRowModel: getCoreRowModel(),
 		getPaginationRowModel: getPaginationRowModel(),
 		onSortingChange: setSorting,
@@ -44,9 +48,12 @@ function SourceTable({ data, columns }) {
 		console.log('Edit button clicked')
 	}
 
-	const handleDeleteClick = (e) => {
+	const handleDeleteClick = (e, id) => {
 		e.stopPropagation()
-		navigate('/')
+		axios.delete('/source/delete/' + id + '/')
+		.then((res) => {
+			location.reload()
+		})
 		console.log('Delete button clicked')
 	}
 
@@ -83,20 +90,23 @@ function SourceTable({ data, columns }) {
 										<TableCell className='text-left' key={cell.id}>
 											{cell.column.id === 'actions' ? (
 												<>
-													<div className='gap-4 flex flex-row  justify-end'>
-														<Button
-															variant='custom'
-															// EDIT LOGIC Only Visible Owner/Admin
-															onClick={handleEditClick}>
-															Edit
-														</Button>
-														<Button
-															variant='custom'
-															// DELETE LOGIC
-															onClick={handleDeleteClick}>
-															Delete
-														</Button>
-													</div>
+													{(user?.is_superuser) ?
+														<div className='gap-4 flex flex-row  justify-end'>
+															{/* <Button
+																variant='custom'
+																// EDIT LOGIC Only Visible Owner/Admin
+																onClick={handleEditClick}>
+																Edit
+															</Button> */}
+															<Button
+																variant='custom'
+																// DELETE LOGIC
+																onClick={(e) => handleDeleteClick(e, data[row.id].id)}>
+																Delete
+															</Button>
+														</div> :
+														<></>
+													}
 												</>
 											) : (
 												flexRender(cell.column.columnDef.cell, cell.getContext())
