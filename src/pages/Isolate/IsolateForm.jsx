@@ -149,7 +149,7 @@ function Morphology({form}) {
 					return (
 						<div className={`w-full bg-background ${field.value === undefined && 'bg-transparent'}  flex justify-between border rounded-md p-2 text-sm`}>
 							<span>Gram Stain</span>
-							<span>{field.value !== undefined && (field.value ? 'Positive' : 'Negative')}</span>
+							<span>{field.value !== undefined && (field.value ? 'Gram-positive' : 'Gram-negative')}</span>
 							<Switch
 								checked={field.value}
 								onCheckedChange={field.onChange}
@@ -229,26 +229,43 @@ function CultureGrowth({form}) {
 function Physiology({form}) {
 	return (
 		<section className='space-y-2'>
+			<Input {...form.register('physiology_metabolism.oxygen_tolerance')}
+				placeholder='Oxygen Requirement'
+			/>
 			<Controller
 				control={form.control}
-				name='physiology_metabolism.oxygen_tolerance'
+				name='physiology_metabolism.cytochrome_oxidase'
 				render={({ field }) => {
 					return (
-						<Select onValueChange={field.onChange} {...field}>
-							<SelectTrigger>
-								<SelectValue placeholder='Oxygen Tolerance' />
-							</SelectTrigger>
-
-							<SelectContent>
-								<SelectGroup>
-									<SelectItem value='aerobe'>Aerobe</SelectItem>
-									<SelectItem value='anaerobe'>Anaerobe</SelectItem>
-									<SelectItem value='microaerophile'>Microaerophile</SelectItem>
-								</SelectGroup>
-							</SelectContent>
-						</Select>
+						<div className={`w-full bg-background ${field.value === undefined && 'bg-transparent'}  flex justify-between border rounded-md p-2 text-sm`}>
+							<span>Presence of cytochrome c oxidase</span>
+							<span>{field.value !== undefined && (field.value ? 'Oxidase-positive' : 'Oxidase-negative')}</span>
+							<Switch
+								checked={field.value}
+								onCheckedChange={field.onChange}
+							/>
+						</div>
 					)
 				}}
+			/>
+			<Controller
+				control={form.control}
+				name='physiology_metabolism.endospore_forming'
+				render={({ field }) => {
+					return (
+						<div className={`w-full bg-background ${field.value === undefined && 'bg-transparent'}  flex justify-between border rounded-md p-2 text-sm`}>
+							<span>Endospore-forming Capability</span>
+							<span>{field.value !== undefined && (field.value ? 'Endospore-forming' : 'Non-endospore-forming')}</span>
+							<Switch
+								checked={field.value}
+								onCheckedChange={field.onChange}
+							/>
+						</div>
+					)
+				}}
+			/>
+			<Input {...form.register('physiology_metabolism.antibiotic_resistance_profile')}
+				placeholder='Antibiotic Resistance Profile'
 			/>
 		</section>
 	)
@@ -257,7 +274,7 @@ function Physiology({form}) {
 function Safety({form}) {
 	return (
 		<section className='space-y-2'>
-			<Controller
+			{/* <Controller
 				control={form.control}
 				name='safety_information.pathogenicity_human'
 				render={({ field }) => {
@@ -288,6 +305,12 @@ function Safety({form}) {
 						</div>
 					)
 				}}
+			/> */}
+			<Input {...form.register('safety_information.pathogenicity_human')} 
+				placeholder="Pathogenicity (Human)" 
+			/>
+			<Input {...form.register('safety_information.pathogenicity_animal')} 
+				placeholder="Pathogenicity (Animal)" 
 			/>
 			<Input {...form.register('safety_information.biosafety_level')} 
 				type="number" placeholder="Biosafety Level" 

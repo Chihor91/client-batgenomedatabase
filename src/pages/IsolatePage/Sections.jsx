@@ -67,7 +67,7 @@ function HostInfo({ data }) {
 	const [host, setHost] = useState(null)
 
 	useEffect(() => {
-		axios.get(axios.defaults.baseURL + '/source/source/' + data.source).then((res) => {
+		axios.get(axios.defaults.baseURL + '/source/view/id/' + data.source + "/").then((res) => {
 			setHost(res.data)
 		})
 	}, [])
@@ -82,11 +82,15 @@ function HostInfo({ data }) {
 				</li>
 				<li className='flex'>
 					<div className={label}>Source Type:</div>
-					{host ? host.host_type : 'N/A'}
+					{host?.host_type ? host.host_type : 'N/A'}
 				</li>
 				<li className='flex'>
 					<div className={label}>Source Species:</div>
-					{host ? host.host_species : 'N/A'}
+					{host?.host_species ? host.host_species : 'N/A'}
+				</li>
+				<li className='flex'>
+					<div className={label}>Sample Type:</div>
+					{host?.sample_type ? host.sample_type : 'N/A'}
 				</li>
 			</ul>
 		</div>
@@ -160,6 +164,24 @@ function PhysiologyMetabolism({data}) {
 						{data.physiology_metabolism.oxygen_tolerance}
 					</li>
 				}
+				{data.physiology_metabolism.cytochrome_oxidase !== undefined &&
+					<li className='flex'>
+						<div className={label}>Presence of Cytochrome c Oxidase:</div>
+						{data.physiology_metabolism.cytochrome_oxidase ? "Oxidase-positive" : "Oxidase-negative"}
+					</li>
+				}
+				{data.physiology_metabolism.endospore_forming !== undefined &&
+					<li className='flex'>
+						<div className={label}>Endospore-forming Capability:</div>
+						{data.physiology_metabolism.endospore_forming ? "Endospore-forming" : "Non-endospore-forming"}
+					</li>
+				}
+				{data.physiology_metabolism.antibiotic_resistance_profile &&
+					<li className='flex'>
+						<div className={label}>Antibiotic Resistance Profile:</div>
+						{data.physiology_metabolism.antibiotic_resistance_profile}
+					</li>
+				}
 			</ul>
 		</div>
 	)
@@ -173,13 +195,13 @@ function Safety({data}) {
  				{data.safety_information.pathogenicity_human !== undefined &&
 					<li className='flex'>
 						<div className={label}>Pathogenicity (Human):</div>
-						{data.safety_information.pathogenicity_human ? "yes" : "no"}
+						{data.safety_information.pathogenicity_human || "no"}
 					</li>
 				}
-				{data.safety_information.pathogenicity_human !== undefined &&
+				{data.safety_information.pathogenicity_animal !== undefined &&
 					<li className='flex'>
 						<div className={label}>Pathogenicity (Animal):</div>
-						{data.safety_information.pathogenicity_animal ? "yes" : "no"}
+						{data.safety_information.pathogenicity_animal || "no"}
 					</li>
 				}
 				{data.safety_information.biosafety_level &&
