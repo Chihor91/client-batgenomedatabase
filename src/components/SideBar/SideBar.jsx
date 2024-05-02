@@ -23,6 +23,9 @@ function SideBar({ showSidebar, setShowSidebar }) {
 		axios.get('/user/isadmin/')
 		.then((res) => setAdmin(true))
 		.catch((err) => setAdmin(false))
+
+		user && axios.get('/user/isloggedin/')
+		.catch((res) => logoutUser())
 	}, [user])
 
 	const handleMouseEnter = () => {
