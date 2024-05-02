@@ -80,8 +80,7 @@ export default function StrainPage({ id }) {
 
 					<div className='flex gap-10 w-full py-10 flex-wrap sm:flex-nowrap'>
 						{/* IMAGE*/}
-						<section className='w-full h-full flex flex-col space-y-3 justify-center '>
-							{/*TODO: image map function*/}
+						{/* <section className='w-full h-full flex flex-col space-y-3 justify-center '>
 							<div className=' relative group cursor-pointer overflow-hidden duration-500 border rounded-sm text-gray-50 p-10'>
 								<div className='bg-white/10 shadow-sm border ' onClick={openModal}>
 									<img
@@ -118,7 +117,8 @@ export default function StrainPage({ id }) {
 									</div>
 								</div>
 							</div>
-						</section>
+						</section> 
+						*/}
 
 						{/* INFO */}
 						<section className='w-full space-y-6'>
