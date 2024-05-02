@@ -205,7 +205,7 @@ export default function SourceForm() {
                     <Button type="submit" variant="outline">Add Source</Button>
                 </div>
             </form>
-            {JSON.stringify(form.watch())}
+            {/* {JSON.stringify(form.watch())} */}
         </div>
     )
 }

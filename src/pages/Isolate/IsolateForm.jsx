@@ -448,7 +448,7 @@ export default function IsolateForm() {
 
 				<Button type="submit" variant="outline">Add Isolate</Button>
 
-                <div>{JSON.stringify(watch(form))}</div>
+                {/* <div>{JSON.stringify(watch(form))}</div> */}
             </form>
         </div>
     )
