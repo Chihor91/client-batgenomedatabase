@@ -109,7 +109,7 @@ function SourceTable({ data, columns }) {
 													}
 												</>
 											) : (
-												flexRender(cell.column.columnDef.cell, cell.getContext())
+												<div className={`${cell.column.id === 'host_species' && "italic"}`}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</div>
 											)}
 										</TableCell>
 									))}

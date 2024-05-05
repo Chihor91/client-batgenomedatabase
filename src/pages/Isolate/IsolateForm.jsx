@@ -133,8 +133,8 @@ function Taxonomy({form}) {
             <Input {...form.register('taxonomy.class')} type="text" placeholder="Class" />
             <Input {...form.register('taxonomy.order')} type="text" placeholder="Order" />
             <Input {...form.register('taxonomy.family')} type="text" placeholder="Family" />
-            <Input {...form.register('taxonomy.genus')} type="text" placeholder="Genus" />
-            <Input {...form.register('taxonomy.species')} type="text" placeholder="Species" />
+            <Input {...form.register('taxonomy.genus')} className="italic" type="text" placeholder="Genus" />
+            <Input {...form.register('taxonomy.species')} className="italic" type="text" placeholder="Species" />
         </section>
     )
 }

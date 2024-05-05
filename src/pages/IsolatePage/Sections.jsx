@@ -49,13 +49,13 @@ function Taxonomy({ data }) {
 				{data.taxonomy.genus && 
 					<li className='flex'>
 						<div className={label}>Genus:</div>
-						{data.taxonomy.genus}
+						<div className='italic'>{data.taxonomy.genus}</div>
 					</li>
 				}
 				{data.taxonomy.species && 
 					<li className='flex'>
 						<div className={label}>Species:</div>
-						{data.taxonomy.species}
+						<div className='italic'>{data.taxonomy.species}</div>
 					</li>
 				}
 			</ul>
@@ -86,7 +86,7 @@ function HostInfo({ data }) {
 				</li>
 				<li className='flex'>
 					<div className={label}>Source Species:</div>
-					{host?.host_species ? host.host_species : 'N/A'}
+					<div className='italic'>{host?.host_species ? host.host_species : 'N/A'}</div>
 				</li>
 				<li className='flex'>
 					<div className={label}>Sample Type:</div>
