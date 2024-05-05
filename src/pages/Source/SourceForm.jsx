@@ -11,20 +11,20 @@ function BasicInfo({form}) {
     return (
         <section className="space-y-2">
             <div className="font-extrabold text-3xl">Project and Collection</div>
-            <Input {...form.register("collection", { required: "Please fill out this field", maxLength: 30 })} 
-                type="text" placeholder="Collection" 
+            <Input {...form.register("collection", { required: "Please fill out this field", maxLength: {value: 25, message: "Please input below 25 characters."} })} 
+                type="text" placeholder="Collection Abbreviation" 
                 error={form.formState.errors.collection} helperText={form.formState.errors.collection?.message}
             />
             {form.formState.errors.collection && <div></div>}
-            <Input {...form.register("institution", { required: "Please fill out this field"})} 
-                type="text" placeholder="Institution" 
+            <Input {...form.register("institution", { required: "Please fill out this field", maxLength: {value: 30, message: "Please input below 25 characters."}})} 
+                type="text" placeholder="Institution Abbreviation" 
                 error={form.formState.errors.institution} helperText={form.formState.errors.institution?.message}
             />
-            <Input {...form.register("project_name", { required: "Please fill out this field"})}
+            <Input {...form.register("project_name", { required: "Please fill out this field", maxLength: {value: 30, message: "Please input below 150 characters."}})}
                 type="text" placeholder="Project Name" 
                 error={form.formState.errors.project_name} helperText={form.formState.errors.project_name?.message}
             />
-            <Input {...form.register("project_abbr", { required: "Please fill out this field"})}
+            <Input {...form.register("project_abbr", { required: "Please fill out this field", maxLength: {value: 30, message: "Please input below 25 characters."}})}
                 type="text" placeholder="Project Abbreviation"
                 error={form.formState.errors.project_abbr} helperText={form.formState.errors.project_abbr?.message}
             />
@@ -80,7 +80,11 @@ function HostInfo({form}) {
                     )
                 }}
             />
-            { host_type  && <Input {...form.register("host_species")} type="text" placeholder="Host Species" /> }
+            { host_type  && 
+                <Input {...form.register("host_species", {maxLength: {value: 50, message: "Please input below 50 characters."}})} 
+                type="text" className="italic" placeholder="Host Species" 
+                error={form.formState.errors.host_species} helperText={form.formState.errors.host_species?.message} /> 
+            }
             { (host_type || host_type === "") &&
                 <Controller
                     control={form.control}
@@ -122,23 +126,23 @@ function LocationInfo({form}) {
     return (
         <section className="space-y-2">
             <div className="font-extrabold text-3xl">Sampling Location</div>
-            <Input {...form.register('loc_location', { required: "Please fill out this field" })} 
+            <Input {...form.register('loc_location', { required: "Please fill out this field", maxLength: {value: 50, message: "Please input below 50 characters."}})} 
                 type="text" placeholder="Location"
                 error={form.formState.errors.loc_location} helperText={form.formState.errors.loc_location?.message}
             />
-            <Input {...form.register('loc_abbr', { required: "Please fill out this field" })} 
+            <Input {...form.register('loc_abbr', { required: "Please fill out this field", maxLength: {value: 25, message: "Please input below 25 characters."}})} 
                 type="text" placeholder="Location Abbreviation"
                 error={form.formState.errors.loc_abbr} helperText={form.formState.errors.loc_abbr?.message}
             />
-            <Input {...form.register('loc_sampling_site', { required: "Please fill out this field" })} 
+            <Input {...form.register('loc_sampling_site', { required: "Please fill out this field", maxLength: {value: 50, message: "Please input below 50 characters."}})} 
                 type="text" placeholder="Sampling Site"
                 error={form.formState.errors.loc_sampling_site} helperText={form.formState.errors.loc_sampling_site?.message}
             />
-            <Input {...form.register('loc_site_abbr', { required: "Please fill out this field" })} 
+            <Input {...form.register('loc_site_abbr', { required: "Please fill out this field", maxLength: {value: 25, message: "Please input below 25 characters."}})} 
                 type="text" placeholder="Sampling Site Abbreviation"
                 error={form.formState.errors.loc_site_abbr} helperText={form.formState.errors.loc_site_abbr?.message}
             />
-            <Input {...form.register('loc_sampling_point', { required: "Please fill out this field" })} 
+            <Input {...form.register('loc_sampling_point', { required: "Please fill out this field"})} 
                 type="number" placeholder="Sampling Point"
                 error={form.formState.errors.loc_sampling_point} helperText={form.formState.errors.loc_sampling_point?.message}
             />
@@ -205,7 +209,7 @@ export default function SourceForm() {
                     <Button type="submit" variant="outline">Add Source</Button>
                 </div>
             </form>
-            {/* {JSON.stringify(form.watch())} */}
+            {JSON.stringify(form.watch())}
         </div>
     )
 }
