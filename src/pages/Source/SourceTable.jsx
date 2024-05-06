@@ -90,7 +90,7 @@ function SourceTable({ data, columns }) {
 										<TableCell className='text-left' key={cell.id}>
 											{cell.column.id === 'actions' ? (
 												<>
-													{(user?.is_superuser) ?
+													{(user?.is_superuser | data[row.id].author === user?.username) ?
 														<div className='gap-4 flex flex-row  justify-end'>
 															{/* <Button
 																variant='custom'

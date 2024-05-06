@@ -146,7 +146,7 @@ export default function Accounts() {
 
 	return (
 		<div className='space-y-2'>
-			<h1 className='text-center text-lg w-full font-semibold'>Accounts</h1>
+			<h1 className='text-center text-xl w-full font-semibold'>Accounts</h1>
 			<div className='rounded-md border'>
 				<Table>
 					<TableHeader>
