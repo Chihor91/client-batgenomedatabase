@@ -3,7 +3,7 @@ import Logs from "./Logs";
 
 export default function AdminPage() {
     return (
-		<div className='flex flex-col justify-center items-center'>
+		<div className='flex flex-col justify-center items-center overflow-hidden'>
 			<h1 className='text-4xl font-bold'>Admin</h1>
 			{/* <h1 className="text-[32px] font-medium">
                 Coming soon :)

@@ -144,12 +144,21 @@ export default function Accounts() {
 			})
 	}, [open])
 
+	const handleDeleteClick = (e, id) => {
+		e.stopPropagation()
+		axios.delete('/user/accounts/delete/' + id + '/')
+		.then((res) => {
+			location.reload()
+		})
+		console.log('Delete button clicked')
+	}
+
 	return (
 		<div className='space-y-2'>
 			<h1 className='text-center text-xl w-full font-semibold'>Accounts</h1>
-			<div className='rounded-md border'>
+			<div className='rounded-md border h-[50%] overflow-scroll'>
 				<Table>
-					<TableHeader>
+					<TableHeader className="sticky top-0 m-0 bg-background">
 						{table.getHeaderGroups().map((headerGroup) => (
 							<TableRow key={headerGroup.id}>
 								{headerGroup.headers.map((header) => {
@@ -171,8 +180,11 @@ export default function Accounts() {
 									{row.getVisibleCells().map((cell) => (
 										<TableCell className='text-left' key={cell.id}>
 											{cell.column.id === 'actions' ? (
-												<Button variant='outline'>
-													View
+												<Button
+													variant='custom'
+													// DELETE LOGIC
+													onClick={(e) => handleDeleteClick(e, data[row.id].id)}>
+													Delete
 												</Button>
 											): (
 												flexRender(cell.column.columnDef.cell, cell.getContext())

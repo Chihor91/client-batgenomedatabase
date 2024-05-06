@@ -21,8 +21,8 @@ export const columns = [
         accessorKey: 'email',
         header: 'Email'
     },
-    // {
-    //     accessorKey: 'actions',
-    //     header: ''
-    // }
+    {
+        accessorKey: 'actions',
+        header: ''
+    }
 ]

@@ -41,11 +41,11 @@ export default function Accounts() {
 	}, [])
 
 	return (
-		<div className='space-y-2 w-full h-full'>
+		<div className='space-y-2 w-full'>
 			<h1 className='text-center text-xl font-semibold'>Activity Log</h1>
-			<div className='rounded-md border'>
+			<div className='rounded-md border h-[50%] overflow-scroll'>
 				<Table>
-					<TableHeader>
+                    <TableHeader className="sticky top-0 m-0 bg-background">
 						{table.getHeaderGroups().map((headerGroup) => (
 							<TableRow key={headerGroup.id}>
 								{headerGroup.headers.map((header) => {
@@ -66,13 +66,7 @@ export default function Accounts() {
 								<TableRow key={row.id} data-state={row.getIsSelected() && 'selected'}>
 									{row.getVisibleCells().map((cell) => (
 										<TableCell className='text-left' key={cell.id}>
-											{cell.column.id === 'actions' ? (
-												<Button variant='outline'>
-													View
-												</Button>
-											): (
-												flexRender(cell.column.columnDef.cell, cell.getContext())
-											)}
+                                            {flexRender(cell.column.columnDef.cell, cell.getContext())}
 										</TableCell>
 									))}
 								</TableRow>
@@ -86,6 +80,7 @@ export default function Accounts() {
 						)}
 					</TableBody>
 				</Table>
+                
 			</div>
 		</div>
 	)
