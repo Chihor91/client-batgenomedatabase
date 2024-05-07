@@ -27,10 +27,11 @@ import {
 import { columns } from './accounts_columns'
 import { Button } from '@/components/ui/button'
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { enqueueSnackbar, useSnackbar } from 'notistack'
 import { Input } from '@/components/ui/input'
+import AuthContext from '@/context/AuthContext'
 
 function AddAccount(open, setOpen) {
 	const form = useForm({})
@@ -122,6 +123,7 @@ function AddAccount(open, setOpen) {
 }
 
 export default function Accounts() {
+	let {user} = useContext(AuthContext)
 	const [data, setData] = useState([])
 	const [sorting, setSorting] = useState([])
 	const [open, setOpen] = useState(false)
@@ -156,11 +158,11 @@ export default function Accounts() {
 	return (
 		<div className='space-y-2'>
 			<h1 className='text-center text-xl w-full font-semibold'>Accounts</h1>
-			<div className='rounded-md border h-[50%] overflow-scroll'>
+			<div className='rounded-md border min-h-[150px] min-w-[30vw] overflow-scroll'>
 				<Table>
 					<TableHeader className="sticky top-0 m-0 bg-background">
 						{table.getHeaderGroups().map((headerGroup) => (
-							<TableRow key={headerGroup.id}>
+							<TableRow className='text-left' key={headerGroup.id}>
 								{headerGroup.headers.map((header) => {
 									return (
 										<TableHead key={header.id}>
@@ -179,7 +181,7 @@ export default function Accounts() {
 								<TableRow key={row.id} data-state={row.getIsSelected() && 'selected'}>
 									{row.getVisibleCells().map((cell) => (
 										<TableCell className='text-left' key={cell.id}>
-											{cell.column.id === 'actions' ? (
+											{(cell.column.id === 'actions' && data[row.id].username !== user?.username) ? (
 												<Button
 													variant='custom'
 													// DELETE LOGIC
