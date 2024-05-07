@@ -18,7 +18,7 @@ const Statistics = () => {
     }, [])
     return(
         <div>
-            {(isolateCount && sourceCount) && 
+            {(isolateCount >= 0 && sourceCount >= 0) &&
             <Grid container spacing={1}>
                 <Grid item xs={12} sm={6}>
                     <div className="border p-3 rounded-md">
