@@ -18,7 +18,7 @@ export const columns = [
     },
     {
         accessorKey: 'host_species',
-        header: 'Species'
+        header: props => (<div className="py-2">Species</div>)
     },
     {
         accessorKey: 'actions',

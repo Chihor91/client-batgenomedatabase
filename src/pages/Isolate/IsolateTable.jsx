@@ -4,6 +4,7 @@ import {
 	getCoreRowModel,
 	useReactTable,
 	getPaginationRowModel,
+	getFilteredRowModel,
 } from '@tanstack/react-table'
 import {
 	Table,
@@ -18,6 +19,7 @@ import { Button } from '@/components/ui/button'
 import { useNavigate } from 'react-router-dom'
 import AuthContext from '@/context/AuthContext'
 import axios from 'axios'
+import { Input } from '@/components/ui/input'
 
 export default function IsolateTable({ data, columns }) {
 	let navigate = useNavigate()
@@ -29,6 +31,7 @@ export default function IsolateTable({ data, columns }) {
 		columns,
 		initialState: { pagination: { pageSize: 5 } },
 		getCoreRowModel: getCoreRowModel(),
+		getFilteredRowModel: getFilteredRowModel(),
 		getPaginationRowModel: getPaginationRowModel(),
 		onSortingChange: setSorting,
 		getSortedRowModel: getSortedRowModel(),
@@ -55,19 +58,28 @@ export default function IsolateTable({ data, columns }) {
 		console.log('Delete button clicked')
 	}
 
+	const rowHeaderClassName =
+		'justify-center self-center place-content-center items-center  grid grid-cols-3 relative'
+
 	return (
 		<div>
 			<div className='border'>
 				<Table>
 					<TableHeader>
 						{table.getHeaderGroups().map((headerGroup) => (
-							<TableRow key={headerGroup.id}>
+							<TableRow className={rowHeaderClassName} key={headerGroup.id}>
 								{headerGroup.headers.map((header) => {
 									return (
 										<TableHead key={header.id}>
 											{header.isPlaceholder
 												? null
 												: flexRender(header.column.columnDef.header, header.getContext())}
+											{header.column.id !== 'actions' && header.column.getCanFilter() ? (
+												<div>
+													<Input className='font-light' value={header.column.getFilterValue() || ''} onChange={(e) => header.column.setFilterValue(e.target.value)} />
+												</div>
+												) : null
+											}
 										</TableHead>
 									)
 								})}

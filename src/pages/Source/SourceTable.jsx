@@ -4,6 +4,7 @@ import {
 	getCoreRowModel,
 	useReactTable,
 	getPaginationRowModel,
+	getFilteredRowModel,
 } from '@tanstack/react-table'
 import {
 	Table,
@@ -18,6 +19,7 @@ import { Button } from '@/components/ui/button'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import AuthContext from '@/context/AuthContext'
+import { Input } from '@/components/ui/input'
 
 function SourceTable({ data, columns }) {
 	let navigate = useNavigate()
@@ -29,6 +31,7 @@ function SourceTable({ data, columns }) {
 		columns,
 		initialState: { pagination: { pageSize: 5 } },
 		getCoreRowModel: getCoreRowModel(),
+		getFilteredRowModel: getFilteredRowModel(),
 		getPaginationRowModel: getPaginationRowModel(),
 		onSortingChange: setSorting,
 		getSortedRowModel: getSortedRowModel(),
@@ -70,6 +73,12 @@ function SourceTable({ data, columns }) {
 											{header.isPlaceholder
 												? null
 												: flexRender(header.column.columnDef.header, header.getContext())}
+											{header.column.id !== 'actions' && header.column.getCanFilter() ? (
+												<div>
+													<Input className='font-light' value={header.column.getFilterValue() || ''} onChange={(e) => header.column.setFilterValue(e.target.value)} />
+												</div>
+												) : null
+											}
 										</TableHead>
 									)
 								})}

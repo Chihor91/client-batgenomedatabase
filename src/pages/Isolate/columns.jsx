@@ -18,6 +18,10 @@ export const columns = [
         },
     },
     {
+        accessorKey: 'accession_no',
+        header: props => (<div className="py-2">Accession Number</div>)
+    },
+    {
         accessorKey: 'actions',
         header: ''
     }
