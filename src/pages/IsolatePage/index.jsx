@@ -62,7 +62,7 @@ export default function StrainPage({ id }) {
 			{data && (
 				<div className='h-[100vh]'>
 					{/* STRAIN ID */}
-					<div className='font-extrabold text-left text-4xl'>{data.human_readable_id}</div>
+					<div className='font-extrabold text-left text-3xl'>{data.human_readable_id}</div>
 					<div className='flex flex-col'>
 						<div className='flex space-x-1'>
 							<span className='font-bold'>Accession Number:</span>

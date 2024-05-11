@@ -102,20 +102,24 @@ function Morphology({data}) {
 		<div className={sectionStyle}>
 			<div className={colTriggerStyle}>Morphology</div>
 			<ul className={listStyle}>
-				<li className='flex'>
-					<div className={label}>Gram Stain:</div>
-					{data.morphology.gram_stain ? 'Positive' : 'Negative'}
-				</li>
+				{data.morphology.gram_stain !== undefined &&
+					<li className='flex'>
+						<div className={label}>Gram Stain:</div>
+						{data.morphology.gram_stain ? 'Gram-positive' : 'Gram-negative'}
+					</li>
+				}
 				{data.morphology.cell_shape &&
 					<li className='flex'>
 						<div className={label}>Cell Shape:</div>
 						{data.morphology.cell_shape}
 					</li>
 				}
-				<li className='flex'>
-					<div className={label}>Motility:</div>
-					{data.morphology.motility ? 'Yes' : 'No'}
-				</li>
+				{ data.morphology.motility !== undefined &&
+					<li className='flex'>
+						<div className={label}>Motility:</div>
+						{data.morphology.motility ? 'Yes' : 'No'}
+					</li>
+				}
 			</ul>
 		</div>
 	)
@@ -132,10 +136,12 @@ function CultureGrowth({data}) {
 						{data.culture_growth.medium}
 					</li>
 				}
-				<li className='flex'>
-					<div className={label}>Culture Medium Growth:</div>
-					{data.culture_growth.growth ? 'Positive' : 'Negative'}
-				</li>
+				{data.culture_growth.growth !== undefined &&
+					<li className='flex'>
+						<div className={label}>Culture Medium Growth:</div>
+						{data.culture_growth.growth ? 'Positive' : 'Negative'}
+					</li>
+				}
 				{data.culture_growth.medium_composition &&
 					<li className='flex'>
 						<div className={label}>Culture Medium Composition:</div>

@@ -20,15 +20,15 @@ function BasicInfo({ data }) {
 			<ul className={listStyle}>
 				<li className='flex'>
 					<div className={label}>Collection:</div>
-					{data.collection}
+					{data.collection_name + ' (' + data.collection + ')'}
 				</li>
 				<li className='flex'>
 					<div className={label}>Institution:</div>
-					{data.institution}
+					{data.institution_name + ' (' + data.institution + ')'}
 				</li>
 				<li className='flex'>
 					<div className={label}>Project:</div>
-					{data.project_name}
+					{data.project_name + ' (' + data.project_abbr + ')'}
 				</li>
 			</ul>
 		</div>

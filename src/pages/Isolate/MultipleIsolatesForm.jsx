@@ -10,15 +10,15 @@ function Results(results, open, setOpen) {
     let navigate = useNavigate()
 
     return (
-        <Dialog open={open} onOpenChange={() => navigate("/isolate")} onClo>
+        <Dialog className="w-[1000px]" open={open} onOpenChange={() => navigate("/isolate")}>
             <DialogContent>
                 <DialogHeader className="text-xl font-semibold">
                     Results
                 </DialogHeader>
-                <div>
+                <div className="w-full">
                 {results.length > 0 &&
                     results.map((result, key) => 
-                    <li key={key} className="flex justify-center space-x-2 text-base">
+                    <li key={key} className="flex space-x-2 text-base">
 
                         <div className="font-bold">
                         {"Row " + (key+1)}

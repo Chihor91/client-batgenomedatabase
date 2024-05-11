@@ -15,7 +15,7 @@ export default function SourcePage({ id }) {
 		<>
 			{data && (
 				<div>
-					<div className='font-extrabold text-left text-4xl'>{data.human_readable_id}</div>
+					<div className='font-extrabold text-left text-3xl'>{data.human_readable_id}</div>
 					<div className='py-10 space-y-6'>
 						<BasicInfo data={data} />
 						<HostInfo data={data} />

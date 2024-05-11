@@ -11,11 +11,18 @@ function BasicInfo({form}) {
     return (
         <section className="space-y-2">
             <div className="font-extrabold text-3xl">Project and Collection</div>
+            <Input {...form.register("collection_name", { required: "Please fill out this field", maxLength: {value: 150, message: "Please input below 150 characters"}})} 
+                type="text" placeholder="Collection Name"
+                error={form.formState.errors.collection_name} helperText={form.formState.errors.collection_name?.message}
+            />
             <Input {...form.register("collection", { required: "Please fill out this field", maxLength: {value: 25, message: "Please input below 25 characters."} })} 
                 type="text" placeholder="Collection Abbreviation" 
                 error={form.formState.errors.collection} helperText={form.formState.errors.collection?.message}
             />
-            {form.formState.errors.collection && <div></div>}
+            <Input {...form.register("institution_name", { required: "Please fill out this field", maxLength: {value: 150, message: "Please input below 150 characters"}})} 
+                type="text" placeholder="Institution Name"
+                error={form.formState.errors.institution_name} helperText={form.formState.errors.institution_name?.message}
+            />
             <Input {...form.register("institution", { required: "Please fill out this field", maxLength: {value: 30, message: "Please input below 25 characters."}})} 
                 type="text" placeholder="Institution Abbreviation" 
                 error={form.formState.errors.institution} helperText={form.formState.errors.institution?.message}
@@ -40,9 +47,10 @@ function HostInfo({form}) {
         ],
         BAT : [
             { name: "Bat Gut", value: "GUT" },
-            { name: "Bat Rinse", value: "BAT_RINSE" },
+            { name: "Bat Rinse", value: "RINSE" },
             { name: "Guano", value: "GUANO" },
             { name: "Fresh Guano", value: "FRESH_GUANO" },
+            { name: "Bat Fecal Pellet", value: "FECAL_PELLET"}
         ]
     }
 
@@ -209,7 +217,6 @@ export default function SourceForm() {
                     <Button type="submit" variant="outline">Add Source</Button>
                 </div>
             </form>
-            {JSON.stringify(form.watch())}
         </div>
     )
 }

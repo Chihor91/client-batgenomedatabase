@@ -158,7 +158,7 @@ export default function Accounts() {
 	return (
 		<div className='space-y-2'>
 			<h1 className='text-center text-xl w-full font-semibold'>Accounts</h1>
-			<div className='rounded-md border min-h-[150px] min-w-[30vw] overflow-scroll'>
+			<div className='rounded-md border min-h-[150px] max-h-[75vh] min-w-[30vw] overflow-scroll'>
 				<Table>
 					<TableHeader className="sticky top-0 m-0 bg-background">
 						{table.getHeaderGroups().map((headerGroup) => (

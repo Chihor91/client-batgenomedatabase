@@ -43,7 +43,7 @@ export default function Accounts() {
 	return (
 		<div className='space-y-2 w-full'>
 			<h1 className='text-center text-xl font-semibold'>Activity Log</h1>
-			<div className='rounded-md border min-h-[50px] w-[40vw] overflow-scroll'>
+			<div className='rounded-md border min-h-[50px] max-h-[75vh] w-[40vw] overflow-scroll'>
 				<Table>
                     <TableHeader className="sticky top-0 m-0 bg-background">
 						{table.getHeaderGroups().map((headerGroup) => (

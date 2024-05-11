@@ -77,14 +77,14 @@ function Login() {
 										? 'bg-clip-text text-transparent bg-gradient-to-r from-[#009112] to-[#007E10]'
 										: 'text-foreground'
 								}`}>
-								WELCOME BACK TO CAVES!
+								CAVE MICROBIOME DATABASE
 							</h1>
 						</div>
 
 						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-							has been the industrs standard dummy text ever since the 1500s, when an unknown
-							printer took a galley of type and scrambled it to make a type specimen book.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget justo placerat, porttitor ligula vitae, laoreet dui. 
+						Nullam finibus turpis vel orci finibus sagittis. Nulla iaculis ipsum est, faucibus consectetur sapien imperdiet vel. 
+						In non libero et mi placerat aliquam ut vel augue. Donec a nunc sed purus placerat venenatis ut in purus.
 						</p>
 					</div>
 				</div>
