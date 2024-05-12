@@ -41,12 +41,14 @@ export default function MultipleIsolateForm() {
     const form = useForm({})
     const [open, setOpen] = useState(false)
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(false)
     const [results, setResults] = useState([])
     
     const onSubmit = (data) => {
         let form_data = new FormData()
         form_data.append("isolates", data.isolates[0])
         setLoading(true)
+        setError(false)
         axios.post(axios.defaults.baseURL + "/source/isolate/add/file/", form_data, {
             headers: {
                 'Content-Type': 'multipart/form-data'
@@ -56,6 +58,7 @@ export default function MultipleIsolateForm() {
             setOpen(true)
             setLoading(false)
         }).catch((err) => {
+            setError(true)
             setLoading(false)
         })
     }
@@ -65,6 +68,7 @@ export default function MultipleIsolateForm() {
                     <Input type="file" accept='.csv' {...form.register("isolates", { required: "This field is required" })} />
                     <Button type="submit" variant="outline" disabled={loading}>Upload File</Button>
                     {loading && <CircularProgress/>}
+                    {error && <div>An error has occurred while trying to submit the file</div>}
                 </form>
                 {Results(results, open, setOpen)}
         </div>
