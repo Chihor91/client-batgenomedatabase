@@ -11,7 +11,7 @@ function BasicInfo({form}) {
     return (
         <section className="space-y-2">
             <div className="font-extrabold text-3xl">Project and Collection</div>
-            <Input {...form.register("collection_name", { required: "Please fill out this field", maxLength: {value: 150, message: "Please input below 150 characters"}})} 
+            <Input {...form.register("collection_name", { required: "Please fill out this field", maxLength: {value: 512, message: "Please input below 512 characters"}})} 
                 type="text" placeholder="Collection Name"
                 error={form.formState.errors.collection_name} helperText={form.formState.errors.collection_name?.message}
             />
@@ -19,19 +19,19 @@ function BasicInfo({form}) {
                 type="text" placeholder="Collection Abbreviation" 
                 error={form.formState.errors.collection} helperText={form.formState.errors.collection?.message}
             />
-            <Input {...form.register("institution_name", { required: "Please fill out this field", maxLength: {value: 150, message: "Please input below 150 characters"}})} 
+            <Input {...form.register("institution_name", { required: "Please fill out this field", maxLength: {value: 512, message: "Please input below 512 characters"}})} 
                 type="text" placeholder="Institution Name"
                 error={form.formState.errors.institution_name} helperText={form.formState.errors.institution_name?.message}
             />
-            <Input {...form.register("institution", { required: "Please fill out this field", maxLength: {value: 30, message: "Please input below 25 characters."}})} 
+            <Input {...form.register("institution", { required: "Please fill out this field", maxLength: {value: 25, message: "Please input below 25 characters."}})} 
                 type="text" placeholder="Institution Abbreviation" 
                 error={form.formState.errors.institution} helperText={form.formState.errors.institution?.message}
             />
-            <Input {...form.register("project_name", { required: "Please fill out this field", maxLength: {value: 30, message: "Please input below 150 characters."}})}
+            <Input {...form.register("project_name", { required: "Please fill out this field", maxLength: {value: 512, message: "Please input below 512 characters."}})}
                 type="text" placeholder="Project Name" 
                 error={form.formState.errors.project_name} helperText={form.formState.errors.project_name?.message}
             />
-            <Input {...form.register("project_abbr", { required: "Please fill out this field", maxLength: {value: 30, message: "Please input below 25 characters."}})}
+            <Input {...form.register("project_abbr", { required: "Please fill out this field", maxLength: {value: 25, message: "Please input below 25 characters."}})}
                 type="text" placeholder="Project Abbreviation"
                 error={form.formState.errors.project_abbr} helperText={form.formState.errors.project_abbr?.message}
             />
