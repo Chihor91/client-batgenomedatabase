@@ -54,22 +54,17 @@ export default function MultipleIsolateForm() {
         }).then((res) => {
             setResults(res.data.results)
             setOpen(true)
+            setLoading(false)
         })
-        setLoading(false)
     }
     return (
-       <div>
-        {loading ? 
-            <div><CircularProgress /></div>
-            :
-            <div>
+        <div>
                  <form className="container mx-auto py-10 space-y-5" onSubmit={form.handleSubmit(onSubmit)}>
                     <Input type="file" accept='.csv' {...form.register("isolates", { required: "This field is required" })} />
-                    <Button type="submit" variant="outline">Upload File</Button>
+                    <Button type="submit" variant="outline" disabled={loading}>Upload File</Button>
+                    {loading && <CircularProgress/>}
                 </form>
                 {Results(results, open, setOpen)}
-            </div>
-        }
-       </div>
+        </div>
     )
 }
