@@ -148,7 +148,7 @@ function Morphology({form}) {
 				render={({ field }) => {
 					return (
 						<div className={`w-full bg-background ${field.value === undefined && 'bg-transparent'}  flex justify-between border rounded-md p-2 text-sm`}>
-							<span>Gram Stain</span>
+							<span>Gram Reaction</span>
 							<span>{field.value !== undefined && (field.value ? 'Gram-positive' : 'Gram-negative')}</span>
 							<Switch
 								checked={field.value}

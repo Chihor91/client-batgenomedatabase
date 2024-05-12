@@ -104,7 +104,7 @@ function Morphology({data}) {
 			<ul className={listStyle}>
 				{data.morphology.gram_stain !== undefined &&
 					<li className='flex'>
-						<div className={label}>Gram Stain:</div>
+						<div className={label}>Gram Reaction:</div>
 						{data.morphology.gram_stain ? 'Gram-positive' : 'Gram-negative'}
 					</li>
 				}
@@ -166,7 +166,7 @@ function PhysiologyMetabolism({data}) {
 			<ul className={listStyle}>
 				{data.physiology_metabolism.oxygen_tolerance &&
 					<li className='flex'>
-						<div className={label}>Oxygen Tolerance:</div>
+						<div className={label}>Oxygen Requirement:</div>
 						{data.physiology_metabolism.oxygen_tolerance}
 					</li>
 				}
