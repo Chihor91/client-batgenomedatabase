@@ -54,8 +54,10 @@ export default function MultipleIsolateForm() {
         }).then((res) => {
             setResults(res.data.results)
             setOpen(true)
+            setLoading(false)
+        }).catch((err) => {
+            setLoading(false)
         })
-        setLoading(false)
     }
     return (
         <div>
