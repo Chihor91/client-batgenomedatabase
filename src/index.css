@@ -11,6 +11,11 @@
 	color-scheme: dark;
 }
 
+.leaflet-container {
+	height: 80vh;
+  }
+  
+
 @layer base {
 	:root {
 		/* #FFF*/

@@ -1,5 +1,6 @@
 import { Grid } from "@mui/material";
 import Statistics from "./Statistics";
+import SourceMap from "@/pages/SourceMapping";
 
 export default function Dashboard() {
 	return (
@@ -10,6 +11,9 @@ export default function Dashboard() {
 				</Grid>
 				<Grid item xs={12}>
 					<Statistics />
+				</Grid>
+				<Grid item xs={12}>
+					<SourceMap />
 				</Grid>
 			</Grid>
 		</div>

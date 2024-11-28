@@ -10,8 +10,8 @@ function jsonEmpty(data) {
 				throw new Error();
 			}
 		})
-	} catch{
-		
+	} catch {
+		empty = true
 	}
 	return empty
 }

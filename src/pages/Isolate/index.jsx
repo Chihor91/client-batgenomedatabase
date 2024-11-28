@@ -36,5 +36,5 @@ function Isolate() {
 		</>
 	)
 }
-
-export default SectionWrapper(Isolate, 'isolate')
+const component = SectionWrapper(Isolate, 'isolate')
+export default component

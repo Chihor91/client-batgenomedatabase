@@ -36,6 +36,7 @@ function BasicInfo({ data }) {
 }
 
 function HostInfo({ data }) {
+	
 	return (
 		<div className={collapsibleStyle}>
 			<div className={colTriggerStyle}>
@@ -70,7 +71,11 @@ function SamplingInfo({ data }) {
 			<ul className={listStyle}>
 				<li className='flex'>
 					<div className={label}>Location:</div>
-					{data.loc_location ? data.loc_location + ' (' + data.loc_abbr + ')' : 'N/A'}
+					{
+						data.loc_city && data.loc_province 
+							? data.loc_city + ', ' + data.loc_province  + ' (' + data.loc_abbr + ')' 
+							: 'N/A'
+					}
 				</li>
 				<li className='flex'>
 					<div className={label}>Sampling Site:</div>
