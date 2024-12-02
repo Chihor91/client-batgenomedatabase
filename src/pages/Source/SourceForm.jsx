@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 import { Controller, useForm } from "react-hook-form"
 import { Select, SelectTrigger, SelectContent, SelectValue, SelectGroup, SelectItem } from "@/components/ui/select"
 import { useNavigate } from "react-router-dom"
+import { caves } from "@/constants/caves"
 
 function BasicInfo({form}) {
 
@@ -40,7 +41,6 @@ function BasicInfo({form}) {
 }
 
 function HostInfo({form}) {
-    const [host, setHost] = useState(null)
     const hostSampleTypes = {
         "" : [
             { name: "Water", value: "WATER" }
@@ -57,11 +57,10 @@ function HostInfo({form}) {
     const host_type = form.watch("host_type")
 
     useEffect(() => {
-        setHost(host_type)
         form.setValue("host_species", undefined)
         form.setValue("sample_type", "")
 
-    }, [host_type])
+    }, [form, host_type])
 
 
 
@@ -131,30 +130,64 @@ function HostInfo({form}) {
 }
 
 function LocationInfo({form}) {
+
+	const sample_site = form.watch("loc_sampling_site")
+	useEffect(() => {
+        let site = caves.find(cave => cave.name === sample_site)
+		if (site) {
+			form.setValue("loc_city", site.municity)
+			form.setValue("loc_province", site.province)
+			form.setValue("loc_abbr", site.loc_abbr)
+			form.setValue("loc_site_abbr", site.loc_site_abbr)
+			form.setValue("loc_longitude", site.coordinates[1])
+			form.setValue("loc_latitude", site.coordinates[0])
+
+		}
+
+
+    }, [form, sample_site])
     return (
-        <section className="space-y-2">
-            <div className="font-extrabold text-3xl">Sampling Location</div>
-            <Input {...form.register('loc_location', { required: "Please fill out this field", maxLength: {value: 50, message: "Please input below 50 characters."}})} 
-                type="text" placeholder="Location"
-                error={form.formState.errors.loc_location} helperText={form.formState.errors.loc_location?.message}
+		<section className="space-y-2">
+			<div className="font-extrabold text-3xl">Sampling Site</div>
+            <Controller
+                control={form.control}
+                name="loc_sampling_site"
+                render={({field}) => {
+                    return (
+                        <Select onValueChange={field.onChange} {...field}>
+                            <SelectTrigger>
+                                <SelectValue placeholder="Select a sampling site" />
+                            </SelectTrigger>
+                            
+                            <SelectContent>
+                                <SelectGroup>
+                                    {caves.map((cave, key) => 
+										<SelectItem
+											key={key}
+											value={cave.name}
+										>{cave.name}</SelectItem>
+									)}
+                                </SelectGroup>
+                            </SelectContent>
+                        </Select>
+                    )
+                }}
             />
-            <Input {...form.register('loc_abbr', { required: "Please fill out this field", maxLength: {value: 25, message: "Please input below 25 characters."}})} 
-                type="text" placeholder="Location Abbreviation"
-                error={form.formState.errors.loc_abbr} helperText={form.formState.errors.loc_abbr?.message}
-            />
-            <Input {...form.register('loc_sampling_site', { required: "Please fill out this field", maxLength: {value: 50, message: "Please input below 50 characters."}})} 
-                type="text" placeholder="Sampling Site"
-                error={form.formState.errors.loc_sampling_site} helperText={form.formState.errors.loc_sampling_site?.message}
-            />
-            <Input {...form.register('loc_site_abbr', { required: "Please fill out this field", maxLength: {value: 25, message: "Please input below 25 characters."}})} 
-                type="text" placeholder="Sampling Site Abbreviation"
-                error={form.formState.errors.loc_site_abbr} helperText={form.formState.errors.loc_site_abbr?.message}
-            />
-            <Input {...form.register('loc_sampling_point', { required: "Please fill out this field"})} 
-                type="number" placeholder="Sampling Point"
-                error={form.formState.errors.loc_sampling_point} helperText={form.formState.errors.loc_sampling_point?.message}
-            />
-        </section>
+			<Input {...form.register('loc_sampling_point', { required: "Please fill out this field"})} 
+				type="number" placeholder="Sampling Point" min='0'
+				error={form.formState.errors.loc_sampling_point} helperText={form.formState.errors.loc_sampling_point?.message}
+			/>			
+			<Input {...form.register("loc_city")} 
+                type="text" placeholder="City/Municipality" disabled
+                error={form.formState.errors.loc_city} helperText={form.formState.errors.loc_city?.message} />
+			<Input {...form.register("loc_province")} 
+                type="text" placeholder="Province" disabled
+                error={form.formState.errors.loc_province} helperText={form.formState.errors.loc_province?.message} /> 
+			<Input {...form.register('loc_site_abbr')} type="hidden" />
+            <Input {...form.register('loc_abbr')} type="hidden" />
+            <Input {...form.register('loc_longitude')} type="hidden" />
+            <Input {...form.register('loc_latitude')} type="hidden" />
+		</section>
     )
 }
 
@@ -164,19 +197,11 @@ export default function SourceForm() {
             host_type: ""
         }
     })
-    const [page, setPage] = useState(1)
-    
+
     let navigate = useNavigate()
 
-    const previous = () => {
-        setPage(curPage => curPage - 1)
-    }
-    const next = () => {
-        form.trigger()
-        setPage(curPage => curPage + 1)
-    }
-
     const onSubmit = (data) => {
+
         axios.post('/source/add/', data)
         .then((res) => {
             alert("Source " + res.data.human_readable_id + " successfully created.")
@@ -190,33 +215,14 @@ export default function SourceForm() {
     return (
         <div>
             <form className="container mx-auto py-10 space-y-3" onSubmit={form.handleSubmit(onSubmit)}>
-                {/* { page === 1 && <BasicInfo form={form} /> }
-                { page === 2 && <HostInfo form={form} /> }
-                { page === 3 && <LocationInfo form={form} /> } */}
                 { <BasicInfo form={form} /> }
                 { <HostInfo form={form} /> }
                 { <LocationInfo form={form} /> }
                 <div className="space-x-3">
-                    {/* <Button 
-                        disabled={page <= 1} 
-                        type="button" 
-                        onClick={previous} 
-                        variant="outline"
-                    >Previous</Button>
-                    { page === 3 &&
-                        <Button type="submit" variant="outline">Add Source</Button>
-                    }
-                    { page != 3 &&
-                        <Button 
-                            disabled={page >= 3} 
-                            type="button" 
-                            onClick={next} 
-                            variant="outline"
-                        >Next</Button>
-                    } */}
                     <Button type="submit" variant="outline">Add Source</Button>
                 </div>
             </form>
+			{JSON.stringify(form.watch())}
         </div>
     )
 }

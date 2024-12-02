@@ -14,7 +14,7 @@ export default function SourcesMapLayer({sources}) {
   const createClusterCustomIcon = (cluster) => {
 
 		return new divIcon({
-			html: `<span class='cluster-icon font-extrabold text-black bg-white rounded-lg'>${cluster.getChildCount() + "asas"}</span>`,
+			html: `<span class='cluster-icon font-extrabold text-black bg-white rounded-lg'>${cluster.getChildCount()}</span>`,
 			className: 'cluster-custom-icon',
 			iconSize: point(33, 33, true)
 		})
