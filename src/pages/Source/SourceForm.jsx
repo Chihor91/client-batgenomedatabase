@@ -6,36 +6,74 @@ import { Controller, useForm } from "react-hook-form"
 import { Select, SelectTrigger, SelectContent, SelectValue, SelectGroup, SelectItem } from "@/components/ui/select"
 import { useNavigate } from "react-router-dom"
 import { caves } from "@/constants/caves"
+import { projects } from "@/constants/projects"
 
 function BasicInfo({form}) {
+	const project_name = form.watch("project_name")
+
+	useEffect(() => {
+        let project = projects.find(project => project.project_name === project_name)
+		if (project) {
+			form.setValue("project_abbr", project.project_abbr)
+			form.setValue("institution_name", project.institution_name)
+			form.setValue("institution", project.institution_abbr)
+			form.setValue("collection_name", project.collection_name)
+			form.setValue("collection", project.collection_abbr)
+		}
+
+    }, [form, project_name])
 
     return (
         <section className="space-y-2">
             <div className="font-extrabold text-3xl">Project and Collection</div>
-            <Input {...form.register("collection_name", { required: "Please fill out this field", maxLength: {value: 512, message: "Please input below 512 characters"}})} 
-                type="text" placeholder="Collection Name"
-                error={form.formState.errors.collection_name} helperText={form.formState.errors.collection_name?.message}
+			<Controller
+                control={form.control}
+                name="project_name"
+                rules={{
+                    required: "Please select a project"
+                }}
+                render={({field}) => {
+                    return (
+                        <Select onValueChange={field.onChange} {...field}>
+                            <SelectTrigger error={form.formState.errors.project_name} helperText={form.formState.errors.project_name?.message}>
+                                <SelectValue placeholder="Select a project" />
+                            </SelectTrigger>
+                            
+                            <SelectContent>
+                                <SelectGroup>
+									{projects.map((project, key) => 
+										<SelectItem 
+											key={key}
+											value={project.project_name}
+										>
+											{project.project_name}
+										</SelectItem>
+									)}
+                                </SelectGroup>
+                            </SelectContent>
+                        </Select>
+                    )
+                }}
             />
-            <Input {...form.register("collection", { required: "Please fill out this field", maxLength: {value: 25, message: "Please input below 25 characters."} })} 
-                type="text" placeholder="Collection Abbreviation" 
-                error={form.formState.errors.collection} helperText={form.formState.errors.collection?.message}
+            <Input {...form.register("collection_name")} disabled
+                type="text" placeholder="Collection Name" 
+			/>
+
+            <Input {...form.register("collection")} 
+                type="hidden" placeholder="Collection Abbreviation" 
             />
-            <Input {...form.register("institution_name", { required: "Please fill out this field", maxLength: {value: 512, message: "Please input below 512 characters"}})} 
-                type="text" placeholder="Institution Name"
-                error={form.formState.errors.institution_name} helperText={form.formState.errors.institution_name?.message}
+
+            <Input {...form.register("institution_name")} disabled
+                type="text" placeholder="Institution Name" 
             />
-            <Input {...form.register("institution", { required: "Please fill out this field", maxLength: {value: 25, message: "Please input below 25 characters."}})} 
-                type="text" placeholder="Institution Abbreviation" 
-                error={form.formState.errors.institution} helperText={form.formState.errors.institution?.message}
+
+            <Input {...form.register("institution")} 
+                type="hidden" placeholder="Institution Abbreviation" 
             />
-            <Input {...form.register("project_name", { required: "Please fill out this field", maxLength: {value: 512, message: "Please input below 512 characters."}})}
-                type="text" placeholder="Project Name" 
-                error={form.formState.errors.project_name} helperText={form.formState.errors.project_name?.message}
-            />
-            <Input {...form.register("project_abbr", { required: "Please fill out this field", maxLength: {value: 25, message: "Please input below 25 characters."}})}
-                type="text" placeholder="Project Abbreviation"
-                error={form.formState.errors.project_abbr} helperText={form.formState.errors.project_abbr?.message}
-            />
+
+            <Input {...form.register("project_abbr")}
+                type="hidden" placeholder="Project Abbreviation"
+			/>
         </section>
     )
 }
@@ -130,8 +168,8 @@ function HostInfo({form}) {
 }
 
 function LocationInfo({form}) {
-
 	const sample_site = form.watch("loc_sampling_site")
+
 	useEffect(() => {
         let site = caves.find(cave => cave.name === sample_site)
 		if (site) {
@@ -146,6 +184,7 @@ function LocationInfo({form}) {
 
 
     }, [form, sample_site])
+
     return (
 		<section className="space-y-2">
 			<div className="font-extrabold text-3xl">Sampling Site</div>
@@ -222,7 +261,7 @@ export default function SourceForm() {
                     <Button type="submit" variant="outline">Add Source</Button>
                 </div>
             </form>
-			{JSON.stringify(form.watch())}
+			{/* {JSON.stringify(form.watch())} */}
         </div>
     )
 }
