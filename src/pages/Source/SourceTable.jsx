@@ -23,7 +23,7 @@ import { Input } from '@/components/ui/input'
 
 function SourceTable({ data, columns }) {
 	let navigate = useNavigate()
-	let {user, logoutUser} = useContext(AuthContext)
+	let {user} = useContext(AuthContext)
 	const [sorting, setSorting] = useState([])
 
 	const table = useReactTable({
@@ -39,16 +39,12 @@ function SourceTable({ data, columns }) {
 			sorting,
 		},
 	})
-
 	const rowClassName =
-	'py-2 my-2 bg-white/10 hover:text-background  flex flex-row items-center justify-between relative after:absolute after:bg-gradient-to-r from-foreground to-background shadow-md rounded-sm after:-z-20 after:inset-0 cursor-pointer overflow-hidden after:-translate-y-full after:hover:translate-y-0'
-	const rowHeaderClassName =
-		'justify-center self-center place-content-center items-center  grid grid-cols-3 relative'
+	'bg-white/10 hover:text-background hover:bg-gradient-to-r from-foreground to-background shadow-md rounded-sm after:-z-20 cursor-pointer'
 
 	const handleEditClick = (e) => {
 		e.stopPropagation()
 		navigate('/')
-		console.log('Edit button clicked')
 	}
 
 	const handleDeleteClick = (e, id) => {
@@ -57,16 +53,15 @@ function SourceTable({ data, columns }) {
 		.then((res) => {
 			location.reload()
 		})
-		console.log('Delete button clicked')
 	}
 
 	return (
 		<div>
-			<div className='border'>
+			<div className='border overflow-auto rounded-lg'>
 				<Table>
 					<TableHeader>
 						{table.getHeaderGroups().map((headerGroup) => (
-							<TableRow className={rowHeaderClassName} key={headerGroup.id}>
+							<TableRow className="bg-background" key={headerGroup.id}>
 								{headerGroup.headers.map((header) => {
 									return (
 										<TableHead key={header.id}>
@@ -96,29 +91,23 @@ function SourceTable({ data, columns }) {
 									}}
 									data-state={row.getIsSelected() && 'selected'}>
 									{row.getVisibleCells().map((cell) => (
-										<TableCell className='text-left' key={cell.id}>
-											{cell.column.id === 'actions' ? (
-												<>
-													{(user?.is_superuser | data[row.id].author === user?.username) ?
-														<div className='gap-4 flex flex-row  justify-end'>
-															{/* <Button
-																variant='custom'
-																// EDIT LOGIC Only Visible Owner/Admin
-																onClick={handleEditClick}>
-																Edit
-															</Button> */}
-															<Button
-																variant='custom'
-																// DELETE LOGIC
-																onClick={(e) => handleDeleteClick(e, data[row.id].id)}>
-																Delete
-															</Button>
-														</div> :
-														<></>
-													}
-												</>
-											) : (
-												<div className={`${cell.column.id === 'host_species' && "italic"}`}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</div>
+										<TableCell className='p-3' key={cell.id}>
+											{((cell.column.id === 'actions' && 
+												(user?.is_superuser | data[row.id].author === user?.username)) ? 
+												<div className=''>
+													<Button
+														variant='custom'
+														onClick={(e) => handleDeleteClick(e, data[row.id].id)}>
+														Delete
+													</Button>
+												</div>
+												:
+												<div>
+													{flexRender(
+														cell.column.columnDef.cell,
+														cell.getContext()
+													)}
+												</div>
 											)}
 										</TableCell>
 									))}

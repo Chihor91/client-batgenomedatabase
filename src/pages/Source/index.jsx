@@ -5,7 +5,6 @@ import { columns } from './columns'
 import { Button } from '@/components/ui/button'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import SourcePage from '@/pages/SourcePage'
-import { SectionWrapper } from '@/hoc'
 
 function Source() {
 	const [searchInput] = useSearchParams()
@@ -19,7 +18,7 @@ function Source() {
 	}, [])
 
 	return (
-		<>
+		<div className='py-20'>
 			{searchInput.get('id') === null ? (
 				<div className='container mx-auto space-y-3'>
 					<Button variant='outline' onClick={() => navigate('/source/add')}>
@@ -30,8 +29,8 @@ function Source() {
 			) : (
 				<SourcePage id={searchInput.get('id')} />
 			)}
-		</>
+		</div>
 	)
 }
 
-export default SectionWrapper(Source, 'source')
+export default Source

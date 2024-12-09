@@ -19,7 +19,7 @@ function Isolate() {
 	}, [])
 
 	return (
-		<>
+		<div className='py-20'>
 			{searchInput.get('id') === null ? (
 				<div className='container mx-auto space-y-3 space-x-2'>
 					<Button variant='outline' onClick={() => navigate('/isolate/add')}>
@@ -33,8 +33,8 @@ function Isolate() {
 			) : (
 				<StrainPage id={searchInput.get('id')} />
 			)}
-		</>
+		</div>
 	)
 }
-const component = SectionWrapper(Isolate, 'isolate')
-export default component
+
+export default Isolate

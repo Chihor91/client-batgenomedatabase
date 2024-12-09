@@ -15,10 +15,25 @@ export const columns = [
                 </Button>
             )
         },
+		meta: {
+			name: 'ID'
+		},
+		cell: ({ row }) => <div className="text-left">{row.getValue("human_readable_id")}</div>
     },
     {
         accessorKey: 'host_species',
-        header: props => (<div className="py-2">Species</div>)
+        header: ({ column }) => {
+            return(
+                <Button
+                variant="ghost"
+                onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+                >
+                Host Species
+                <ArrowUpDown className="ml-2 h-4 w-4" />
+                </Button>
+            )
+		},
+		cell: ({ row }) => <div className="text-left">{row.getValue("host_species")}</div>
     },
     {
         accessorKey: 'actions',
