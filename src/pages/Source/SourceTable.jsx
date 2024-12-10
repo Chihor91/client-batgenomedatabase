@@ -57,7 +57,7 @@ function SourceTable({ data, columns }) {
 
 	return (
 		<div>
-			<div className='border overflow-auto rounded-lg'>
+			<div className='border overflow-auto rounded-lg bg-background'>
 				<Table>
 					<TableHeader>
 						{table.getHeaderGroups().map((headerGroup) => (

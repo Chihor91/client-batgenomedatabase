@@ -1,22 +1,23 @@
-import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import StrainTable from '@/pages/Isolate/IsolateTable'
 import { columns } from '@/pages/Isolate/columns'
-import { useTheme } from '@/components/ui/theme-provider'
+import { category_1 } from '@/constants/miso'
+import { cn } from '@/lib/utils'
+import { Label } from '@/components/ui/label'
+import { Badge } from '@/components/ui/badge'
 
-const collapsibleStyle = 'border bg-white/10 shadow-md  text-start'
-const colTriggerStyle = 'flex  w-full text-start text-2xl font-extrabold p-2'
-const colContentStyle = ''
+const collapsibleStyle = 'border rounded-lg bg-white/10 shadow-md  text-start p-2'
+const colTriggerStyle = 'w-full text-start text-xl font-bold p-2'
 const listStyle = 'space-y-1 p-2'
-const label = 'font-bold mr-1'
+const label = 'font-semibold mr-1'
 
 function BasicInfo({ data }) {
 	return (
 		<div className={collapsibleStyle}>
-			<div className={colTriggerStyle}>
+			<Label className={colTriggerStyle}>
 				Collection Information
-			</div>
+			</Label>
 			<ul className={listStyle}>
 				<li className='flex'>
 					<div className={label}>Collection:</div>
@@ -39,9 +40,9 @@ function HostInfo({ data }) {
 	
 	return (
 		<div className={collapsibleStyle}>
-			<div className={colTriggerStyle}>
+			<Label className={colTriggerStyle}>
 					Host Information
-			</div>
+			</Label>
 			<ul className={listStyle}>
 				<li className='flex'>
 					<div className={label}>Host Type:</div>
@@ -64,9 +65,9 @@ function SamplingInfo({ data }) {
 
 	return (
 		<div className={collapsibleStyle}>
-			<div className={colTriggerStyle}>
+			<Label className={colTriggerStyle}>
 				Sampling Information
-			</div>
+			</Label>
 
 			<ul className={listStyle}>
 				<li className='flex'>
@@ -92,23 +93,66 @@ function SamplingInfo({ data }) {
 	)
 }
 
-function Strains({ data }) {
-	const [strains, setStrains] = useState([])
-	const theme = useTheme()
-	useEffect(() => {
-		axios.get('/source/isolate/source/' + data.id + '/').then((res) => {
-			setStrains(res.data)
-		})
-	}, [])
+function MISOCategories({ data }) {
+	const miso = data.miso_categories
+
+	const displayMISO = (data) => {
+		const color = category_1.find( item => {return item.name === data[0] })?.color_code
+
+		return (
+			<div className="grid grid-flow-col min-w-max gap-1 m-1">
+				<Badge
+				className={cn(
+					data[0] ? color : null, 'hover:bg-disable justify-center text-foreground font-inter font-normal'
+				)}
+				>{data[0]}</Badge>
+				<Badge
+				className={cn(
+					data[0] ? color : null, 'hover:bg-disable justify-center text-foreground font-inter font-normal'
+				)}
+				>{data[1]}</Badge>
+				<Badge
+				className={cn(
+					data[0] ? color : null, 'hover:bg-disable justify-center text-foreground font-inter font-normal'
+				)}
+				>{data[2]}</Badge>
+			</div>
+		)
+	}
 
 	return (
-		<>
-			<div className={colTriggerStyle}>
-				Isolates
+		<div className={collapsibleStyle}>
+			<Label className={colTriggerStyle}>
+				MISO Categories
+			</Label>
+			<div>
+				{
+					JSON.stringify(miso) !== '{}' && miso?.length != 0 ? (
+						miso?.length == 1 ? 
+							<>{displayMISO(miso[0])}</>
+						: 
+							<>{miso.map( item => displayMISO(item))}</>
+					) : null
+				}
 			</div>
-			<StrainTable data={strains} columns={columns} />
-		</>
+		</div>
 	)
 }
 
-export { BasicInfo, HostInfo, SamplingInfo, Strains }
+function Isolates({ data }) {
+	const [isolates, setIsolates] = useState([])
+	useEffect(() => {
+		axios.get('/source/isolate/source/' + data.id + '/').then((res) => {
+			setIsolates(res.data)
+		})
+	}, [data.id])
+
+	return (
+		<div className={colTriggerStyle}>
+			Isolates
+			<StrainTable data={isolates} columns={columns} />
+		</div>
+	)
+}
+
+export { BasicInfo, HostInfo, SamplingInfo, MISOCategories, Isolates }

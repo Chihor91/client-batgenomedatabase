@@ -192,6 +192,7 @@ function MISOCategories({form}) {
 
 	useEffect(() => {	
 		form.setValue("miso_categories", MISOCategories)
+		form.setValue("miso_categories_string", MISOCategories.toString())
 	}, [form, MISOCategories])
 
 	function handleMISOChange (MISOData) {

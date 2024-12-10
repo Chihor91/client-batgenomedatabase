@@ -18,9 +18,9 @@ function Source() {
 	}, [])
 
 	return (
-		<div className='py-20'>
+		<div className='p-20'>
 			{searchInput.get('id') === null ? (
-				<div className='container mx-auto space-y-3'>
+				<div className='space-y-3'>
 					<Button variant='outline' onClick={() => navigate('/source/add')}>
 						Add New Source
 					</Button>

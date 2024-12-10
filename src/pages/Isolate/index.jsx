@@ -19,9 +19,9 @@ function Isolate() {
 	}, [])
 
 	return (
-		<div className='py-20'>
+		<div className='p-20'>
 			{searchInput.get('id') === null ? (
-				<div className='container mx-auto space-y-3 space-x-2'>
+				<div className='space-y-3 space-x-2'>
 					<Button variant='outline' onClick={() => navigate('/isolate/add')}>
 						Add New Isolate
 					</Button>
