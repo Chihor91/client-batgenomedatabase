@@ -148,8 +148,8 @@ function Isolates({ data }) {
 	}, [data.id])
 
 	return (
-		<div className={colTriggerStyle}>
-			Isolates
+		<div>
+			<Label className={colTriggerStyle}>Isolates</Label>
 			<StrainTable data={isolates} columns={columns} />
 		</div>
 	)
