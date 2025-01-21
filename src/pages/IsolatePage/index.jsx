@@ -1,6 +1,10 @@
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { CultureGrowth, HostInfo, Morphology, PhysiologyMetabolism, Safety, Taxonomy } from './Sections'
+import AuthContext from '@/context/AuthContext'
+import { Button } from '@/components/ui/button'
+import { enqueueSnackbar } from 'notistack'
+
 function jsonEmpty(data) {
 	var empty = true
 	try {
@@ -16,46 +20,66 @@ function jsonEmpty(data) {
 	return empty
 }
 export default function StrainPage({ id }) {
+	const { user } = useContext(AuthContext)
 	const [data, setData] = useState(null)
 	const [isModalOpen, setIsModalOpen] = useState(false)
+	const [visibility, setVisibility] = useState(null)
 
 	useEffect(() => {
 		axios.get('/source/isolate/view/id/' + id + '/').then((res) => {
 			setData(res.data)
+			setVisibility(res.data.visibility)
 		})
-	}, [])
+	}, [id])
 
-	const openModal = () => {
-		setIsModalOpen(true)
+	const updateVisibility = (id, visibility) => {
+		let data = {visibility: visibility}
+		axios.put('/source/isolate/visibility/' + id + '/', data).then((res) => {
+			enqueueSnackbar(res.data.message, {
+				variant: 'success',
+				autoHideDuration: 2000,
+				onClose: () => location.reload()
+			})
+		}).catch((err) => {
+			enqueueSnackbar(err.response.data.error, {
+				variant: 'error',
+				autoHideDuration: 2000,
+				onClose: () => location.reload()
+			})
+		})
 	}
 
-	const closeModal = () => {
-		setIsModalOpen(false)
-	}
+	// const openModal = () => {
+	// 	setIsModalOpen(true)
+	// }
 
-	const handleOverlayClick = (e) => {
-		if (e.target.classList.contains('modal-overlay')) {
-			closeModal()
-		}
-	}
+	// const closeModal = () => {
+	// 	setIsModalOpen(false)
+	// }
 
-	useEffect(() => {
-		const handleKeyDown = (event) => {
-			if (event.key === 'Escape') {
-				closeModal()
-			}
-		}
+	// const handleOverlayClick = (e) => {
+	// 	if (e.target.classList.contains('modal-overlay')) {
+	// 		closeModal()
+	// 	}
+	// }
 
-		window.addEventListener('keydown', handleKeyDown)
+	// useEffect(() => {
+	// 	const handleKeyDown = (event) => {
+	// 		if (event.key === 'Escape') {
+	// 			closeModal()
+	// 		}
+	// 	}
 
-		return () => {
-			window.removeEventListener('keydown', handleKeyDown)
-		}
-	}, [])
+	// 	window.addEventListener('keydown', handleKeyDown)
 
-	//Image from backend
-	const sampleImageSrc =
-		'https://cdn.dsmz.de/images/strain/11843/EM_DSM_2949_1.jpg'
+	// 	return () => {
+	// 		window.removeEventListener('keydown', handleKeyDown)
+	// 	}
+	// }, [])
+
+	// //Image from backend
+	// const sampleImageSrc =
+	// 	'https://cdn.dsmz.de/images/strain/11843/EM_DSM_2949_1.jpg'
 
 	return (
 		<>
@@ -77,6 +101,19 @@ export default function StrainPage({ id }) {
 							</span>
 						</div>
 					</div>
+
+					{ data.author_id == user?.id || user?.is_superuser && //TODO:better admin check
+						<div className='flex space-x-2'>
+							<div className='font-bold'>Visibility:</div>
+							<select className='bg-background' id="visibility" value={visibility} onChange={(e) => setVisibility(e.target.value)}>
+								<option value='Public'>Public</option>
+								<option value='Researchers Only'>Researchers Only</option>
+								<option value='Private'>Private</option>
+							</select>
+							<Button className='h-6' disabled={data.visibility === visibility} onClick={() => {updateVisibility(data.id, visibility)}}>Save</Button>
+						</div>
+						
+					}
 
 					<div className='flex gap-10 w-full py-10 flex-wrap sm:flex-nowrap'>
 						{/* IMAGE*/}
@@ -133,7 +170,7 @@ export default function StrainPage({ id }) {
 					</div>
 
 					{/* MODAL */}
-					{isModalOpen && (
+					{/* {isModalOpen && (
 						<div
 							className='fixed top-0 left-0 w-full h-screen bg-black z-50 bg-opacity-80 flex items-center justify-center modal-overlay'
 							onClick={handleOverlayClick}>
@@ -146,7 +183,7 @@ export default function StrainPage({ id }) {
 								/>
 							</div>
 						</div>
-					)}
+					)} */}
 				</div>
 			)}
 		</>

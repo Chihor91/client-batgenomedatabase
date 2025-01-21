@@ -38,9 +38,9 @@ import BackgroundElement1 from './components/Custom/Background1'
 import BackgroundElement2 from './components/Custom/Background2'
 
 // Server API address
-axios.defaults.baseURL = 'http://159.89.192.168:8000/'
+// axios.defaults.baseURL = 'http://159.89.192.168:8000/'
 // axios.defaults.baseURL = 'http://172.16.7.5:8000'
-// axios.defaults.baseURL = 'http://localhost:8000'
+axios.defaults.baseURL = 'https://mapi.nicercaves.site/'
 // axios.defaults.baseURL = "http://202.92.144.124:8000/";
 
 function App() {
@@ -89,14 +89,14 @@ const Root = () => {
 										? 'left-[200px] w-[calc(100%-200px)]'
 										: 'left-[100px] w-[calc(100%-100px)]'
 								}`}>
-								<body
+								<div
 									className={`w-[100%] overflow-scroll transition-all  bg-background/20  h-[100vh] ${
 										showSidebar ? 'w-[calc(100vw-200px)]' : 'w-[calc(100vw-100px)]'
 									}`}
 									onClick={() => setShowSidebar(false)}
 									style={{ position: 'relative', zIndex: 0 }}>
 									<Outlet />
-								</body>
+								</div>
 							</div>
 
 							<BackgroundElement1 />
