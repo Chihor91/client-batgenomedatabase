@@ -28,7 +28,7 @@ export default function MunicitiesMapLayer({sources, handleSetFilter, setSelecte
 					}}
 					positions={coordinates}
 					eventHandlers={{
-						mouseover: (e) => {
+						click: (e) => {
 							const layer = e.target;
 							layer.setStyle({
 								dashArray: '',
@@ -38,21 +38,11 @@ export default function MunicitiesMapLayer({sources, handleSetFilter, setSelecte
 							})
 							setSelectedLocation(municity.properties.ADM3_EN)
 							setSelectedLocSourceCount(sourceCount)
-						},
-						mouseout: (e) => {
-							const layer = e.target;
-							layer.setStyle({
-								weight: 2,
-								dashArray: '3',
-								color: 'green',
-							});
-						},
-						click: (e) => {
 							handleSetFilter({
 								id: 'municity',
 								value: municity.properties.ADM3_EN.toLowerCase()
 							})
-						}
+						},
 					}}
 					key={municity.properties.ADM2_EN + municity.properties.ADM3_EN}
 				/>)

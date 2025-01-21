@@ -29,7 +29,7 @@ export default function SourceMap() {
 							<span className='text-base text-foreground ml-2'> {selectedLocSourceCount} sample sources</span>
 						</>
 					:
-					<span className='text-base font-semibold text-foreground'>Hover over an area</span>
+					<span className='text-base font-semibold text-foreground'>Click an area</span>
 				}
 			</div>
 			<MapContainer center={[14.1651, 121.2402]} zoom={8} zoomControl className='rounded-sm'>
@@ -55,19 +55,20 @@ export default function SourceMap() {
 							/>
 						</LayerGroup>
 					</LayersControl.Overlay>
+					
 					<LayersControl.Overlay checked name='Muncities Heat Map'>
 						<LayerGroup>
 							<MunicitiesMapLayer sources={data} setSelectedLocation={setSelectedLocation} setSelectedLocSourceCount={setSelectedLocSourceCount} />
 						</LayerGroup>	
 					</LayersControl.Overlay>
-					<LayersControl.Overlay checked name='Sources'>
-						<LayerGroup>
-							<SourcesMapLayer sources={data} />
-						</LayerGroup>
-					</LayersControl.Overlay>
 					<LayersControl.Overlay checked name='Cave Positions'>
 						<LayerGroup>
 							<CavePositionLayer />
+						</LayerGroup>
+					</LayersControl.Overlay>
+					<LayersControl.Overlay checked name='Sources'>
+						<LayerGroup>
+							<SourcesMapLayer sources={data} />
 						</LayerGroup>
 					</LayersControl.Overlay>
 				</LayersControl>

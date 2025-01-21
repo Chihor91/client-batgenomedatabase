@@ -27,7 +27,7 @@ export default function ProvinceMapLayer({sources, handleSetFilter, setSelectedL
 					}}
 					positions={coordinates}
 					eventHandlers={{
-						mouseover: (e) => {
+						click: (e) => {
 							const layer = e.target;
 							layer.setStyle({
 								dashArray: '',
@@ -37,16 +37,6 @@ export default function ProvinceMapLayer({sources, handleSetFilter, setSelectedL
 							})
 							setSelectedLocation(province.properties.ADM2_EN)
 							setSelectedLocSourceCount(sourceCount)
-						},
-						mouseout: (e) => {
-							const layer = e.target;
-							layer.setStyle({
-								weight: 2,
-								dashArray: '3',
-								color: 'white',
-							});
-						},
-						click: (e) => {
 							handleSetFilter({
 								id: 'province',
 								value: province.properties.ADM2_EN.toLowerCase()

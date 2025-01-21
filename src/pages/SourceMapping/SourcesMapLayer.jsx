@@ -35,11 +35,13 @@ export default function SourcesMapLayer({sources}) {
 					<CircleMarker
 						center={[(parseFloat(source?.loc_latitude)) + (Math.random() * (0.00009 - 0.000001) + 0.000001), (parseFloat(source?.loc_longitude)) + (Math.random() * (0.00009 - 0.000001) + 0.000001)]}
 						radius={1.5}
-						pathOptions={{ color: 'yellow', fillColor: 'yellow' }}
+						pathOptions={{ color: 'black', fillColor: 'yellow', fillOpacity: 1, stroke: true, radius: 6 }}
 						key={source.id}
 					>
-						<Popup className="font-inter italic">
+						<Popup className="font-inter font-semibold">
+							<a href={"/source?id=" + source.id}>
 							{source.human_readable_id}
+							</a>
 						</Popup>
 						{/* {
 							user?.user_level === 'ADMIN' ?
