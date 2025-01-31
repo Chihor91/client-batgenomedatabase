@@ -15,7 +15,7 @@ const PrivateRoutes = () =>  {
         .catch((err) => {
             logoutUser()
         })
-    }, [])
+    }, [logoutUser])
 
     return(
         loading ? 

@@ -323,7 +323,7 @@ export default function SourceForm() {
     }
 
     return (
-        <div className="container border rounded-lg py-10 my-10">
+        <div className="container border rounded-lg py-10 my-10 bg-secondary_background">
             <form className="text-left" onSubmit={form.handleSubmit(onSubmit)}>
                 <BasicInfo form={form} />
 				<Separator className="my-4" />

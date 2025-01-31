@@ -358,12 +358,12 @@ export default function IsolateForm() {
         <div>
             <form className="container mx-auto py-10 space-y-5" onSubmit={form.handleSubmit(onSubmit)}>
                 
-				<div className='space-y-2 border p-3 rounded-md'>
+				<div className='space-y-2 border p-3 rounded-md bg-secondary_background'>
 					<div className='font-extrabold text-3xl text-left'>Source Information</div>
 					<Basic form={form} navigate={navigate} />
 				</div>
 
-				<div className='space-y-2 border p-3 rounded-md'>
+				<div className='space-y-2 border p-3 rounded-md bg-secondary_background'>
 					<div className='flex justify-between'>
 						<div className="font-extrabold text-3xl text-left">
 							Taxonomic Classification
@@ -373,7 +373,7 @@ export default function IsolateForm() {
 					{taxonomy && <Taxonomy form={form} />}
 				</div>
 
-                <div className='space-y-2 border p-3 rounded-md'>
+                <div className='space-y-2 border p-3 rounded-md bg-secondary_background'>
 					<div className='flex justify-between'>
 						<div className="font-extrabold text-3xl text-left">
 							Morphology
@@ -383,7 +383,7 @@ export default function IsolateForm() {
 					{ morphology && <Morphology form={form} /> }
 				</div>
 
-				<div className='space-y-2 border p-3 rounded-md'>
+				<div className='space-y-2 border p-3 rounded-md bg-secondary_background'>
 					<div className='flex justify-between'>
 						<div className="font-extrabold text-3xl text-left">
 							Culture and Growth Conditions
@@ -394,7 +394,7 @@ export default function IsolateForm() {
 					{ culture && <CultureGrowth form={form} /> }
 				</div>
 
-				<div className='space-y-2 border p-3 rounded-md'>
+				<div className='space-y-2 border p-3 rounded-md bg-secondary_background'>
 					<div className='flex justify-between'>
 						<div className="font-extrabold text-3xl text-left">
 							Physiology and Metabolism
@@ -405,7 +405,7 @@ export default function IsolateForm() {
 					{ physiology && <Physiology form={form} /> }
 				</div>
 
-				<div className='space-y-2 border p-3 rounded-md'>
+				<div className='space-y-2 border p-3 rounded-md bg-secondary_background'>
 					<div className='flex justify-between'>
 						<div className="font-extrabold text-3xl text-left">
 							Safety Information
@@ -416,7 +416,7 @@ export default function IsolateForm() {
 					{ safety && <Safety form={form} /> }
 				</div>
 
-				<div className='space-y-2 border p-3 rounded-md'>
+				<div className='space-y-2 border p-3 rounded-md bg-secondary_background'>
 					<div className='flex justify-between'>
 						<div className="font-extrabold text-3xl text-left">
 							Visibility

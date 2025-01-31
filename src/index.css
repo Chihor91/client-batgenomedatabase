@@ -6,20 +6,33 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Poppins', sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 	scroll-behavior: smooth;
 	color-scheme: dark;
+}
+/* 
+#root {
+	max-width: 100vw;
+} */
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+	  monospace;
 }
 
 .leaflet-container {
 	height: 80vh;
   }
+
   
 
 @layer base {
 	:root {
 		/* #FFF*/
-		--background: 0, 0%, 100%;
+		--background: 0, 0%, 90%;
 		/* #007E10*/
 		--foreground: 128, 100%, 25%;
 
@@ -37,6 +50,8 @@
 		--accent: 127, 100%, 28%;
 		/* A */
 		--accent-foreground: 0, 0%, 50%;
+
+		--secondary-background: 0, 0%, 100%;
 
 		/* #15666f */
 		--card: 120, 100%, 91%;
@@ -80,6 +95,8 @@
 
 		--secondary-foreground: 149, 72%, 82%;
 
+		--secondary-background: 192, 48%, 5%;
+
 		--accent: 152, 77%, 56%;
 
 		--accent-foreground: 146, 87%, 41%;
@@ -118,13 +135,13 @@
 }
 
 .bg-light-theme {
-	background-color: #c0e5f2;
+	background-color: #ffffff;
 }
 
 .bg-dark-theme {
 	background-color: #0f252f;
 }
-
+/* 
 ::-webkit-scrollbar {
 	width: 6px !important;
 	height: 6px !important;
@@ -146,13 +163,12 @@
 
 .visible-scrollbar::-webkit-scrollbar-thumb {
 	background: #08535e;
-	/* Scrollbar thumb color */
 }
 
 .visible-scrollbar::-webkit-scrollbar-thumb:hover {
 	background: #242728;
 	cursor: grab !important;
-}
+} */
 
 .svg-container:hover #your-svg-path {
 	fill: #d1e4e5;

@@ -8,6 +8,10 @@ module.exports = {
 		'./src/**/*.{js,jsx}',
 	],
 	theme: {
+		fontFamily: {
+			'title': ["Philosopher"],
+			'title-desc': ["News Cycle"],
+		},
 		fontSize: {
 			sm: '1rem',
 			base: '1.25rem',
@@ -17,7 +21,7 @@ module.exports = {
 			'4xl': '3.052rem',
 			'5xl': '3.642rem',
 			'6xl': '4.202rem'
-		  },
+		},
 		container: {
 			center: true,
 			padding: '2rem',
@@ -31,6 +35,7 @@ module.exports = {
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
+				secondary_background: 'hsl(var(--secondary-background))', 
 				foreground: 'hsl(var(--foreground))',
 				animation: {
 					'spin-slow': 'spin 10s linear infinite',
@@ -83,6 +88,9 @@ module.exports = {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 			},
+			backgroundImage: {
+				'home': "url('/images/homebackground.png')"
+			}
 		},
 	},
 	plugins: [require('tailwindcss-animate')],

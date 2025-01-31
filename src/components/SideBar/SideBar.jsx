@@ -17,16 +17,11 @@ function SideBar({ showSidebar, setShowSidebar }) {
 	const navigate = useNavigate()
 
 	const [activeButton, setActiveButton] = useState(null)
-	const [admin, setAdmin] = useState(false)
 
 	useEffect(() => {
-		axios.get('/user/isadmin/')
-		.then((res) => setAdmin(true))
-		.catch((err) => setAdmin(false))
-
 		user && axios.get('/user/isloggedin/')
-		.catch((res) => logoutUser())
-	}, [user])
+		.catch((err) => logoutUser())
+	}, [user, logoutUser])
 
 	const handleMouseEnter = () => {
 		setShowSidebar(true)
@@ -38,32 +33,35 @@ function SideBar({ showSidebar, setShowSidebar }) {
 
 	const handleButtonClick = (buttonName) => {
 		setActiveButton(buttonName)
+		buttonName === 'Dashboard' ? 
+		navigate("/") :
 		navigate(`/${buttonName.toLowerCase()}`)
 	}
 
-	const logoWidth = showSidebar ? '70px' : '60px'
+	const logoWidth = showSidebar ? '80px' : '60px'
+	const logoHeight = showSidebar ? '80px' : '60px'
+	const logoFontSize = showSidebar ? 'text-xl mt-[-5px]' : 'text-lg'
 
 	return (
 		<div
 			className={`${
-				theme.theme === 'light'
-					? 'bg-gradient-to-b from-[#C6FFC7]/80 via-[#D2FFD2]/20 to-[#94FF97]/20'
-					: 'bg-[#072931]'
+				theme.theme === 'light' ? 'bg-[#E9FDE0]' : 'bg-background' 
 			} top-0 left-0 h-screen overflow-hidden  transition-all fixed z-40 ${
 				showSidebar ? 'w-[200px]' : 'w-[100px]'
 			} `}
-			style={{ boxShadow: '0 0 20px rgba(0, 0, 0, 0.2)' }}
+			style={{ boxShadow: '0 0 20px rgba(0, 0, 0, 0.5)' }}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}>
-			<div className={`flex flex-col   h-[120px] p-[24px] justify-center    items-center `}>
+			<div className={`flex flex-col   h-[120px] p-[24px] justify-center items-center `}>
 
 				<img
+				height={logoHeight}
 					width={logoWidth}
 					src={theme.theme === 'light' ? Images.ic_gradient_caves : Images.ic_DM_cave}
 					alt='caves-logo'
 				/>
 				<h1
-					className={`font-bold text-lg  
+					className={`font-[1000] ${logoFontSize} font-title 
 					}`}>
 					CAVES
 				</h1>
@@ -71,22 +69,22 @@ function SideBar({ showSidebar, setShowSidebar }) {
 			{/* FOR AUTHENTICATED USERS */}
 			<div className='h-[90%] flex flex-col justify-between'>
 				{user ? (
-					<ul className='flex flex-col justify-between py-12  overflow-x-hidden overflow-y-scroll'>
+					<ul className='flex flex-col justify-between py-12'>
 						<div className='space-y-4 '>
 							<CustomButton
 								imgSrc={theme.theme === 'light' ? Images.ic_dashboard : Images.ic_DM_dashboard}
-								className={`w-[80%]  ${activeButton === '' ? 'bg-background border' : 'bg-transparent'}`}
+								className={`w-[80%] ${activeButton === 'Dashboard' ? 'bg-secondary_background border' : 'bg-transparent'}`}
 								variant='outline'
 								width={30}
 								showSidebar={showSidebar}
-								onClick={() => handleButtonClick('')}>
+								onClick={() => handleButtonClick('Dashboard')}>
 								Dashboard
 							</CustomButton>
 
-							{admin && (
+							{user.is_superuser && (
 								<CustomButton
 									className={`w-[80%]   ${
-										activeButton === 'Admin' ? 'bg-background border' : 'bg-transparent'
+										activeButton === 'Admin' ? 'bg-secondary_background border' : 'bg-transparent'
 									} `}
 									imgSrc={theme.theme === 'light' ? Images.ic_project : Images.ic_DM_project}
 									variant='outline'
@@ -100,7 +98,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 							<CustomButton
 								imgSrc={theme.theme === 'light' ? Images.ic_source : Images.ic_DM_source}
 								className={`w-[80%]   ${
-									activeButton === 'Source' ? 'bg-background border' : 'bg-transparent'
+									activeButton === 'Source' ? 'bg-secondary_background border' : 'bg-transparent'
 								}`}
 								variant='outline'
 								width={30}
@@ -111,7 +109,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 							<CustomButton
 								imgSrc={theme.theme === 'light' ? Images.ic_isolate : Images.ic_DM_isolate}
 								className={`w-[80%]  ${
-									activeButton === 'Isolate' ? 'bg-background border' : 'bg-transparent'
+									activeButton === 'Isolate' ? 'bg-secondary_background border' : 'bg-transparent'
 								} `}
 								variant='outline'
 								width={30}
@@ -134,19 +132,17 @@ function SideBar({ showSidebar, setShowSidebar }) {
 					<section className='flex flex-col gap-6 pt-6 '>
 						<CustomButton
 							imgSrc={theme.theme === 'light' ? Images.ic_dashboard : Images.ic_DM_dashboard}
-							className={`w-[80%]  bg-transparent`}
+							className={`w-[80%] ${activeButton === 'Dashboard' ? 'bg-secondary_background border' : 'bg-transparent'}`}
 							variant='outline'
 							width={30}
 							showSidebar={showSidebar}
-							onClick={() => {
-								navigate('/')
-							}}>
+							onClick={() => handleButtonClick('Dashboard')}>
 							Dashboard
 						</CustomButton>
 						<CustomButton
 							imgSrc={theme.theme === 'light' ? Images.ic_source : Images.ic_DM_source}
 							className={`w-[80%]   ${
-								activeButton === 'Source' ? 'bg-background border' : 'bg-transparent'
+								activeButton === 'Source' ? 'bg-secondary_background border' : 'bg-transparent'
 							}`}
 							variant='outline'
 							width={30}
@@ -157,7 +153,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
 						<CustomButton
 							imgSrc={theme.theme === 'light' ? Images.ic_isolate : Images.ic_DM_isolate}
 							className={`w-[80%]  ${
-								activeButton === 'Isolate' ? 'bg-background border' : 'bg-transparent'
+								activeButton === 'Isolate' ? 'bg-secondary_background border' : 'bg-transparent'
 							} `}
 							variant='outline'
 							width={30}

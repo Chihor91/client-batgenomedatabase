@@ -11,7 +11,7 @@ export const columns = [
                 onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
                 className="font-bold"
                 >
-                ID
+                <span>ID</span>
                 <ArrowUpDown className="ml-2 h-4 w-4" />
                 </Button>
             )
@@ -30,7 +30,7 @@ export const columns = [
 				onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
 				className="font-bold"
 				>
-					Accession Number
+					<span>Accession Number</span>
 					<ArrowUpDown className="ml-2 h-4 w-4" />
 				</Button>
 			)

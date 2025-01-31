@@ -62,7 +62,7 @@ function AddAccount(open, setOpen) {
 	return (
 		<Dialog open={open} onOpenChange={setOpen}>
 			<DialogTrigger asChild>
-				<Button variant="outline" onClick={() => setOpen(true)}>Add Account</Button>
+				<Button variant="outline" className="bg-secondary_background" onClick={() => setOpen(true)}>Add Account</Button>
 			</DialogTrigger>
 			<DialogContent>
 				<DialogHeader className="text-xl font-semibold">
@@ -158,9 +158,9 @@ export default function Accounts() {
 	return (
 		<div className='space-y-2'>
 			<h1 className='text-center text-xl w-full font-semibold'>Accounts</h1>
-			<div className='rounded-md border min-h-[150px] max-h-[75vh] min-w-[30vw] overflow-scroll'>
+			<div className='bg-secondary_background rounded-md border min-h-[150px] max-h-[75vh] min-w-[30vw] overflow-y-scroll'>
 				<Table>
-					<TableHeader className="sticky top-0 m-0 bg-background">
+					<TableHeader className="sticky top-0 m-0 bg-secondary_background shadow-lg">
 						{table.getHeaderGroups().map((headerGroup) => (
 							<TableRow className='text-left' key={headerGroup.id}>
 								{headerGroup.headers.map((header) => {

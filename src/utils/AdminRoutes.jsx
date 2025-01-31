@@ -13,7 +13,7 @@ const AdminRoutes = () =>  {
         .catch((err) => {
             navigate('/')
         })
-    }, [])
+    }, [navigate])
 
     return(
         loading ? 

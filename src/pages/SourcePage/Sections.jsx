@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 import { Label } from '@/components/ui/label'
 import { Badge } from '@/components/ui/badge'
 
-const collapsibleStyle = 'border rounded-lg bg-white/10 shadow-md  text-start p-2'
+const collapsibleStyle = 'border rounded-lg bg-secondary_background shadow-md  text-start p-2'
 const colTriggerStyle = 'w-full text-start text-xl font-bold p-2'
 const listStyle = 'space-y-1 p-2'
 const label = 'font-semibold mr-1'

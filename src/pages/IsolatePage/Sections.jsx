@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import IsolateTable from '@/pages/Isolate/IsolateTable'
 import { columns } from '@/pages/Isolate/columns'
 
-const sectionStyle = 'border w-full bg-white/10 shadow-md rounded-md  text-start'
+const sectionStyle = 'border w-full bg-secondary_background shadow-md rounded-md  text-start'
 const colTriggerStyle = 'flex  w-full text-start text-2xl font-extrabold p-2'
 const colContentStyle = ''
 const listStyle = 'space-y-1 p-2'

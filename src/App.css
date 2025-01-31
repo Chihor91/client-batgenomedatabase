@@ -4,3 +4,71 @@
   margin: 0 auto;
   text-align: center;
 }
+
+span {
+	font-family: 'Raleway';
+}
+
+@font-face {
+	font-family: 'Philosopher';
+	src: local('Philosopher-Regular'), local('Philosopher-Regular'),
+	  url('../fonts/Philosopher-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+  }
+  
+  @font-face {
+	font-family: 'Philosopher';
+	src: local('Philosopher-Bold'), local('Philosopher-Bold'),
+	  url('../fonts/Philosopher-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+  }
+  
+  @font-face {
+	font-family: 'News Cycle';
+	src: local('NewsCycle-Regular'), local('NewsCycle-Regular'),
+	  url('../fonts/NewsCycle-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+  }
+  
+  @font-face {
+	font-family: 'News Cycle';
+	src: local('NewsCycle-Bold'), local('NewsCycle-Bold'),
+	  url('../fonts/NewsCycle-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+  }
+  
+  @font-face {
+	font-family: 'Raleway';
+	src: local('Raleway-Regular'), local('Raleway-Regular'),
+	  url('../fonts/Raleway-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+  }
+  
+  @font-face {
+	font-family: 'Raleway';
+	src: local('Raleway-Bold'), local('Raleway-Bold'),
+	  url('../fonts/Raleway-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+  }
+  
+  @font-face {
+	font-family: 'Raleway';
+	src: local('Raleway-ExtraBold'), local('Raleway-ExtraBold'),
+	  url('../fonts/Raleway-ExtraBold.ttf') format('truetype');
+	font-weight: 800;
+	font-style: normal;
+  }
+  
+  @font-face {
+	font-family: 'Raleway';
+	src: local('Raleway-SemiBold'), local('Raleway-SemiBold'),
+	  url('../fonts/Raleway-SemiBold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+  }

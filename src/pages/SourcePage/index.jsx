@@ -20,7 +20,9 @@ export default function SourcePage({ id }) {
 						<BasicInfo data={data} />
 						<HostInfo data={data} />
 						<SamplingInfo data={data} />
-						<MISOCategories data={data} />
+						{ JSON.stringify(data.miso_categories) !== '{}' && data.miso_categories?.length != 0 &&
+							<MISOCategories data={data} />
+						}
 						<Isolates data={data} />
 					</div>
 				</div>

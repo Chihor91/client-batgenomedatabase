@@ -19,8 +19,7 @@ export default function SourceMap() {
 	}, [])
 
 	return (
-		<div className="border p-3 rounded-md">
-			<label className="text-center text-xl justify-center font-bold">Source Map</label>
+		<div className="bg-white p-5 rounded-md">
 			<div className=' items-center rounded-sm justify-center'>
 				{
 					selectedLocation ? 

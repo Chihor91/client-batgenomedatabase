@@ -10,7 +10,7 @@ import {
 import axios from 'axios'
 
 // Component Imports
-import Home from '@/pages/Home/Home'
+import Home from '@/pages/Home'
 import Login from '@/pages/Login/Login'
 
 import Source from '@/pages/Source'
@@ -83,24 +83,17 @@ const Root = () => {
 						<AuthProvider>
 							<SideBar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
 
-							<div
-								className={`fixed transition-all  ${
-									showSidebar
-										? 'left-[200px] w-[calc(100%-200px)]'
-										: 'left-[100px] w-[calc(100%-100px)]'
-								}`}>
+							<div className="fixed transition-all w-full">
 								<div
-									className={`w-[100%] overflow-scroll transition-all  bg-background/20  h-[100vh] ${
-										showSidebar ? 'w-[calc(100vw-200px)]' : 'w-[calc(100vw-100px)]'
-									}`}
+									className="w-[100%] overflow-x-hidden transition-all  bg-background/20  h-[100vh]"
 									onClick={() => setShowSidebar(false)}
 									style={{ position: 'relative', zIndex: 0 }}>
 									<Outlet />
 								</div>
 							</div>
-
+{/* 
 							<BackgroundElement1 />
-							<BackgroundElement2 />
+							<BackgroundElement2 /> */}
 						</AuthProvider>
 					</ThemeProvider>
 				</MUIThemeProvider>

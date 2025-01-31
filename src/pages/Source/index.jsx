@@ -18,10 +18,10 @@ function Source() {
 	}, [])
 
 	return (
-		<div className='p-20'>
+		<div className='p-20 mx-20'>
 			{searchInput.get('id') === null ? (
 				<div className='space-y-3'>
-					<Button variant='outline' onClick={() => navigate('/source/add')}>
+					<Button variant='outline' className="bg-secondary_background" onClick={() => navigate('/source/add')}>
 						Add New Source
 					</Button>
 					<SourceTable data={data} columns={columns} />

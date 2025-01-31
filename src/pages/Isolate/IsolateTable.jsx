@@ -29,7 +29,7 @@ export default function IsolateTable({ data, columns }) {
 	const table = useReactTable({
 		data,
 		columns,
-		initialState: { pagination: { pageSize: 5 } },
+		initialState: { pagination: { pageSize: 10 } },
 		getCoreRowModel: getCoreRowModel(),
 		getFilteredRowModel: getFilteredRowModel(),
 		getPaginationRowModel: getPaginationRowModel(),
@@ -39,6 +39,7 @@ export default function IsolateTable({ data, columns }) {
 			sorting,
 		},
 	})
+	const headers = table.getHeaderGroups()[0].headers
 
 	const handleEditClick = (e) => {
 		e.stopPropagation()
@@ -53,28 +54,40 @@ export default function IsolateTable({ data, columns }) {
 		})
 	}
 
+	const resetFilters = () => {
+		headers[0].column.setFilterValue("")
+		headers[1].column.setFilterValue("")
+	}
+
 	const rowClassName =
-	'bg-white/10 hover:text-background hover:bg-gradient-to-r from-foreground to-background shadow-md rounded-sm after:-z-20 cursor-pointer'
+	'bg-white/10 hover:text-secondary_background hover:bg-gradient-to-r from-foreground to-background shadow-md rounded-sm after:-z-20 cursor-pointer'
 	
 	return (
-		<div>
-			<div className='border overflow-auto rounded-lg bg-background'>
+		<div className='flex w-full space-x-5'>
+			<div className='border bg-secondary_background rounded-lg w-[30%] h-full p-3 flex flex-col space-y-5'>
+				<span className='font-bold text-[20px]'>Filters</span>
+				<div>
+					<span className='font-semibold'>ID</span>
+					<Input className='font-light bg-secondary_background' value={headers[0].column.getFilterValue() || ""} onChange={(e) => headers[0].column.setFilterValue(e.target.value)} />
+				</div>
+				<div>	
+					<span className='font-semibold'>Accession Number</span>
+					<Input className='font-light bg-secondary_background' value={headers[1].column.getFilterValue() || ""} onChange={(e) => headers[1].column.setFilterValue(e.target.value)} />
+				</div>
+				<Button variant="outline" onClick={() => resetFilters()}>Reset</Button>
+			</div>
+			
+			<div className='border overflow-auto rounded-lg bg-secondary_background w-full'>
 				<Table>
 					<TableHeader>
 						{table.getHeaderGroups().map((headerGroup) => (
-							<TableRow className="bg-background" key={headerGroup.id}>
+							<TableRow className="bg-secondary_background shadow-lg" key={headerGroup.id}>
 								{headerGroup.headers.map((header) => {
 									return (
 										<TableHead key={header.id}>
 											{header.isPlaceholder
 												? null
 												: flexRender(header.column.columnDef.header, header.getContext())}
-											{header.column.id !== 'actions' && header.column.getCanFilter() ? (
-												<div>
-													<Input className='font-light' value={header.column.getFilterValue() || ''} onChange={(e) => header.column.setFilterValue(e.target.value)} />
-												</div>
-												) : null
-											}
 										</TableHead>
 									)
 								})}
@@ -92,7 +105,7 @@ export default function IsolateTable({ data, columns }) {
 										navigate('/isolate?id=' + data[row.id].id)
 									}}>
 									{row.getVisibleCells().map((cell) => (
-										<TableCell className='text-left ' key={cell.id}>
+										<TableCell className='text-left p-3' key={cell.id}>
 											{cell.column.id === 'actions' ? (
 												<>
 													{(user?.is_superuser | data[row.id].author === user?.username) ?
@@ -129,11 +142,11 @@ export default function IsolateTable({ data, columns }) {
 						)}
 					</TableBody>
 				</Table>
-			</div>
 
 			<div className='flex items-center justify-center space-x-2 py-4'>
 				<Button
 					variant='outline'
+					className="bg-secondary_background"
 					size='sm'
 					onClick={() => table.setPageIndex(0)}
 					disabled={!table.getCanPreviousPage()}>
@@ -141,6 +154,7 @@ export default function IsolateTable({ data, columns }) {
 				</Button>
 				<Button
 					variant='outline'
+					className="bg-secondary_background"
 					size='sm'
 					onClick={() => table.previousPage()}
 					disabled={!table.getCanPreviousPage()}>
@@ -149,6 +163,7 @@ export default function IsolateTable({ data, columns }) {
 				<div>{'Page ' + (table.options.state.pagination.pageIndex + 1)}</div>
 				<Button
 					variant='outline'
+					className="bg-secondary_background"
 					size='sm'
 					onClick={() => table.nextPage()}
 					disabled={!table.getCanNextPage()}>
@@ -156,11 +171,13 @@ export default function IsolateTable({ data, columns }) {
 				</Button>
 				<Button
 					variant='outline'
+					className="bg-secondary_background"
 					size='sm'
 					onClick={() => table.setPageIndex(table.getPageCount() - 1)}
 					disabled={!table.getCanNextPage()}>
 					{'>>'}
 				</Button>
+			</div>
 			</div>
 		</div>
 	)

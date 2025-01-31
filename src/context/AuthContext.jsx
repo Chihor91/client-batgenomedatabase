@@ -166,12 +166,9 @@ export const AuthProvider = ({ children }) => {
 
 	useEffect(() => {
 		if (loading) updateToken()
-
 		let threeMinutes = 1000 * 60 * 3
 		let interval = setInterval(() => {
-			if (authTokens) {
-				updateToken()
-			}
+			updateToken()
 		}, threeMinutes)
 
 		return () => clearInterval(interval)

@@ -105,7 +105,7 @@ export default function StrainPage({ id }) {
 					{ data.author_id == user?.id || user?.is_superuser && //TODO:better admin check
 						<div className='flex space-x-2'>
 							<div className='font-bold'>Visibility:</div>
-							<select className='bg-background' id="visibility" value={visibility} onChange={(e) => setVisibility(e.target.value)}>
+							<select className='bg-secondary_background' id="visibility" value={visibility} onChange={(e) => setVisibility(e.target.value)}>
 								<option value='Public'>Public</option>
 								<option value='Researchers Only'>Researchers Only</option>
 								<option value='Private'>Private</option>
