@@ -5,7 +5,13 @@ The Cave Microbiome database is a culture collection database system by the NICE
 * Node.js environment
 
 ## Features
-write this tomorrow lol
+* **Source Mapping**
+* **View Source(s)**
+* **Add/Delete Source**
+* **View Isolate(s)**
+* **Add/Delete Isolate(s)**
+* **Add/Delete User**
+* **Activity Log**
 
 ## Setup
 1. Clone the repository
