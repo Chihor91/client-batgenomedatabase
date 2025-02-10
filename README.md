@@ -1,8 +1,24 @@
-# React + Vite
+# Cave Microbiome Database
+The Cave Microbiome database is a culture collection database system by the NICER CAVES project used to store the source and isolation data of cave microorganisms collection from various caves in CALABARZON or Region IV-A.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Requirements
+* Node.js environment
 
-Currently, two official plugins are available:
+## Setup
+1. Clone the repository
+2. Install dependencies:
+```
+npm install
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Usage
+1. Run the following command(s):
+```
+For development:
+	* npm run dev
+
+For deployment:
+	* npm run build
+	* npm run preview
+```
+
