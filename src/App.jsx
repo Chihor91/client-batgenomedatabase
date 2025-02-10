@@ -34,8 +34,6 @@ import PrivateRoutes from '@/utils/PrivateRoutes'
 import AdminRoutes from '@/utils/AdminRoutes'
 import AdminPage from '@/pages/Admin'
 import { SnackbarProvider } from 'notistack'
-import BackgroundElement1 from './components/Custom/Background1'
-import BackgroundElement2 from './components/Custom/Background2'
 
 // Server API address
 // axios.defaults.baseURL = 'http://159.89.192.168:8000/'
