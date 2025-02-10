@@ -13,12 +13,13 @@ npm install
 
 ## Usage
 1. Run the following command(s):
+* For development:
 ```
-For development:
-	* npm run dev
-
-For deployment:
-	* npm run build
-	* npm run preview
+npm run dev
+```
+* For deployment:
+```
+npm run build
+npm run preview
 ```
 
