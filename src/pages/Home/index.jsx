@@ -12,7 +12,7 @@ export default function Home() {
 				</div>
 				<div className="text-[calc(1vw+20px)]">
 					<h1 className="font-title-desc">
-						Culture Collection Information System for Cave Microorganisms
+						Information on Microbes from Caves in the Philippines
 					</h1>
 				</div>
 			</div>
