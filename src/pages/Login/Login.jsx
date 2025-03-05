@@ -77,15 +77,16 @@ function Login() {
 										? 'bg-clip-text text-transparent bg-gradient-to-r from-[#009112] to-[#007E10]'
 										: 'text-foreground'
 								}`}>
-								CAVE MICROBIOME DATABASE
+								IMCavesPH
 							</h1>
 						</div>
 
-						<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget justo placerat, porttitor ligula vitae, laoreet dui. 
-						Nullam finibus turpis vel orci finibus sagittis. Nulla iaculis ipsum est, faucibus consectetur sapien imperdiet vel. 
-						In non libero et mi placerat aliquam ut vel augue. Donec a nunc sed purus placerat venenatis ut in purus.
-						</p>
+						<span className="lg:mx-[50px] text-justify inline-block">
+							The <span className="font-semibold">IMCavesPH</span> database is a culture collection information system developed 
+							by the <span className="font-semibold">UPLB Museum of Natural History (UPLB-MNH)</span> for storage of microbiological and
+							demographic information of cave microorganisms sampled from various caves in the Philippines under the&nbsp;
+							<a href='https://www.nicercaves.site' className="font-bold underline">NICER CAVES</a> Program.
+						</span>
 					</div>
 				</div>
 
