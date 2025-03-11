@@ -11,7 +11,7 @@ function jsonEmpty(data) {
 		Object.keys(data).forEach(function (property) {
 			if (data[property] !== '') {
 				empty = false
-				throw new Error();
+				return
 			}
 		})
 	} catch {
