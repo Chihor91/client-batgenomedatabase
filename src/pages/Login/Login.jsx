@@ -26,18 +26,19 @@ function Login() {
 	let { loginUser, logoutUser, loading, error } = useContext(AuthContext)
 	let navigate = useNavigate()
 	const theme = useTheme()
+	const [loggedIn, setLoggedIn] = useState(false)
 	const [username, setUsername] = useState('')
 	const [password, setPassword] = useState('')
 
 	useEffect(() => {
-        axios.get(axios.defaults.baseURL + "/user/isloggedin/")
+        axios.get(axios.defaults.baseURL + "user/isloggedin/")
         .then((res) => {
-            navigate('/')
+            navigate("/")
         })
         .catch((err) => {
-            logoutUser()
+			localStorage.getItem('authTokens') && localStorage.removeItem('authTokens')
         })
-    }, [logoutUser, navigate])
+    }, [navigate])
 
 	const icons = Array(3).fill(null)
 
