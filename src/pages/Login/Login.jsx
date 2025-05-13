@@ -18,19 +18,26 @@ import { useState } from 'react'
 // Asset Imports
 import { useForm } from 'react-hook-form'
 import { enqueueSnackbar } from 'notistack'
+import axios from 'axios'
 
 // Style Imports
 
 function Login() {
-	let { loginUser, loading, error } = useContext(AuthContext)
+	let { loginUser, logoutUser, loading, error } = useContext(AuthContext)
 	let navigate = useNavigate()
 	const theme = useTheme()
 	const [username, setUsername] = useState('')
 	const [password, setPassword] = useState('')
 
 	useEffect(() => {
-		localStorage.getItem('authTokens') && navigate('/')
-	}, [])
+        axios.get(axios.defaults.baseURL + "/user/isloggedin/")
+        .then((res) => {
+            navigate('/')
+        })
+        .catch((err) => {
+            logoutUser()
+        })
+    }, [logoutUser, navigate])
 
 	const icons = Array(3).fill(null)
 
@@ -155,4 +162,4 @@ function Login() {
 	)
 }
 
-export default SectionWrapper(Login, 'login')
+export default Login
