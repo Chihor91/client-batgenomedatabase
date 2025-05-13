@@ -47,9 +47,9 @@ function App() {
 			<Route path='/' element={<Root />}>
 				<Route index element={<Home />} />
 				<Route path='/login' element={<Login />} />
-				<Route path='/source' element={<Source />} />
-				<Route path='/isolate' element={<Isolate />} />
 				<Route element={<PrivateRoutes />}>
+					<Route path='/source' element={<Source />} />
+					<Route path='/isolate' element={<Isolate />} />
 					<Route path='/source/add' element={<SourceForm />} />
 					<Route path='/isolate/add' element={<IsolateForm />} />
 					<Route path='/isolate/add/multiple' element={<MultipleIsolateForm />} />
