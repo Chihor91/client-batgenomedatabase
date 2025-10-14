@@ -60,11 +60,11 @@ function AddAccount(open, setOpen) {
 	}
 
 	return (
-		<Dialog open={open} onOpenChange={setOpen}>
-			<DialogTrigger asChild>
+        <Dialog open={open} onOpenChange={setOpen}>
+            <DialogTrigger asChild>
 				<Button variant="outline" className="bg-secondary_background" onClick={() => setOpen(true)}>Add Account</Button>
 			</DialogTrigger>
-			<DialogContent>
+            <DialogContent>
 				<DialogHeader className="text-xl font-semibold">
 					Add New Account
 				</DialogHeader>
@@ -117,9 +117,8 @@ function AddAccount(open, setOpen) {
 					</DialogFooter>
 				</form>
 			</DialogContent>
-			
-		</Dialog>
-	)
+        </Dialog>
+    );
 }
 
 export default function Accounts() {

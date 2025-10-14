@@ -22,41 +22,41 @@ export default function SourcesMapLayer({sources}) {
 
 
   return (
-		<>
-			<MarkerClusterGroup
-				chunkedLoading
-				iconCreateFunction={createClusterCustomIcon}
-				className='text-semibold'
-			>
-			{
-				// strains?.strains.map( (strain) => (
-				sources?.map( (source) => (
-					// I add random number so the strain don't overlap with each other
-					<CircleMarker
-						center={[(parseFloat(source?.loc_latitude)) + (Math.random() * (0.00009 - 0.000001) + 0.000001), (parseFloat(source?.loc_longitude)) + (Math.random() * (0.00009 - 0.000001) + 0.000001)]}
-						radius={1.5}
-						pathOptions={{ color: 'black', fillColor: 'yellow', fillOpacity: 1, stroke: true, radius: 6 }}
-						key={source.id}
-					>
-						<Popup className="font-inter font-semibold">
-							<a href={"/source?id=" + source.id}>
-							{source.human_readable_id}
-							</a>
-						</Popup>
-						{/* {
-							user?.user_level === 'ADMIN' ?
-							(
-								<Popup className="font-inter italic">
-									{strain?.strain_name}
-								</Popup>
-							) : (
-								null
-							)
-						} */}	
-					</CircleMarker>
-				))
-			}
-			</MarkerClusterGroup>
-		</>
-	)
+      <>
+          <MarkerClusterGroup
+              chunkedLoading
+              iconCreateFunction={createClusterCustomIcon}
+              className='text-semibold'
+          >
+          {
+              // strains?.strains.map( (strain) => (
+              sources?.map( (source) => (
+                  // I add random number so the strain don't overlap with each other
+                  (<CircleMarker
+                      center={[(parseFloat(source?.loc_latitude)) + (Math.random() * (0.00009 - 0.000001) + 0.000001), (parseFloat(source?.loc_longitude)) + (Math.random() * (0.00009 - 0.000001) + 0.000001)]}
+                      radius={1.5}
+                      pathOptions={{ color: 'black', fillColor: 'yellow', fillOpacity: 1, stroke: true, radius: 6 }}
+                      key={source.id}
+                  >
+                      <Popup className="font-inter font-semibold">
+                          <a href={"/source?id=" + source.id}>
+                          {source.human_readable_id}
+                          </a>
+                      </Popup>
+                      {/* {
+                          user?.user_level === 'ADMIN' ?
+                          (
+                              <Popup className="font-inter italic">
+                                  {strain?.strain_name}
+                              </Popup>
+                          ) : (
+                              null
+                          )
+                      } */}
+                  </CircleMarker>)
+              ))
+          }
+          </MarkerClusterGroup>
+      </>
+  );
 }

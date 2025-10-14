@@ -11,20 +11,20 @@ const CavePositionLayer = () => {
 	})
 
 	return (
-		<>
-		{
-			caves.map( (cave) => (
-				// <CircleMarker center={cave.coordinates} radius={5} pathOptions={{ color: 'black', fillColor: 'black' }}>
-				<Marker position={cave.coordinates} icon={customIcon} key={cave.name}>
-					<Popup>
-						{cave.name}
-					</Popup>
-				</Marker>
-				// </CircleMarker>
-			))
-		}
-		</>
-	)
+        <>
+            {
+                caves.map( (cave) => (
+                    // <CircleMarker center={cave.coordinates} radius={5} pathOptions={{ color: 'black', fillColor: 'black' }}>
+                    (<Marker position={cave.coordinates} icon={customIcon} key={cave.name}>
+                        <Popup>
+                            {cave.name}
+                        </Popup>
+                    </Marker>)
+                    // </CircleMarker>
+                ))
+            }
+        </>
+    );
 }
 
 export default CavePositionLayer
