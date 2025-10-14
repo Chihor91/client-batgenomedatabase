@@ -26,6 +26,7 @@ import { ThemeProvider } from '@/components/ui/theme-provider'
 import MUIThemeProvider from '@/components/Custom/MUIThemeProvider'
 
 import Hometest from '@/pages/Test/Hometest'
+import SidebarTest from '@/components/Test/SidebarTest.jsx';
 
 // Asset Imports
 
@@ -74,7 +75,7 @@ function App() {
 }
 
 const Root = () => {
-	const [showSidebar, setShowSidebar] = useState(false)
+	// const [showSidebar, setShowSidebar] = useState(false)
 
 	return (
 		<>
@@ -82,12 +83,13 @@ const Root = () => {
 				<MUIThemeProvider>
 					<ThemeProvider defaultTheme='light' storageKey='vite-ui-theme'>
 						<AuthProvider>
-							<SideBar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+							<SidebarTest />
+							{/* <SideBar showSidebar={showSidebar} setShowSidebar={setShowSidebar} /> */}
 
 							<div className="fixed transition-all w-full">
 								<div
 									className="w-[100%] overflow-x-hidden transition-all  bg-background/20  h-[100vh]"
-									onClick={() => setShowSidebar(false)}
+									// onClick={() => setShowSidebar(false)}
 									style={{ position: 'relative', zIndex: 0 }}>
 									<Outlet />
 								</div>

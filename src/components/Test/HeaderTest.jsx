@@ -13,7 +13,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-// import caveslogo from '../assets/svg/ic_gradient_caves.svg';
+import caveslogo from '../../assets/svg/ic_gradient_caves.svg';
 import Images from '@/common/images'
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import { CssBaseline } from '@mui/material';
@@ -67,7 +67,8 @@ export default function Header(props) {
                             {/* persistent brand: logo + label always shown together */}
                             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, overflow: 'hidden' }}>
                                 <img
-                                    src={Images.ic_gradient_caves}
+                                    // src={Images.ic_gradient_caves}
+                                    src={caveslogo}
                                     alt="caves-logo"
                                     style={{ flex: '0 0 auto', width: 28, height: 28, objectFit: 'contain' }}
                                 />

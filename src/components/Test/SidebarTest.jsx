@@ -12,7 +12,7 @@ import MailIcon from '@mui/icons-material/Mail';
 
 const drawerWidth = 150;
 
-export default function Sidebar() {
+export default function SidebarTest() {
   return (
     <Drawer
       sx={{
