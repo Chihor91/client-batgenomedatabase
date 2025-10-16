@@ -1,36 +1,81 @@
-import React, { useState, useEffect } from 'react'
-import Images from '@/common/images'
-import { useTheme } from '@/components/ui/theme-provider'
+import React, { useState, useEffect } from "react";
+import { useTheme } from "@/components/ui/theme-provider";
+import { styled } from "@mui/material/styles";
+import Switch from "@mui/material/Switch";
+
+const MaterialUISwitch = styled(Switch)(({ theme }) => ({
+  width: 62,
+  height: 34,
+  padding: 7,
+  "& .MuiSwitch-switchBase": {
+    margin: 1,
+    padding: 0,
+    transform: "translateX(6px)",
+    "&.Mui-checked": {
+      color: "#fff",
+      transform: "translateX(22px)",
+      "& .MuiSwitch-thumb:before": {
+        // keep the white icon on the thumb for contrast
+        backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20"><path fill="${encodeURIComponent(
+          "#fff"
+        )}" d="M4.2 2.5l-.7 1.8-1.8.7 1.8.7.7 1.8.6-1.8L6.7 5l-1.9-.7-.6-1.8zm15 8.3a6.7 6.7 0 11-6.6-6.6 5.8 5.8 0 006.6 6.6z"/></svg>')`,
+      },
+      "& + .MuiSwitch-track": {
+        opacity: 1,
+        backgroundColor: "#9BE6A6", // checked (light mode) — soft green
+        ...theme.applyStyles("dark", {
+          backgroundColor: "#2F6B3C", // checked (dark mode) — deeper green
+        }),
+      },
+    },
+  },
+  "& .MuiSwitch-thumb": {
+    backgroundColor: "#2E7D32", // thumb (light) — MUI green[700]
+    width: 32,
+    height: 32,
+    "&::before": {
+      content: "''",
+      position: "absolute",
+      width: "100%",
+      height: "100%",
+      left: 0,
+      top: 0,
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center",
+      // keep the white sun/moon icon for contrast on green thumb
+      backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20"><path fill="${encodeURIComponent(
+        "#fff"
+      )}" d="M9.305 1.667V3.75h1.389V1.667h-1.39zm-4.707 1.95l-.982.982L5.09 6.072l.982-.982-1.473-1.473zm10.802 0L13.927 5.09l.982.982 1.473-1.473-.982-.982zM10 5.139a4.872 4.872 0 00-4.862 4.86A4.872 4.872 0 0010 14.862 4.872 4.872 0 0014.86 10 4.872 4.872 0 0010 5.139zm0 1.389A3.462 3.462 0 0113.471 10a3.462 3.462 0 01-3.473 3.472A3.462 3.462 0 016.527 10 3.462 3.462 0 0110 6.528zM1.665 9.305v1.39h2.083v-1.39H1.666zm14.583 0v1.39h2.084v-1.39h-2.084zM5.09 13.928L3.616 15.4l.982.982 1.473-1.473-.982-.982zm9.82 0l-.982.982 1.473 1.473.982-.982-1.473-1.473zM9.305 16.25v2.083h1.389V16.25h-1.39z"/></svg>')`,
+    },
+    ...theme.applyStyles("dark", {
+      backgroundColor: "#1B5E20", // thumb (dark) — darker green
+    }),
+  },
+  "& .MuiSwitch-track": {
+    opacity: 1,
+    backgroundColor: "#CFF5D0", // unchecked (light) — very pale green matching project
+    borderRadius: 20 / 2,
+    ...theme.applyStyles("dark", {
+      backgroundColor: "#234E2B", // unchecked (dark) — muted dark-green
+    }),
+  },
+}));
 
 const DarkLightModeToggle = () => {
-	const { theme, setTheme } = useTheme()
-	const [isChecked, setIsChecked] = useState(theme === 'dark')
+  const { theme, setTheme } = useTheme();
+  const [isChecked, setIsChecked] = useState(theme === "dark");
 
-	useEffect(() => {
-		setTheme(isChecked ? 'dark' : 'light')
-	}, [isChecked, setTheme])
+  useEffect(() => {
+    setIsChecked(theme === "dark");
+  }, [theme]);
 
-	const handleCheckboxChange = () => {
-		setIsChecked(!isChecked)
-		setTheme(isChecked ? 'light' : 'dark')
-	}
+  const handleSwitchChange = (event) => {
+    const newCheckedState = event.target.checked;
+    setIsChecked(newCheckedState);
+    setTheme(newCheckedState ? "dark" : "light");
+  };
 
-	return (
-		<>
-			<div>
-				<label className='relative inline-flex items-center cursor-pointer'>
-					<input
-						className='sr-only peer'
-						type='checkbox'
-						checked={isChecked}
-						onChange={handleCheckboxChange}
-					/>
-					<div
-						className={` w-24 h-12 rounded-full ring-0 peer duration-500 outline-none bg-secondary_background overflow-hidden before:flex before:items-center before:justify-center after:flex after:items-center after:justify-center  before:content-['☀️'] before:absolute before:h-10 before:w-10 before:top-1/2 before:rounded-full before:left-2 before:-translate-y-1/2 before:transition-all before:duration-700  peer-checked:before:opacity-0 peer-checked:before:rotate-90 peer-checked:before:-translate-y-full shadow-md shadow-gray-700 peer-checked:shadow-lg peer-checked:shadow-gray-700 peer-checked:bg-[#218d99] after:content-['☽'] after:absolute after:bg-[#0e2328] after:rounded-full after:top-[4px] after:right-2 after:translate-y-full after:w-10 after:h-10 after:opacity-0 after:transition-all after:duration-700 peer-checked:after:opacity-100 peer-checked:after:rotate-180 peer-checked:after:translate-y-0`}></div>
-				</label>
-			</div>
-		</>
-	)
-}
+  return <MaterialUISwitch checked={isChecked} onChange={handleSwitchChange} />;
+};
 
-export default DarkLightModeToggle
+export default DarkLightModeToggle;
