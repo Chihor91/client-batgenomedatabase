@@ -14,6 +14,8 @@ import SpaceDashboardIcon from "@mui/icons-material/SpaceDashboard";
 import SearchIcon from "@mui/icons-material/Search";
 import BiotechIcon from "@mui/icons-material/Biotech";
 import LoginIcon from "@mui/icons-material/Login";
+import LandscapeIcon from "@mui/icons-material/Landscape";
+import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import { useTheme } from "@/components/ui/theme-provider";
 import axios from "axios";
 
@@ -46,16 +48,21 @@ function SideBar({ showSidebar, setShowSidebar }) {
   return (
     <div
       className={`${
-        theme.theme === "light" ? "bg-[#E9FDE0]" : "bg-background"
+        theme.theme === "light" ? "bg-[#f8fee5]" : "bg-[#0f1724]"
       } top-0 left-0 h-screen overflow-hidden transition-all fixed z-40 w-[100px]`}
-      style={{ boxShadow: "0 0 20px rgba(0, 0, 0, 0.5)" }}
+      style={{
+        borderRight:
+          theme.theme === "light"
+            ? "1px solid rgba(0, 0, 0, 0.08)"
+            : "1px solid rgba(255, 255, 255, 0.06)",
+      }}
     >
       <div
-        className={`flex flex-col h-[120px] p-[24px] justify-center items-center`}
+        className={`flex flex-col h-[90px] p-[24px] justify-center items-center`}
       >
         <img
-          height="60px"
-          width="60px"
+          height="40px"
+          width="40px"
           src={
             theme.theme === "light"
               ? Images.ic_gradient_caves
@@ -164,7 +171,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
           </ul>
         ) : (
           // FOR NON-AUTHENTICATED USERS
-          <section className="flex flex-col gap-6 pt-6 ">
+          <section className="flex flex-col gap-0 pt-0 ">
             <SideNavButton
               icon={SpaceDashboardIcon}
               label="Dashboard"
@@ -172,7 +179,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
               isActive={activeButton === "Dashboard"}
             />
             <SideNavButton
-              icon={SearchIcon}
+              icon={LandscapeIcon}
               label="Sources"
               onClick={() => handleButtonClick("Source")}
               isActive={activeButton === "Sources"}
@@ -182,6 +189,18 @@ function SideBar({ showSidebar, setShowSidebar }) {
               label="Isolates"
               onClick={() => handleButtonClick("Isolate")}
               isActive={activeButton === "Isolate"}
+            />
+            <SideNavButton
+              icon={AccountTreeIcon}
+              label="OntoGraph"
+              onClick={() => console.log("OntoGraph Clicked")}
+              isActive={activeButton === "OntoGraph"}
+            />
+            <SideNavButton
+              icon={SearchIcon}
+              label="OntoDex"
+              onClick={() => console.log("OntoDex Clicked")}
+              isActive={activeButton === "OntoDex"}
             />
             <SideNavButton
               icon={LoginIcon}
