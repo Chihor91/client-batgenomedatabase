@@ -193,7 +193,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
             <SideNavButton
               icon={AccountTreeIcon}
               label="OntoGraph"
-              onClick={() => console.log("OntoGraph Clicked")}
+              onClick={() => handleButtonClick("OntoGraph")}
               isActive={activeButton === "OntoGraph"}
             />
             <SideNavButton

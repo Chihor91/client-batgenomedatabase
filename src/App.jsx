@@ -26,6 +26,7 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 import MUIThemeProvider from "@/components/Custom/MUIThemeProvider";
 
 import Hometest from "@/pages/Test/Hometest";
+import OntoGraph from "@/pages/Ontology/Visualizer/OntoGraph";
 import SidebarTest from "@/components/Test/SidebarTest.jsx";
 
 // Asset Imports
@@ -50,6 +51,7 @@ function App() {
       <Route path="/" element={<Root />}>
         <Route index element={<Home />} />
         <Route path="/hometest" element={<Hometest />} />
+        <Route path="/ontograph" element={<OntoGraph />} />
         <Route path="/login" element={<Login />} />
         <Route element={<PrivateRoutes />}>
           <Route path="/source" element={<Source />} />
