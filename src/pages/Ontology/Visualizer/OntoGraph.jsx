@@ -1,14 +1,17 @@
 import * as React from "react";
 import OuterBox from "@/components/Custom/OuterBox.jsx";
-import { Grid } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 import { AuthProvider } from "@/context/AuthContext";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import MUIThemeProvider from "@/components/Custom/MUIThemeProvider";
 import { SnackbarProvider } from "notistack";
-import Header from "./header.jsx";
 import GraphView from "./graphView.jsx";
-import InfoBar from "./infoBar.jsx";
+import StatusCard from "./StatusCard.jsx";
+import ImportProgressCard from "./ImportProgressCard.jsx";
+import ImportHelpText from "./ImportHelpText.jsx";
 import useOWLImport from "./useOWLImport.js";
+import { PageHeader, InfoPanel, MetadataCard } from "@/components/Layout";
+import UploadFileIcon from "@mui/icons-material/UploadFile";
 
 export default function OntoGraph() {
   const {
@@ -16,11 +19,9 @@ export default function OntoGraph() {
     uploadStatus,
     fileMetadata,
     errorMessage,
-    progressPercentage,
     startFileSelect,
     fileInputRef,
     handleInputChange,
-    resetImport,
   } = useOWLImport();
 
   // MODIFIED - Store parsed data in component state for use throughout the app
@@ -45,11 +46,32 @@ export default function OntoGraph() {
             <AuthProvider>
               <OuterBox>
                 <Grid container direction="column" sx={{ height: "100vh" }}>
-                  <Header
-                    startFileSelect={startFileSelect}
-                    fileInputRef={fileInputRef}
-                    handleInputChange={handleInputChange}
-                  />
+                  <PageHeader title="OntoGraph">
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      accept=".ttl,.owl,.rdf,.xml"
+                      onChange={handleInputChange}
+                      style={{ display: "none" }}
+                    />
+                    <Button
+                      variant="contained"
+                      color="success"
+                      size="small"
+                      onClick={startFileSelect}
+                      aria-label="Import file"
+                      sx={{
+                        alignSelf: "center",
+                        mt: 0,
+                        display: "flex",
+                        gap: 1,
+                      }}
+                    >
+                      <UploadFileIcon fontSize="small" />
+                      Import File
+                    </Button>
+                  </PageHeader>
+
                   <Grid
                     item
                     container
@@ -61,12 +83,23 @@ export default function OntoGraph() {
                     }}
                   >
                     <GraphView parsedData={parsedData} />
-                    <InfoBar
-                      uploadStatus={uploadStatus}
-                      progressPercentage={progressPercentage}
-                      fileMetadata={fileMetadata}
-                      errorMessage={errorMessage}
-                    />
+                    <InfoPanel title="Properties">
+                      {uploadStatus === "idle" && (
+                        <StatusCard
+                          uploadStatus={uploadStatus}
+                          fileMetadata={fileMetadata}
+                          errorMessage={errorMessage}
+                        />
+                      )}
+
+                      {uploadStatus === "importing" && <ImportProgressCard />}
+
+                      {uploadStatus === "success" && (
+                        <MetadataCard fileMetadata={fileMetadata} />
+                      )}
+
+                      {uploadStatus === "idle" && <ImportHelpText />}
+                    </InfoPanel>
                   </Grid>
                 </Grid>
               </OuterBox>
