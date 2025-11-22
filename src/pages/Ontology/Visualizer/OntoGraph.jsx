@@ -5,7 +5,7 @@ import { AuthProvider } from "@/context/AuthContext";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import MUIThemeProvider from "@/components/Custom/MUIThemeProvider";
 import { SnackbarProvider } from "notistack";
-import GraphView from "./graphView.jsx";
+import GraphView from "./GraphView.jsx";
 import StatusCard from "./StatusCard.jsx";
 import ImportProgressCard from "./ImportProgressCard.jsx";
 import ImportHelpText from "./ImportHelpText.jsx";
