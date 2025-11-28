@@ -13,13 +13,10 @@ import {
 import cytoscape from "cytoscape";
 import cytoscapeDagre from "cytoscape-dagre";
 
-// Register the dagre layout plugin with Cytoscape
 cytoscape.use(cytoscapeDagre);
 
-// Helper: map parsed ontology data (nodes/edges) into Cytoscape element format.
-// Cytoscape expects an array combining node and edge entries, each with a `data` object.
+// Convert parsed ontology data into Cytoscape elements
 function buildElements(ontologyData) {
-  // If no data yet (before parsing completes), return an empty array safely.
   if (
     !ontologyData ||
     !Array.isArray(ontologyData.nodes) ||
@@ -28,36 +25,33 @@ function buildElements(ontologyData) {
     return [];
   }
 
-  // Convert node objects into Cytoscape node elements.
   const nodeElements = ontologyData.nodes.map((n) => ({
     data: {
-      id: n.id, // unique id per node
-      label: n.label || n.id, // visible text on the node
-      type: n.type || "default", // used for styling rules
-      uri: n.uri || "", // optional metadata
+      id: n.id,
+      label: n.label || n.id,
+      type: n.type || "default",
+      uri: n.uri || "",
     },
   }));
 
-  // Convert edge objects into Cytoscape edge elements.
   const edgeElements = ontologyData.edges.map((e) => ({
     data: {
-      id: e.id, // unique id per edge
-      source: e.source, // source node id
-      target: e.target, // target node id
-      label: e.label || "", // optional edge label
-      type: e.type || "relation", // used for styling rules (if desired)
+      id: e.id,
+      source: e.source,
+      target: e.target,
+      label: e.label || "",
+      type: e.type || "relation",
     },
   }));
 
-  // Cytoscape consumes a flat array of all elements.
+  // Combine node and edge elements into a single array
   return [...nodeElements, ...edgeElements];
 }
 
-// Helper: define the Cytoscape style rules.
-// These rules color nodes by their semantic "type" from parsing, and draw labeled, arrowed edges.
+// Set styles for different node types and edges
 function getCytoscapeStyle() {
   return [
-    // Base node style: label inside, with readable text.
+    // Base node style
     {
       selector: "node",
       style: {
@@ -83,18 +77,26 @@ function getCytoscapeStyle() {
       selector: 'node[type = "class"]',
       style: { "background-color": "#22CC22" },
     },
-    // Properties: blue, with a different shape to hint semantics
+    // Properties: blue nodes, rounded rectangle shape
     {
       selector: 'node[type = "property"]',
       style: { "background-color": "#3399FF", shape: "round-rectangle" },
     },
-    // Individuals: orange
+    // Individuals: orange nodes
     {
       selector: 'node[type = "individual"]',
       style: { "background-color": "#FF9933" },
     },
-
-    // Base edge style: thin, curved, with a triangle arrow and optional label.
+    // Selected node
+    {
+      selector: "node:selected",
+      style: {
+        "border-width": 3,
+        "border-color": "#FF5722",
+        "background-color": "#FFE0B2",
+      },
+    },
+    // Base edge style
     {
       selector: "edge",
       style: {
@@ -115,10 +117,10 @@ function getCytoscapeStyle() {
   ];
 }
 
-// Helper: produce layout options for different layout names.
-// Dagre provides a clear "top-to-bottom" hierarchical organization that often suits ontologies.
+// Set layout options and configurations
 function getLayoutOptions(name, nodeCount) {
   switch (name) {
+    // Dagre layout: hierarchical layout
     case "dagre":
       return {
         name: "dagre",
@@ -127,12 +129,16 @@ function getLayoutOptions(name, nodeCount) {
         spacingFactor: 1.1,
         rankDir: "TB",
       };
+
     case "circle":
       return { name: "circle", padding: 30, radius: 200 };
+
     case "grid": {
       const rows = Math.max(1, Math.ceil(Math.sqrt(Math.max(1, nodeCount))));
       return { name: "grid", padding: 30, rows };
     }
+
+    // Cose layout: force-directed layout
     case "cose":
       return {
         name: "cose",
@@ -141,6 +147,8 @@ function getLayoutOptions(name, nodeCount) {
         idealEdgeLength: 100,
         edgeElasticity: 100,
       };
+
+    // Breadthfirst layout: hierarchical layout expanding from roots
     case "breadthfirst":
       return {
         name: "breadthfirst",
@@ -148,6 +156,7 @@ function getLayoutOptions(name, nodeCount) {
         directed: true,
         spacingFactor: 1.4,
       };
+
     default:
       return {
         name: "dagre",
@@ -159,50 +168,51 @@ function getLayoutOptions(name, nodeCount) {
   }
 }
 
-export default function GraphView({ parsedData }) {
-  // Ref to the DOM element where Cytoscape will mount
-  const cyContainerRef = useRef(null);
-
-  // Keep a persistent Cytoscape instance between renders
-  const cyRef = useRef(null);
-
-  // Keep track of which layout the user wants to use
+export default function GraphView({
+  parsedData,
+  onNodeSelect,
+  onNodeDeselect,
+}) {
+  // Set current layout
   const [layoutName, setLayoutName] = useState("dagre");
 
-  // Derive elements from parsedData
+  // Derive Cytoscape elements from parsed ontology data
   const elements = React.useMemo(() => buildElements(parsedData), [parsedData]);
   const nodeCount = Array.isArray(parsedData?.nodes)
     ? parsedData.nodes.length
     : 0;
 
-  // Initialize Cytoscape once when container is ready
+  const cyContainerRef = useRef(null);
+  const cyRef = useRef(null);
   useEffect(() => {
     if (!cyContainerRef.current) return;
 
+    // Initialize cytoscape instance
     if (!cyRef.current) {
       cyRef.current = cytoscape({
         container: cyContainerRef.current,
         elements: [],
         style: getCytoscapeStyle(),
         layout: getLayoutOptions(layoutName, nodeCount),
-        wheelSensitivity: 0.2,
+        wheelSensitivity: 1.0,
       });
 
       const handleResize = () => {
         try {
           cyRef.current?.resize();
         } catch {
-          // no-op
+          console.log("Error occurred in graph resizing.");
         }
       };
       window.addEventListener("resize", handleResize);
 
+      // Cleanup on unmount
       return () => {
         window.removeEventListener("resize", handleResize);
         try {
           cyRef.current?.destroy();
         } catch {
-          // no-op
+          console.log("Error occurred in graph cleanup");
         }
         cyRef.current = null;
       };
@@ -214,6 +224,7 @@ export default function GraphView({ parsedData }) {
     const cy = cyRef.current;
     if (!cy) return;
 
+    // Clear existing elements then add new ones
     cy.elements().remove();
     if (elements.length > 0) {
       cy.add(elements);
@@ -222,23 +233,44 @@ export default function GraphView({ parsedData }) {
     const layout = cy.layout(getLayoutOptions(layoutName, nodeCount));
     layout.run();
 
+    // Fit graph to viewport after layout completes
     layout.on("layoutstop", () => {
       setTimeout(() => {
         try {
           cy.fit();
         } catch {
-          // no-op
+          console.log("Error occurred in graph fitting.");
         }
       }, 80);
     });
   }, [elements, layoutName, nodeCount]);
 
-  // Viewport control handlers
+  // Show node details on selection
+  useEffect(() => {
+    const cy = cyRef.current;
+    if (!cy) return;
+
+    // Handle node selection
+    cy.on("tap", "node", (event) => {
+      const node = event.target;
+      const nodeData = node.data();
+      onNodeSelect?.(nodeData);
+    });
+
+    // Handle deselection
+    cy.on("tap", (event) => {
+      if (event.target === cy) {
+        onNodeDeselect?.();
+      }
+    });
+  }, [onNodeSelect, onNodeDeselect]);
+
+  // Fit all nodes into view
   const onFit = () => {
     try {
       cyRef.current?.fit();
     } catch {
-      // no-op
+      console.log("Error occurred in fitting all nodes into view.");
     }
   };
 
@@ -249,7 +281,7 @@ export default function GraphView({ parsedData }) {
       cy.zoom(1);
       cy.center();
     } catch {
-      // no-op
+      console.log("Error occurred in zoom reset.");
     }
   };
 
@@ -322,7 +354,7 @@ export default function GraphView({ parsedData }) {
           </Button>
         </Box>
 
-        {/* Cytoscape container - fills remaining height */}
+        {/* Cytoscape container */}
         <Box
           sx={{
             flex: 1,

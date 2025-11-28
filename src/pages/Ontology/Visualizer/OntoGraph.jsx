@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import OuterBox from "@/components/Custom/OuterBox.jsx";
 import { Button, Grid, Typography } from "@mui/material";
 import { AuthProvider } from "@/context/AuthContext";
@@ -9,6 +10,7 @@ import GraphView from "./GraphView.jsx";
 import StatusCard from "./StatusCard.jsx";
 import ImportProgressCard from "./ImportProgressCard.jsx";
 import ImportHelpText from "./ImportHelpText.jsx";
+import NodeDetails from "./NodeDetails.jsx";
 import useOWLImport from "./useOWLImport.js";
 import { PageHeader, InfoPanel, MetadataCard } from "@/components/Layout";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
@@ -23,6 +25,17 @@ export default function OntoGraph() {
     fileInputRef,
     handleInputChange,
   } = useOWLImport();
+
+  // Manage selected node state
+  const [selectedNode, setSelectedNode] = useState(null);
+
+  const handleNodeSelect = (nodeData) => {
+    setSelectedNode(nodeData);
+  };
+
+  const handleNodeDeselect = () => {
+    setSelectedNode(null);
+  };
 
   // MODIFIED - Store parsed data in component state for use throughout the app
   // parsedData shape: { nodes: Array, edges: Array, metadata: Object }
@@ -82,23 +95,28 @@ export default function OntoGraph() {
                       flexWrap: "nowrap",
                     }}
                   >
-                    <GraphView parsedData={parsedData} />
-                    <InfoPanel title="Properties">
-                      {uploadStatus === "idle" && (
-                        <StatusCard
-                          uploadStatus={uploadStatus}
-                          fileMetadata={fileMetadata}
-                          errorMessage={errorMessage}
-                        />
-                      )}
-
+                    <GraphView
+                      parsedData={parsedData}
+                      onNodeSelect={handleNodeSelect}
+                      onNodeDeselect={handleNodeDeselect}
+                    />
+                    <InfoPanel
+                      title={selectedNode ? "Node Details" : "Properties"}
+                    >
                       {uploadStatus === "importing" && <ImportProgressCard />}
+
+                      {uploadStatus === "idle" && <ImportHelpText />}
 
                       {uploadStatus === "success" && (
                         <MetadataCard fileMetadata={fileMetadata} />
                       )}
 
-                      {uploadStatus === "idle" && <ImportHelpText />}
+                      {selectedNode && (
+                        <NodeDetails
+                          node={selectedNode}
+                          onClose={handleNodeDeselect}
+                        />
+                      )}
                     </InfoPanel>
                   </Grid>
                 </Grid>

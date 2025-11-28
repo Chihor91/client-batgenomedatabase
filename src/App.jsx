@@ -42,8 +42,9 @@ import { SnackbarProvider } from "notistack";
 // Server API address
 // axios.defaults.baseURL = 'http://159.89.192.168:8000/'
 // axios.defaults.baseURL = 'http://172.16.7.5:8000'
-axios.defaults.baseURL = "https://mapi.nicercaves.site/";
+// axios.defaults.baseURL = "https://mapi.nicercaves.site/";
 // axios.defaults.baseURL = "http://202.92.144.124:8000/";
+axios.defaults.baseURL = "http://127.0.0.1:8000/";
 
 function App() {
   const router = createBrowserRouter(
@@ -66,8 +67,8 @@ function App() {
         <Route element={<AdminRoutes />}>
           <Route path="/admin" element={<AdminPage />} />
         </Route>
-      </Route>
-    )
+      </Route>,
+    ),
   );
 
   return (
