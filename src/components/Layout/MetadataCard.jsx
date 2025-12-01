@@ -22,7 +22,12 @@ export default function MetadataCard({ fileMetadata }) {
         <Typography
           variant="caption"
           color="text.secondary"
-          sx={{ mb: 2, display: "block" }}
+          sx={{
+            mb: 2,
+            display: "block",
+            wordBreak: "break-word",
+            overflowWrap: "break-word",
+          }}
         >
           {fileMetadata.ontologyDescription}
         </Typography>

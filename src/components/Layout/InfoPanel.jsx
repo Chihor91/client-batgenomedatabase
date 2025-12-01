@@ -17,7 +17,9 @@ export default function InfoPanel({ title = "Status", children }) {
       item
       sx={{
         width: { xs: "100%", md: "30%" },
-        order: { xs: 1, md: 2 },
+        maxWidth: { xs: "100%", md: "30%" },
+        minWidth: 0,
+        order: { xs: 2, md: 2 },
       }}
     >
       <Box
@@ -26,10 +28,13 @@ export default function InfoPanel({ title = "Status", children }) {
           padding: 2,
           backgroundColor: "#f0f0f0",
           borderRadius: 2,
-          height: "90%",
+          height: { xs: "auto", md: "90%" },
+          minHeight: { xs: 200, md: "auto" },
           display: "flex",
           flexDirection: "column",
           gap: 2,
+          overflow: "hidden",
+          minWidth: 0,
         }}
       >
         <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>

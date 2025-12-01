@@ -194,7 +194,7 @@ export default function GraphView({
         elements: [],
         style: getCytoscapeStyle(),
         layout: getLayoutOptions(layoutName, nodeCount),
-        wheelSensitivity: 1.0,
+        wheelSensitivity: 10.0,
       });
 
       const handleResize = () => {
@@ -290,7 +290,9 @@ export default function GraphView({
       item
       sx={{
         width: { xs: "100%", md: "70%" },
-        order: { xs: 2, md: 1 },
+        maxWidth: { xs: "100%", md: "70%" },
+        minWidth: 0,
+        order: { xs: 1, md: 1 },
       }}
     >
       <Box
@@ -299,10 +301,12 @@ export default function GraphView({
           padding: 2,
           backgroundColor: "#ffffff",
           borderRadius: 2,
-          height: "90%",
+          height: { xs: "auto", md: "90%" },
+          minHeight: { xs: 400, md: "auto" },
           display: "flex",
           flexDirection: "column",
           gap: 1.5,
+          overflow: "hidden",
         }}
       >
         {/* Toolbar with layout controls */}

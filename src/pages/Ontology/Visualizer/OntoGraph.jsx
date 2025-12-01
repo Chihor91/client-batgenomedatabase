@@ -7,12 +7,14 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 import MUIThemeProvider from "@/components/Custom/MUIThemeProvider";
 import { SnackbarProvider } from "notistack";
 import GraphView from "./GraphView.jsx";
-import StatusCard from "./StatusCard.jsx";
-import ImportProgressCard from "./ImportProgressCard.jsx";
-import ImportHelpText from "./ImportHelpText.jsx";
-import NodeDetails from "./NodeDetails.jsx";
 import useOWLImport from "./useOWLImport.js";
-import { PageHeader, InfoPanel, MetadataCard } from "@/components/Layout";
+import {
+  PageHeader,
+  InfoPanel,
+  MetadataCard,
+  SelectionCard,
+  ImportStatusCard,
+} from "@/components/Layout";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
 
 export default function OntoGraph() {
@@ -93,6 +95,8 @@ export default function OntoGraph() {
                       flexDirection: { xs: "column", md: "row" },
                       gap: 2,
                       flexWrap: "nowrap",
+                      overflow: { xs: "auto", md: "hidden" },
+                      padding: { xs: 1, md: 0 },
                     }}
                   >
                     <GraphView
@@ -103,20 +107,21 @@ export default function OntoGraph() {
                     <InfoPanel
                       title={selectedNode ? "Node Details" : "Properties"}
                     >
-                      {uploadStatus === "importing" && <ImportProgressCard />}
-
-                      {uploadStatus === "idle" && <ImportHelpText />}
+                      {selectedNode && (
+                        <SelectionCard
+                          selectedElement={selectedNode}
+                          onClose={handleNodeDeselect}
+                        />
+                      )}
 
                       {uploadStatus === "success" && (
                         <MetadataCard fileMetadata={fileMetadata} />
                       )}
 
-                      {selectedNode && (
-                        <NodeDetails
-                          node={selectedNode}
-                          onClose={handleNodeDeselect}
-                        />
-                      )}
+                      <ImportStatusCard
+                        uploadStatus={uploadStatus}
+                        errorMessage={errorMessage}
+                      />
                     </InfoPanel>
                   </Grid>
                 </Grid>
