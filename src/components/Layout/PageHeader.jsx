@@ -37,7 +37,7 @@ export default function PageHeader({ title, children }) {
             marginBottom: 0,
             marginTop: 0,
             lineHeight: 1,
-            fontSize: { xs: "1.1rem", md: "1.5rem" },
+            fontSize: { xs: "1.1rem", md: "2.0rem" },
           }}
         >
           {title}

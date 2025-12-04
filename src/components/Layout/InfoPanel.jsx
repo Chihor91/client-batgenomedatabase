@@ -26,7 +26,9 @@ export default function InfoPanel({ title = "Status", children }) {
         sx={{
           border: "1px solid #ccc",
           padding: 2,
-          backgroundColor: "#f0f0f0",
+          // backgroundColor: "#F8F9F0",
+          // backgroundColor: "#EEFCEE",
+          backgroundColor: "#FFFFFF",
           borderRadius: 2,
           height: { xs: "auto", md: "90%" },
           minHeight: { xs: 200, md: "auto" },

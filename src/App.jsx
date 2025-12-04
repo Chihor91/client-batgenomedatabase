@@ -25,9 +25,8 @@ import { AuthProvider } from "@/context/AuthContext";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import MUIThemeProvider from "@/components/Custom/MUIThemeProvider";
 
-import Hometest from "@/pages/Test/Hometest";
 import OntoGraph from "@/pages/Ontology/Visualizer/OntoGraph";
-import SidebarTest from "@/components/Test/SidebarTest.jsx";
+import OntoDex from "@/pages/Ontology/LookupSearch/OntoDex";
 
 // Asset Imports
 
@@ -51,8 +50,8 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
         <Route index element={<Home />} />
-        <Route path="/hometest" element={<Hometest />} />
         <Route path="/ontograph" element={<OntoGraph />} />
+        <Route path="/ontodex" element={<OntoDex />} />
         <Route path="/login" element={<Login />} />
         <Route element={<PrivateRoutes />}>
           <Route path="/source" element={<Source />} />
@@ -67,8 +66,8 @@ function App() {
         <Route element={<AdminRoutes />}>
           <Route path="/admin" element={<AdminPage />} />
         </Route>
-      </Route>,
-    ),
+      </Route>
+    )
   );
 
   return (

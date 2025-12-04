@@ -25,7 +25,7 @@ export default function InfoCard({
 }) {
   // Base styles for all cards
   const baseStyles = {
-    backgroundColor: "#ffffff",
+    backgroundColor: "#EAF1E4",
     borderRadius: 1,
     padding: 2,
   };

@@ -30,14 +30,6 @@ function SideBar({ showSidebar, setShowSidebar }) {
     user && axios.get("/user/isloggedin/").catch((err) => logoutUser());
   }, [user, logoutUser]);
 
-  const handleMouseEnter = () => {
-    setShowSidebar(true);
-  };
-
-  const handleMouseLeave = () => {
-    setShowSidebar(false);
-  };
-
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
     buttonName === "Dashboard"
@@ -48,7 +40,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
   return (
     <div
       className={`${
-        theme.theme === "light" ? "bg-[#f8fee5]" : "bg-[#0f1724]"
+        theme.theme === "light" ? "bg-[#F1F4E1]" : "bg-[#0f1724]"
       } top-0 left-0 h-screen overflow-hidden transition-all fixed z-40 w-[100px]`}
       style={{
         borderRight:
@@ -199,7 +191,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
             <SideNavButton
               icon={SearchIcon}
               label="OntoDex"
-              onClick={() => console.log("OntoDex Clicked")}
+              onClick={() => handleButtonClick("OntoDex")}
               isActive={activeButton === "OntoDex"}
             />
             <SideNavButton
