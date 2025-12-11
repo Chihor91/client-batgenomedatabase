@@ -340,19 +340,19 @@ export default function GraphView({
           </FormControl>
 
           {/* View control buttons */}
-          <Button
-            variant="contained"
-            color="success"
-            size="small"
-            onClick={onFit}
-          >
+          <Button variant="contained" size="small" onClick={onFit}>
             Fit
           </Button>
           <Button
             variant="contained"
-            color="success"
             size="small"
             onClick={onResetZoom}
+            sx={{
+              backgroundColor: "#454F02",
+              "&:hover": {
+                backgroundColor: "#353c01ff",
+              },
+            }}
           >
             Reset
           </Button>

@@ -71,7 +71,6 @@ export default function OntoGraph() {
                     />
                     <Button
                       variant="contained"
-                      color="success"
                       size="small"
                       onClick={startFileSelect}
                       aria-label="Import file"

@@ -17,10 +17,18 @@ import { SnackbarProvider } from "notistack";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import { styled } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
+import SearchIndividuals from "./SearchIndividuals";
 
 export default function OntoDex() {
-  const handleClick = () => {
+  const navigate = useNavigate();
+  const handleChipClick = () => {
     console.info("You clicked the Chip.");
+  };
+
+  const handleSearchClick = () => {
+    console.info("You clicked the Search Button.");
+    navigate("/ontodex/search");
   };
 
   return (
@@ -74,13 +82,14 @@ export default function OntoDex() {
                     >
                       <InputBase
                         sx={{ ml: 1, flex: 1 }}
-                        placeholder="Find the terms you need..."
+                        placeholder="Find the term you need..."
                         inputProps={{ "aria-label": "search for terms" }}
                       />
                       <IconButton
                         type="button"
                         sx={{ p: "10px" }}
                         aria-label="search"
+                        onClick={handleSearchClick}
                       >
                         <SearchIcon />
                       </IconButton>
@@ -96,12 +105,12 @@ export default function OntoDex() {
                     <Chip
                       label="MISO"
                       sx={{ backgroundColor: "#454F02", color: "#ffffff" }}
-                      onClick={handleClick}
+                      onClick={handleChipClick}
                     />
                     <Chip
                       label="ENVO"
                       variant="outlined"
-                      onClick={handleClick}
+                      onClick={handleChipClick}
                     />
                   </Stack>
                 </Stack>
