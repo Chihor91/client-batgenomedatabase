@@ -3,6 +3,7 @@ import { Suspense, useState } from "react";
 import {
   createBrowserRouter,
   createRoutesFromElements,
+  useLocation,
   Route,
   Outlet,
   RouterProvider,
@@ -82,7 +83,9 @@ function App() {
 }
 
 const Root = () => {
+  const location = useLocation();
   const [showSidebar, setShowSidebar] = useState(false);
+  const hideSidebar = location.pathname === "/login";
 
   return (
     <>
@@ -90,10 +93,12 @@ const Root = () => {
         <MUIThemeProvider>
           <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
             <AuthProvider>
-              <SideBar
-                showSidebar={showSidebar}
-                setShowSidebar={setShowSidebar}
-              />
+              {!hideSidebar && (
+                <SideBar
+                  showSidebar={showSidebar}
+                  setShowSidebar={setShowSidebar}
+                />
+              )}
 
               <div className="fixed transition-all w-full">
                 <div
