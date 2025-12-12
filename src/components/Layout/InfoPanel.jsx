@@ -24,12 +24,12 @@ export default function InfoPanel({ title = "Status", children }) {
     >
       <Box
         sx={{
-          border: "1px solid #ccc",
+          border: "1px solid #e1e1e1",
           padding: 2,
           // backgroundColor: "#F8F9F0",
           // backgroundColor: "#EEFCEE",
           backgroundColor: "#FFFFFF",
-          borderRadius: 2,
+          borderRadius: 3,
           height: { xs: "auto", md: "90%" },
           minHeight: { xs: 200, md: "auto" },
           display: "flex",

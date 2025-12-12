@@ -17,7 +17,6 @@ export default function PageHeader({ title, children }) {
     <Grid item sx={{ mt: 0 }}>
       <Box
         sx={{
-          borderBottom: "1px solid #ccc",
           marginTop: "-15px",
           marginBottom: 2,
           paddingTop: 0,
@@ -37,7 +36,6 @@ export default function PageHeader({ title, children }) {
             marginBottom: 0,
             marginTop: 0,
             lineHeight: 1,
-            fontSize: { xs: "1.1rem", md: "2.0rem" },
           }}
         >
           {title}

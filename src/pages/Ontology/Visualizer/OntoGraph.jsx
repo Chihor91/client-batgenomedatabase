@@ -95,7 +95,7 @@ export default function OntoGraph() {
                       gap: 2,
                       flexWrap: "nowrap",
                       overflow: { xs: "auto", md: "hidden" },
-                      padding: { xs: 1, md: 0 },
+                      px: { xs: 1, md: 2 },
                     }}
                   >
                     <GraphView

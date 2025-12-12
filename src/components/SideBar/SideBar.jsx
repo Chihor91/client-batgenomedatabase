@@ -14,8 +14,10 @@ import SpaceDashboardIcon from "@mui/icons-material/SpaceDashboard";
 import SearchIcon from "@mui/icons-material/Search";
 import BiotechIcon from "@mui/icons-material/Biotech";
 import LoginIcon from "@mui/icons-material/Login";
+import LogoutIcon from "@mui/icons-material/Logout";
 import LandscapeIcon from "@mui/icons-material/Landscape";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
+import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import { useTheme } from "@/components/ui/theme-provider";
 import axios from "axios";
 
@@ -50,7 +52,8 @@ function SideBar({ showSidebar, setShowSidebar }) {
       }}
     >
       <div
-        className={`flex flex-col h-[90px] p-[24px] justify-center items-center`}
+        className={`flex flex-col h-[90px] p-[24px] justify-center items-center cursor-pointer`}
+        onClick={() => handleButtonClick("Dashboard")}
       >
         <img
           height="40px"
@@ -67,114 +70,54 @@ function SideBar({ showSidebar, setShowSidebar }) {
       {/* FOR AUTHENTICATED USERS */}
       <div className="h-[90%] flex flex-col justify-start">
         {user ? (
-          <ul className="flex flex-col justify-between py-12">
-            <div className="space-y-4 ">
-              <CustomButton
-                imgSrc={
-                  theme.theme === "light"
-                    ? Images.ic_dashboard
-                    : Images.ic_DM_dashboard
-                }
-                className={`w-[80%] ${
-                  activeButton === "Dashboard"
-                    ? "bg-secondary_background border"
-                    : "bg-transparent"
-                }`}
-                variant="outline"
-                width={30}
-                showSidebar={showSidebar}
-                onClick={() => handleButtonClick("Dashboard")}
-              >
-                Dashboard
-              </CustomButton>
-
-              {user.is_superuser && (
-                <CustomButton
-                  className={`w-[80%]   ${
-                    activeButton === "Admin"
-                      ? "bg-secondary_background border"
-                      : "bg-transparent"
-                  } `}
-                  imgSrc={
-                    theme.theme === "light"
-                      ? Images.ic_project
-                      : Images.ic_DM_project
-                  }
-                  variant="outline"
-                  width={30}
-                  showSidebar={showSidebar}
-                  onClick={() => handleButtonClick("Admin")}
-                >
-                  Admin
-                </CustomButton>
-              )}
-
-              <CustomButton
-                imgSrc={
-                  theme.theme === "light"
-                    ? Images.ic_source
-                    : Images.ic_DM_source
-                }
-                className={`w-[80%]   ${
-                  activeButton === "Source"
-                    ? "bg-secondary_background border"
-                    : "bg-transparent"
-                }`}
-                variant="outline"
-                width={30}
-                showSidebar={showSidebar}
-                onClick={() => handleButtonClick("Source")}
-              >
-                Sources
-              </CustomButton>
-              <CustomButton
-                imgSrc={
-                  theme.theme === "light"
-                    ? Images.ic_isolate
-                    : Images.ic_DM_isolate
-                }
-                className={`w-[80%]  ${
-                  activeButton === "Isolate"
-                    ? "bg-secondary_background border"
-                    : "bg-transparent"
-                } `}
-                variant="outline"
-                width={30}
-                showSidebar={showSidebar}
-                onClick={() => handleButtonClick("Isolate")}
-              >
-                Isolates
-              </CustomButton>
-              <CustomButton
-                imgSrc={
-                  theme.theme === "light"
-                    ? Images.ic_logout
-                    : Images.ic_DM_logout
-                }
-                className={`w-[80%]  bg-transparent`}
-                variant="outline"
-                width={30}
-                showSidebar={showSidebar}
-                onClick={logoutUser}
-              >
-                Logout
-              </CustomButton>
-            </div>
-          </ul>
-        ) : (
-          // FOR NON-AUTHENTICATED USERS
           <section className="flex flex-col gap-0 pt-0 ">
-            <SideNavButton
-              icon={SpaceDashboardIcon}
-              label="Dashboard"
-              onClick={() => handleButtonClick("Dashboard")}
-              isActive={activeButton === "Dashboard"}
-            />
             <SideNavButton
               icon={LandscapeIcon}
               label="Sources"
               onClick={() => handleButtonClick("Source")}
-              isActive={activeButton === "Sources"}
+              isActive={activeButton === "Source"}
+            />
+            <SideNavButton
+              icon={BiotechIcon}
+              label="Isolates"
+              onClick={() => handleButtonClick("Isolate")}
+              isActive={activeButton === "Isolate"}
+            />
+            <SideNavButton
+              icon={AccountTreeIcon}
+              label="OntoGraph"
+              onClick={() => handleButtonClick("OntoGraph")}
+              isActive={activeButton === "OntoGraph"}
+            />
+            <SideNavButton
+              icon={SearchIcon}
+              label="OntoDex"
+              onClick={() => handleButtonClick("OntoDex")}
+              isActive={activeButton === "OntoDex"}
+            />
+            {user.is_superuser && (
+              <SideNavButton
+                icon={AdminPanelSettingsIcon}
+                label="Admin"
+                onClick={() => handleButtonClick("Admin")}
+                isActive={activeButton === "Admin"}
+              />
+            )}
+            <SideNavButton
+              icon={LogoutIcon}
+              label="Logout"
+              onClick={logoutUser}
+              isActive={activeButton === "Logout"}
+            />
+          </section>
+        ) : (
+          // FOR NON-AUTHENTICATED USERS
+          <section className="flex flex-col gap-0 pt-0 ">
+            <SideNavButton
+              icon={LandscapeIcon}
+              label="Sources"
+              onClick={() => handleButtonClick("Source")}
+              isActive={activeButton === "Source"}
             />
             <SideNavButton
               icon={BiotechIcon}

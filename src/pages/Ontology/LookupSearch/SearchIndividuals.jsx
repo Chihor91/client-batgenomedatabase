@@ -98,42 +98,14 @@ export default function SearchIndividuals() {
                   }}
                 >
                   {/* Page Header */}
-                  <Box
-                    sx={{
-                      borderBottom: "1px solid #ccc",
-                      marginTop: "-15px",
-                      marginBottom: 2,
-                      paddingTop: 0,
-                      paddingLeft: 2,
-                      paddingRight: 2,
-                      height: "44px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      flexShrink: 0,
-                    }}
-                  >
-                    <Typography
-                      variant="h4"
-                      sx={{
-                        fontWeight: "bold",
-                        textAlign: "left",
-                        marginBottom: 0,
-                        marginTop: 0,
-                        lineHeight: 1,
-                        fontSize: { xs: "1.5rem", md: "2.0rem" },
-                      }}
-                    >
-                      OntoDex
-                    </Typography>
-                  </Box>
+                  <PageHeader title="OntoDex"></PageHeader>
 
                   {/* Content Area - Takes remaining space */}
                   <Box
                     sx={{
                       flexGrow: 1,
                       width: "100%",
-                      p: 2,
+                      px: 2,
                       overflow: "hidden",
                     }}
                   >
@@ -142,7 +114,7 @@ export default function SearchIndividuals() {
                       sx={{
                         width: "100%",
                         height: "100%",
-                        borderRadius: 4,
+                        borderRadius: 3,
                         p: 3,
                         display: "flex",
                         flexDirection: "column",

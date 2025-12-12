@@ -300,7 +300,7 @@ export default function GraphView({
           border: "1px solid #e1e1e1",
           padding: 2,
           backgroundColor: "#ffffff",
-          borderRadius: 2,
+          borderRadius: 3,
           height: { xs: "auto", md: "90%" },
           minHeight: { xs: 400, md: "auto" },
           display: "flex",
