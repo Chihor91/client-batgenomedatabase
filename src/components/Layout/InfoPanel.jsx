@@ -30,16 +30,15 @@ export default function InfoPanel({ title = "Status", children }) {
           // backgroundColor: "#EEFCEE",
           backgroundColor: "#FFFFFF",
           borderRadius: 3,
-          height: { xs: "auto", md: "90%" },
-          minHeight: { xs: 200, md: "auto" },
+          height: "auto",
           display: "flex",
           flexDirection: "column",
           gap: 2,
-          overflow: "hidden",
+          overflow: "auto",
           minWidth: 0,
         }}
       >
-        <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+        <Typography variant="h6" align="left" sx={{ fontWeight: 600 }}>
           {title}
         </Typography>
 

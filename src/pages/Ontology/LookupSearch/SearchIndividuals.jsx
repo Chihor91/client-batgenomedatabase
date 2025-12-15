@@ -1,40 +1,14 @@
 import * as React from "react";
 import { useState } from "react";
 import OuterBox from "@/components/Custom/OuterBox.jsx";
-import {
-  Button,
-  Grid,
-  Typography,
-  Box,
-  Paper,
-  TextField,
-  Select,
-  MenuItem,
-  FormControl,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Pagination,
-  InputAdornment,
-  Link,
-  IconButton,
-} from "@mui/material";
+import { Grid } from "@mui/material";
 import { AuthProvider } from "@/context/AuthContext";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import MUIThemeProvider from "@/components/Custom/MUIThemeProvider";
 import { SnackbarProvider } from "notistack";
-import SearchIcon from "@mui/icons-material/Search";
-import SettingsIcon from "@mui/icons-material/Settings";
-import {
-  PageHeader,
-  InfoPanel,
-  MetadataCard,
-  SelectionCard,
-  ImportStatusCard,
-} from "@/components/Layout";
+import { PageHeader } from "@/components/Layout";
+import SearchPanel from "./SearchPanel.jsx";
+import ResultsTable from "./ResultsTable.jsx";
 
 // Sample data for demonstration
 const sampleResults = [
@@ -42,7 +16,7 @@ const sampleResults = [
     label: "Simulation",
     ontology: "miso",
     type: "class",
-    description: "A computational simulation process",
+    description: "A computational simulation process that models a system",
   },
   {
     label: "Simulation",
@@ -54,7 +28,47 @@ const sampleResults = [
     label: "Simulation",
     ontology: "sio",
     type: "class",
-    description: "a simulation is a process of using a model...",
+    description:
+      "a simulation is a process of using a model to predict the behavior of a systems",
+  },
+  {
+    label: "assocation",
+    ontology: "sio",
+    type: "class",
+    description: "an association is a relationship between two entities",
+  },
+  {
+    label: "emulation",
+    ontology: "sio",
+    type: "class",
+    description:
+      "an emulation is a process of imitating the behavior of a system",
+  },
+  {
+    label: "emotion",
+    ontology: "sio",
+    type: "class",
+    description:
+      "an emotion is a state of mind characterized by a complex of physiological, psychological, and behavioral responses to a stimulus or situation",
+  },
+  {
+    label: "Dedicated",
+    ontology: "sio",
+    type: "class",
+    description:
+      "a dedicated is a process that is designed to perform a specific task",
+  },
+  {
+    label: "Hawaii",
+    ontology: "sio",
+    type: "class",
+    description: "Hawaii is a state of the United States of America",
+  },
+  {
+    label: "Iphone",
+    ontology: "sio",
+    type: "class",
+    description: "Iphone is a mobile phone",
   },
   {
     label: "Simulation",
@@ -68,19 +82,35 @@ const sampleResults = [
     type: "class",
     description: "A planned process that has some simulation as part.",
   },
+  {
+    label: "earth",
+    ontology: "envo",
+    type: "class",
+    description:
+      "The Earth is the third planet from the Sun and the only known planet to support life.",
+  },
+];
+
+// Available ontologies for filtering
+const ontologyOptions = [
+  { id: "miso", label: "MISO" },
+  { id: "eo", label: "EO" },
+  { id: "sio", label: "SIO" },
+  { id: "obi", label: "OBI" },
 ];
 
 export default function SearchIndividuals() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [ontologyFilter, setOntologyFilter] = useState("all");
+  const [ontologyFilter, setOntologyFilter] = useState("");
   const [page, setPage] = useState(1);
 
   const handleSearch = () => {
     console.log("Searching for:", searchTerm, "in ontology:", ontologyFilter);
   };
 
-  const handlePageChange = (event, value) => {
-    setPage(value);
+  const handleReset = () => {
+    setSearchTerm("");
+    setOntologyFilter("");
   };
 
   return (
@@ -90,197 +120,38 @@ export default function SearchIndividuals() {
           <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
             <AuthProvider>
               <OuterBox>
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    height: "90vh",
-                  }}
-                >
-                  {/* Page Header */}
-                  <PageHeader title="OntoDex"></PageHeader>
+                <Grid container direction="column" sx={{ minHeight: "100vh" }}>
+                  <PageHeader title="OntoDex" />
 
-                  {/* Content Area - Takes remaining space */}
-                  <Box
+                  {/* Main Content Area */}
+                  <Grid
+                    item
+                    container
                     sx={{
                       flexGrow: 1,
-                      width: "100%",
-                      px: 2,
-                      overflow: "hidden",
+                      flexDirection: { xs: "column", md: "row" },
+                      gap: 2,
+                      flexWrap: "nowrap",
+                      overflow: "visible",
+                      px: { xs: 1, md: 2 },
+                      pb: 2,
                     }}
                   >
-                    <Paper
-                      variant="outlined"
-                      sx={{
-                        width: "100%",
-                        height: "100%",
-                        borderRadius: 3,
-                        p: 3,
-                        display: "flex",
-                        flexDirection: "column",
-                      }}
-                    >
-                      {/* Search Bar Section */}
-                      <Box
-                        sx={{
-                          display: "flex",
-                          gap: 2,
-                          mb: 2,
-                          alignItems: "center",
-                        }}
-                      >
-                        <TextField
-                          placeholder="Find the term you need..."
-                          variant="outlined"
-                          size="small"
-                          value={searchTerm}
-                          onChange={(e) => setSearchTerm(e.target.value)}
-                          sx={{ flex: 1 }}
-                        />
-                        <FormControl size="small" sx={{ minWidth: 180 }}>
-                          <Select
-                            value={ontologyFilter}
-                            onChange={(e) => setOntologyFilter(e.target.value)}
-                            displayEmpty
-                          >
-                            <MenuItem value="all">All ontologies</MenuItem>
-                            <MenuItem value="miso">miso</MenuItem>
-                            <MenuItem value="eo">eo</MenuItem>
-                            <MenuItem value="sio">sio</MenuItem>
-                            <MenuItem value="obi">obi</MenuItem>
-                          </Select>
-                        </FormControl>
-                        <Button
-                          variant="contained"
-                          startIcon={<SearchIcon />}
-                          onClick={handleSearch}
-                        >
-                          Search
-                        </Button>
-                      </Box>
+                    {/* Left: Results Table */}
+                    <ResultsTable results={sampleResults} />
 
-                      {/* Results Info Row */}
-                      <Box
-                        sx={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                          alignItems: "center",
-                          mb: 2,
-                        }}
-                      >
-                        <Typography variant="body2" color="text.secondary">
-                          1-10 of 257 results for "Simulation"
-                        </Typography>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: 0.5,
-                          }}
-                        >
-                          <Link
-                            href="#"
-                            underline="hover"
-                            sx={{
-                              color: "text.secondary",
-                              fontSize: "0.875rem",
-                            }}
-                          >
-                            Advanced search
-                          </Link>
-                          <IconButton size="small">
-                            <SettingsIcon fontSize="small" />
-                          </IconButton>
-                        </Box>
-                      </Box>
-
-                      {/* Results Table */}
-                      <TableContainer sx={{ flexGrow: 1 }}>
-                        <Table stickyHeader>
-                          <TableHead>
-                            <TableRow>
-                              <TableCell sx={{ fontWeight: "bold" }}>
-                                Label
-                              </TableCell>
-                              <TableCell sx={{ fontWeight: "bold" }}>
-                                Ontology
-                              </TableCell>
-                              <TableCell sx={{ fontWeight: "bold" }}>
-                                Type
-                              </TableCell>
-                              <TableCell sx={{ fontWeight: "bold" }}>
-                                Description
-                              </TableCell>
-                            </TableRow>
-                          </TableHead>
-                          <TableBody>
-                            {sampleResults.map((row, index) => (
-                              <TableRow
-                                key={index}
-                                sx={{
-                                  "&:last-child td, &:last-child th": {
-                                    border: 0,
-                                  },
-                                }}
-                              >
-                                <TableCell>
-                                  <Link
-                                    href="#"
-                                    underline="hover"
-                                    sx={{ color: "success.main" }}
-                                  >
-                                    {row.label}
-                                  </Link>
-                                </TableCell>
-                                <TableCell>{row.ontology}</TableCell>
-                                <TableCell>{row.type}</TableCell>
-                                <TableCell>{row.description}</TableCell>
-                              </TableRow>
-                            ))}
-                          </TableBody>
-                        </Table>
-                      </TableContainer>
-
-                      {/* Pagination */}
-                      <Box
-                        sx={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                          alignItems: "center",
-                          pt: 2,
-                          borderTop: 1,
-                          borderColor: "divider",
-                        }}
-                      >
-                        <Button
-                          variant="outlined"
-                          size="small"
-                          disabled={page === 1}
-                          onClick={() => setPage(page - 1)}
-                        >
-                          Previous
-                        </Button>
-                        <Pagination
-                          count={26}
-                          page={page}
-                          onChange={handlePageChange}
-                          color="success"
-                          siblingCount={1}
-                          boundaryCount={1}
-                          hidePrevButton
-                          hideNextButton
-                        />
-                        <Button
-                          variant="outlined"
-                          size="small"
-                          onClick={() => setPage(page + 1)}
-                        >
-                          Next
-                        </Button>
-                      </Box>
-                    </Paper>
-                  </Box>
-                </Box>
+                    {/* Right: Search Panel */}
+                    <SearchPanel
+                      searchTerm={searchTerm}
+                      setSearchTerm={setSearchTerm}
+                      ontologyFilter={ontologyFilter}
+                      setOntologyFilter={setOntologyFilter}
+                      ontologyOptions={ontologyOptions}
+                      onSearch={handleSearch}
+                      onReset={handleReset}
+                    />
+                  </Grid>
+                </Grid>
               </OuterBox>
             </AuthProvider>
           </ThemeProvider>

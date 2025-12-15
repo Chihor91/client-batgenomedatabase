@@ -114,18 +114,6 @@ function SideBar({ showSidebar, setShowSidebar }) {
           // FOR NON-AUTHENTICATED USERS
           <section className="flex flex-col gap-0 pt-0 ">
             <SideNavButton
-              icon={LandscapeIcon}
-              label="Sources"
-              onClick={() => handleButtonClick("Source")}
-              isActive={activeButton === "Source"}
-            />
-            <SideNavButton
-              icon={BiotechIcon}
-              label="Isolates"
-              onClick={() => handleButtonClick("Isolate")}
-              isActive={activeButton === "Isolate"}
-            />
-            <SideNavButton
               icon={AccountTreeIcon}
               label="OntoGraph"
               onClick={() => handleButtonClick("OntoGraph")}

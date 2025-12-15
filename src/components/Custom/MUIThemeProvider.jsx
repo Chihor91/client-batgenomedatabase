@@ -96,7 +96,7 @@ const customTheme = createTheme({
         root: {
           borderColor: "#454f02",
           color: "#454f02",
-          backgroundColor: "transparent",
+          backgroundColor: "white",
           "&:hover": {
             backgroundColor: "rgba(69, 79, 2, 0.08)",
           },
