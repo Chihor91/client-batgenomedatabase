@@ -138,7 +138,11 @@ export default function SearchIndividuals() {
                     }}
                   >
                     {/* Left: Results Table */}
-                    <ResultsTable results={sampleResults} />
+                    <ResultsTable
+                      results={sampleResults}
+                      searchTerm={searchTerm}
+                      ontologyFilter={ontologyFilter}
+                    />
 
                     {/* Right: Search Panel */}
                     <SearchPanel

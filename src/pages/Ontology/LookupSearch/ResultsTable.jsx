@@ -9,7 +9,7 @@ import { Grid, Paper, Typography, Link } from "@mui/material";
  * @param {Object} props
  * @param {Array} props.results - Array of result objects
  */
-export default function ResultsTable({ results }) {
+export default function ResultsTable({ results, searchTerm, ontologyFilter }) {
   // Define columns for Material React Table
   const columns = useMemo(
     () => [
@@ -54,6 +54,11 @@ export default function ResultsTable({ results }) {
     []
   );
 
+  const columnFilters = useMemo(
+    () => (ontologyFilter ? [{ id: "ontology", value: ontologyFilter }] : []),
+    [ontologyFilter]
+  );
+
   return (
     <Grid
       item
@@ -85,6 +90,10 @@ export default function ResultsTable({ results }) {
           enableSorting={true}
           enablePagination={true}
           layoutMode="fixed"
+          state={{
+            globalFilter: searchTerm || undefined,
+            columnFilters,
+          }}
           initialState={{
             pagination: { pageSize: 10, pageIndex: 0 },
             density: "comfortable",
