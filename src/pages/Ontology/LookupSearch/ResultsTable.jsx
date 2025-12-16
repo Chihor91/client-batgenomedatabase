@@ -1,16 +1,18 @@
 import * as React from "react";
 import { useMemo } from "react";
-import { MaterialReactTable } from "material-react-table";
-import { Grid, Paper, Typography, Link } from "@mui/material";
+import { Grid, Paper, Link } from "@mui/material";
+import { DataTable } from "@/components/Layout";
 
 /**
- * ResultsTable - Results display for OntoDex using Material React Table
+ * ResultsTable - Results display for OntoDex using DataTable
  *
  * @param {Object} props
  * @param {Array} props.results - Array of result objects
+ * @param {string} [props.searchTerm] - Global search filter
+ * @param {string} [props.ontologyFilter] - Ontology column filter
  */
 export default function ResultsTable({ results, searchTerm, ontologyFilter }) {
-  // Define columns for Material React Table
+  // Define columns for DataTable
   const columns = useMemo(
     () => [
       {
@@ -79,29 +81,11 @@ export default function ResultsTable({ results, searchTerm, ontologyFilter }) {
           flexDirection: "column",
         }}
       >
-        {/* Material React Table */}
-        <MaterialReactTable
+        <DataTable
           columns={columns}
           data={results}
-          enableColumnActions={false}
-          enableColumnFilters={false}
-          enableTopToolbar={false}
-          enableBottomToolbar={true}
-          enableSorting={true}
-          enablePagination={true}
-          layoutMode="fixed"
-          state={{
-            globalFilter: searchTerm || undefined,
-            columnFilters,
-          }}
-          initialState={{
-            pagination: { pageSize: 10, pageIndex: 0 },
-            density: "comfortable",
-          }}
-          muiTablePaperProps={{
-            elevation: 0,
-            sx: { boxShadow: "none", width: "100%" },
-          }}
+          globalFilter={searchTerm}
+          columnFilters={columnFilters}
         />
       </Paper>
     </Grid>

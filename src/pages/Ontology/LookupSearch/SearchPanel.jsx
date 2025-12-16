@@ -1,16 +1,12 @@
 import * as React from "react";
 import {
-  Button,
   TextField,
   Select,
   MenuItem,
   FormControl,
   InputLabel,
-  Box,
-  IconButton,
 } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
-import { InfoPanel } from "@/components/Layout";
+import { FilterPanel } from "@/components/Layout";
 
 /**
  * SearchPanel - Search controls for OntoDex
@@ -34,7 +30,7 @@ export default function SearchPanel({
   onReset,
 }) {
   return (
-    <InfoPanel title="Search">
+    <FilterPanel title="Search" onSearch={onSearch} onReset={onReset}>
       <TextField
         fullWidth
         placeholder="Find the term you need..."
@@ -80,34 +76,6 @@ export default function SearchPanel({
           ))}
         </Select>
       </FormControl>
-
-      {/* Action Buttons - Bottom */}
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          gap: 1,
-          mt: 2,
-        }}
-      >
-        <Button variant="outlined" size="small" onClick={onReset}>
-          Clear
-        </Button>
-        <IconButton
-          onClick={onSearch}
-          aria-label="search"
-          sx={{
-            backgroundColor: "#2e7d32",
-            color: "white",
-            "&:hover": {
-              backgroundColor: "#1b5e20",
-            },
-          }}
-        >
-          <SearchIcon />
-        </IconButton>
-      </Box>
-    </InfoPanel>
+    </FilterPanel>
   );
 }
