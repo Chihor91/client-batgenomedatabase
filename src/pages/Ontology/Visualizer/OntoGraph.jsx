@@ -10,11 +10,12 @@ import GraphView from "./GraphView.jsx";
 import useOWLImport from "./useOWLImport.js";
 import {
   PageHeader,
-  InfoPanel,
-  MetadataCard,
-  SelectionCard,
-  ImportStatusCard,
+  // InfoPanel, // Using local specific InfoPanel now
+  // MetadataCard,
+  // SelectionCard,
+  // ImportStatusCard,
 } from "@/components/Layout";
+import InfoPanel from "./InfoPanel"; // Import specific local panel
 import UploadFileIcon from "@mui/icons-material/UploadFile";
 
 export default function OntoGraph() {
@@ -104,24 +105,12 @@ export default function OntoGraph() {
                       onNodeDeselect={handleNodeDeselect}
                     />
                     <InfoPanel
-                      title={selectedNode ? "Node Details" : "Properties"}
-                    >
-                      {selectedNode && (
-                        <SelectionCard
-                          selectedElement={selectedNode}
-                          onClose={handleNodeDeselect}
-                        />
-                      )}
-
-                      {uploadStatus === "success" && (
-                        <MetadataCard fileMetadata={fileMetadata} />
-                      )}
-
-                      <ImportStatusCard
-                        uploadStatus={uploadStatus}
-                        errorMessage={errorMessage}
-                      />
-                    </InfoPanel>
+                      selectedNode={selectedNode}
+                      onDeselect={handleNodeDeselect}
+                      fileMetadata={fileMetadata}
+                      uploadStatus={uploadStatus}
+                      errorMessage={errorMessage}
+                    />
                   </Grid>
                 </Grid>
               </OuterBox>

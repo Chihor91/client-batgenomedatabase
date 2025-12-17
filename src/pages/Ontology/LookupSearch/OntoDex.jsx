@@ -18,7 +18,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import { styled } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
-import SearchIndividuals from "./SearchIndividuals";
+import SearchIndividuals from "./SearchPage";
 
 export default function OntoDex() {
   const navigate = useNavigate();

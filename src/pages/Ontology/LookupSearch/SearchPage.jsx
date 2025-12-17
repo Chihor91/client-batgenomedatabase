@@ -8,7 +8,7 @@ import MUIThemeProvider from "@/components/Custom/MUIThemeProvider";
 import { SnackbarProvider } from "notistack";
 import { PageHeader } from "@/components/Layout";
 import SearchPanel from "./SearchPanel.jsx";
-import ResultsTable from "./ResultsTable.jsx";
+import SearchTable from "./SearchTable.jsx";
 
 // Sample data for demonstration
 const sampleResults = [
@@ -99,7 +99,7 @@ const ontologyOptions = [
   { id: "obi", label: "OBI" },
 ];
 
-export default function SearchIndividuals() {
+export default function SearchPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [ontologyFilter, setOntologyFilter] = useState("");
   const [page, setPage] = useState(1);
@@ -137,8 +137,8 @@ export default function SearchIndividuals() {
                       pb: 2,
                     }}
                   >
-                    {/* Left: Results Table */}
-                    <ResultsTable
+                    {/* Left: Search Table */}
+                    <SearchTable
                       results={sampleResults}
                       searchTerm={searchTerm}
                       ontologyFilter={ontologyFilter}

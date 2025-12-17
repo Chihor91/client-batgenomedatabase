@@ -5,21 +5,12 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
+  Button,
+  IconButton,
 } from "@mui/material";
-import { FilterPanel } from "@/components/Layout";
+import SearchIcon from "@mui/icons-material/Search";
+import { SidePanel } from "@/components/Layout";
 
-/**
- * SearchPanel - Search controls for OntoDex
- *
- * @param {Object} props
- * @param {string} props.searchTerm - Current search term
- * @param {function} props.setSearchTerm - Update search term
- * @param {string} props.ontologyFilter - Selected ontology filter
- * @param {function} props.setOntologyFilter - Update ontology filter
- * @param {Array} props.ontologyOptions - Available ontology options
- * @param {function} props.onSearch - Search callback
- * @param {function} props.onReset - Reset/clear callback
- */
 export default function SearchPanel({
   searchTerm,
   setSearchTerm,
@@ -29,8 +20,40 @@ export default function SearchPanel({
   onSearch,
   onReset,
 }) {
+  const actions = (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        width: "100%",
+      }}
+    >
+      {onReset && (
+        <Button variant="outlined" size="small" onClick={onReset}>
+          Clear
+        </Button>
+      )}
+      {onSearch && (
+        <IconButton
+          onClick={onSearch}
+          aria-label="search"
+          sx={{
+            backgroundColor: "#2e7d32",
+            color: "white",
+            "&:hover": {
+              backgroundColor: "#1b5e20",
+            },
+          }}
+        >
+          <SearchIcon />
+        </IconButton>
+      )}
+    </div>
+  );
+
   return (
-    <FilterPanel title="Search" onSearch={onSearch} onReset={onReset}>
+    <SidePanel title="Search" actions={actions}>
       <TextField
         fullWidth
         placeholder="Find the term you need..."
@@ -76,6 +99,6 @@ export default function SearchPanel({
           ))}
         </Select>
       </FormControl>
-    </FilterPanel>
+    </SidePanel>
   );
 }

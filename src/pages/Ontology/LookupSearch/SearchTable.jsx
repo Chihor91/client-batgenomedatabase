@@ -3,15 +3,7 @@ import { useMemo } from "react";
 import { Grid, Paper, Link } from "@mui/material";
 import { DataTable } from "@/components/Layout";
 
-/**
- * ResultsTable - Results display for OntoDex using DataTable
- *
- * @param {Object} props
- * @param {Array} props.results - Array of result objects
- * @param {string} [props.searchTerm] - Global search filter
- * @param {string} [props.ontologyFilter] - Ontology column filter
- */
-export default function ResultsTable({ results, searchTerm, ontologyFilter }) {
+export default function SearchTable({ results, searchTerm, ontologyFilter }) {
   // Define columns for DataTable
   const columns = useMemo(
     () => [
