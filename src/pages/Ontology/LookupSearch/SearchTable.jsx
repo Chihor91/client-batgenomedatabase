@@ -1,9 +1,12 @@
 import * as React from "react";
 import { useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 import { Grid, Paper, Link } from "@mui/material";
 import { DataTable } from "@/components/Layout";
 
 export default function SearchTable({ results, searchTerm, ontologyFilter }) {
+  const navigate = useNavigate();
+
   // Define columns for DataTable
   const columns = useMemo(
     () => [
@@ -12,7 +15,13 @@ export default function SearchTable({ results, searchTerm, ontologyFilter }) {
         header: "Label",
         size: 100,
         Cell: ({ cell }) => (
-          <Link href="#" underline="hover" sx={{ color: "success.main" }}>
+          <Link
+            component="button"
+            variant="body2"
+            underline="hover"
+            onClick={() => navigate("/ontodex/search/class")}
+            sx={{ color: "success.main", textAlign: "left" }}
+          >
             {cell.getValue()}
           </Link>
         ),
