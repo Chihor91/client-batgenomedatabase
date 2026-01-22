@@ -1,40 +1,254 @@
-import { Grid } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import Statistics from "./Statistics";
-import SourceMap from "@/pages/SourceMapping";
 import { Separator } from "@/components/ui/separator";
+import { AuthProvider } from "@/context/AuthContext";
+import { ThemeProvider } from "@/components/ui/theme-provider";
+import MUIThemeProvider from "@/components/Custom/MUIThemeProvider";
+import { SnackbarProvider } from "notistack";
+import { PageHeader } from "@/components/Layout";
+import OuterBox from "@/components/Custom/OuterBox.jsx";
+import UploadFileIcon from "@mui/icons-material/UploadFile";
+import AccountTreeIcon from "@mui/icons-material/AccountTree";
+import SearchIcon from "@mui/icons-material/Search";
 
 export default function Home() {
-	return (
-		<div className='h-[95vh]'>
-			<div className="pl-10 flex flex-col bg-home bg-fixed text-white w-full lg:p-0 h-[60%] justify-center">
-				<div className="text-[calc(5vw+10px)] font-extrabold">
-					<h1 className="font-title text-nowrap">IMCavesPH</h1>
-				</div>
-				<div className="text-[calc(1vw+20px)]">
-					<h1 className="font-title-desc">
-						Information on Microbes from Caves in the Philippines
-					</h1>
-				</div>
-			</div>
-			<div className="mx-[30px] md:mx-[100px] md:h-[35%] overflow-y-hidden mt-[50px] md:mt-[100px]">
-				<div className="mx-20 mr-10 flex flex-col space-y-10 md:flex-row md:space-y-0 lg:mx-0">
-					<div className="max-w-full md:max-w-[50%]">
-						<span className="lg:mx-[50px] text-justify inline-block">
-							The <span className="font-semibold">IMCavesPH</span> database is a culture collection information system developed 
-							by the <span className="font-semibold">UPLB Museum of Natural History (UPLB-MNH)</span> for storage of microbiological and
-							demographic information of cave microorganisms sampled from various caves in the Philippines under the&nbsp;
-							<a href='https://www.nicercaves.site' className="font-bold underline">NICER CAVES</a> Program.
-						</span>
-					</div>
-					<Separator orientation="vertical" className="hidden md:block mx-10 h-auto" />
-					<Separator className="block md:hidden" />
-					<Statistics />
-				</div>
-			</div>
-			<div className="bg-[#e1ebd6] flex flex-col py-10 pl-20 pr-[calc(5vw+10px)]">
-				<label className="text-left font-title text-3xl">Source Mapping</label>
-				<SourceMap />
-			</div>
-		</div>
-	)
+  return (
+    <>
+      <SnackbarProvider maxSnack={3}>
+        <MUIThemeProvider>
+          <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+            <AuthProvider>
+              <OuterBox>
+                <PageHeader title="Welcome, User!">
+                  <Button
+                    variant="contained"
+                    size="small"
+                    onClick={console.log("Click")}
+                    aria-label="Import file"
+                    sx={{
+                      alignSelf: "center",
+                      mt: 0,
+                      display: "flex",
+                      gap: 1,
+                    }}
+                  >
+                    <UploadFileIcon fontSize="small" />
+                    Import File
+                  </Button>
+                </PageHeader>
+
+                <Grid container spacing={2}>
+                  <Grid size={12}>
+                    <Box
+                      sx={{
+                        height: { xs: "auto", md: "90%" },
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-between",
+                        alignItems: "stretch",
+                        padding: 4,
+                        backgroundImage: `url(/images/homebackground.png)`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                        borderRadius: 4,
+                        color: "white",
+                        m: 2,
+                      }}
+                    >
+                      <Typography
+                        variant="h4"
+                        sx={{
+                          color: "white",
+                          fontWeight: 600,
+                          textAlign: "left",
+                        }}
+                      >
+                        IMCavesPH: Built for the Semantic Web
+                      </Typography>
+                      <Typography
+                        variant="h8"
+                        sx={{
+                          color: "white",
+                          fontWeight: 400,
+                          textAlign: "left",
+                          "& a": {
+                            fontWeight: 700,
+                            textDecoration: "underline",
+                            color: "inherit",
+                          },
+                        }}
+                      >
+                        Free-form text is often ambiguous (e.g., 'cold' vs 'low
+                        temp'). To ensure accuracy, this database uses the{" "}
+                        <a
+                          href="https://bioportal.bioontology.org/ontologies/ENVO"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Environment Ontology (ENVO)
+                        </a>{" "}
+                        — the controlled vocabulary used by the world's leading
+                        microbial datasets.
+                      </Typography>
+                    </Box>
+                  </Grid>
+                  <Grid size={6}>
+                    <Box
+                      sx={{
+                        height: { xs: "auto", md: "90%" },
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-between",
+                        alignItems: "stretch",
+                        padding: 4,
+                        m: 2,
+                        border: "1px solid #e1e1e1",
+                        backgroundColor: "#FFFFFF",
+                        borderRadius: 3,
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          width: "fit-content",
+                          backgroundColor: "success.main",
+                          borderRadius: 2,
+                          padding: 1.5,
+                          mb: 2,
+                        }}
+                      >
+                        <AccountTreeIcon
+                          sx={{
+                            color: "white",
+                            fontSize: 30,
+                          }}
+                        />
+                      </Box>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          color: "black",
+                          fontWeight: 600,
+                          textAlign: "left",
+                        }}
+                      >
+                        Ontology Graph
+                      </Typography>
+                      <Typography
+                        variant="h8"
+                        sx={{
+                          color: "black",
+                          fontWeight: 400,
+                          textAlign: "left",
+                          "& a": {
+                            fontWeight: 700,
+                            textDecoration: "underline",
+                            color: "inherit",
+                          },
+                        }}
+                      >
+                        Visualize relationships between ontological terms.
+                      </Typography>
+                      <Button
+                        variant="outlined"
+                        size="small"
+                        onClick={console.log("Click")}
+                        aria-label="View Graph"
+                        sx={{
+                          alignSelf: "stretch",
+                          mt: 2,
+                          display: "flex",
+                          gap: 1,
+                        }}
+                      >
+                        View Graph
+                      </Button>
+                    </Box>
+                  </Grid>
+                  <Grid size={6}>
+                    <Box
+                      sx={{
+                        height: { xs: "auto", md: "90%" },
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-between",
+                        alignItems: "stretch",
+                        padding: 4,
+                        m: 2,
+                        border: "1px solid #e1e1e1",
+                        backgroundColor: "#FFFFFF",
+                        borderRadius: 3,
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          width: "fit-content",
+                          backgroundColor: "success.main",
+                          borderRadius: 2,
+                          padding: 1.5,
+                          mb: 2,
+                        }}
+                      >
+                        <SearchIcon
+                          sx={{
+                            color: "white",
+                            fontSize: 30,
+                          }}
+                        />
+                      </Box>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          color: "black",
+                          fontWeight: 600,
+                          textAlign: "left",
+                        }}
+                      >
+                        Ontology Index
+                      </Typography>
+                      <Typography
+                        variant="h8"
+                        sx={{
+                          color: "black",
+                          fontWeight: 400,
+                          textAlign: "left",
+                          "& a": {
+                            fontWeight: 700,
+                            textDecoration: "underline",
+                            color: "inherit",
+                          },
+                        }}
+                      >
+                        Browse ontological terms.
+                      </Typography>
+                      <Button
+                        variant="contained"
+                        size="small"
+                        onClick={console.log("Click")}
+                        aria-label="Search Terms"
+                        sx={{
+                          alignSelf: "stretch",
+                          mt: 2,
+                          display: "flex",
+                          gap: 1,
+                        }}
+                      >
+                        Search Terms
+                      </Button>
+                    </Box>
+                  </Grid>
+                </Grid>
+              </OuterBox>
+            </AuthProvider>
+          </ThemeProvider>
+        </MUIThemeProvider>
+      </SnackbarProvider>
+    </>
+  );
 }

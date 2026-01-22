@@ -1,0 +1,1314 @@
+{
+  "page": 1,
+  "pageCount": 1,
+  "totalCount": 29,
+  "prevPage": null,
+  "nextPage": null,
+  "links": {
+    "nextPage": null,
+    "prevPage": null
+  },
+  "collection": [
+    {
+      "prefLabel": "cave",
+      "synonym": ["notch", "grotto", "cavern"],
+      "definition": ["Naturally formed, subterranean open area or chamber."],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_00000067",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000067",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000067/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000067/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000067/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000067/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000067/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000067/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000067/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000067/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000067",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "synonym": "http://www.w3.org/2004/02/skos/core#altLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "karst cave",
+      "definition": ["A cave which is part of a karst formation."],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_00012411",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00012411",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00012411/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00012411/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00012411/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00012411/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00012411/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00012411/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00012411/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00012411/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00012411",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "erosional cave",
+      "definition": [
+        "A cave formed by erosion caused by flowing streams carrying rocks or sediments."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_01000363",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000363",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000363/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000363/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000363/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000363/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000363/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000363/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000363/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000363/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000363",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "fault cave",
+      "definition": [
+        "A cave developed along a fault or fault zone, either by movement of the fault or by preferential solution along it."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_00000071",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000071",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000071/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000071/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000071/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000071/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000071/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000071/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000071/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000071/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000071",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "fissure cave",
+      "definition": [
+        "A narrow, vertical cave passage, often developed along a joint but not necessarily so. Usually due to solution but sometimes to tension."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_00000263",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000263",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000263/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000263/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000263/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000263/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000263/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000263/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000263/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000263/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000263",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "anchialine cave",
+      "definition": [
+        "An anchialine cave is a cave which contains an anchialine pool."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_01000367",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000367",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000367/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000367/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000367/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000367/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000367/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000367/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000367/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000367/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000367",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "cave entrance",
+      "synonym": ["cave exit"],
+      "definition": [
+        "A two-dimensional continuant fiat boundary which is used to demarcate the interior from the exterior of a cave."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_00000102",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000102",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000102/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000102/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000102/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000102/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000102/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000102/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000102/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000102/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000102",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "synonym": "http://www.w3.org/2004/02/skos/core#altLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "ice cave",
+      "definition": [
+        "An ice cave is a bedrock cave which contains year-round ice formations."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_01000365",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000365",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000365/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000365/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000365/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000365/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000365/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000365/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000365/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000365/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000365",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "solutional cave",
+      "definition": [
+        "A cave formed by the dissolution of soluble rock or other solid material such as limestone, chalk, dolomite, gypsum, salt or marble."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_01000360",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000360",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000360/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000360/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000360/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000360/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000360/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000360/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000360/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000360/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000360",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "live cave",
+      "definition": ["A cave containing a stream or active speleothems."],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_00000323",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000323",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000323/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000323/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000323/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000323/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000323/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000323/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000323/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000323/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000323",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "inflationary cave",
+      "definition": [
+        "A cave that is formed by the action of pressurised lava pushing against surrounding rock and then draining away."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_01000362",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000362",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000362/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000362/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000362/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000362/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000362/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000362/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000362/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000362/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000362",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "volcanic cave",
+      "synonym": ["lava cave"],
+      "definition": ["A cave formed in volcanic rock."],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_00000322",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000322",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000322/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000322/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000322/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000322/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000322/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000322/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000322/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000322/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000322",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "synonym": "http://www.w3.org/2004/02/skos/core#altLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "limestone cave",
+      "definition": [
+        "A cave formed in limestone, usually by dissolution of limestone by acidic groundwater."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_01000359",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000359",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000359/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000359/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000359/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000359/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000359/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000359/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000359/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000359/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000359",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "vadose cave",
+      "definition": ["A cave which is within a vadose zone."],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_01000369",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000369",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000369/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000369/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000369/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000369/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000369/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000369/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000369/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000369/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000369",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "cave collapse",
+      "definition": [
+        "A structural collapse process during which the walls of cave are unable to support the load placed upon them."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_01001768",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01001768",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01001768/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01001768/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01001768/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01001768/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01001768/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01001768/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01001768/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01001768/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01001768",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "glacier cave",
+      "definition": [
+        "A glacier cave is a cave formed within or under a glacier."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_01000364",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000364",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000364/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000364/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000364/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000364/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000364/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000364/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000364/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000364/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000364",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "cave wall",
+      "definition": [
+        "A solid surface layer which 1)  forms part of the boundary between the cavity of a cave and its solid container and 2) is roughtly perpendicular to the cave floor."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_00002144",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00002144",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00002144/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00002144/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00002144/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00002144/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00002144/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00002144/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00002144/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00002144/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00002144",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "talus cave",
+      "definition": [
+        "A talus cave is a cave formed by the openings between large boulders which have fallen into a random heap."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_01000366",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000366",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000366/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000366/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000366/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000366/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000366/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000366/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000366/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000366/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000366",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "cave floor",
+      "definition": [
+        "A solid surface layer which 1) forms part of the boundary between the cavity of a cave and its solid container and 2)  is the closest solid boundary to the gravitational centre of the astronomical body of which the cave is a part."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_01000019",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000019",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000019/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000019/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000019/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000019/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000019/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000019/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000019/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000019/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000019",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "sea cave",
+      "definition": [
+        "A cave in present-day or emerged sea cliffs, formed by wave attack or solution."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_00000326",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000326",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000326/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000326/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000326/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000326/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000326/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000326/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000326/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000326/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000326",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "outflow cave",
+      "definition": [
+        "A cave from which a stream flows or formerly did so and which cannot be followed upstream to the surface."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_00000324",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000324",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000324/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000324/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000324/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000324/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000324/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000324/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000324/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000324/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000324",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "dead cave",
+      "synonym": ["dry cave"],
+      "definition": ["A cave without streams or drips of water."],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_00000030",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000030",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000030/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000030/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000030/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000030/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000030/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000030/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000030/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000030/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000030",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "synonym": "http://www.w3.org/2004/02/skos/core#altLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "cave system",
+      "definition": [
+        "A collection of caves interconnected by enterable passages or linked hydrologically or a cave with an extensive complex of chambers and passages."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_00000013",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000013",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000013/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000013/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000013/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000013/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000013/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000013/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000013/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000013/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000013",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "primary cave",
+      "definition": ["A cave formed at the same time as the surrounding rock."],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_01000361",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000361",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000361/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000361/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000361/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000361/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000361/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000361/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000361/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000361/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000361",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "tunnel",
+      "synonym": ["natural tunnel", "cave"],
+      "definition": ["An underground or underwater passage."],
+      "obsolete": false,
+      "matchType": "synonym",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_00000068",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000068",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000068/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000068/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000068/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000068/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000068/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000068/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000068/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000068/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000068",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "synonym": "http://www.w3.org/2004/02/skos/core#altLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "bedding-plane cave",
+      "definition": [
+        "A cavity developed along a bedding-plane and elongate in cross-section as a result."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_00000001",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000001",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000001/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000001/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000001/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000001/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000001/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000001/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000001/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000001/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000001",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "joint-plane cave",
+      "definition": [
+        "A cavity developed along a joint and elongate in cross-section."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_00000321",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000321",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000321/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000321/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000321/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000321/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000321/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000321/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000321/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000321/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00000321",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "ice cave congelation ice",
+      "definition": [
+        "Freshwater congelation ice which has formed on a solid substrate in an ice cave."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_01001516",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01001516",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01001516/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01001516/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01001516/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01001516/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01001516/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01001516/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01001516/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01001516/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01001516",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "thermokarst lake",
+      "synonym": ["thermokarst lakes", "thaw lake", "cave-in lake"],
+      "definition": [
+        "A freshwater lake which fills a depression formed by the erosion of thermokarst caused by permafrost thaw."
+      ],
+      "obsolete": false,
+      "matchType": "synonym",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/ENVO_03000082",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_03000082",
+        "ontology": "https://data.bioontology.org/ontologies/ENVO",
+        "children": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_03000082/children",
+        "parents": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_03000082/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_03000082/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_03000082/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_03000082/instances",
+        "tree": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_03000082/tree",
+        "notes": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_03000082/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ENVO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_03000082/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ENVO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_03000082",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "synonym": "http://www.w3.org/2004/02/skos/core#altLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    }
+  ]
+}

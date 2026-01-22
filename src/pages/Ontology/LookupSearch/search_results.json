@@ -1,0 +1,2202 @@
+{
+  "page": 1,
+  "pageCount": 3,
+  "totalCount": 132,
+  "prevPage": null,
+  "nextPage": 2,
+  "links": {
+    "nextPage": "https://data.bioontology.org/search?q=christmas&apikey=fa2cbf3a-fbfc-45b5-bb1f-76ee601a0fe3&page=2",
+    "prevPage": null
+  },
+  "collection": [
+    {
+      "prefLabel": "Christmas",
+      "definition": [
+        "A census-designated place and an unincorporated area in Orange County, Florida, United States."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/GAZ_00152249",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00152249",
+        "ontology": "https://data.bioontology.org/ontologies/GAZ",
+        "children": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00152249/children",
+        "parents": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00152249/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00152249/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00152249/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00152249/instances",
+        "tree": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00152249/tree",
+        "notes": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00152249/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00152249/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GAZ?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00152249",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas",
+      "definition": ["A cave."],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/GAZ_00458351",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00458351",
+        "ontology": "https://data.bioontology.org/ontologies/GAZ",
+        "children": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00458351/children",
+        "parents": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00458351/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00458351/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00458351/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00458351/instances",
+        "tree": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00458351/tree",
+        "notes": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00458351/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00458351/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GAZ?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00458351",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas",
+      "definition": ["December 25"],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://informatics.mayo.edu/TEO.owl#TEO_0000074",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/TEO/classes/http%3A%2F%2Finformatics.mayo.edu%2FTEO.owl%23TEO_0000074",
+        "ontology": "https://data.bioontology.org/ontologies/TEO",
+        "children": "https://data.bioontology.org/ontologies/TEO/classes/http%3A%2F%2Finformatics.mayo.edu%2FTEO.owl%23TEO_0000074/children",
+        "parents": "https://data.bioontology.org/ontologies/TEO/classes/http%3A%2F%2Finformatics.mayo.edu%2FTEO.owl%23TEO_0000074/parents",
+        "descendants": "https://data.bioontology.org/ontologies/TEO/classes/http%3A%2F%2Finformatics.mayo.edu%2FTEO.owl%23TEO_0000074/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/TEO/classes/http%3A%2F%2Finformatics.mayo.edu%2FTEO.owl%23TEO_0000074/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/TEO/classes/http%3A%2F%2Finformatics.mayo.edu%2FTEO.owl%23TEO_0000074/instances",
+        "tree": "https://data.bioontology.org/ontologies/TEO/classes/http%3A%2F%2Finformatics.mayo.edu%2FTEO.owl%23TEO_0000074/tree",
+        "notes": "https://data.bioontology.org/ontologies/TEO/classes/http%3A%2F%2Finformatics.mayo.edu%2FTEO.owl%23TEO_0000074/notes",
+        "mappings": "https://data.bioontology.org/ontologies/TEO/classes/http%3A%2F%2Finformatics.mayo.edu%2FTEO.owl%23TEO_0000074/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/TEO?p=classes&conceptid=http%3A%2F%2Finformatics.mayo.edu%2FTEO.owl%23TEO_0000074",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Island",
+      "synonym": ["Christmas Island (geographic location)"],
+      "cui": ["C0006888"],
+      "semanticType": ["T083"],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.bioontology.org/ontology/SNOMEDCT/1187207000",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/SNOMEDCT/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F1187207000",
+        "ontology": "https://data.bioontology.org/ontologies/SNOMEDCT",
+        "children": "https://data.bioontology.org/ontologies/SNOMEDCT/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F1187207000/children",
+        "parents": "https://data.bioontology.org/ontologies/SNOMEDCT/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F1187207000/parents",
+        "descendants": "https://data.bioontology.org/ontologies/SNOMEDCT/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F1187207000/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/SNOMEDCT/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F1187207000/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/SNOMEDCT/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F1187207000/instances",
+        "tree": "https://data.bioontology.org/ontologies/SNOMEDCT/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F1187207000/tree",
+        "notes": "https://data.bioontology.org/ontologies/SNOMEDCT/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F1187207000/notes",
+        "mappings": "https://data.bioontology.org/ontologies/SNOMEDCT/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F1187207000/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/SNOMEDCT?p=classes&conceptid=http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F1187207000",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "synonym": "http://www.w3.org/2004/02/skos/core#altLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "semanticType": "http://bioportal.bioontology.org/ontologies/umls/hasSTY",
+        "cui": "http://bioportal.bioontology.org/ontologies/umls/cui",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas pudding",
+      "synonym": ["Christmas pudding (substance)"],
+      "cui": ["C0453510"],
+      "semanticType": ["T168"],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.bioontology.org/ontology/SNOMEDCT/227687005",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/SNOMEDCT/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F227687005",
+        "ontology": "https://data.bioontology.org/ontologies/SNOMEDCT",
+        "children": "https://data.bioontology.org/ontologies/SNOMEDCT/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F227687005/children",
+        "parents": "https://data.bioontology.org/ontologies/SNOMEDCT/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F227687005/parents",
+        "descendants": "https://data.bioontology.org/ontologies/SNOMEDCT/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F227687005/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/SNOMEDCT/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F227687005/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/SNOMEDCT/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F227687005/instances",
+        "tree": "https://data.bioontology.org/ontologies/SNOMEDCT/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F227687005/tree",
+        "notes": "https://data.bioontology.org/ontologies/SNOMEDCT/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F227687005/notes",
+        "mappings": "https://data.bioontology.org/ontologies/SNOMEDCT/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F227687005/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/SNOMEDCT?p=classes&conceptid=http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F227687005",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "synonym": "http://www.w3.org/2004/02/skos/core#altLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "semanticType": "http://bioportal.bioontology.org/ontologies/umls/hasSTY",
+        "cui": "http://bioportal.bioontology.org/ontologies/umls/cui",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas factor",
+      "cui": ["C0200408"],
+      "semanticType": ["T059"],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.bioontology.org/ontology/MEDDRA/10008794",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/MEDDRA/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDDRA%2F10008794",
+        "ontology": "https://data.bioontology.org/ontologies/MEDDRA",
+        "children": "https://data.bioontology.org/ontologies/MEDDRA/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDDRA%2F10008794/children",
+        "parents": "https://data.bioontology.org/ontologies/MEDDRA/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDDRA%2F10008794/parents",
+        "descendants": "https://data.bioontology.org/ontologies/MEDDRA/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDDRA%2F10008794/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/MEDDRA/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDDRA%2F10008794/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/MEDDRA/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDDRA%2F10008794/instances",
+        "tree": "https://data.bioontology.org/ontologies/MEDDRA/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDDRA%2F10008794/tree",
+        "notes": "https://data.bioontology.org/ontologies/MEDDRA/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDDRA%2F10008794/notes",
+        "mappings": "https://data.bioontology.org/ontologies/MEDDRA/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDDRA%2F10008794/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/MEDDRA?p=classes&conceptid=http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDDRA%2F10008794",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "semanticType": "http://bioportal.bioontology.org/ontologies/umls/hasSTY",
+        "cui": "http://bioportal.bioontology.org/ontologies/umls/cui",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas rose",
+      "cui": ["C0330262"],
+      "semanticType": ["T002"],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.bioontology.org/ontology/RCD/X90G9",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/RCD/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCD%2FX90G9",
+        "ontology": "https://data.bioontology.org/ontologies/RCD",
+        "children": "https://data.bioontology.org/ontologies/RCD/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCD%2FX90G9/children",
+        "parents": "https://data.bioontology.org/ontologies/RCD/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCD%2FX90G9/parents",
+        "descendants": "https://data.bioontology.org/ontologies/RCD/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCD%2FX90G9/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/RCD/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCD%2FX90G9/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/RCD/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCD%2FX90G9/instances",
+        "tree": "https://data.bioontology.org/ontologies/RCD/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCD%2FX90G9/tree",
+        "notes": "https://data.bioontology.org/ontologies/RCD/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCD%2FX90G9/notes",
+        "mappings": "https://data.bioontology.org/ontologies/RCD/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCD%2FX90G9/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/RCD?p=classes&conceptid=http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCD%2FX90G9",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "semanticType": "http://bioportal.bioontology.org/ontologies/umls/hasSTY",
+        "cui": "http://bioportal.bioontology.org/ontologies/umls/cui",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas pudding",
+      "cui": ["C0453510"],
+      "semanticType": ["T168"],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.bioontology.org/ontology/RCD/Ub0XD",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/RCD/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCD%2FUb0XD",
+        "ontology": "https://data.bioontology.org/ontologies/RCD",
+        "children": "https://data.bioontology.org/ontologies/RCD/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCD%2FUb0XD/children",
+        "parents": "https://data.bioontology.org/ontologies/RCD/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCD%2FUb0XD/parents",
+        "descendants": "https://data.bioontology.org/ontologies/RCD/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCD%2FUb0XD/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/RCD/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCD%2FUb0XD/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/RCD/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCD%2FUb0XD/instances",
+        "tree": "https://data.bioontology.org/ontologies/RCD/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCD%2FUb0XD/tree",
+        "notes": "https://data.bioontology.org/ontologies/RCD/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCD%2FUb0XD/notes",
+        "mappings": "https://data.bioontology.org/ontologies/RCD/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCD%2FUb0XD/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/RCD?p=classes&conceptid=http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCD%2FUb0XD",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "semanticType": "http://bioportal.bioontology.org/ontologies/umls/hasSTY",
+        "cui": "http://bioportal.bioontology.org/ontologies/umls/cui",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Island",
+      "synonym": ["Christmas Island", "CHRISTMAS ISLAND", "162", "CX", "CXR"],
+      "definition": [
+        "An Australian-administered island in the eastern Indian Ocean south of Java, Indonesia."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C44482",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C44482",
+        "ontology": "https://data.bioontology.org/ontologies/NCIT",
+        "children": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C44482/children",
+        "parents": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C44482/parents",
+        "descendants": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C44482/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C44482/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C44482/instances",
+        "tree": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C44482/tree",
+        "notes": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C44482/notes",
+        "mappings": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C44482/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C44482",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "synonym": "http://www.w3.org/2004/02/skos/core#altLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas disease",
+      "synonym": ["Factor IX deficiency"],
+      "cui": ["C0008533"],
+      "semanticType": ["T047"],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.bioontology.org/ontology/MEDLINEPLUS/C0008533",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/MEDLINEPLUS/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDLINEPLUS%2FC0008533",
+        "ontology": "https://data.bioontology.org/ontologies/MEDLINEPLUS",
+        "children": "https://data.bioontology.org/ontologies/MEDLINEPLUS/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDLINEPLUS%2FC0008533/children",
+        "parents": "https://data.bioontology.org/ontologies/MEDLINEPLUS/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDLINEPLUS%2FC0008533/parents",
+        "descendants": "https://data.bioontology.org/ontologies/MEDLINEPLUS/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDLINEPLUS%2FC0008533/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/MEDLINEPLUS/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDLINEPLUS%2FC0008533/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/MEDLINEPLUS/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDLINEPLUS%2FC0008533/instances",
+        "tree": "https://data.bioontology.org/ontologies/MEDLINEPLUS/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDLINEPLUS%2FC0008533/tree",
+        "notes": "https://data.bioontology.org/ontologies/MEDLINEPLUS/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDLINEPLUS%2FC0008533/notes",
+        "mappings": "https://data.bioontology.org/ontologies/MEDLINEPLUS/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDLINEPLUS%2FC0008533/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/MEDLINEPLUS?p=classes&conceptid=http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDLINEPLUS%2FC0008533",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "synonym": "http://www.w3.org/2004/02/skos/core#altLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "semanticType": "http://bioportal.bioontology.org/ontologies/umls/hasSTY",
+        "cui": "http://bioportal.bioontology.org/ontologies/umls/cui",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "christmas tree",
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://sbmi.uth.tmc.edu/ontology/ochv#C0697236",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/OCHV/classes/http%3A%2F%2Fsbmi.uth.tmc.edu%2Fontology%2Fochv%23C0697236",
+        "ontology": "https://data.bioontology.org/ontologies/OCHV",
+        "children": "https://data.bioontology.org/ontologies/OCHV/classes/http%3A%2F%2Fsbmi.uth.tmc.edu%2Fontology%2Fochv%23C0697236/children",
+        "parents": "https://data.bioontology.org/ontologies/OCHV/classes/http%3A%2F%2Fsbmi.uth.tmc.edu%2Fontology%2Fochv%23C0697236/parents",
+        "descendants": "https://data.bioontology.org/ontologies/OCHV/classes/http%3A%2F%2Fsbmi.uth.tmc.edu%2Fontology%2Fochv%23C0697236/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/OCHV/classes/http%3A%2F%2Fsbmi.uth.tmc.edu%2Fontology%2Fochv%23C0697236/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/OCHV/classes/http%3A%2F%2Fsbmi.uth.tmc.edu%2Fontology%2Fochv%23C0697236/instances",
+        "tree": "https://data.bioontology.org/ontologies/OCHV/classes/http%3A%2F%2Fsbmi.uth.tmc.edu%2Fontology%2Fochv%23C0697236/tree",
+        "notes": "https://data.bioontology.org/ontologies/OCHV/classes/http%3A%2F%2Fsbmi.uth.tmc.edu%2Fontology%2Fochv%23C0697236/notes",
+        "mappings": "https://data.bioontology.org/ontologies/OCHV/classes/http%3A%2F%2Fsbmi.uth.tmc.edu%2Fontology%2Fochv%23C0697236/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/OCHV?p=classes&conceptid=http%3A%2F%2Fsbmi.uth.tmc.edu%2Fontology%2Fochv%23C0697236",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas pudding",
+      "synonym": ["plum pudding"],
+      "definition": [
+        "A type of pudding traditionally served as part of the Christmas dinner in the UK, Ireland and in other countries where it has been brought by Irish and British immigrants."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/FOODON_03307094",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FFOODON_03307094",
+        "ontology": "https://data.bioontology.org/ontologies/FOODON",
+        "children": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FFOODON_03307094/children",
+        "parents": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FFOODON_03307094/parents",
+        "descendants": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FFOODON_03307094/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FFOODON_03307094/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FFOODON_03307094/instances",
+        "tree": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FFOODON_03307094/tree",
+        "notes": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FFOODON_03307094/notes",
+        "mappings": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FFOODON_03307094/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/FOODON?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FFOODON_03307094",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "synonym": "http://www.w3.org/2004/02/skos/core#altLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Island",
+      "definition": ["An island."],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/GAZ_00251096",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00251096",
+        "ontology": "https://data.bioontology.org/ontologies/GAZ",
+        "children": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00251096/children",
+        "parents": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00251096/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00251096/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00251096/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00251096/instances",
+        "tree": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00251096/tree",
+        "notes": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00251096/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00251096/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GAZ?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00251096",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Lake",
+      "definition": [
+        "A spring-fed lake located in the western Minneapolis suburb of Shorewood. The lake is crossed by the border of Hennepin and Carver counties, with most of the area lying within the jurisdiction of the former."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/GAZ_00190881",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00190881",
+        "ontology": "https://data.bioontology.org/ontologies/GAZ",
+        "children": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00190881/children",
+        "parents": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00190881/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00190881/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00190881/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00190881/instances",
+        "tree": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00190881/tree",
+        "notes": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00190881/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00190881/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GAZ?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00190881",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Mountains",
+      "definition": [
+        "A series of rounded peaks at the headwaters of North Pole Stream and the Little Southwest Miramichi River, west of Big Bald Mountain, and south of Mount Carleton in northern New Brunswick, Canada. The mountains, in part, separate the Miramichi River watershed from the watersheds of the Serpentine River and the Nepisiguit River."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/GAZ_00268897",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00268897",
+        "ontology": "https://data.bioontology.org/ontologies/GAZ",
+        "children": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00268897/children",
+        "parents": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00268897/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00268897/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00268897/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00268897/instances",
+        "tree": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00268897/tree",
+        "notes": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00268897/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00268897/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GAZ?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00268897",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Valley",
+      "definition": [
+        "An unincorporated community in Lake County, Oregon, United States."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/GAZ_00168485",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168485",
+        "ontology": "https://data.bioontology.org/ontologies/GAZ",
+        "children": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168485/children",
+        "parents": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168485/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168485/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168485/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168485/instances",
+        "tree": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168485/tree",
+        "notes": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168485/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168485/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GAZ?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168485",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Island",
+      "definition": [
+        "An island in the Indian Ocean, 500 km south of Indonesia and about 2600 km northwest of Perth. The island is the flat summit of a submarine mountain."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/GAZ_00005915",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00005915",
+        "ontology": "https://data.bioontology.org/ontologies/GAZ",
+        "children": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00005915/children",
+        "parents": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00005915/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00005915/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00005915/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00005915/instances",
+        "tree": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00005915/tree",
+        "notes": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00005915/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00005915/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GAZ?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00005915",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Lake",
+      "synonym": ["Chrisman's Lake {alternative name}"],
+      "definition": ["A seasonally dry lake in Christmas Valley."],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/GAZ_00168496",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168496",
+        "ontology": "https://data.bioontology.org/ontologies/GAZ",
+        "children": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168496/children",
+        "parents": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168496/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168496/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168496/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168496/instances",
+        "tree": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168496/tree",
+        "notes": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168496/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168496/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GAZ?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168496",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "synonym": "http://www.w3.org/2004/02/skos/core#altLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Seamount",
+      "definition": ["A seamount. Capped by Kiritimati Atoll."],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/GAZ_00144757",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00144757",
+        "ontology": "https://data.bioontology.org/ontologies/GAZ",
+        "children": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00144757/children",
+        "parents": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00144757/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00144757/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00144757/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00144757/instances",
+        "tree": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00144757/tree",
+        "notes": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00144757/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00144757/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GAZ?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00144757",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Bay",
+      "definition": ["A part of Galveston Bay."],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/GAZ_00143387",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143387",
+        "ontology": "https://data.bioontology.org/ontologies/GAZ",
+        "children": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143387/children",
+        "parents": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143387/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143387/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143387/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143387/instances",
+        "tree": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143387/tree",
+        "notes": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143387/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143387/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GAZ?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143387",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Island",
+      "definition": [
+        "An island nature reserve, with an area of 63.49 ha, in south-eastern Australia. It is part of the New Year Island Group which includes the much larger King Island, lying north-west of Tasmania in Bass Strait."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/GAZ_00088009",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00088009",
+        "ontology": "https://data.bioontology.org/ontologies/GAZ",
+        "children": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00088009/children",
+        "parents": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00088009/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00088009/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00088009/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00088009/instances",
+        "tree": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00088009/tree",
+        "notes": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00088009/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00088009/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GAZ?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00088009",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Point",
+      "definition": ["The S tip of Elliott Key."],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/GAZ_00143289",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143289",
+        "ontology": "https://data.bioontology.org/ontologies/GAZ",
+        "children": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143289/children",
+        "parents": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143289/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143289/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143289/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143289/instances",
+        "tree": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143289/tree",
+        "notes": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143289/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143289/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GAZ?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143289",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Lake",
+      "definition": ["A lake in Farm Island Township, Aitkin County, MN."],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/GAZ_00186805",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00186805",
+        "ontology": "https://data.bioontology.org/ontologies/GAZ",
+        "children": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00186805/children",
+        "parents": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00186805/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00186805/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00186805/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00186805/instances",
+        "tree": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00186805/tree",
+        "notes": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00186805/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00186805/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GAZ?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00186805",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Lake",
+      "definition": ["A lake in Okefenokee National Wildlife Refuge."],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/GAZ_00151921",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00151921",
+        "ontology": "https://data.bioontology.org/ontologies/GAZ",
+        "children": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00151921/children",
+        "parents": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00151921/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00151921/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00151921/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00151921/instances",
+        "tree": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00151921/tree",
+        "notes": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00151921/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00151921/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GAZ?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00151921",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Is",
+      "definition": [
+        "\"deficiency of blood coagulation factor IX inherited as an X-linked disorder; clinical features resemble those in hemophilia A, but patients present with fewer symptoms.\""
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://www.bioontology.org/pma.owl#PMA_1726",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/PMA/classes/http%3A%2F%2Fwww.bioontology.org%2Fpma.owl%23PMA_1726",
+        "ontology": "https://data.bioontology.org/ontologies/PMA",
+        "children": "https://data.bioontology.org/ontologies/PMA/classes/http%3A%2F%2Fwww.bioontology.org%2Fpma.owl%23PMA_1726/children",
+        "parents": "https://data.bioontology.org/ontologies/PMA/classes/http%3A%2F%2Fwww.bioontology.org%2Fpma.owl%23PMA_1726/parents",
+        "descendants": "https://data.bioontology.org/ontologies/PMA/classes/http%3A%2F%2Fwww.bioontology.org%2Fpma.owl%23PMA_1726/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/PMA/classes/http%3A%2F%2Fwww.bioontology.org%2Fpma.owl%23PMA_1726/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/PMA/classes/http%3A%2F%2Fwww.bioontology.org%2Fpma.owl%23PMA_1726/instances",
+        "tree": "https://data.bioontology.org/ontologies/PMA/classes/http%3A%2F%2Fwww.bioontology.org%2Fpma.owl%23PMA_1726/tree",
+        "notes": "https://data.bioontology.org/ontologies/PMA/classes/http%3A%2F%2Fwww.bioontology.org%2Fpma.owl%23PMA_1726/notes",
+        "mappings": "https://data.bioontology.org/ontologies/PMA/classes/http%3A%2F%2Fwww.bioontology.org%2Fpma.owl%23PMA_1726/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/PMA?p=classes&conceptid=http%3A%2F%2Fwww.bioontology.org%2Fpma.owl%23PMA_1726",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas disease",
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://www.semanticweb.org/ontologies/STO.owl#OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/STO-DRAFT/classes/http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2FSTO.owl%23OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f",
+        "ontology": "https://data.bioontology.org/ontologies/STO-DRAFT",
+        "children": "https://data.bioontology.org/ontologies/STO-DRAFT/classes/http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2FSTO.owl%23OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f/children",
+        "parents": "https://data.bioontology.org/ontologies/STO-DRAFT/classes/http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2FSTO.owl%23OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f/parents",
+        "descendants": "https://data.bioontology.org/ontologies/STO-DRAFT/classes/http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2FSTO.owl%23OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/STO-DRAFT/classes/http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2FSTO.owl%23OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/STO-DRAFT/classes/http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2FSTO.owl%23OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f/instances",
+        "tree": "https://data.bioontology.org/ontologies/STO-DRAFT/classes/http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2FSTO.owl%23OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f/tree",
+        "notes": "https://data.bioontology.org/ontologies/STO-DRAFT/classes/http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2FSTO.owl%23OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f/notes",
+        "mappings": "https://data.bioontology.org/ontologies/STO-DRAFT/classes/http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2FSTO.owl%23OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/STO-DRAFT?p=classes&conceptid=http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2FSTO.owl%23OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas disease",
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://www.semanticweb.org/ontologies/STO.owl#OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/CVAO/classes/http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2FSTO.owl%23OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f",
+        "ontology": "https://data.bioontology.org/ontologies/CVAO",
+        "children": "https://data.bioontology.org/ontologies/CVAO/classes/http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2FSTO.owl%23OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f/children",
+        "parents": "https://data.bioontology.org/ontologies/CVAO/classes/http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2FSTO.owl%23OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f/parents",
+        "descendants": "https://data.bioontology.org/ontologies/CVAO/classes/http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2FSTO.owl%23OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/CVAO/classes/http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2FSTO.owl%23OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/CVAO/classes/http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2FSTO.owl%23OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f/instances",
+        "tree": "https://data.bioontology.org/ontologies/CVAO/classes/http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2FSTO.owl%23OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f/tree",
+        "notes": "https://data.bioontology.org/ontologies/CVAO/classes/http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2FSTO.owl%23OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f/notes",
+        "mappings": "https://data.bioontology.org/ontologies/CVAO/classes/http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2FSTO.owl%23OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/CVAO?p=classes&conceptid=http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2FSTO.owl%23OWLClass_b95da7f0_5a60_432c_9901_7e7c58c59f1f",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Islander",
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/HANCESTRO_0455",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/HANCESTRO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455",
+        "ontology": "https://data.bioontology.org/ontologies/HANCESTRO",
+        "children": "https://data.bioontology.org/ontologies/HANCESTRO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/children",
+        "parents": "https://data.bioontology.org/ontologies/HANCESTRO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/parents",
+        "descendants": "https://data.bioontology.org/ontologies/HANCESTRO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/HANCESTRO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/HANCESTRO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/instances",
+        "tree": "https://data.bioontology.org/ontologies/HANCESTRO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/tree",
+        "notes": "https://data.bioontology.org/ontologies/HANCESTRO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/notes",
+        "mappings": "https://data.bioontology.org/ontologies/HANCESTRO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/HANCESTRO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas disease",
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "rgo:03229",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/GAMUTS/classes/rgo%3A03229",
+        "ontology": "https://data.bioontology.org/ontologies/GAMUTS",
+        "children": "https://data.bioontology.org/ontologies/GAMUTS/classes/rgo%3A03229/children",
+        "parents": "https://data.bioontology.org/ontologies/GAMUTS/classes/rgo%3A03229/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GAMUTS/classes/rgo%3A03229/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GAMUTS/classes/rgo%3A03229/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GAMUTS/classes/rgo%3A03229/instances",
+        "tree": "https://data.bioontology.org/ontologies/GAMUTS/classes/rgo%3A03229/tree",
+        "notes": "https://data.bioontology.org/ontologies/GAMUTS/classes/rgo%3A03229/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GAMUTS/classes/rgo%3A03229/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GAMUTS?p=classes&conceptid=rgo%3A03229",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Islander",
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/HANCESTRO_0455",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455",
+        "ontology": "https://data.bioontology.org/ontologies/FOODON",
+        "children": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/children",
+        "parents": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/parents",
+        "descendants": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/instances",
+        "tree": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/tree",
+        "notes": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/notes",
+        "mappings": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/FOODON?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Island",
+      "definition": [
+        "An island in the Indian Ocean, 500 km south of Indonesia and about 2600 km northwest of Perth. The island is the flat summit of a submarine mountain."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/GAZ_00005915",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00005915",
+        "ontology": "https://data.bioontology.org/ontologies/FOODON",
+        "children": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00005915/children",
+        "parents": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00005915/parents",
+        "descendants": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00005915/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00005915/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00005915/instances",
+        "tree": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00005915/tree",
+        "notes": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00005915/notes",
+        "mappings": "https://data.bioontology.org/ontologies/FOODON/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00005915/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/FOODON?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00005915",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Island",
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://localhost/plosthes.2017-1#4258",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/PLOSTHES/classes/http%3A%2F%2Flocalhost%2Fplosthes.2017-1%234258",
+        "ontology": "https://data.bioontology.org/ontologies/PLOSTHES",
+        "children": "https://data.bioontology.org/ontologies/PLOSTHES/classes/http%3A%2F%2Flocalhost%2Fplosthes.2017-1%234258/children",
+        "parents": "https://data.bioontology.org/ontologies/PLOSTHES/classes/http%3A%2F%2Flocalhost%2Fplosthes.2017-1%234258/parents",
+        "descendants": "https://data.bioontology.org/ontologies/PLOSTHES/classes/http%3A%2F%2Flocalhost%2Fplosthes.2017-1%234258/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/PLOSTHES/classes/http%3A%2F%2Flocalhost%2Fplosthes.2017-1%234258/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/PLOSTHES/classes/http%3A%2F%2Flocalhost%2Fplosthes.2017-1%234258/instances",
+        "tree": "https://data.bioontology.org/ontologies/PLOSTHES/classes/http%3A%2F%2Flocalhost%2Fplosthes.2017-1%234258/tree",
+        "notes": "https://data.bioontology.org/ontologies/PLOSTHES/classes/http%3A%2F%2Flocalhost%2Fplosthes.2017-1%234258/notes",
+        "mappings": "https://data.bioontology.org/ontologies/PLOSTHES/classes/http%3A%2F%2Flocalhost%2Fplosthes.2017-1%234258/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/PLOSTHES?p=classes&conceptid=http%3A%2F%2Flocalhost%2Fplosthes.2017-1%234258",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Islander",
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/HANCESTRO_0455",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/GENEPIO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455",
+        "ontology": "https://data.bioontology.org/ontologies/GENEPIO",
+        "children": "https://data.bioontology.org/ontologies/GENEPIO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/children",
+        "parents": "https://data.bioontology.org/ontologies/GENEPIO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GENEPIO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GENEPIO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GENEPIO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/instances",
+        "tree": "https://data.bioontology.org/ontologies/GENEPIO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/tree",
+        "notes": "https://data.bioontology.org/ontologies/GENEPIO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GENEPIO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GENEPIO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHANCESTRO_0455",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Island",
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://dbpedia.org/resource/Christmas_Island",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/CRENO/classes/http%3A%2F%2Fdbpedia.org%2Fresource%2FChristmas_Island",
+        "ontology": "https://data.bioontology.org/ontologies/CRENO",
+        "children": "https://data.bioontology.org/ontologies/CRENO/classes/http%3A%2F%2Fdbpedia.org%2Fresource%2FChristmas_Island/children",
+        "parents": "https://data.bioontology.org/ontologies/CRENO/classes/http%3A%2F%2Fdbpedia.org%2Fresource%2FChristmas_Island/parents",
+        "descendants": "https://data.bioontology.org/ontologies/CRENO/classes/http%3A%2F%2Fdbpedia.org%2Fresource%2FChristmas_Island/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/CRENO/classes/http%3A%2F%2Fdbpedia.org%2Fresource%2FChristmas_Island/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/CRENO/classes/http%3A%2F%2Fdbpedia.org%2Fresource%2FChristmas_Island/instances",
+        "tree": "https://data.bioontology.org/ontologies/CRENO/classes/http%3A%2F%2Fdbpedia.org%2Fresource%2FChristmas_Island/tree",
+        "notes": "https://data.bioontology.org/ontologies/CRENO/classes/http%3A%2F%2Fdbpedia.org%2Fresource%2FChristmas_Island/notes",
+        "mappings": "https://data.bioontology.org/ontologies/CRENO/classes/http%3A%2F%2Fdbpedia.org%2Fresource%2FChristmas_Island/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/CRENO?p=classes&conceptid=http%3A%2F%2Fdbpedia.org%2Fresource%2FChristmas_Island",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Island",
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://dbpedia.org/resource/Christmas_Island",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/HANCESTRO/classes/http%3A%2F%2Fdbpedia.org%2Fresource%2FChristmas_Island",
+        "ontology": "https://data.bioontology.org/ontologies/HANCESTRO",
+        "children": "https://data.bioontology.org/ontologies/HANCESTRO/classes/http%3A%2F%2Fdbpedia.org%2Fresource%2FChristmas_Island/children",
+        "parents": "https://data.bioontology.org/ontologies/HANCESTRO/classes/http%3A%2F%2Fdbpedia.org%2Fresource%2FChristmas_Island/parents",
+        "descendants": "https://data.bioontology.org/ontologies/HANCESTRO/classes/http%3A%2F%2Fdbpedia.org%2Fresource%2FChristmas_Island/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/HANCESTRO/classes/http%3A%2F%2Fdbpedia.org%2Fresource%2FChristmas_Island/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/HANCESTRO/classes/http%3A%2F%2Fdbpedia.org%2Fresource%2FChristmas_Island/instances",
+        "tree": "https://data.bioontology.org/ontologies/HANCESTRO/classes/http%3A%2F%2Fdbpedia.org%2Fresource%2FChristmas_Island/tree",
+        "notes": "https://data.bioontology.org/ontologies/HANCESTRO/classes/http%3A%2F%2Fdbpedia.org%2Fresource%2FChristmas_Island/notes",
+        "mappings": "https://data.bioontology.org/ontologies/HANCESTRO/classes/http%3A%2F%2Fdbpedia.org%2Fresource%2FChristmas_Island/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/HANCESTRO?p=classes&conceptid=http%3A%2F%2Fdbpedia.org%2Fresource%2FChristmas_Island",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Island",
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/MVC_0000185",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/MIXSCV/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMVC_0000185",
+        "ontology": "https://data.bioontology.org/ontologies/MIXSCV",
+        "children": "https://data.bioontology.org/ontologies/MIXSCV/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMVC_0000185/children",
+        "parents": "https://data.bioontology.org/ontologies/MIXSCV/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMVC_0000185/parents",
+        "descendants": "https://data.bioontology.org/ontologies/MIXSCV/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMVC_0000185/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/MIXSCV/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMVC_0000185/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/MIXSCV/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMVC_0000185/instances",
+        "tree": "https://data.bioontology.org/ontologies/MIXSCV/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMVC_0000185/tree",
+        "notes": "https://data.bioontology.org/ontologies/MIXSCV/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMVC_0000185/notes",
+        "mappings": "https://data.bioontology.org/ontologies/MIXSCV/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMVC_0000185/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/MIXSCV?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMVC_0000185",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas stories",
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://id.loc.gov/authorities/subjects/sh85025320",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/FAST-GENREFORM/classes/http%3A%2F%2Fid.loc.gov%2Fauthorities%2Fsubjects%2Fsh85025320",
+        "ontology": "https://data.bioontology.org/ontologies/FAST-GENREFORM",
+        "children": "https://data.bioontology.org/ontologies/FAST-GENREFORM/classes/http%3A%2F%2Fid.loc.gov%2Fauthorities%2Fsubjects%2Fsh85025320/children",
+        "parents": "https://data.bioontology.org/ontologies/FAST-GENREFORM/classes/http%3A%2F%2Fid.loc.gov%2Fauthorities%2Fsubjects%2Fsh85025320/parents",
+        "descendants": "https://data.bioontology.org/ontologies/FAST-GENREFORM/classes/http%3A%2F%2Fid.loc.gov%2Fauthorities%2Fsubjects%2Fsh85025320/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/FAST-GENREFORM/classes/http%3A%2F%2Fid.loc.gov%2Fauthorities%2Fsubjects%2Fsh85025320/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/FAST-GENREFORM/classes/http%3A%2F%2Fid.loc.gov%2Fauthorities%2Fsubjects%2Fsh85025320/instances",
+        "tree": "https://data.bioontology.org/ontologies/FAST-GENREFORM/classes/http%3A%2F%2Fid.loc.gov%2Fauthorities%2Fsubjects%2Fsh85025320/tree",
+        "notes": "https://data.bioontology.org/ontologies/FAST-GENREFORM/classes/http%3A%2F%2Fid.loc.gov%2Fauthorities%2Fsubjects%2Fsh85025320/notes",
+        "mappings": "https://data.bioontology.org/ontologies/FAST-GENREFORM/classes/http%3A%2F%2Fid.loc.gov%2Fauthorities%2Fsubjects%2Fsh85025320/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/FAST-GENREFORM?p=classes&conceptid=http%3A%2F%2Fid.loc.gov%2Fauthorities%2Fsubjects%2Fsh85025320",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas stories",
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://id.loc.gov/authorities/subjects/sh85025320",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/FAST-FORMGENRE/classes/http%3A%2F%2Fid.loc.gov%2Fauthorities%2Fsubjects%2Fsh85025320",
+        "ontology": "https://data.bioontology.org/ontologies/FAST-FORMGENRE",
+        "children": "https://data.bioontology.org/ontologies/FAST-FORMGENRE/classes/http%3A%2F%2Fid.loc.gov%2Fauthorities%2Fsubjects%2Fsh85025320/children",
+        "parents": "https://data.bioontology.org/ontologies/FAST-FORMGENRE/classes/http%3A%2F%2Fid.loc.gov%2Fauthorities%2Fsubjects%2Fsh85025320/parents",
+        "descendants": "https://data.bioontology.org/ontologies/FAST-FORMGENRE/classes/http%3A%2F%2Fid.loc.gov%2Fauthorities%2Fsubjects%2Fsh85025320/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/FAST-FORMGENRE/classes/http%3A%2F%2Fid.loc.gov%2Fauthorities%2Fsubjects%2Fsh85025320/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/FAST-FORMGENRE/classes/http%3A%2F%2Fid.loc.gov%2Fauthorities%2Fsubjects%2Fsh85025320/instances",
+        "tree": "https://data.bioontology.org/ontologies/FAST-FORMGENRE/classes/http%3A%2F%2Fid.loc.gov%2Fauthorities%2Fsubjects%2Fsh85025320/tree",
+        "notes": "https://data.bioontology.org/ontologies/FAST-FORMGENRE/classes/http%3A%2F%2Fid.loc.gov%2Fauthorities%2Fsubjects%2Fsh85025320/notes",
+        "mappings": "https://data.bioontology.org/ontologies/FAST-FORMGENRE/classes/http%3A%2F%2Fid.loc.gov%2Fauthorities%2Fsubjects%2Fsh85025320/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/FAST-FORMGENRE?p=classes&conceptid=http%3A%2F%2Fid.loc.gov%2Fauthorities%2Fsubjects%2Fsh85025320",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas tree cataract",
+      "definition": [
+        "A type of cataract that shows a spectacular display of multiple colors that glitters with the change of incident light like an illuminated Christmas tree."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/HP_0025571",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/HP/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0025571",
+        "ontology": "https://data.bioontology.org/ontologies/HP",
+        "children": "https://data.bioontology.org/ontologies/HP/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0025571/children",
+        "parents": "https://data.bioontology.org/ontologies/HP/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0025571/parents",
+        "descendants": "https://data.bioontology.org/ontologies/HP/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0025571/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/HP/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0025571/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/HP/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0025571/instances",
+        "tree": "https://data.bioontology.org/ontologies/HP/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0025571/tree",
+        "notes": "https://data.bioontology.org/ontologies/HP/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0025571/notes",
+        "mappings": "https://data.bioontology.org/ontologies/HP/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0025571/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/HP?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0025571",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Little Christmas Island",
+      "definition": ["One of the Schouten Island Group."],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/GAZ_00088155",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00088155",
+        "ontology": "https://data.bioontology.org/ontologies/GAZ",
+        "children": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00088155/children",
+        "parents": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00088155/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00088155/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00088155/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00088155/instances",
+        "tree": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00088155/tree",
+        "notes": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00088155/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00088155/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GAZ?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00088155",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Swallet (P9)",
+      "definition": ["A cave."],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/GAZ_00500952",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00500952",
+        "ontology": "https://data.bioontology.org/ontologies/GAZ",
+        "children": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00500952/children",
+        "parents": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00500952/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00500952/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00500952/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00500952/instances",
+        "tree": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00500952/tree",
+        "notes": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00500952/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00500952/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GAZ?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00500952",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas tree cataract",
+      "definition": [
+        "A type of cataract that shows a spectacular display of multiple colors that glitters with the change of incident light like an illuminated Christmas tree."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/HP_0025571",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/UPHENO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0025571",
+        "ontology": "https://data.bioontology.org/ontologies/UPHENO",
+        "children": "https://data.bioontology.org/ontologies/UPHENO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0025571/children",
+        "parents": "https://data.bioontology.org/ontologies/UPHENO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0025571/parents",
+        "descendants": "https://data.bioontology.org/ontologies/UPHENO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0025571/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/UPHENO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0025571/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/UPHENO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0025571/instances",
+        "tree": "https://data.bioontology.org/ontologies/UPHENO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0025571/tree",
+        "notes": "https://data.bioontology.org/ontologies/UPHENO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0025571/notes",
+        "mappings": "https://data.bioontology.org/ontologies/UPHENO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0025571/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/UPHENO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0025571",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas-tree bladder",
+      "synonym": ["クリスマスツリー膀胱", "Christmas-tree bladder"],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.jp/bio/4/id/200906059727174274",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/IOBC/classes/http%3A%2F%2Fpurl.jp%2Fbio%2F4%2Fid%2F200906059727174274",
+        "ontology": "https://data.bioontology.org/ontologies/IOBC",
+        "children": "https://data.bioontology.org/ontologies/IOBC/classes/http%3A%2F%2Fpurl.jp%2Fbio%2F4%2Fid%2F200906059727174274/children",
+        "parents": "https://data.bioontology.org/ontologies/IOBC/classes/http%3A%2F%2Fpurl.jp%2Fbio%2F4%2Fid%2F200906059727174274/parents",
+        "descendants": "https://data.bioontology.org/ontologies/IOBC/classes/http%3A%2F%2Fpurl.jp%2Fbio%2F4%2Fid%2F200906059727174274/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/IOBC/classes/http%3A%2F%2Fpurl.jp%2Fbio%2F4%2Fid%2F200906059727174274/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/IOBC/classes/http%3A%2F%2Fpurl.jp%2Fbio%2F4%2Fid%2F200906059727174274/instances",
+        "tree": "https://data.bioontology.org/ontologies/IOBC/classes/http%3A%2F%2Fpurl.jp%2Fbio%2F4%2Fid%2F200906059727174274/tree",
+        "notes": "https://data.bioontology.org/ontologies/IOBC/classes/http%3A%2F%2Fpurl.jp%2Fbio%2F4%2Fid%2F200906059727174274/notes",
+        "mappings": "https://data.bioontology.org/ontologies/IOBC/classes/http%3A%2F%2Fpurl.jp%2Fbio%2F4%2Fid%2F200906059727174274/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/IOBC?p=classes&conceptid=http%3A%2F%2Fpurl.jp%2Fbio%2F4%2Fid%2F200906059727174274",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "synonym": "http://www.w3.org/2004/02/skos/core#altLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Tree Cataract",
+      "definition": [
+        "A type of cataract that shows a spectacular display of multiple colours that glitters with the change of incident light like an illuminated Christmas tree."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://www.phoc.org.cn/pmo/class/PMO_00006536",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/PMAPP-PMO/classes/http%3A%2F%2Fwww.phoc.org.cn%2Fpmo%2Fclass%2FPMO_00006536",
+        "ontology": "https://data.bioontology.org/ontologies/PMAPP-PMO",
+        "children": "https://data.bioontology.org/ontologies/PMAPP-PMO/classes/http%3A%2F%2Fwww.phoc.org.cn%2Fpmo%2Fclass%2FPMO_00006536/children",
+        "parents": "https://data.bioontology.org/ontologies/PMAPP-PMO/classes/http%3A%2F%2Fwww.phoc.org.cn%2Fpmo%2Fclass%2FPMO_00006536/parents",
+        "descendants": "https://data.bioontology.org/ontologies/PMAPP-PMO/classes/http%3A%2F%2Fwww.phoc.org.cn%2Fpmo%2Fclass%2FPMO_00006536/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/PMAPP-PMO/classes/http%3A%2F%2Fwww.phoc.org.cn%2Fpmo%2Fclass%2FPMO_00006536/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/PMAPP-PMO/classes/http%3A%2F%2Fwww.phoc.org.cn%2Fpmo%2Fclass%2FPMO_00006536/instances",
+        "tree": "https://data.bioontology.org/ontologies/PMAPP-PMO/classes/http%3A%2F%2Fwww.phoc.org.cn%2Fpmo%2Fclass%2FPMO_00006536/tree",
+        "notes": "https://data.bioontology.org/ontologies/PMAPP-PMO/classes/http%3A%2F%2Fwww.phoc.org.cn%2Fpmo%2Fclass%2FPMO_00006536/notes",
+        "mappings": "https://data.bioontology.org/ontologies/PMAPP-PMO/classes/http%3A%2F%2Fwww.phoc.org.cn%2Fpmo%2Fclass%2FPMO_00006536/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/PMAPP-PMO?p=classes&conceptid=http%3A%2F%2Fwww.phoc.org.cn%2Fpmo%2Fclass%2FPMO_00006536",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Island (Australia)",
+      "synonym": [
+        "christmas island (australia)",
+        "canton and enderbury island",
+        "christma island",
+        "christma island (australia)",
+        "canton and enderbury islands",
+        "christmas island ( australia)",
+        "christma island ( australia)",
+        "christmas island",
+        "canton and enderburi island",
+        "australia"
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://id.nlm.nih.gov/mesh/D001315",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/MDM/classes/http%3A%2F%2Fid.nlm.nih.gov%2Fmesh%2FD001315",
+        "ontology": "https://data.bioontology.org/ontologies/MDM",
+        "children": "https://data.bioontology.org/ontologies/MDM/classes/http%3A%2F%2Fid.nlm.nih.gov%2Fmesh%2FD001315/children",
+        "parents": "https://data.bioontology.org/ontologies/MDM/classes/http%3A%2F%2Fid.nlm.nih.gov%2Fmesh%2FD001315/parents",
+        "descendants": "https://data.bioontology.org/ontologies/MDM/classes/http%3A%2F%2Fid.nlm.nih.gov%2Fmesh%2FD001315/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/MDM/classes/http%3A%2F%2Fid.nlm.nih.gov%2Fmesh%2FD001315/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/MDM/classes/http%3A%2F%2Fid.nlm.nih.gov%2Fmesh%2FD001315/instances",
+        "tree": "https://data.bioontology.org/ontologies/MDM/classes/http%3A%2F%2Fid.nlm.nih.gov%2Fmesh%2FD001315/tree",
+        "notes": "https://data.bioontology.org/ontologies/MDM/classes/http%3A%2F%2Fid.nlm.nih.gov%2Fmesh%2FD001315/notes",
+        "mappings": "https://data.bioontology.org/ontologies/MDM/classes/http%3A%2F%2Fid.nlm.nih.gov%2Fmesh%2FD001315/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/MDM?p=classes&conceptid=http%3A%2F%2Fid.nlm.nih.gov%2Fmesh%2FD001315",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "synonym": "http://www.w3.org/2004/02/skos/core#altLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas disease (Factor IX)",
+      "cui": ["C0008533"],
+      "semanticType": ["T047"],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.bioontology.org/ontology/MEDDRA/10008793",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/MEDDRA/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDDRA%2F10008793",
+        "ontology": "https://data.bioontology.org/ontologies/MEDDRA",
+        "children": "https://data.bioontology.org/ontologies/MEDDRA/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDDRA%2F10008793/children",
+        "parents": "https://data.bioontology.org/ontologies/MEDDRA/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDDRA%2F10008793/parents",
+        "descendants": "https://data.bioontology.org/ontologies/MEDDRA/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDDRA%2F10008793/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/MEDDRA/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDDRA%2F10008793/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/MEDDRA/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDDRA%2F10008793/instances",
+        "tree": "https://data.bioontology.org/ontologies/MEDDRA/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDDRA%2F10008793/tree",
+        "notes": "https://data.bioontology.org/ontologies/MEDDRA/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDDRA%2F10008793/notes",
+        "mappings": "https://data.bioontology.org/ontologies/MEDDRA/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDDRA%2F10008793/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/MEDDRA?p=classes&conceptid=http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMEDDRA%2F10008793",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "semanticType": "http://bioportal.bioontology.org/ontologies/umls/hasSTY",
+        "cui": "http://bioportal.bioontology.org/ontologies/umls/cui",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Born in Christmas Island",
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.bioontology.org/ontology/RCTV2/13eq.00",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/RCTV2/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCTV2%2F13eq.00",
+        "ontology": "https://data.bioontology.org/ontologies/RCTV2",
+        "children": "https://data.bioontology.org/ontologies/RCTV2/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCTV2%2F13eq.00/children",
+        "parents": "https://data.bioontology.org/ontologies/RCTV2/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCTV2%2F13eq.00/parents",
+        "descendants": "https://data.bioontology.org/ontologies/RCTV2/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCTV2%2F13eq.00/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/RCTV2/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCTV2%2F13eq.00/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/RCTV2/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCTV2%2F13eq.00/instances",
+        "tree": "https://data.bioontology.org/ontologies/RCTV2/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCTV2%2F13eq.00/tree",
+        "notes": "https://data.bioontology.org/ontologies/RCTV2/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCTV2%2F13eq.00/notes",
+        "mappings": "https://data.bioontology.org/ontologies/RCTV2/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCTV2%2F13eq.00/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/RCTV2?p=classes&conceptid=http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRCTV2%2F13eq.00",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Bay Coastal Preserve",
+      "definition": [
+        "A protected area. A shallow 4,173 acre embayment in the southwestern portion of the Galveston Bay system."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/GAZ_00209508",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00209508",
+        "ontology": "https://data.bioontology.org/ontologies/GAZ",
+        "children": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00209508/children",
+        "parents": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00209508/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00209508/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00209508/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00209508/instances",
+        "tree": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00209508/tree",
+        "notes": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00209508/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00209508/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GAZ?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00209508",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Valley Sand Dunes",
+      "definition": ["A natural sand dune complex."],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/GAZ_00168224",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168224",
+        "ontology": "https://data.bioontology.org/ontologies/GAZ",
+        "children": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168224/children",
+        "parents": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168224/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168224/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168224/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168224/instances",
+        "tree": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168224/tree",
+        "notes": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168224/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168224/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GAZ?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00168224",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    },
+    {
+      "prefLabel": "Christmas Island National Park",
+      "definition": [
+        "A national park occupying most of Christmas Island, an Australian territory in the Indian Ocean southwest of Indonesia."
+      ],
+      "obsolete": false,
+      "matchType": "prefLabel",
+      "ontologyType": "ONTOLOGY",
+      "provisional": false,
+      "@id": "http://purl.obolibrary.org/obo/GAZ_00143144",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "links": {
+        "self": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143144",
+        "ontology": "https://data.bioontology.org/ontologies/GAZ",
+        "children": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143144/children",
+        "parents": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143144/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143144/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143144/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143144/instances",
+        "tree": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143144/tree",
+        "notes": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143144/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GAZ/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143144/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GAZ?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGAZ_00143144",
+        "@context": {
+          "self": "http://www.w3.org/2002/07/owl#Class",
+          "ontology": "http://data.bioontology.org/metadata/Ontology",
+          "children": "http://www.w3.org/2002/07/owl#Class",
+          "parents": "http://www.w3.org/2002/07/owl#Class",
+          "descendants": "http://www.w3.org/2002/07/owl#Class",
+          "ancestors": "http://www.w3.org/2002/07/owl#Class",
+          "instances": "http://data.bioontology.org/metadata/Instance",
+          "tree": "http://www.w3.org/2002/07/owl#Class",
+          "notes": "http://data.bioontology.org/metadata/Note",
+          "mappings": "http://data.bioontology.org/metadata/Mapping",
+          "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+      },
+      "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "definition": "http://www.w3.org/2004/02/skos/core#definition",
+        "obsolete": "http://www.w3.org/2002/07/owl#deprecated",
+        "@language": "en"
+      }
+    }
+  ]
+}
