@@ -2,9 +2,10 @@ import { Box, styled } from "@mui/material";
 
 const OuterBox = styled(Box)(({ theme }) => ({
   // --- Base Styles (Applied to all screen sizes) ---
-  marginTop: theme.spacing(5),
+  paddingTop: theme.spacing(5),
   width: "calc(100% - 100px)",
-  height: "100%",
+  minHeight: "100vh",
+  overflowY: "auto",
 
   // --- Responsive Margin Left ---
   // Start with the 'xs' value (or smallest/default)

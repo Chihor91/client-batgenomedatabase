@@ -1,17 +1,60 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
-import Statistics from "./Statistics";
-import { Separator } from "@/components/ui/separator";
+import React from "react";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import {
+  Box,
+  Button,
+  Grid,
+  Typography,
+  Stack,
+  Tooltip,
+  IconButton,
+  Avatar,
+  Menu,
+  MenuItem,
+  Divider,
+  ListItemIcon,
+} from "@mui/material";
+import AuthContext from "../../context/AuthContext";
 import { AuthProvider } from "@/context/AuthContext";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import MUIThemeProvider from "@/components/Custom/MUIThemeProvider";
 import { SnackbarProvider } from "notistack";
 import { PageHeader } from "@/components/Layout";
 import OuterBox from "@/components/Custom/OuterBox.jsx";
-import UploadFileIcon from "@mui/icons-material/UploadFile";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import SearchIcon from "@mui/icons-material/Search";
+import LoginIcon from "@mui/icons-material/Login";
+import LogOutIcon from "@mui/icons-material/Logout";
+import LandscapeIcon from "@mui/icons-material/Landscape";
+import BiotechIcon from "@mui/icons-material/Biotech";
+import axios from "axios";
 
 export default function Home() {
+  const { user, logoutUser } = useContext(AuthContext);
+  useEffect(() => {
+    user && axios.get("/user/isloggedin/").catch((err) => logoutUser());
+  }, [user, logoutUser]);
+
+  const [isolateCount, setIsolateCount] = useState(null);
+  const [sourceCount, setSourceCount] = useState(null);
+
+  useEffect(() => {
+    axios.get("/source/isolate/count/").then((res) => {
+      setIsolateCount(res.data);
+    });
+    axios.get("/source/count/").then((res) => {
+      setSourceCount(res.data);
+    });
+  }, []);
+
+  const navigate = useNavigate();
+  const handleButtonClick = (buttonName) => {
+    buttonName === "Dashboard"
+      ? navigate("/")
+      : navigate(`/${buttonName.toLowerCase()}`);
+  };
+
   return (
     <>
       <SnackbarProvider maxSnack={3}>
@@ -19,29 +62,35 @@ export default function Home() {
           <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
             <AuthProvider>
               <OuterBox>
-                <PageHeader title="Welcome, User!">
-                  <Button
-                    variant="contained"
-                    size="small"
-                    onClick={console.log("Click")}
-                    aria-label="Import file"
-                    sx={{
-                      alignSelf: "center",
-                      mt: 0,
-                      display: "flex",
-                      gap: 1,
-                    }}
-                  >
-                    <UploadFileIcon fontSize="small" />
-                    Import File
-                  </Button>
+                <PageHeader
+                  title={user ? `Welcome, ${user.username}!` : "Welcome!"}
+                >
+                  {user ? (
+                    <Button
+                      variant="outlined"
+                      id="logout-button"
+                      startIcon={<LogOutIcon />}
+                      onClick={logoutUser}
+                    >
+                      Logout
+                    </Button>
+                  ) : (
+                    <Button
+                      variant="outlined"
+                      id="login-button"
+                      startIcon={<LoginIcon />}
+                      onClick={() => navigate("login")}
+                    >
+                      Login
+                    </Button>
+                  )}
                 </PageHeader>
 
                 <Grid container spacing={2}>
                   <Grid size={12}>
                     <Box
                       sx={{
-                        height: { xs: "auto", md: "90%" },
+                        // height: { xs: "auto", md: "90%" },
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "space-between",
@@ -96,7 +145,7 @@ export default function Home() {
                   <Grid size={6}>
                     <Box
                       sx={{
-                        height: { xs: "auto", md: "90%" },
+                        // height: { xs: "auto", md: "90%" },
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "space-between",
@@ -114,7 +163,7 @@ export default function Home() {
                           alignItems: "center",
                           justifyContent: "center",
                           width: "fit-content",
-                          backgroundColor: "success.main",
+                          backgroundColor: "#eaf0ec",
                           borderRadius: 2,
                           padding: 1.5,
                           mb: 2,
@@ -122,7 +171,7 @@ export default function Home() {
                       >
                         <AccountTreeIcon
                           sx={{
-                            color: "white",
+                            color: "#2e7d32",
                             fontSize: 30,
                           }}
                         />
@@ -155,7 +204,7 @@ export default function Home() {
                       <Button
                         variant="outlined"
                         size="small"
-                        onClick={console.log("Click")}
+                        onClick={() => handleButtonClick("ontograph")}
                         aria-label="View Graph"
                         sx={{
                           alignSelf: "stretch",
@@ -171,7 +220,7 @@ export default function Home() {
                   <Grid size={6}>
                     <Box
                       sx={{
-                        height: { xs: "auto", md: "90%" },
+                        // height: { xs: "auto", md: "90%" },
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "space-between",
@@ -189,7 +238,7 @@ export default function Home() {
                           alignItems: "center",
                           justifyContent: "center",
                           width: "fit-content",
-                          backgroundColor: "success.main",
+                          backgroundColor: "#eaf0ec",
                           borderRadius: 2,
                           padding: 1.5,
                           mb: 2,
@@ -197,7 +246,7 @@ export default function Home() {
                       >
                         <SearchIcon
                           sx={{
-                            color: "white",
+                            color: "#2e7d32",
                             fontSize: 30,
                           }}
                         />
@@ -230,7 +279,7 @@ export default function Home() {
                       <Button
                         variant="contained"
                         size="small"
-                        onClick={console.log("Click")}
+                        onClick={() => handleButtonClick("ontodex")}
                         aria-label="Search Terms"
                         sx={{
                           alignSelf: "stretch",
@@ -241,6 +290,127 @@ export default function Home() {
                       >
                         Search Terms
                       </Button>
+                    </Box>
+                  </Grid>
+                  <Grid size={12}>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-between",
+                        alignItems: "stretch",
+                        px: 4,
+                      }}
+                    >
+                      <Typography variant="h6" align="left">
+                        Quick Stats
+                      </Typography>
+                    </Box>
+                  </Grid>
+                  <Grid size={6} mb={4}>
+                    <Box
+                      sx={{
+                        padding: 2,
+                        mx: 2,
+                        border: "1px solid #e1e1e1",
+                        backgroundColor: "#FFFFFF",
+                        borderRadius: 3,
+                      }}
+                    >
+                      <Stack
+                        direction="row"
+                        divider={<Divider orientation="vertical" flexItem />}
+                        spacing={2}
+                      >
+                        <Box sx={{ display: "flex", alignItems: "center" }}>
+                          <Box
+                            sx={{
+                              backgroundColor: "#eaf0ec",
+                              borderRadius: 10,
+                              padding: 1.5,
+                            }}
+                          >
+                            <LandscapeIcon
+                              sx={{
+                                color: "#2e7d32",
+                                fontSize: 30,
+                              }}
+                            />
+                          </Box>
+                        </Box>
+                        <Box
+                          sx={{
+                            flexGrow: 1,
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: 2,
+                          }}
+                        >
+                          <Typography align="left" color="#6c6c6cff">
+                            Total Sources
+                          </Typography>
+                          <Typography
+                            variant="h4"
+                            align="left"
+                            fontWeight={600}
+                          >
+                            {sourceCount}
+                          </Typography>
+                        </Box>
+                      </Stack>
+                    </Box>
+                  </Grid>
+                  <Grid size={6} mb={4}>
+                    <Box
+                      sx={{
+                        padding: 2,
+                        mx: 2,
+                        border: "1px solid #e1e1e1",
+                        backgroundColor: "#FFFFFF",
+                        borderRadius: 3,
+                      }}
+                    >
+                      <Stack
+                        direction="row"
+                        divider={<Divider orientation="vertical" flexItem />}
+                        spacing={2}
+                      >
+                        <Box sx={{ display: "flex", alignItems: "center" }}>
+                          <Box
+                            sx={{
+                              backgroundColor: "#eaf0ec",
+                              borderRadius: 10,
+                              padding: 1.5,
+                            }}
+                          >
+                            <BiotechIcon
+                              sx={{
+                                color: "#2e7d32",
+                                fontSize: 30,
+                              }}
+                            />
+                          </Box>
+                        </Box>
+                        <Box
+                          sx={{
+                            flexGrow: 1,
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: 2,
+                          }}
+                        >
+                          <Typography align="left" color="#6c6c6cff">
+                            Total Isolates
+                          </Typography>
+                          <Typography
+                            variant="h4"
+                            align="left"
+                            fontWeight={600}
+                          >
+                            {isolateCount}
+                          </Typography>
+                        </Box>
+                      </Stack>
                     </Box>
                   </Grid>
                 </Grid>

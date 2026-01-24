@@ -68,71 +68,61 @@ function SideBar({ showSidebar, setShowSidebar }) {
         <h1 className={`font-[1000] text-lg font-title`}>CAVES</h1>
       </div>
       {/* FOR AUTHENTICATED USERS */}
-      <div className="h-[90%] flex flex-col justify-start">
-        {user ? (
-          <section className="flex flex-col gap-0 pt-0 ">
-            <SideNavButton
-              icon={LandscapeIcon}
-              label="Sources"
-              onClick={() => handleButtonClick("Source")}
-              isActive={activeButton === "Source"}
-            />
-            <SideNavButton
-              icon={BiotechIcon}
-              label="Isolates"
-              onClick={() => handleButtonClick("Isolate")}
-              isActive={activeButton === "Isolate"}
-            />
-            <SideNavButton
-              icon={AccountTreeIcon}
-              label="OntoGraph"
-              onClick={() => handleButtonClick("OntoGraph")}
-              isActive={activeButton === "OntoGraph"}
-            />
-            <SideNavButton
-              icon={SearchIcon}
-              label="OntoDex"
-              onClick={() => handleButtonClick("OntoDex")}
-              isActive={activeButton === "OntoDex"}
-            />
-            {user.is_superuser && (
+      <div className="h-[90%] flex flex-col justify-between">
+        <div>
+          {user ? (
+            <section className="flex flex-col gap-0 pt-0 ">
               <SideNavButton
-                icon={AdminPanelSettingsIcon}
-                label="Admin"
-                onClick={() => handleButtonClick("Admin")}
-                isActive={activeButton === "Admin"}
+                icon={LandscapeIcon}
+                label="Sources"
+                onClick={() => handleButtonClick("Source")}
+                isActive={activeButton === "Source"}
               />
-            )}
-            <SideNavButton
-              icon={LogoutIcon}
-              label="Logout"
-              onClick={logoutUser}
-              isActive={activeButton === "Logout"}
-            />
-          </section>
-        ) : (
-          // FOR NON-AUTHENTICATED USERS
-          <section className="flex flex-col gap-0 pt-0 ">
-            <SideNavButton
-              icon={AccountTreeIcon}
-              label="OntoGraph"
-              onClick={() => handleButtonClick("OntoGraph")}
-              isActive={activeButton === "OntoGraph"}
-            />
-            <SideNavButton
-              icon={SearchIcon}
-              label="OntoDex"
-              onClick={() => handleButtonClick("OntoDex")}
-              isActive={activeButton === "OntoDex"}
-            />
-            <SideNavButton
-              icon={LoginIcon}
-              label="Login"
-              onClick={() => navigate("login")}
-              isActive={activeButton === "Login"}
-            />
-          </section>
-        )}
+              <SideNavButton
+                icon={BiotechIcon}
+                label="Isolates"
+                onClick={() => handleButtonClick("Isolate")}
+                isActive={activeButton === "Isolate"}
+              />
+              <SideNavButton
+                icon={AccountTreeIcon}
+                label="OntoGraph"
+                onClick={() => handleButtonClick("OntoGraph")}
+                isActive={activeButton === "OntoGraph"}
+              />
+              <SideNavButton
+                icon={SearchIcon}
+                label="OntoDex"
+                onClick={() => handleButtonClick("OntoDex")}
+                isActive={activeButton === "OntoDex"}
+              />
+              {user.is_superuser && (
+                <SideNavButton
+                  icon={AdminPanelSettingsIcon}
+                  label="Admin"
+                  onClick={() => handleButtonClick("Admin")}
+                  isActive={activeButton === "Admin"}
+                />
+              )}
+            </section>
+          ) : (
+            // FOR NON-AUTHENTICATED USERS
+            <section className="flex flex-col gap-0 pt-0 ">
+              <SideNavButton
+                icon={AccountTreeIcon}
+                label="OntoGraph"
+                onClick={() => handleButtonClick("OntoGraph")}
+                isActive={activeButton === "OntoGraph"}
+              />
+              <SideNavButton
+                icon={SearchIcon}
+                label="OntoDex"
+                onClick={() => handleButtonClick("OntoDex")}
+                isActive={activeButton === "OntoDex"}
+              />
+            </section>
+          )}
+        </div>
 
         <div className="py-10">
           <DarkLightModeToggle />
