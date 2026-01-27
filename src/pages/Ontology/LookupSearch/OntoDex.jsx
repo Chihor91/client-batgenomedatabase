@@ -1,34 +1,105 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import OuterBox from "@/components/Custom/OuterBox.jsx";
-import {
-  Box,
-  Chip,
-  Paper,
-  Stack,
-  Typography,
-  TextField,
-  IconButton,
-} from "@mui/material";
+import { Grid } from "@mui/material";
 import { AuthProvider } from "@/context/AuthContext";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import MUIThemeProvider from "@/components/Custom/MUIThemeProvider";
-import { SnackbarProvider } from "notistack";
-import SearchIcon from "@mui/icons-material/Search";
-import InputBase from "@mui/material/InputBase";
-import { styled } from "@mui/material/styles";
-import { useNavigate } from "react-router-dom";
-import SearchIndividuals from "./SearchPage";
+import { useSnackbar, SnackbarProvider } from "notistack";
+import { PageHeader } from "@/components/Layout";
+import SearchPanel from "./SearchPanel.jsx";
+import SearchTable from "./SearchTable.jsx";
+
+// Available ontologies for filtering
+const ontologyOptions = [
+  { id: "envo", label: "ENVO" },
+  { id: "ncit", label: "NCIT" },
+  { id: "ncbitaxon", label: "NCBITAXON" },
+  { id: "aro", label: "ARO" },
+];
 
 export default function OntoDex() {
-  const navigate = useNavigate();
-  const handleChipClick = () => {
-    console.info("You clicked the Chip.");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [ontologyFilter, setOntologyFilter] = useState("");
+  const [results, setResults] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const { enqueueSnackbar } = useSnackbar();
+
+  // Restore search state from sessionStorage on mount
+  useEffect(() => {
+    const savedState = sessionStorage.getItem("ontodex_search_state");
+    if (savedState) {
+      try {
+        const { results, searchTerm, ontologyFilter } = JSON.parse(savedState);
+        setResults(results || []);
+        setSearchTerm(searchTerm || "");
+        setOntologyFilter(ontologyFilter || "");
+      } catch (error) {
+        console.error("Failed to restore search state:", error);
+      }
+    }
+  }, []);
+
+  const handleSearch = async () => {
+    if (!searchTerm) {
+      enqueueSnackbar("Please enter a search term", { variant: "error" });
+      return;
+    }
+
+    try {
+      setIsLoading(true);
+
+      // Define query parameters
+      const params = new URLSearchParams({
+        q: searchTerm,
+        apikey: "fa2cbf3a-fbfc-45b5-bb1f-76ee601a0fe3",
+      });
+
+      // Use all ontology filters if none are selected
+      const ontologies =
+        ontologyFilter || ontologyOptions.map((opt) => opt.id).join(",");
+      params.append("ontologies", ontologies.toUpperCase());
+
+      // Make the API call
+      const response = await fetch(
+        `https://data.bioontology.org/search?${params}`,
+      );
+
+      if (!response.ok) {
+        enqueueSnackbar(`API request failed: ${response.status}`, {
+          variant: "error",
+        });
+        return;
+      }
+
+      // Update results state with the API data
+      const data = await response.json();
+      setResults(data.collection);
+
+      // Save search state to sessionStorage
+      sessionStorage.setItem(
+        "ontodex_search_state",
+        JSON.stringify({
+          results: data.collection,
+          searchTerm,
+          ontologyFilter,
+        }),
+      );
+
+      console.log("Search results:", data);
+    } catch (error) {
+      console.error("Error searching:", error);
+      enqueueSnackbar("Failed to fetch data", { variant: "error" });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  const handleSearchClick = () => {
-    console.info("You clicked the Search Button.");
-    navigate("/ontodex/search");
+  const handleReset = () => {
+    setSearchTerm("");
+    setOntologyFilter("");
+    setResults([]);
+    sessionStorage.removeItem("ontodex_search_state");
   };
 
   return (
@@ -37,83 +108,44 @@ export default function OntoDex() {
         <MUIThemeProvider>
           <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
             <AuthProvider>
-              <OuterBox
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  height: "80vh",
-                }}
-              >
-                <Stack
-                  direction="column"
-                  spacing={1}
-                  sx={{
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Typography
-                    variant="h2"
-                    gutterBottom
-                    sx={{ fontWeight: "bold" }}
+              <OuterBox>
+                <Grid container direction="column" sx={{ minHeight: "100vh" }}>
+                  <PageHeader title="OntoDex" />
+
+                  {/* Main Content Area */}
+                  <Grid
+                    item
+                    container
+                    sx={{
+                      flexGrow: 1,
+                      flexDirection: { xs: "column", md: "row" },
+                      gap: 2,
+                      flexWrap: "nowrap",
+                      overflow: "visible",
+                      px: { xs: 1, md: 2 },
+                      pb: 2,
+                    }}
                   >
-                    OntoDex
-                  </Typography>
-                  <Typography
-                    variant="h6"
-                    gutterBottom
-                    sx={{ color: "text.secondary" }}
-                  >
-                    Discover and explore ontology terms supported by the NCBO
-                    BioPortal repository.
-                  </Typography>
-                  <form style={{ display: "flex", alignItems: "center" }}>
-                    <Paper
-                      component="form"
-                      sx={{
-                        p: "2px 4px",
-                        display: "flex",
-                        alignItems: "center",
-                        width: 400,
-                        marginTop: "20px",
-                        marginBottom: "20px",
-                      }}
-                    >
-                      <InputBase
-                        sx={{ ml: 1, flex: 1 }}
-                        placeholder="Find the term you need..."
-                        inputProps={{ "aria-label": "search for terms" }}
-                      />
-                      <IconButton
-                        type="button"
-                        sx={{ p: "10px" }}
-                        aria-label="search"
-                        onClick={handleSearchClick}
-                      >
-                        <SearchIcon />
-                      </IconButton>
-                    </Paper>
-                  </form>
-                  <Stack direction="row" spacing={1}>
-                    <Typography
-                      variant="body1"
-                      sx={{ alignSelf: "center", color: "text.secondary" }}
-                    >
-                      Search within specific ontologies:
-                    </Typography>
-                    <Chip
-                      label="MISO"
-                      sx={{ backgroundColor: "#454F02", color: "#ffffff" }}
-                      onClick={handleChipClick}
+                    {/* Left: Search Table */}
+                    <SearchTable
+                      results={results}
+                      searchTerm={searchTerm}
+                      ontologyFilter={ontologyFilter}
+                      isLoading={isLoading}
                     />
-                    <Chip
-                      label="ENVO"
-                      variant="outlined"
-                      onClick={handleChipClick}
+
+                    {/* Right: Search Panel */}
+                    <SearchPanel
+                      searchTerm={searchTerm}
+                      setSearchTerm={setSearchTerm}
+                      ontologyFilter={ontologyFilter}
+                      setOntologyFilter={setOntologyFilter}
+                      ontologyOptions={ontologyOptions}
+                      onSearch={handleSearch}
+                      onReset={handleReset}
                     />
-                  </Stack>
-                </Stack>
+                  </Grid>
+                </Grid>
               </OuterBox>
             </AuthProvider>
           </ThemeProvider>

@@ -4,14 +4,19 @@ import { useNavigate } from "react-router-dom";
 import { Grid, Paper, Link } from "@mui/material";
 import { DataTable } from "@/components/Layout";
 
-export default function SearchTable({ results, searchTerm, ontologyFilter }) {
+export default function SearchTable({
+  results,
+  searchTerm,
+  ontologyFilter,
+  isLoading,
+}) {
   const navigate = useNavigate();
 
   // Define columns for DataTable
   const columns = useMemo(
     () => [
       {
-        accessorKey: "label",
+        accessorKey: "prefLabel",
         header: "Label",
         size: 100,
         Cell: ({ cell }) => (
@@ -19,7 +24,15 @@ export default function SearchTable({ results, searchTerm, ontologyFilter }) {
             component="button"
             variant="body2"
             underline="hover"
-            onClick={() => navigate("/ontodex/search/class")}
+            onClick={() =>
+              navigate("/ontodex/class", {
+                state: {
+                  searchResults: results,
+                  searchTerm,
+                  ontologyFilter,
+                },
+              })
+            }
             sx={{ color: "success.main", textAlign: "left" }}
           >
             {cell.getValue()}
@@ -27,18 +40,18 @@ export default function SearchTable({ results, searchTerm, ontologyFilter }) {
         ),
       },
       {
-        accessorKey: "ontology",
+        accessorFn: (row) => row.links.ontology.split("/").pop(),
         header: "Ontology",
         size: 80,
       },
       {
-        accessorKey: "type",
+        accessorFn: (row) => row["@type"]?.split("#").pop() || "Class",
         header: "Type",
         size: 60,
       },
       {
-        accessorKey: "description",
-        header: "Description",
+        accessorFn: (row) => row.definition?.[0] || "",
+        header: "Definition",
         grow: true,
         Cell: ({ cell }) => (
           <span
@@ -54,12 +67,12 @@ export default function SearchTable({ results, searchTerm, ontologyFilter }) {
         ),
       },
     ],
-    []
+    [],
   );
 
   const columnFilters = useMemo(
     () => (ontologyFilter ? [{ id: "ontology", value: ontologyFilter }] : []),
-    [ontologyFilter]
+    [ontologyFilter],
   );
 
   return (
@@ -85,8 +98,8 @@ export default function SearchTable({ results, searchTerm, ontologyFilter }) {
         <DataTable
           columns={columns}
           data={results}
-          globalFilter={searchTerm}
           columnFilters={columnFilters}
+          isLoading={isLoading}
         />
       </Paper>
     </Grid>

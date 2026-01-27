@@ -6,6 +6,7 @@ export default function DataTable({
   data,
   globalFilter,
   columnFilters = [],
+  isLoading,
   muiTablePaperProps,
   initialState,
 }) {
@@ -23,6 +24,7 @@ export default function DataTable({
       state={{
         globalFilter: globalFilter || undefined,
         columnFilters,
+        isLoading: isLoading || false,
       }}
       initialState={{
         pagination: { pageSize: 10, pageIndex: 0 },

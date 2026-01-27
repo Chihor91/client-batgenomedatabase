@@ -28,10 +28,7 @@ import MUIThemeProvider from "@/components/Custom/MUIThemeProvider";
 
 import OntoGraph from "@/pages/Ontology/Visualizer/OntoGraph";
 import OntoDex from "@/pages/Ontology/LookupSearch/OntoDex";
-import SearchPage from "@/pages/Ontology/LookupSearch/SearchPage";
 import SearchClass from "@/pages/Ontology/LookupSearch/SearchClass";
-
-// Asset Imports
 
 // Style Imports
 import "./App.css";
@@ -55,8 +52,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/ontograph" element={<OntoGraph />} />
         <Route path="/ontodex" element={<OntoDex />} />
-        <Route path="/ontodex/search" element={<SearchPage />} />
-        <Route path="/ontodex/search/class" element={<SearchClass />} />
+        <Route path="/ontodex/class" element={<SearchClass />} />
         <Route path="/login" element={<Login />} />
         <Route element={<PrivateRoutes />}>
           <Route path="/source" element={<Source />} />

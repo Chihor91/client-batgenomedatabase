@@ -49,7 +49,7 @@ export default function Individual() {
                         cursor: "pointer",
                         "&:hover": { textDecoration: "underline" },
                       }}
-                      onClick={() => navigate("/ontodex/search")}
+                      onClick={() => navigate("/ontodex")}
                     >
                       OntoDex
                     </Typography>
