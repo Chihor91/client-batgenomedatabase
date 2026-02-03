@@ -33,7 +33,7 @@ export default function SearchTable({
                 },
               })
             }
-            sx={{ color: "success.main", textAlign: "left" }}
+            sx={{ color: "#2e7d32", textAlign: "left" }}
           >
             {cell.getValue()}
           </Link>
@@ -90,7 +90,7 @@ export default function SearchTable({
           width: "100%",
           height: "auto",
           borderRadius: 3,
-          p: 3,
+          overflow: "hidden",
           display: "flex",
           flexDirection: "column",
         }}

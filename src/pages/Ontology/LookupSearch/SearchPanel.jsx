@@ -39,10 +39,10 @@ export default function SearchPanel({
           onClick={onSearch}
           aria-label="search"
           sx={{
-            backgroundColor: "#2e7d32",
+            backgroundColor: "#454f02",
             color: "white",
             "&:hover": {
-              backgroundColor: "#1b5e20",
+              backgroundColor: "#5a6603",
             },
           }}
         >

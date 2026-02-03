@@ -16,8 +16,8 @@ import BiotechIcon from "@mui/icons-material/Biotech";
 import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
 import LandscapeIcon from "@mui/icons-material/Landscape";
-import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+import HubIcon from "@mui/icons-material/Hub";
 import { useTheme } from "@/components/ui/theme-provider";
 import axios from "axios";
 
@@ -85,7 +85,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
                 isActive={activeButton === "Isolate"}
               />
               <SideNavButton
-                icon={AccountTreeIcon}
+                icon={HubIcon}
                 label="OntoGraph"
                 onClick={() => handleButtonClick("OntoGraph")}
                 isActive={activeButton === "OntoGraph"}
@@ -109,7 +109,7 @@ function SideBar({ showSidebar, setShowSidebar }) {
             // FOR NON-AUTHENTICATED USERS
             <section className="flex flex-col gap-0 pt-0 ">
               <SideNavButton
-                icon={AccountTreeIcon}
+                icon={HubIcon}
                 label="OntoGraph"
                 onClick={() => handleButtonClick("OntoGraph")}
                 isActive={activeButton === "OntoGraph"}

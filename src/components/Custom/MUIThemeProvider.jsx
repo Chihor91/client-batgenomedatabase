@@ -39,12 +39,12 @@ const customTheme = createTheme({
       styleOverrides: {
         root: {
           "&:hover": {
-            backgroundColor: "rgba(46, 125, 50, 0.1)",
+            backgroundColor: "#2e7d321a",
           },
           "&.Mui-selected": {
-            backgroundColor: "rgba(46, 125, 50, 0.15)",
+            backgroundColor: "#2e7d3226",
             "&:hover": {
-              backgroundColor: "rgba(46, 125, 50, 0.2)",
+              backgroundColor: "#2e7d3233",
             },
           },
         },
@@ -53,11 +53,10 @@ const customTheme = createTheme({
     MuiButton: {
       styleOverrides: {
         outlined: {
-          borderColor: "#2e7d32",
-          color: "#2e7d32",
+          borderColor: "#454f02",
+          color: "#454f02",
           "&:hover": {
-            borderColor: "#1b5e20",
-            backgroundColor: "rgba(46, 125, 50, 0.08)",
+            backgroundColor: "#454f0214",
           },
         },
         contained: {
@@ -87,7 +86,8 @@ const customTheme = createTheme({
           color: "#2e7d32",
         },
         h6: {
-          color: "#2e7d32",
+          fontSize: "16px",
+          fontWeight: 600,
         },
       },
     },
@@ -98,22 +98,11 @@ const customTheme = createTheme({
           color: "#454f02",
           backgroundColor: "white",
           "&:hover": {
-            backgroundColor: "rgba(69, 79, 2, 0.08)",
+            backgroundColor: "#454f0214",
           },
-        },
-        filled: {
-          backgroundColor: "#454f02",
-          color: "#fff",
-          borderColor: "#454f02",
-          "&:hover": {
-            backgroundColor: "#5a6603",
-          },
-        },
-        outlined: {
-          borderColor: "#454f02",
-          color: "#454f02",
-          "&:hover": {
-            backgroundColor: "rgba(69, 79, 2, 0.08)",
+          "&:active": {
+            color: "#5a6603",
+            transform: "scale(0.95)",
           },
         },
         deleteIcon: {
@@ -121,6 +110,26 @@ const customTheme = createTheme({
           "&:hover": {
             color: "#5a6603",
           },
+        },
+      },
+    },
+    MuiAccordion: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "transparent",
+          "&:before": {
+            display: "none",
+          },
+          borderBottom: "1px solid",
+          borderColor: "#cfcfcf",
+        },
+      },
+    },
+    MuiListItemText: {
+      styleOverrides: {
+        primary: {
+          color: "#757575",
+          fontSize: 15,
         },
       },
     },

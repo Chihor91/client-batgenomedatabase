@@ -123,7 +123,6 @@ export default function OntoDex() {
                       flexWrap: "nowrap",
                       overflow: "visible",
                       px: { xs: 1, md: 2 },
-                      pb: 2,
                     }}
                   >
                     {/* Left: Search Table */}

@@ -22,7 +22,7 @@ import MUIThemeProvider from "@/components/Custom/MUIThemeProvider";
 import { SnackbarProvider } from "notistack";
 import { PageHeader } from "@/components/Layout";
 import OuterBox from "@/components/Custom/OuterBox.jsx";
-import AccountTreeIcon from "@mui/icons-material/AccountTree";
+import HubIcon from "@mui/icons-material/Hub";
 import SearchIcon from "@mui/icons-material/Search";
 import LoginIcon from "@mui/icons-material/Login";
 import LogOutIcon from "@mui/icons-material/Logout";
@@ -169,7 +169,7 @@ export default function Home() {
                           mb: 2,
                         }}
                       >
-                        <AccountTreeIcon
+                        <HubIcon
                           sx={{
                             color: "#2e7d32",
                             fontSize: 30,
