@@ -6,13 +6,9 @@ import {
   Paper,
   Box,
   Typography,
-  Divider,
   Stack,
   Chip,
   Button,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
   List,
   ListItem,
   ListItemText,
@@ -21,19 +17,35 @@ import { AuthProvider } from "@/context/AuthContext";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import MUIThemeProvider from "@/components/Custom/MUIThemeProvider";
 import { SnackbarProvider } from "notistack";
-import { PageHeader } from "@/components/Layout";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArticleIcon from "@mui/icons-material/Article";
 import SellIcon from "@mui/icons-material/Sell";
-import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import ManageSearchIcon from "@mui/icons-material/ManageSearch";
-import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
 export default function Individual() {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Extract the class data from navigation state (if it exists)
+  const classData = location.state?.classData || {};
+
+  // Destructure classData fields
+  const {
+    prefLabel = "Unknown Class",
+    definition = [],
+    "@id": iri = "",
+    synonym = [],
+    cui = [],
+    semanticType = [],
+    links = {},
+  } = classData;
+
+  // Get ontology name from the links
+  const ontologyName = links?.ontology?.split("/").pop() || "Unknown";
+  const bioPortalUrl = links?.ui || "#";
+
   return (
     <>
       <SnackbarProvider maxSnack={3}>
@@ -78,8 +90,10 @@ export default function Individual() {
                     <Button
                       variant="contained"
                       size="small"
-                      color="primary"
-                      aria-label="add to isolate"
+                      aria-label="View in BioPortal"
+                      href={bioPortalUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       sx={{
                         alignSelf: "center",
                         mt: 0,
@@ -126,15 +140,23 @@ export default function Individual() {
                           gap: 3,
                         }}
                       >
-                        <Box sx={{ textAlign: "left" }}>
+                        <Box
+                          sx={{
+                            textAlign: "left",
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                          }}
+                        >
                           <Typography
                             variant="h5"
                             fontWeight={700}
                             gutterBottom
                             align="left"
                           >
-                            Rhinolophus affinis
+                            {prefLabel}
                           </Typography>
+                          <Chip color="success" label={ontologyName} />
                         </Box>
 
                         <Box sx={{ textAlign: "left" }}>
@@ -148,17 +170,25 @@ export default function Individual() {
                             <ArticleIcon />
                             <Typography variant="h6">Definition(s)</Typography>
                           </Box>
-
                           <List sx={{ listStyleType: "disc", pl: 4 }}>
-                            <ListItem sx={{ display: "list-item", p: 0 }}>
-                              <ListItemText primary="Rhinolophus affinis, commonly known as the Intermediate Horseshoe Bat, is a species of bag in the family Rhinolophidae. It is found in South Asia, Southern China, and Southeast Asia." />
-                            </ListItem>
-                            <ListItem sx={{ display: "list-item", p: 0 }}>
-                              <ListItemText primary="This species plays a crucial role in the ecosystem as an insect regulator. Recent studies have also highlighted its significance in viral ecology, particularly relating to coronaviruses." />
-                            </ListItem>
+                            {definition.length > 0 ? (
+                              definition.map((def, index) => (
+                                <ListItem
+                                  key={index}
+                                  sx={{ display: "list-item", p: 0 }}
+                                >
+                                  <ListItemText primary={def} />
+                                </ListItem>
+                              ))
+                            ) : (
+                              <ListItem sx={{ display: "list-item", p: 0 }}>
+                                <ListItemText primary="No definition available." />
+                              </ListItem>
+                            )}
                           </List>
                         </Box>
 
+                        {/* Identifiers */}
                         <Box sx={{ textAlign: "left" }}>
                           <Box
                             sx={{
@@ -172,16 +202,30 @@ export default function Individual() {
                           </Box>
 
                           <Stack spacing={1} sx={{ mt: 2, width: "100%" }}>
-                            {[
-                              {
-                                label: "IRI",
-                                value:
-                                  "http://purl.obolibrary.org/obo/ENV0_01000281",
-                              },
-                              { label: "CUI", value: "C0000000" },
-                            ].map((item) => (
+                            <Box
+                              sx={{
+                                display: "flex",
+                                justifyContent: "space-between",
+                                alignItems: "center",
+                                bgcolor: "#5a660312",
+                                p: 2,
+                                borderRadius: 2,
+                                width: "100%",
+                              }}
+                            >
+                              <Typography color="text.secondary" fontSize={15}>
+                                IRI
+                              </Typography>
+                              <Typography
+                                sx={{ fontFamily: "monospace" }}
+                                fontSize={15}
+                              >
+                                {iri}
+                              </Typography>
+                            </Box>
+
+                            {cui.length > 0 && (
                               <Box
-                                key={item.label}
                                 sx={{
                                   display: "flex",
                                   justifyContent: "space-between",
@@ -196,16 +240,43 @@ export default function Individual() {
                                   color="text.secondary"
                                   fontSize={15}
                                 >
-                                  {item.label}
+                                  CUI
                                 </Typography>
                                 <Typography
                                   sx={{ fontFamily: "monospace" }}
                                   fontSize={15}
                                 >
-                                  {item.value}
+                                  {cui.join(", ")}
                                 </Typography>
                               </Box>
-                            ))}
+                            )}
+
+                            {semanticType.length > 0 && (
+                              <Box
+                                sx={{
+                                  display: "flex",
+                                  justifyContent: "space-between",
+                                  alignItems: "center",
+                                  bgcolor: "#5a660312",
+                                  p: 2,
+                                  borderRadius: 2,
+                                  width: "100%",
+                                }}
+                              >
+                                <Typography
+                                  color="text.secondary"
+                                  fontSize={15}
+                                >
+                                  Semantic Type
+                                </Typography>
+                                <Typography
+                                  sx={{ fontFamily: "monospace" }}
+                                  fontSize={15}
+                                >
+                                  {semanticType.join(", ")}
+                                </Typography>
+                              </Box>
+                            )}
                           </Stack>
                         </Box>
                       </Paper>
@@ -243,97 +314,40 @@ export default function Individual() {
                             gap: 2,
                           }}
                         >
-                          <Accordion disableGutters elevation={0}>
-                            <AccordionSummary
-                              expandIcon={<ArrowDropDownIcon />}
-                              aria-controls="panel1-content"
-                              id="panel1-header"
-                            >
-                              <Box
-                                sx={{
-                                  display: "flex",
-                                  alignItems: "center",
-                                  gap: 1,
-                                }}
-                              >
-                                <SellIcon
-                                  fontSize="small"
-                                  sx={{ color: "#454f02" }}
-                                />
-                                <Typography variant="h6">Synonyms</Typography>
-                              </Box>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                              <Stack
-                                direction="row"
-                                flexWrap="wrap"
-                                useFlexGap
-                                spacing={1}
-                                sx={{ mt: 1 }}
-                              >
-                                <Chip label="Chiroptera" variant="outlined" />
+                          <Box
+                            sx={{
+                              display: "flex",
+                              alignItems: "center",
+                              gap: 1,
+                            }}
+                          >
+                            <SellIcon fontSize="small" />
+                            <Typography variant="h6">Synonyms</Typography>
+                          </Box>
+                          <Stack
+                            direction="row"
+                            flexWrap="wrap"
+                            useFlexGap
+                            spacing={1}
+                            sx={{ mt: 1 }}
+                          >
+                            {synonym.length > 0 ? (
+                              synonym.map((syn, index) => (
                                 <Chip
-                                  label="Rhinolophidae"
+                                  key={index}
+                                  label={syn}
                                   variant="outlined"
                                 />
-                                <Chip label="Extant" variant="outlined" />
-                                <Chip label="Extinct" variant="outlined" />
-                              </Stack>
-                            </AccordionDetails>
-                          </Accordion>
-                          <Accordion disableGutters elevation={0}>
-                            <AccordionSummary
-                              expandIcon={<ArrowDropDownIcon />}
-                              aria-controls="panel2-content"
-                              id="panel2-header"
-                            >
-                              <Box
-                                sx={{
-                                  display: "flex",
-                                  alignItems: "center",
-                                  gap: 1,
-                                }}
+                              ))
+                            ) : (
+                              <Typography
+                                color="text.secondary"
+                                sx={{ fontStyle: "italic" }}
                               >
-                                <AccountTreeIcon
-                                  fontSize="small"
-                                  sx={{ color: "#454f02" }}
-                                />
-                                <Typography variant="h6">Hierarchy</Typography>
-                              </Box>
-                            </AccordionSummary>
-                            <AccordionDetails align="left">
-                              <Typography color="text.secondary">
-                                Parent
+                                No synonyms available.
                               </Typography>
-                              <Stack
-                                direction="row"
-                                flexWrap="wrap"
-                                useFlexGap
-                                spacing={1}
-                                sx={{ m: 1 }}
-                              >
-                                <Chip label="Chiroptera" variant="outlined" />
-                              </Stack>
-                              <Typography color="text.secondary">
-                                Children
-                              </Typography>
-                              <Stack
-                                direction="row"
-                                flexWrap="wrap"
-                                useFlexGap
-                                spacing={1}
-                                sx={{ mt: 1 }}
-                              >
-                                <Chip label="Chiroptera" variant="outlined" />
-                                <Chip
-                                  label="Rhinolophidae"
-                                  variant="outlined"
-                                />
-                                <Chip label="Extant" variant="outlined" />
-                                <Chip label="Extinct" variant="outlined" />
-                              </Stack>
-                            </AccordionDetails>
-                          </Accordion>
+                            )}
+                          </Stack>
                         </Box>
                       </Box>
                     </Grid>

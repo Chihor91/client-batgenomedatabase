@@ -73,7 +73,7 @@ export default function SearchPanel({
           sx={{
             color: "#9e9e9e",
             "&.Mui-focused": {
-              color: "#2e7d32",
+              color: "#454f02",
             },
           }}
         >
@@ -84,12 +84,6 @@ export default function SearchPanel({
           value={ontologyFilter}
           label="Filter by Ontology"
           onChange={(e) => setOntologyFilter(e.target.value)}
-          sx={{
-            backgroundColor: "white",
-            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#2e7d32",
-            },
-          }}
         >
           <MenuItem value="">All ontologies</MenuItem>
           {ontologyOptions.map((ontology) => (

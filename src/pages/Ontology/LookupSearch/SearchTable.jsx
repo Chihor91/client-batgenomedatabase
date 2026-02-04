@@ -19,7 +19,7 @@ export default function SearchTable({
         accessorKey: "prefLabel",
         header: "Label",
         size: 100,
-        Cell: ({ cell }) => (
+        Cell: ({ cell, row }) => (
           <Link
             component="button"
             variant="body2"
@@ -27,6 +27,7 @@ export default function SearchTable({
             onClick={() =>
               navigate("/ontodex/class", {
                 state: {
+                  classData: row.original,
                   searchResults: results,
                   searchTerm,
                   ontologyFilter,

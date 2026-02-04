@@ -7,17 +7,17 @@ const customTheme = createTheme({
       styleOverrides: {
         root: {
           "& label": {
-            color: "#2e7d32",
+            color: "#454f02",
           },
           "& label.Mui-focused": {
-            color: "#2e7d32",
+            color: "#454f02",
           },
           "& .MuiOutlinedInput-root": {
             "&:hover fieldset": {
-              borderColor: "#2e7d32",
+              borderColor: "#454f02",
             },
             "&.Mui-focused fieldset": {
-              borderColor: "#2e7d32",
+              borderColor: "#454f02",
             },
           },
         },
@@ -27,10 +27,10 @@ const customTheme = createTheme({
       styleOverrides: {
         root: {
           "&:hover .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#2e7d32",
+            borderColor: "#454f02",
           },
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#2e7d32",
+            borderColor: "#454f02",
           },
         },
       },
@@ -39,12 +39,12 @@ const customTheme = createTheme({
       styleOverrides: {
         root: {
           "&:hover": {
-            backgroundColor: "#2e7d321a",
+            backgroundColor: "#454f0214",
           },
           "&.Mui-selected": {
-            backgroundColor: "#2e7d3226",
+            backgroundColor: "#454f0214",
             "&:hover": {
-              backgroundColor: "#2e7d3233",
+              backgroundColor: "#454f0214",
             },
           },
         },
@@ -54,6 +54,7 @@ const customTheme = createTheme({
       styleOverrides: {
         outlined: {
           borderColor: "#454f02",
+          borderWidth: 1.5,
           color: "#454f02",
           "&:hover": {
             backgroundColor: "#454f0214",
@@ -93,8 +94,9 @@ const customTheme = createTheme({
     },
     MuiChip: {
       styleOverrides: {
-        root: {
+        outlined: {
           borderColor: "#454f02",
+          borderWidth: 1.5,
           color: "#454f02",
           backgroundColor: "white",
           "&:hover": {
