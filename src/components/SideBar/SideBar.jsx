@@ -1,20 +1,14 @@
 //Library Imports
 import { useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
-// import { Button } from "@/components/ui/button";
 import SideNavButton from "../Custom/SideNavButton";
 
 // Component Imports
 import AuthContext from "../../context/AuthContext";
-import { ModeToggle } from "../ui/mode-toggle";
 import DarkLightModeToggle from "../Custom/DarkLightModeToggle";
-import { CustomButton } from "../Custom/CustomButton";
 import Images from "@/common/images";
-import SpaceDashboardIcon from "@mui/icons-material/SpaceDashboard";
 import SearchIcon from "@mui/icons-material/Search";
 import BiotechIcon from "@mui/icons-material/Biotech";
-import LoginIcon from "@mui/icons-material/Login";
-import LogoutIcon from "@mui/icons-material/Logout";
 import LandscapeIcon from "@mui/icons-material/Landscape";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import HubIcon from "@mui/icons-material/Hub";
@@ -83,6 +77,18 @@ function SideBar({ showSidebar, setShowSidebar }) {
                 label="Isolates"
                 onClick={() => handleButtonClick("Isolate")}
                 isActive={activeButton === "Isolate"}
+              />
+              <SideNavButton
+                icon={LandscapeIcon}
+                label="SourceTest"
+                onClick={() => handleButtonClick("SourceTest")}
+                isActive={activeButton === "SourceTest"}
+              />
+              <SideNavButton
+                icon={BiotechIcon}
+                label="IsolateTest"
+                onClick={() => handleButtonClick("IsolateTest")}
+                isActive={activeButton === "IsolateTest"}
               />
               <SideNavButton
                 icon={HubIcon}

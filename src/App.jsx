@@ -17,9 +17,15 @@ import Login from "@/pages/Login/Login";
 import Source from "@/pages/Source";
 import SourceForm from "@/pages/Source/SourceForm";
 
+import SourceTest from "@/pages/SourceTest/SourceTest";
+import SourceFormTest from "@/pages/SourceTest/SourceFormTest";
+
 import Isolate from "@/pages/Isolate";
 import IsolateForm from "@/pages/Isolate/IsolateForm";
 import MultipleIsolateForm from "@/pages/Isolate/MultipleIsolatesForm";
+
+import IsolateTest from "@/pages/IsolateTest/IsolateTest";
+// import IsolateFormTest from "@/pages/IsolateTest/IsolateFormTest";
 
 import SideBar from "@/components/SideBar/SideBar";
 import { AuthProvider } from "@/context/AuthContext";
@@ -56,13 +62,21 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route element={<PrivateRoutes />}>
           <Route path="/source" element={<Source />} />
+          <Route path="/sourcetest" element={<SourceTest />} />
           <Route path="/isolate" element={<Isolate />} />
+          <Route path="/isolatetest" element={<IsolateTest />} />
           <Route path="/source/add" element={<SourceForm />} />
+          <Route path="/sourcetest/add" element={<SourceFormTest />} />
           <Route path="/isolate/add" element={<IsolateForm />} />
+          {/* <Route path="/isolatetest/add" element={<IsolateFormTest />} /> */}
           <Route
             path="/isolate/add/multiple"
             element={<MultipleIsolateForm />}
           />
+          {/* <Route
+            path="/isolatetest/add/multiple"
+            element={<MultipleIsolateFormTest />}
+          /> */}
         </Route>
         <Route element={<AdminRoutes />}>
           <Route path="/admin" element={<AdminPage />} />

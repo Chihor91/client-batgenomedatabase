@@ -9,6 +9,7 @@ export default function DataTable({
   isLoading,
   muiTablePaperProps,
   initialState,
+  enablePagination = true,
 }) {
   return (
     <MaterialReactTable
@@ -17,9 +18,9 @@ export default function DataTable({
       enableColumnActions={false}
       enableColumnFilters={false}
       enableTopToolbar={false}
-      enableBottomToolbar={true}
+      enableBottomToolbar={enablePagination}
       enableSorting={true}
-      enablePagination={true}
+      enablePagination={enablePagination}
       layoutMode="fixed"
       state={{
         globalFilter: globalFilter || undefined,

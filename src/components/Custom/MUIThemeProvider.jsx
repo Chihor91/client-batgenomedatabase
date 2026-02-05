@@ -104,7 +104,6 @@ const customTheme = createTheme({
           },
           "&:active": {
             color: "#5a6603",
-            transform: "scale(0.95)",
           },
         },
         deleteIcon: {
