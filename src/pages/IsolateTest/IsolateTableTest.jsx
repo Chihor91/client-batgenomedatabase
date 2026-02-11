@@ -19,7 +19,7 @@ export default function IsolateTableTest({ data, columnFilters, isLoading }) {
             component="button"
             variant="body2"
             underline="hover"
-            onClick={() => navigate("/isolate?id=" + row.original.id)}
+            onClick={() => navigate("/isolatetest?id=" + row.original.id)}
             sx={{ color: "#2e7d32", textAlign: "left" }}
           >
             {cell.getValue()}

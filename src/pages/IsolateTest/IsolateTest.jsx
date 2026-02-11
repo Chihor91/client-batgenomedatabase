@@ -10,16 +10,18 @@ import MUIThemeProvider from "@/components/Custom/MUIThemeProvider";
 import { useSnackbar, SnackbarProvider } from "notistack";
 import { PageHeader } from "@/components/Layout";
 import AddIcon from "@mui/icons-material/Add";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import IsolateTableTest from "./IsolateTableTest";
 import IsolatePanelTest from "./IsolatePanelTest";
 import { Stack } from "@mui/system";
 import { FormatListBulletedAdd } from "@mui/icons-material";
+import IsolateDetails from "./IsolateDetails";
 
 function IsolateTestContent() {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const { enqueueSnackbar } = useSnackbar();
+  const [searchParams] = useSearchParams();
 
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -69,6 +71,14 @@ function IsolateTestContent() {
     navigate("/isolate/add/multiple");
   };
 
+  // Render isolate detail view with ID parameter in the URL
+  const isolateId = searchParams.get("id");
+
+  if (isolateId) {
+    return <IsolateDetails id={isolateId} />;
+  }
+
+  // Otherwise, render the table view
   return (
     <OuterBox>
       <Grid container direction="column" sx={{ minHeight: "100vh" }}>

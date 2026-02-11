@@ -70,10 +70,9 @@ function SourceTestContent() {
     navigate("/source/add");
   };
 
-  // Check if we have an ID parameter in the URL
+  // Render source detail view with ID parameter in the URL
   const sourceId = searchParams.get("id");
 
-  // If ID exists, render SourceDetails detail view
   if (sourceId) {
     return <SourceDetails id={sourceId} />;
   }

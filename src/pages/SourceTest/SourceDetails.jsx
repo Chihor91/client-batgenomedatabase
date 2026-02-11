@@ -4,6 +4,7 @@ import { useEffect, useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import OuterBox from "@/components/Custom/OuterBox.jsx";
 import { DataTable } from "@/components/Layout";
+import DetailSection from "@/components/Layout/DetailSection";
 import { Grid, Paper, Box, Typography, Stack, Divider } from "@mui/material";
 import { AuthProvider } from "@/context/AuthContext";
 import { ThemeProvider } from "@/components/ui/theme-provider";
@@ -13,27 +14,6 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import ManageSearchIcon from "@mui/icons-material/ManageSearch";
 import PetsIcon from "@mui/icons-material/Pets";
 import PlaceIcon from "@mui/icons-material/Place";
-
-const DetailRow = ({ label, value }) => (
-  <Box
-    sx={{
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      bgcolor: "#5a660312",
-      p: 2,
-      borderRadius: 2,
-      width: "100%",
-    }}
-  >
-    <Typography color="text.secondary" fontSize={15}>
-      {label}
-    </Typography>
-    <Typography sx={{ fontFamily: "monospace" }} fontSize={15}>
-      {value || "N/A"}
-    </Typography>
-  </Box>
-);
 
 export default function SourceInfo({ id }) {
   const navigate = useNavigate();
@@ -150,132 +130,64 @@ export default function SourceInfo({ id }) {
                           gap: 3,
                         }}
                       >
-                        <Typography
-                          variant="h5"
-                          fontWeight={700}
-                          gutterBottom
-                          align="left"
-                        >
+                        <Typography variant="h5" fontWeight={700} align="left">
                           {data.human_readable_id}
                         </Typography>
 
                         <Box sx={{ textAlign: "left" }}>
-                          <Box
-                            sx={{
-                              display: "flex",
-                              gap: 1,
-                              color: "#454f02",
-                            }}
-                          >
-                            <ManageSearchIcon />
-                            <Typography variant="h6">
-                              Basic Information
-                            </Typography>
-                          </Box>
-
-                          <Stack spacing={1} sx={{ mt: 2, width: "100%" }}>
-                            <DetailRow
-                              label="Collection"
-                              value={
-                                data.collection_name +
-                                " (" +
-                                data.collection +
-                                ")"
-                              }
-                            />
-                            <DetailRow
-                              label="Institution"
-                              value={
-                                data.institution_name +
-                                " (" +
-                                data.institution +
-                                ")"
-                              }
-                            />
-                            <DetailRow
-                              label="Project"
-                              value={
-                                data.project_name +
-                                " (" +
-                                data.project_abbr +
-                                ")"
-                              }
-                            />
-                          </Stack>
-
-                          <Box
-                            sx={{
-                              display: "flex",
-                              gap: 1,
-                              mt: 2,
-                              color: "#454f02",
-                            }}
-                          >
-                            <PetsIcon />
-                            <Typography variant="h6">
-                              Host Information
-                            </Typography>
-                          </Box>
-
-                          <Stack spacing={1} sx={{ mt: 2, width: "100%" }}>
-                            <DetailRow
-                              label="Host Type"
-                              value={data.host_type}
-                            />
-                            <DetailRow
-                              label="Host Species"
-                              value={data.host_species}
-                            />
-                            <DetailRow
-                              label="Sample Type"
-                              value={data.sample_type}
-                            />
-                          </Stack>
-
-                          <Box
-                            sx={{
-                              display: "flex",
-                              gap: 1,
-                              mt: 2,
-                              color: "#454f02",
-                            }}
-                          >
-                            <PlaceIcon />
-                            <Typography variant="h6">
-                              Sampling Information
-                            </Typography>
-                          </Box>
-
-                          <Stack spacing={1} sx={{ mt: 2, width: "100%" }}>
-                            <DetailRow
-                              label="Location"
-                              value={
-                                data.loc_city && data.loc_province
-                                  ? data.loc_city +
-                                    ", " +
-                                    data.loc_province +
-                                    " (" +
-                                    data.loc_abbr +
-                                    ")"
-                                  : "N/A"
-                              }
-                            />
-                            <DetailRow
-                              label="Sampling Site"
-                              value={
-                                data.loc_sampling_site
-                                  ? data.loc_sampling_site +
-                                    " (" +
-                                    data.loc_site_abbr +
-                                    ")"
-                                  : "N/A"
-                              }
-                            />
-                            <DetailRow
-                              label="Sampling Point"
-                              value={data.loc_sampling_point}
-                            />
-                          </Stack>
+                          <DetailSection
+                            icon={<ManageSearchIcon />}
+                            title="Basic Information"
+                            rows={[
+                              {
+                                label: "Collection",
+                                value: `${data.collection_name} (${data.collection})`,
+                              },
+                              {
+                                label: "Institution",
+                                value: `${data.institution_name} (${data.institution})`,
+                              },
+                              {
+                                label: "Project",
+                                value: `${data.project_name} (${data.project_abbr})`,
+                              },
+                            ]}
+                          />
+                          <DetailSection
+                            icon={<PetsIcon />}
+                            title="Host Information"
+                            rows={[
+                              { label: "Host Type", value: data.host_type },
+                              {
+                                label: "Host Species",
+                                value: data.host_species,
+                              },
+                              { label: "Sample Type", value: data.sample_type },
+                            ]}
+                          />
+                          <DetailSection
+                            icon={<PlaceIcon />}
+                            title="Sampling Information"
+                            rows={[
+                              {
+                                label: "Location",
+                                value:
+                                  data.loc_city && data.loc_province
+                                    ? `${data.loc_city}, ${data.loc_province} (${data.loc_abbr})`
+                                    : null,
+                              },
+                              {
+                                label: "Sampling Site",
+                                value: data.loc_sampling_site
+                                  ? `${data.loc_sampling_site} (${data.loc_site_abbr})`
+                                  : null,
+                              },
+                              {
+                                label: "Sampling Point",
+                                value: data.loc_sampling_point,
+                              },
+                            ]}
+                          />
                         </Box>
                       </Paper>
                     )}
