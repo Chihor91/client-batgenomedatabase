@@ -94,7 +94,7 @@ export default function AccountsTableTest({
         <Divider />
         <DataTable
           columns={columns}
-          data={data}
+          data={data || []}
           isLoading={isLoading}
           enablePagination={false}
         />

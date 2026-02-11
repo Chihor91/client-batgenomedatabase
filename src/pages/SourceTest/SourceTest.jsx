@@ -10,14 +10,16 @@ import MUIThemeProvider from "@/components/Custom/MUIThemeProvider";
 import { useSnackbar, SnackbarProvider } from "notistack";
 import { PageHeader } from "@/components/Layout";
 import AddIcon from "@mui/icons-material/Add";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import SourceTableTest from "./SourceTableTest";
 import SourcePanelTest from "./SourcePanelTest";
+import SourceDetails from "./SourceDetails";
 
 function SourceTestContent() {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const { enqueueSnackbar } = useSnackbar();
+  const [searchParams] = useSearchParams();
 
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -68,6 +70,15 @@ function SourceTestContent() {
     navigate("/source/add");
   };
 
+  // Check if we have an ID parameter in the URL
+  const sourceId = searchParams.get("id");
+
+  // If ID exists, render SourceDetails detail view
+  if (sourceId) {
+    return <SourceDetails id={sourceId} />;
+  }
+
+  // Otherwise, render the table view
   return (
     <OuterBox>
       <Grid container direction="column" sx={{ minHeight: "100vh" }}>

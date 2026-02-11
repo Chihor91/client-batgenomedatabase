@@ -26,7 +26,7 @@ export default function SourceTableTest({ data, columnFilters, isLoading }) {
             component="button"
             variant="body2"
             underline="hover"
-            onClick={() => navigate("/source?id=" + row.original.id)}
+            onClick={() => navigate("/sourcetest?id=" + row.original.id)}
             sx={{ color: "#2e7d32", textAlign: "left" }}
           >
             {cell.getValue()}
