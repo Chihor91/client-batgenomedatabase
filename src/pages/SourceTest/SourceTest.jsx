@@ -67,7 +67,7 @@ function SourceTestContent() {
   };
 
   const handleAddSource = () => {
-    navigate("/source/add");
+    navigate("/sourcetest/add");
   };
 
   // Render source detail view with ID parameter in the URL
