@@ -1,6 +1,5 @@
 import * as React from "react";
-import { TextField, Button, IconButton } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+import { TextField, Button } from "@mui/material";
 import { SidePanel } from "@/components/Layout";
 
 export default function SourcePanelTest({
@@ -8,8 +7,6 @@ export default function SourcePanelTest({
   setIdFilter,
   hostSpeciesFilter,
   setHostSpeciesFilter,
-  misoFilter,
-  setMisoFilter,
   onReset,
 }) {
   const actions = (
@@ -53,18 +50,6 @@ export default function SourcePanelTest({
         value={hostSpeciesFilter}
         onChange={(e) => setHostSpeciesFilter(e.target.value)}
         sx={{ backgroundColor: "white", mb: 2 }}
-      />
-
-      {/* MISO Categories Filter */}
-      <TextField
-        fullWidth
-        label="MISO Categories"
-        placeholder="Filter by MISO Categories..."
-        variant="outlined"
-        size="small"
-        value={misoFilter}
-        onChange={(e) => setMisoFilter(e.target.value)}
-        sx={{ backgroundColor: "white" }}
       />
     </SidePanel>
   );

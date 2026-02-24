@@ -3,7 +3,7 @@ import { useMemo } from "react";
 import { Divider, Grid, Paper, Typography } from "@mui/material";
 import { DataTable } from "@/components/Layout";
 
-export default function LogsTableTest({ data, isLoading }) {
+export default function LogsTable({ data, isLoading }) {
   // Define columns for Activity Log
   const columns = useMemo(
     () => [

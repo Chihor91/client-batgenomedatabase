@@ -3,15 +3,12 @@ import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import OuterBox from "@/components/Custom/OuterBox.jsx";
 import { Grid, Button } from "@mui/material";
-import { AuthProvider } from "@/context/AuthContext";
 import AuthContext from "@/context/AuthContext";
-import { ThemeProvider } from "@/components/ui/theme-provider";
-import MUIThemeProvider from "@/components/Custom/MUIThemeProvider";
-import { useSnackbar, SnackbarProvider } from "notistack";
+import { useSnackbar } from "notistack";
 import { PageHeader } from "@/components/Layout";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import LogsTableTest from "./LogsTableTest";
-import AccountsTableTest from "./AccountsTableTest";
+import LogsTableTest from "./LogsTable";
+import AccountsTableTest from "./AccountsTable";
 import AddAccountDialog from "./AddAccountDialog";
 
 function AdminContent() {
@@ -124,15 +121,5 @@ function AdminContent() {
 }
 
 export default function AdminPage() {
-  return (
-    <SnackbarProvider maxSnack={3}>
-      <MUIThemeProvider>
-        <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-          <AuthProvider>
-            <AdminContent />
-          </AuthProvider>
-        </ThemeProvider>
-      </MUIThemeProvider>
-    </SnackbarProvider>
-  );
+  return <AdminContent />;
 }

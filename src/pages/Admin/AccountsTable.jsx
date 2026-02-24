@@ -3,20 +3,22 @@ import { useMemo, useContext, useState } from "react";
 import { Grid, Paper, Typography, Button, Divider } from "@mui/material";
 import { DataTable } from "@/components/Layout";
 import AuthContext from "@/context/AuthContext";
+import { useSnackbar } from "notistack";
 import axios from "axios";
 
-export default function AccountsTableTest({
-  data,
-  isLoading,
-  onAccountDeleted,
-}) {
+export default function AccountsTable({ data, isLoading, onAccountDeleted }) {
   const { user } = useContext(AuthContext);
+  const { enqueueSnackbar } = useSnackbar();
 
   const handleDeleteClick = (e, id) => {
     e.stopPropagation();
     axios.delete("/user/accounts/delete/" + id + "/").then((res) => {
       if (onAccountDeleted) {
         onAccountDeleted();
+        enqueueSnackbar("Account successfully deleted.", {
+          variant: "success",
+          autoHideDuration: 2000,
+        });
       }
     });
   };
@@ -36,7 +38,7 @@ export default function AccountsTableTest({
       },
       {
         accessorKey: "actions",
-        header: "Operation",
+        header: "",
         size: 80,
         enableSorting: false,
         Cell: ({ row }) => {
@@ -51,6 +53,12 @@ export default function AccountsTableTest({
               variant="outlined"
               onClick={(e) => handleDeleteClick(e, row.original.id)}
               aria-label="Delete account"
+              sx={{
+                borderColor: "transparent",
+                "&:hover": {
+                  borderColor: "#454f02",
+                },
+              }}
             >
               Delete
             </Button>

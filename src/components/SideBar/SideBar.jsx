@@ -79,12 +79,6 @@ function SideBar({ showSidebar, setShowSidebar }) {
                 isActive={activeButton === "Isolate"}
               />
               <SideNavButton
-                icon={LandscapeIcon}
-                label="SourceTest"
-                onClick={() => handleButtonClick("SourceTest")}
-                isActive={activeButton === "SourceTest"}
-              />
-              <SideNavButton
                 icon={BiotechIcon}
                 label="IsolateTest"
                 onClick={() => handleButtonClick("IsolateTest")}
