@@ -64,11 +64,11 @@ function IsolateTestContent() {
   };
 
   const handleAddIsolate = () => {
-    navigate("/isolate/add");
+    navigate("/isolatetest/add");
   };
 
   const handleAddMultipleIsolates = () => {
-    navigate("/isolate/add/multiple");
+    navigate("/isolatetest/add/multiple");
   };
 
   // Render isolate detail view with ID parameter in the URL

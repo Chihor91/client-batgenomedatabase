@@ -134,6 +134,18 @@ const customTheme = createTheme({
         },
       },
     },
+    MuiSwitch: {
+      styleOverrides: {
+        switchBase: {
+          "&.Mui-checked": {
+            color: "#454f02",
+          },
+          "&.Mui-checked + .MuiSwitch-track": {
+            backgroundColor: "#454f02",
+          },
+        },
+      },
+    },
   },
 });
 
