@@ -45,14 +45,14 @@ function BasicInfo({ form }) {
         control={form.control}
         name="project_name"
         rules={{ required: "Please select a project" }}
-        render={({ field }) => (
+        render={({ field, fieldState: { error } }) => (
           <TextField
             select
             required
             fullWidth
             label="Project"
-            error={!!form.formState.errors.project_name}
-            helperText={form.formState.errors.project_name?.message}
+            error={!!error}
+            helperText={error?.message}
             {...field}
           >
             {projects.map((project, key) => (
@@ -121,13 +121,13 @@ function HostInfo({ form }) {
       <Controller
         control={form.control}
         name="host_type"
-        render={({ field }) => (
+        render={({ field, fieldState: { error } }) => (
           <TextField
             select
             fullWidth
             label="Host Type"
-            error={!!form.formState.errors.host_type}
-            helperText={form.formState.errors.host_type?.message}
+            error={!!error}
+            helperText={error?.message}
             {...field}
           >
             {hostTypes.map((hostType, key) => (
@@ -164,15 +164,15 @@ function HostInfo({ form }) {
           control={form.control}
           name="sample_type"
           rules={{ required: "Please select a sample type" }}
-          render={({ field }) => (
+          render={({ field, fieldState: { error } }) => (
             <TextField
               select
               required
               fullWidth
               key={host_type}
               label="Sample Type"
-              error={!!form.formState.errors.sample_type}
-              helperText={form.formState.errors.sample_type?.message}
+              error={!!error}
+              helperText={error?.message}
               {...field}
             >
               <MenuItem disabled value="">
@@ -215,13 +215,13 @@ function LocationInfo({ form }) {
       <Controller
         control={form.control}
         name="loc_sampling_site"
-        render={({ field }) => (
+        render={({ field, fieldState: { error } }) => (
           <TextField
             select
             fullWidth
             label="Site/Cave"
-            error={!!form.formState.errors.loc_sampling_site}
-            helperText={form.formState.errors.loc_sampling_site?.message}
+            error={!!error}
+            helperText={error?.message}
             {...field}
           >
             {caves.map((cave, key) => (
@@ -246,8 +246,8 @@ function LocationInfo({ form }) {
           {...form.register("loc_sampling_point", {
             required: "Please fill out this field",
           })}
-          error={!!form.formState.errors.loc_sampling_point}
-          helperText={form.formState.errors.loc_sampling_point?.message}
+          error={!!error}
+          helperText={error?.message}
           placeholder="e.g. 0"
           type="number"
           min="0"
@@ -257,8 +257,8 @@ function LocationInfo({ form }) {
           label="City/Municipality"
           value={form.watch("loc_city") ?? ""}
           disabled
-          error={!!form.formState.errors.loc_city}
-          helperText={form.formState.errors.loc_city?.message}
+          error={!!error}
+          helperText={error?.message}
           placeholder="e.g. Cavinti"
         />
       </Box>
@@ -274,8 +274,8 @@ function LocationInfo({ form }) {
           label="Province"
           value={form.watch("loc_province") ?? ""}
           disabled
-          error={!!form.formState.errors.loc_province}
-          helperText={form.formState.errors.loc_province?.message}
+          error={!!error}
+          helperText={error?.message}
           placeholder="e.g. Laguna"
         />
         <TextField
