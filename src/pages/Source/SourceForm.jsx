@@ -246,8 +246,8 @@ function LocationInfo({ form }) {
           {...form.register("loc_sampling_point", {
             required: "Please fill out this field",
           })}
-          error={!!error}
-          helperText={error?.message}
+          error={!!form.formState.errors.loc_sampling_point}
+          helperText={form.formState.errors.loc_sampling_point?.message}
           placeholder="e.g. 0"
           type="number"
           min="0"
@@ -257,8 +257,8 @@ function LocationInfo({ form }) {
           label="City/Municipality"
           value={form.watch("loc_city") ?? ""}
           disabled
-          error={!!error}
-          helperText={error?.message}
+          error={!!form.formState.errors.loc_city}
+          helperText={form.formState.errors.loc_city?.message}
           placeholder="e.g. Cavinti"
         />
       </Box>
@@ -274,8 +274,8 @@ function LocationInfo({ form }) {
           label="Province"
           value={form.watch("loc_province") ?? ""}
           disabled
-          error={!!error}
-          helperText={error?.message}
+          error={!!form.formState.errors.loc_province}
+          helperText={form.formState.errors.loc_province?.message}
           placeholder="e.g. Laguna"
         />
         <TextField
