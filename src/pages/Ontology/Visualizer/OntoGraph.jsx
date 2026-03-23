@@ -62,7 +62,7 @@ export default function OntoGraph() {
             <AuthProvider>
               <OuterBox>
                 <Grid container direction="column" sx={{ height: "100vh" }}>
-                  <PageHeader title="OntoGraph">
+                  <PageHeader title="Explorer">
                     <input
                       ref={fileInputRef}
                       type="file"

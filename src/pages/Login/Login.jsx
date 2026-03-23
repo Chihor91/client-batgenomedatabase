@@ -141,7 +141,7 @@ function Login() {
             textAlign: "right",
           }}
         >
-          IMCavesPH
+          Caventology
         </Typography>
         <Typography
           variant="h4"

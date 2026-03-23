@@ -110,7 +110,7 @@ export default function OntoDex() {
             <AuthProvider>
               <OuterBox>
                 <Grid container direction="column" sx={{ minHeight: "100vh" }}>
-                  <PageHeader title="OntoDex" />
+                  <PageHeader title="Lookup" />
 
                   {/* Main Content Area */}
                   <Grid

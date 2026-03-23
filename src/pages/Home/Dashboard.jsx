@@ -113,7 +113,7 @@ export default function Home() {
                           textAlign: "left",
                         }}
                       >
-                        IMCavesPH: Built for the Semantic Web
+                        Caventology: Built for the Semantic Web
                       </Typography>
                       <Typography
                         variant="h8"
@@ -184,7 +184,7 @@ export default function Home() {
                           textAlign: "left",
                         }}
                       >
-                        Ontology Graph
+                        Graph Explorer
                       </Typography>
                       <Typography
                         variant="h8"
@@ -199,7 +199,8 @@ export default function Home() {
                           },
                         }}
                       >
-                        Visualize relationships between ontological terms.
+                        Navigate the structure and relationships of classes
+                        within ontologies.
                       </Typography>
                       <Button
                         variant="outlined"
@@ -259,7 +260,7 @@ export default function Home() {
                           textAlign: "left",
                         }}
                       >
-                        Ontology Index
+                        Term Lookup
                       </Typography>
                       <Typography
                         variant="h8"
@@ -274,7 +275,8 @@ export default function Home() {
                           },
                         }}
                       >
-                        Browse ontological terms.
+                        Query over 12 million formal classes across the
+                        BioPortal registry.
                       </Typography>
                       <Button
                         variant="contained"

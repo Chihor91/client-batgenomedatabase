@@ -59,7 +59,9 @@ function SideBar({ showSidebar, setShowSidebar }) {
           }
           alt="caves-logo"
         />
-        <h1 className={`font-[1000] text-lg font-title`}>CAVES</h1>
+        <h1 className={`font-[700] text-xs font-title tracking-tighter`}>
+          Caventology
+        </h1>
       </div>
       {/* FOR AUTHENTICATED USERS */}
       <div className="h-[90%] flex flex-col justify-between">
@@ -72,27 +74,27 @@ function SideBar({ showSidebar, setShowSidebar }) {
                 onClick={() => handleButtonClick("Source")}
                 isActive={activeButton === "Source"}
               />
-              <SideNavButton
+              {/* <SideNavButton
                 icon={BiotechIcon}
                 label="Isolates"
                 onClick={() => handleButtonClick("Isolate")}
                 isActive={activeButton === "Isolate"}
-              />
+              /> */}
               <SideNavButton
                 icon={BiotechIcon}
-                label="IsolateTest"
+                label="Isolates"
                 onClick={() => handleButtonClick("IsolateTest")}
                 isActive={activeButton === "IsolateTest"}
               />
               <SideNavButton
                 icon={HubIcon}
-                label="OntoGraph"
+                label="Explorer"
                 onClick={() => handleButtonClick("OntoGraph")}
                 isActive={activeButton === "OntoGraph"}
               />
               <SideNavButton
                 icon={SearchIcon}
-                label="OntoDex"
+                label="Lookup"
                 onClick={() => handleButtonClick("OntoDex")}
                 isActive={activeButton === "OntoDex"}
               />
@@ -110,13 +112,13 @@ function SideBar({ showSidebar, setShowSidebar }) {
             <section className="flex flex-col gap-0 pt-0 ">
               <SideNavButton
                 icon={HubIcon}
-                label="OntoGraph"
+                label="Explorer"
                 onClick={() => handleButtonClick("OntoGraph")}
                 isActive={activeButton === "OntoGraph"}
               />
               <SideNavButton
                 icon={SearchIcon}
-                label="OntoDex"
+                label="Lookup"
                 onClick={() => handleButtonClick("OntoDex")}
                 isActive={activeButton === "OntoDex"}
               />
