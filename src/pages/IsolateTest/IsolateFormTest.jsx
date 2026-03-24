@@ -16,8 +16,15 @@ import {
   Switch,
   Collapse,
   FormControlLabel,
+  IconButton,
+  Popover,
+  List,
+  ListItemButton,
+  ListItemText,
+  CircularProgress,
 } from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import { caves } from "@/constants/caves";
 import { projects } from "@/constants/projects";
 import { Controller, useForm } from "react-hook-form";
@@ -50,6 +57,122 @@ function SwitchField({ control, name, label, trueLabel, falseLabel }) {
           />
         </Stack>
       )}
+    />
+  );
+}
+
+// Custom component for textfield with ontology lookup powered by BioPortal's Annotator API
+function OntologyLookupField({ control, name, label, ontologies }) {
+  const [suggestions, setSuggestions] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  return (
+    <Controller
+      control={control}
+      name={name}
+      render={({ field }) => {
+        const handleLookup = async (event) => {
+          // Don't lookup if field is empty
+          if (!field.value?.trim()) return;
+
+          // Else, open popover and fetch suggestions
+          setAnchorEl(event.currentTarget.closest(".MuiFormControl-root"));
+          setLoading(true);
+          setSuggestions([]);
+          try {
+            const res = await fetch(
+              `https://data.bioontology.org/annotator?text=${encodeURIComponent(field.value)}&apikey=fa2cbf3a-fbfc-45b5-bb1f-76ee601a0fe3&ontologies=${ontologies}&longest_only=true&include=prefLabel,definition`,
+            );
+            const data = await res.json();
+            setSuggestions(
+              data.map((item) => ({
+                label: item.annotatedClass?.prefLabel || "Unknown",
+                id: item.annotatedClass?.["@id"] || "",
+                definition: item.annotatedClass?.definition?.[0] || "",
+              })),
+            );
+          } catch {
+            setSuggestions([]);
+          } finally {
+            setLoading(false);
+          }
+        };
+
+        // Change input value to selected term
+        const handleSelect = (term) => {
+          field.onChange(term.label);
+          setAnchorEl(null);
+        };
+
+        return (
+          <>
+            <TextField
+              label={label}
+              value={field.value || ""}
+              onChange={(e) => field.onChange(e.target.value)}
+              fullWidth
+              InputProps={{
+                endAdornment: (
+                  <IconButton
+                    onClick={handleLookup}
+                    disabled={loading || !field.value?.trim()}
+                    size="small"
+                  >
+                    {loading ? (
+                      <CircularProgress size={20} />
+                    ) : (
+                      <TravelExploreIcon />
+                    )}
+                  </IconButton>
+                ),
+              }}
+            />
+            <Popover
+              open={Boolean(anchorEl)}
+              anchorEl={anchorEl}
+              onClose={() => setAnchorEl(null)}
+              anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+            >
+              <Box sx={{ width: 850, maxHeight: 250, overflowY: "auto" }}>
+                {loading ? (
+                  <Box
+                    sx={{ p: 2, display: "flex", alignItems: "center", gap: 1 }}
+                  >
+                    <CircularProgress size={18} />
+                    <Typography variant="body2">Looking up terms...</Typography>
+                  </Box>
+                ) : suggestions.length === 0 ? (
+                  <Typography
+                    variant="body2"
+                    sx={{ p: 2, color: "text.secondary" }}
+                  >
+                    No matching terms found.
+                  </Typography>
+                ) : (
+                  <List dense disablePadding>
+                    {suggestions.map((term, i) => (
+                      <ListItemButton
+                        key={i}
+                        onClick={() => handleSelect(term)}
+                      >
+                        <ListItemText
+                          primary={term.label}
+                          secondary={term.definition || term.id}
+                          secondaryTypographyProps={{
+                            noWrap: true,
+                            fontSize: "0.75rem",
+                          }}
+                        />
+                      </ListItemButton>
+                    ))}
+                  </List>
+                )}
+              </Box>
+            </Popover>
+          </>
+        );
+      }}
     />
   );
 }
@@ -230,10 +353,11 @@ function Morphology({ form }) {
 function CultureGrowth({ form }) {
   return (
     <Stack spacing={2}>
-      <TextField
-        {...form.register("culture_growth.medium")}
+      <OntologyLookupField
+        control={form.control}
+        name="culture_growth.medium"
         label="Culture Medium"
-        fullWidth
+        ontologies="NCIT"
       />
       <SwitchField
         control={form.control}
