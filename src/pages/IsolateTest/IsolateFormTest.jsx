@@ -302,34 +302,47 @@ function BasicInfo({ form, navigate }) {
 function Taxonomy({ form }) {
   return (
     <Stack spacing={2}>
-      <TextField
-        {...form.register("taxonomy.domain")}
+      <OntologyLookupField
+        control={form.control}
+        name="taxonomy.domain"
         label="Domain"
-        fullWidth
+        ontologies="NCBITAXON"
       />
-      <TextField
-        {...form.register("taxonomy.phylum")}
+      <OntologyLookupField
+        control={form.control}
+        name="taxonomy.phylum"
         label="Phylum"
-        fullWidth
+        ontologies="NCBITAXON"
       />
-      <TextField {...form.register("taxonomy.class")} label="Class" fullWidth />
-      <TextField {...form.register("taxonomy.order")} label="Order" fullWidth />
-      <TextField
-        {...form.register("taxonomy.family")}
+      <OntologyLookupField
+        control={form.control}
+        name="taxonomy.class"
+        label="Class"
+        ontologies="NCBITAXON"
+      />
+      <OntologyLookupField
+        control={form.control}
+        name="taxonomy.order"
+        label="Order"
+        ontologies="NCBITAXON"
+      />
+      <OntologyLookupField
+        control={form.control}
+        name="taxonomy.family"
         label="Family"
-        fullWidth
+        ontologies="NCBITAXON"
       />
-      <TextField
-        {...form.register("taxonomy.genus")}
+      <OntologyLookupField
+        control={form.control}
+        name="taxonomy.genus"
         label="Genus"
-        fullWidth
-        sx={{ "& input": { fontStyle: "italic" } }}
+        ontologies="NCBITAXON"
       />
-      <TextField
-        {...form.register("taxonomy.species")}
+      <OntologyLookupField
+        control={form.control}
+        name="taxonomy.species"
         label="Species"
-        fullWidth
-        sx={{ "& input": { fontStyle: "italic" } }}
+        ontologies="NCBITAXON"
       />
     </Stack>
   );

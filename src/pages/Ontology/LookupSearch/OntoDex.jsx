@@ -17,8 +17,7 @@ const ontologyOptions = [
   { id: "gmo", label: "Growth Medium Ontology (GMO)" },
   {
     id: "ncbitaxon",
-    label:
-      "National Center for Biotechnology Information (NCBI) Organismal Classification (NCBITAXON)",
+    label: "NCBI Organismal Classification (NCBITAXON)",
   },
   { id: "ncit", label: "National Cancer Institute Thesaurus (NCIT)" },
   { id: "mpo", label: "Microbial Phenotype Ontology (MPO)" },
@@ -133,7 +132,7 @@ export default function OntoDex() {
                       flexDirection: { xs: "column", md: "row" },
                       gap: 2,
                       flexWrap: "nowrap",
-                      overflow: "visible",
+                      overflow: "hidden",
                       px: { xs: 1, md: 2 },
                     }}
                   >
