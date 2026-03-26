@@ -12,10 +12,24 @@ import SearchTable from "./SearchTable.jsx";
 
 // Available ontologies for filtering
 const ontologyOptions = [
-  { id: "envo", label: "ENVO" },
-  { id: "ncit", label: "NCIT" },
-  { id: "ncbitaxon", label: "NCBITAXON" },
-  { id: "aro", label: "ARO" },
+  { id: "aro", label: "Antibiotic Resistance Ontology (ARO)" },
+  { id: "envo", label: "Environmental Ontology (ENVO)" },
+  { id: "gmo", label: "Growth Medium Ontology (GMO)" },
+  {
+    id: "ncbitaxon",
+    label:
+      "National Center for Biotechnology Information (NCBI) Organismal Classification (NCBITAXON)",
+  },
+  { id: "ncit", label: "National Cancer Institute Thesaurus (NCIT)" },
+  { id: "mpo", label: "Microbial Phenotype Ontology (MPO)" },
+  {
+    id: "phipo",
+    label: "Pathogen Host Interaction Phenotype Ontology (PHIPO)",
+  },
+  {
+    id: "snomedct",
+    label: "Systematized Nomenclature of Medicine - Clinical Terms (SNOMED CT)",
+  },
 ];
 
 export default function OntoDex() {
@@ -55,10 +69,10 @@ export default function OntoDex() {
         apikey: "fa2cbf3a-fbfc-45b5-bb1f-76ee601a0fe3",
       });
 
-      // Use all ontology filters if none are selected
-      const ontologies =
-        ontologyFilter || ontologyOptions.map((opt) => opt.id).join(",");
-      params.append("ontologies", ontologies.toUpperCase());
+      // Only filter by ontology if the user selected one
+      if (ontologyFilter) {
+        params.append("ontologies", ontologyFilter.toUpperCase());
+      }
 
       // Make the API call
       const response = await fetch(
@@ -85,8 +99,6 @@ export default function OntoDex() {
           ontologyFilter,
         }),
       );
-
-      console.log("Search results:", data);
     } catch (error) {
       console.error("Error searching:", error);
       enqueueSnackbar("Failed to fetch data", { variant: "error" });
