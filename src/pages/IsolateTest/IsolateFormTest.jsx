@@ -61,8 +61,9 @@ function SwitchField({ control, name, label, trueLabel, falseLabel }) {
   );
 }
 
-// Custom component for textfield with ontology lookup powered by BioPortal's Annotator API
+// Custom component for textfield with ontology lookup powered by BioPortal's Search API
 function OntologyLookupField({ control, name, label, ontologies }) {
+  const { enqueueSnackbar } = useSnackbar();
   const [suggestions, setSuggestions] = useState([]);
   const [loading, setLoading] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -81,18 +82,33 @@ function OntologyLookupField({ control, name, label, ontologies }) {
           setLoading(true);
           setSuggestions([]);
           try {
-            const res = await fetch(
-              `https://data.bioontology.org/annotator?text=${encodeURIComponent(field.value)}&apikey=fa2cbf3a-fbfc-45b5-bb1f-76ee601a0fe3&ontologies=${ontologies}&longest_only=true&include=prefLabel,definition`,
+            const params = new URLSearchParams({
+              q: field.value,
+              apikey: "fa2cbf3a-fbfc-45b5-bb1f-76ee601a0fe3",
+              ontologies,
+            });
+            const response = await fetch(
+              `https://data.bioontology.org/search?${params}`,
             );
-            const data = await res.json();
+            if (!response.ok) {
+              enqueueSnackbar(`Ontology lookup failed: ${response.status}`, {
+                variant: "error",
+              });
+              return;
+            }
+            const data = await response.json();
             setSuggestions(
-              data.map((item) => ({
-                label: item.annotatedClass?.prefLabel || "Unknown",
-                id: item.annotatedClass?.["@id"] || "",
-                definition: item.annotatedClass?.definition?.[0] || "",
+              data.collection.map((item) => ({
+                label: item.prefLabel || "Unknown",
+                id: item["@id"] || "",
+                definition: item.definition?.[0] || "",
               })),
             );
-          } catch {
+          } catch (error) {
+            console.error("Ontology lookup error:", error);
+            enqueueSnackbar("Failed to fetch ontology suggestions", {
+              variant: "error",
+            });
             setSuggestions([]);
           } finally {
             setLoading(false);
@@ -357,7 +373,7 @@ function CultureGrowth({ form }) {
         control={form.control}
         name="culture_growth.medium"
         label="Culture Medium"
-        ontologies="NCIT"
+        ontologies="GMO"
       />
       <SwitchField
         control={form.control}
@@ -388,10 +404,11 @@ function CultureGrowth({ form }) {
 function Physiology({ form }) {
   return (
     <Stack spacing={2}>
-      <TextField
-        {...form.register("physiology_metabolism.oxygen_tolerance")}
+      <OntologyLookupField
+        control={form.control}
+        name="physiology_metabolism.oxygen_tolerance"
         label="Oxygen Requirement"
-        fullWidth
+        ontologies="MPO"
       />
       <SwitchField
         control={form.control}
@@ -407,12 +424,11 @@ function Physiology({ form }) {
         trueLabel="Endospore-forming"
         falseLabel="Non-endospore-forming"
       />
-      <TextField
-        {...form.register(
-          "physiology_metabolism.antibiotic_resistance_profile",
-        )}
+      <OntologyLookupField
+        control={form.control}
+        name="physiology_metabolism.antibiotic_resistance_profile"
         label="Antibiotic Resistance Profile"
-        fullWidth
+        ontologies="PHIPO"
       />
     </Stack>
   );
