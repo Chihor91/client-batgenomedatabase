@@ -11,7 +11,7 @@ import {
 import axios from "axios";
 
 // Component Imports
-import Home from "@/pages/Home/Dashboard";
+import Home from "@/pages/Home";
 import Login from "@/pages/Login/Login";
 
 import Source from "@/pages/Source";

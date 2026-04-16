@@ -1,20 +1,16 @@
 import React from "react";
+import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Box, Button, Grid, Typography, Stack, Divider } from "@mui/material";
 import {
-  Box,
-  Button,
-  Grid,
-  Typography,
-  Stack,
-  Tooltip,
-  IconButton,
-  Avatar,
-  Menu,
-  MenuItem,
-  Divider,
-  ListItemIcon,
-} from "@mui/material";
+  Hub as HubIcon,
+  Search as SearchIcon,
+  Login as LoginIcon,
+  Logout as LogOutIcon,
+  Landscape as LandscapeIcon,
+  Biotech as BiotechIcon,
+} from "@mui/icons-material";
 import AuthContext from "../../context/AuthContext";
 import { AuthProvider } from "@/context/AuthContext";
 import { ThemeProvider } from "@/components/ui/theme-provider";
@@ -22,13 +18,6 @@ import MUIThemeProvider from "@/components/Custom/MUIThemeProvider";
 import { SnackbarProvider } from "notistack";
 import { PageHeader } from "@/components/Layout";
 import OuterBox from "@/components/Custom/OuterBox.jsx";
-import HubIcon from "@mui/icons-material/Hub";
-import SearchIcon from "@mui/icons-material/Search";
-import LoginIcon from "@mui/icons-material/Login";
-import LogOutIcon from "@mui/icons-material/Logout";
-import LandscapeIcon from "@mui/icons-material/Landscape";
-import BiotechIcon from "@mui/icons-material/Biotech";
-import axios from "axios";
 
 export default function Home() {
   const { user, logoutUser } = useContext(AuthContext);
@@ -129,16 +118,17 @@ export default function Home() {
                         }}
                       >
                         Free-form text is often ambiguous (e.g., 'cold' vs 'low
-                        temp'). To ensure accuracy, this database uses the{" "}
+                        temp'). To ensure accuracy, this tool guides data entry
+                        using auto-suggested terms from controlled vocabularies,
+                        also known as{" "}
                         <a
-                          href="https://bioportal.bioontology.org/ontologies/ENVO"
+                          href="https://www.ebi.ac.uk/training/online/courses/bringing-data-to-life-data-management/adding-structure-to-data/ontologies/"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          Environment Ontology (ENVO)
+                          ontologies,
                         </a>{" "}
-                        — the controlled vocabulary used by the world's leading
-                        microbial datasets.
+                        used by the world's leading microbial datasets.
                       </Typography>
                     </Box>
                   </Grid>
