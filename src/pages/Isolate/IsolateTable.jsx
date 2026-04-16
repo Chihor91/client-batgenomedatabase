@@ -6,7 +6,7 @@ import { DataTable } from "@/components/Layout";
 import { useSnackbar } from "notistack";
 import axios from "axios";
 
-export default function IsolateTableTest({ data, columnFilters, isLoading }) {
+export default function IsolateTable({ data, columnFilters, isLoading }) {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
 
@@ -35,7 +35,7 @@ export default function IsolateTableTest({ data, columnFilters, isLoading }) {
             component="button"
             variant="body2"
             underline="hover"
-            onClick={() => navigate("/isolatetest?id=" + row.original.id)}
+            onClick={() => navigate("/isolate?id=" + row.original.id)}
             sx={{ color: "#2e7d32", textAlign: "left" }}
           >
             {cell.getValue()}

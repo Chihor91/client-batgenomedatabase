@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSnackbar } from "notistack";
 
-export default function MultipleIsolateFormTest() {
+export default function MultipleIsolateForm() {
   const { enqueueSnackbar } = useSnackbar();
   const navigate = useNavigate();
   const fileInputRef = useRef(null);

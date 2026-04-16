@@ -1,23 +1,17 @@
-import * as React from "react";
-import { useState, useEffect, useMemo, useContext } from "react";
+import React, { useState, useEffect, useMemo, useContext } from "react";
 import axios from "axios";
-import OuterBox from "@/components/Custom/OuterBox.jsx";
-import { Grid, Button } from "@mui/material";
-import { AuthProvider } from "@/context/AuthContext";
-import AuthContext from "@/context/AuthContext";
-import { ThemeProvider } from "@/components/ui/theme-provider";
-import MUIThemeProvider from "@/components/Custom/MUIThemeProvider";
-import { useSnackbar, SnackbarProvider } from "notistack";
-import { PageHeader } from "@/components/Layout";
-import AddIcon from "@mui/icons-material/Add";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import IsolateTableTest from "./IsolateTableTest";
-import IsolatePanelTest from "./IsolatePanelTest";
-import { Stack } from "@mui/system";
-import { FormatListBulletedAdd } from "@mui/icons-material";
+import { useSnackbar } from "notistack";
+import { Grid, Button, Stack } from "@mui/material";
+import { Add as AddIcon, FormatListBulletedAdd } from "@mui/icons-material";
+import { PageHeader } from "@/components/Layout";
+import OuterBox from "@/components/Custom/OuterBox.jsx";
+import AuthContext from "@/context/AuthContext";
+import IsolateTable from "./IsolateTable";
+import IsolatePanel from "./IsolatePanel";
 import IsolateDetails from "./IsolateDetails";
 
-function IsolateTestContent() {
+export default function Isolate() {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const { enqueueSnackbar } = useSnackbar();
@@ -64,11 +58,11 @@ function IsolateTestContent() {
   };
 
   const handleAddIsolate = () => {
-    navigate("/isolatetest/add");
+    navigate("/isolate/add");
   };
 
   const handleAddMultipleIsolates = () => {
-    navigate("/isolatetest/add/multiple");
+    navigate("/isolate/add/multiple");
   };
 
   // Render isolate detail view with ID parameter in the URL
@@ -92,33 +86,21 @@ function IsolateTestContent() {
             <Button
               variant="contained"
               size="small"
+              startIcon={<AddIcon />}
               onClick={handleAddIsolate}
               aria-label="Add Isolate"
-              sx={{
-                alignSelf: "center",
-                mt: 0,
-                mr: 1,
-                display: "flex",
-                gap: 1,
-              }}
+              sx={{ alignSelf: "center" }}
             >
-              <AddIcon fontSize="small" />
               Add Isolate
             </Button>
             <Button
               variant="contained"
               size="small"
+              startIcon={<FormatListBulletedAdd />}
               onClick={handleAddMultipleIsolates}
               aria-label="Add Multiple Isolates"
-              // color="secondary"
-              sx={{
-                alignSelf: "center",
-                mt: 0,
-                display: "flex",
-                gap: 1,
-              }}
+              sx={{ alignSelf: "center" }}
             >
-              <FormatListBulletedAdd fontSize="small" />
               Add Multiple
             </Button>
           </Stack>
@@ -138,14 +120,14 @@ function IsolateTestContent() {
           }}
         >
           {/* Left: Isolate Table */}
-          <IsolateTableTest
+          <IsolateTable
             data={data}
             columnFilters={columnFilters}
             isLoading={isLoading}
           />
 
           {/* Right: Filter Panel */}
-          <IsolatePanelTest
+          <IsolatePanel
             idFilter={idFilter}
             setIdFilter={setIdFilter}
             accessionFilter={accessionFilter}
@@ -155,19 +137,5 @@ function IsolateTestContent() {
         </Grid>
       </Grid>
     </OuterBox>
-  );
-}
-
-export default function IsolateTest() {
-  return (
-    <SnackbarProvider maxSnack={3}>
-      <MUIThemeProvider>
-        <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-          <AuthProvider>
-            <IsolateTestContent />
-          </AuthProvider>
-        </ThemeProvider>
-      </MUIThemeProvider>
-    </SnackbarProvider>
   );
 }

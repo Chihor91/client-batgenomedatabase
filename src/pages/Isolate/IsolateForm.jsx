@@ -23,10 +23,10 @@ import {
   ListItemText,
   CircularProgress,
 } from "@mui/material";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import TravelExploreIcon from "@mui/icons-material/TravelExplore";
-import { caves } from "@/constants/caves";
-import { projects } from "@/constants/projects";
+import {
+  NavigateNext as NavigateNextIcon,
+  TravelExplore as TravelExploreIcon,
+} from "@mui/icons-material";
 import { Controller, useForm } from "react-hook-form";
 import { useSnackbar } from "notistack";
 import Autocomplete from "@mui/material/Autocomplete";
@@ -87,15 +87,19 @@ function OntologyLookupField({ control, name, label, ontologies }) {
               apikey: "fa2cbf3a-fbfc-45b5-bb1f-76ee601a0fe3",
               ontologies,
             });
+
             const response = await fetch(
               `https://data.bioontology.org/search?${params}`,
             );
+
             if (!response.ok) {
               enqueueSnackbar(`Ontology lookup failed: ${response.status}`, {
                 variant: "error",
               });
               return;
             }
+
+            // Update suggestions with fetched data
             const data = await response.json();
             setSuggestions(
               data.collection.map((item) => ({
@@ -491,7 +495,7 @@ function Visibility({ form }) {
   );
 }
 
-export default function IsolateFormTest() {
+export default function IsolateForm() {
   const { enqueueSnackbar } = useSnackbar();
   const navigate = useNavigate();
   const form = useForm({
@@ -524,7 +528,7 @@ export default function IsolateFormTest() {
           },
         );
         setTimeout(() => {
-          navigate("/isolatetest");
+          navigate("/isolate");
         }, 1000);
       })
       .catch((err) => {
@@ -533,7 +537,7 @@ export default function IsolateFormTest() {
           autoHideDuration: 2000,
         });
         setTimeout(() => {
-          navigate("/isolatetest");
+          navigate("/isolate");
         }, 1000);
       });
   };
@@ -559,7 +563,7 @@ export default function IsolateFormTest() {
               cursor: "pointer",
               "&:hover": { textDecoration: "underline" },
             }}
-            onClick={() => navigate("/isolatetest")}
+            onClick={() => navigate("/isolate")}
           >
             Isolate
           </Typography>
@@ -659,10 +663,7 @@ export default function IsolateFormTest() {
                 gap: 2,
               }}
             >
-              <Button
-                variant="outlined"
-                onClick={() => navigate("/isolatetest")}
-              >
+              <Button variant="outlined" onClick={() => navigate("/isolate")}>
                 Cancel
               </Button>
               <Button variant="contained" onClick={form.handleSubmit(onSubmit)}>

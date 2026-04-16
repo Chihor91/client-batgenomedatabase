@@ -19,11 +19,11 @@ import SourceForm from "@/pages/Source/SourceForm";
 
 import Isolate from "@/pages/Isolate";
 import IsolateForm from "@/pages/Isolate/IsolateForm";
-import MultipleIsolateForm from "@/pages/Isolate/MultipleIsolatesForm";
+import MultipleIsolateForm from "@/pages/Isolate/MultipleIsolateForm";
 
-import IsolateTest from "@/pages/IsolateTest/IsolateTest";
-import IsolateFormTest from "@/pages/IsolateTest/IsolateFormTest";
-import MultipleIsolateFormTest from "@/pages/IsolateTest/MultipleIsolateFormTest";
+// import IsolateTest from "@/pages/IsolateTest/IsolateTest";
+// import IsolateFormTest from "@/pages/IsolateTest/IsolateFormTest";
+// import MultipleIsolateFormTest from "@/pages/IsolateTest/MultipleIsolateFormTest";
 
 import SideBar from "@/components/SideBar/SideBar";
 import { AuthProvider } from "@/context/AuthContext";
@@ -61,17 +61,11 @@ function App() {
         <Route element={<PrivateRoutes />}>
           <Route path="/source" element={<Source />} />
           <Route path="/isolate" element={<Isolate />} />
-          <Route path="/isolatetest" element={<IsolateTest />} />
           <Route path="/source/add" element={<SourceForm />} />
           <Route path="/isolate/add" element={<IsolateForm />} />
-          <Route path="/isolatetest/add" element={<IsolateFormTest />} />
           <Route
             path="/isolate/add/multiple"
             element={<MultipleIsolateForm />}
-          />
-          <Route
-            path="/isolatetest/add/multiple"
-            element={<MultipleIsolateFormTest />}
           />
         </Route>
         <Route element={<AdminRoutes />}>

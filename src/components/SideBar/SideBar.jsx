@@ -74,17 +74,11 @@ function SideBar({ showSidebar, setShowSidebar }) {
                 onClick={() => handleButtonClick("Source")}
                 isActive={activeButton === "Source"}
               />
-              {/* <SideNavButton
+              <SideNavButton
                 icon={BiotechIcon}
                 label="Isolates"
                 onClick={() => handleButtonClick("Isolate")}
                 isActive={activeButton === "Isolate"}
-              /> */}
-              <SideNavButton
-                icon={BiotechIcon}
-                label="Isolates"
-                onClick={() => handleButtonClick("IsolateTest")}
-                isActive={activeButton === "IsolateTest"}
               />
               <SideNavButton
                 icon={HubIcon}
@@ -124,10 +118,6 @@ function SideBar({ showSidebar, setShowSidebar }) {
               />
             </section>
           )}
-        </div>
-
-        <div className="py-10">
-          <DarkLightModeToggle />
         </div>
       </div>
     </div>

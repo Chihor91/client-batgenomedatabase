@@ -2,7 +2,7 @@ import * as React from "react";
 import { TextField, Button } from "@mui/material";
 import { SidePanel } from "@/components/Layout";
 
-export default function IsolatePanelTest({
+export default function IsolatePanel({
   idFilter,
   setIdFilter,
   accessionFilter,
