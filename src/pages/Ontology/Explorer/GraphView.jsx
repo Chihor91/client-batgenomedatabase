@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import {
   Grid,
   Box,
-  Typography,
   Select,
   MenuItem,
   FormControl,
@@ -13,6 +12,7 @@ import {
 import cytoscape from "cytoscape";
 import cytoscapeDagre from "cytoscape-dagre";
 
+// Register dagre layout plugin
 cytoscape.use(cytoscapeDagre);
 
 // Convert parsed ontology data into Cytoscape elements
@@ -51,7 +51,6 @@ function buildElements(ontologyData) {
 // Set styles for different node types and edges
 function getCytoscapeStyle() {
   return [
-    // Base node style
     {
       selector: "node",
       style: {
@@ -72,22 +71,18 @@ function getCytoscapeStyle() {
         height: 28,
       },
     },
-    // Classes: green nodes
     {
       selector: 'node[type = "class"]',
       style: { "background-color": "#22CC22" },
     },
-    // Properties: blue nodes, rounded rectangle shape
     {
       selector: 'node[type = "property"]',
       style: { "background-color": "#3399FF", shape: "round-rectangle" },
     },
-    // Individuals: orange nodes
     {
       selector: 'node[type = "individual"]',
       style: { "background-color": "#FF9933" },
     },
-    // Selected node
     {
       selector: "node:selected",
       style: {

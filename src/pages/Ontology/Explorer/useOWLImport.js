@@ -1,32 +1,13 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { OWLParser } from "@/utils/OwlParser.js";
 
-/**
- * useOWLImport Hook - Simplified version for beginners
- *
- * This hook handles importing OWL ontology files into your application.
- * It reads the file, parses it, and returns the structured data.
- *
- * What it returns:
- * - parsedData: The ontology graph (nodes and edges)
- * - uploadStatus: Current state ('idle', 'importing', 'success', 'error')
- * - fileMetadata: Information about the file and ontology
- * - errorMessage: What went wrong (if there's an error)
- * - startFileSelect: Function to open the file picker
- * - fileInputRef: Reference for the hidden file input
- * - resetImport: Function to start over
- */
+// useOWLImport hook for parsing OWL files and returning structured data
 export default function useOWLImport() {
-  // Store the parsed ontology data
   const [parsedData, setParsedData] = useState(null);
   const [uploadStatus, setUploadStatus] = useState("idle");
   const [fileMetadata, setFileMetadata] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
-
-  // Reference to the hidden file input element
   const fileInputRef = useRef(null);
-
-  // Reference to the FileReader (for cleanup if needed)
   const fileReaderRef = useRef(null);
 
   const validateFile = useCallback((file) => {
@@ -41,11 +22,11 @@ export default function useOWLImport() {
       };
     }
 
-    const MAX_SIZE = 50 * 1024 * 1024; // 50MB
+    const MAX_SIZE = 20 * 1024 * 1024; // 20MB
     if (file.size > MAX_SIZE) {
       return {
         valid: false,
-        error: `File size exceeds 50MB limit (${(
+        error: `File size exceeds 20MB limit (${(
           file.size /
           (1024 * 1024)
         ).toFixed(2)}MB). Please choose a smaller file.`,
@@ -112,7 +93,7 @@ export default function useOWLImport() {
           setUploadStatus("success");
 
           console.log(
-            `Successfully parsed ${nodeCount} nodes and ${edgeCount} edges from ${file.name}`
+            `Successfully parsed ${nodeCount} nodes and ${edgeCount} edges from ${file.name}`,
           );
         } catch (error) {
           console.error("OWL parsing error:", error);
@@ -141,21 +122,16 @@ export default function useOWLImport() {
       // Start reading the file as text
       reader.readAsText(file, "utf-8");
     },
-    [validateFile]
+    [validateFile],
   );
 
-  /**
-   * Open the file picker when user clicks the import button
-   */
+  // Open the file picker when user clicks the import button
   const startFileSelect = useCallback(() => {
     if (fileInputRef.current) {
       fileInputRef.current.click();
     }
   }, []);
 
-  /**
-   * Reset everything back to initial state
-   */
   const resetImport = useCallback(() => {
     // Abort any active FileReader
     if (fileReaderRef.current) {
@@ -175,9 +151,7 @@ export default function useOWLImport() {
     }
   }, []);
 
-  /**
-   * Cleanup on unmount
-   */
+  // Cleanup on unmount
   useEffect(() => {
     return () => {
       if (fileReaderRef.current) {
@@ -186,9 +160,6 @@ export default function useOWLImport() {
     };
   }, []);
 
-  /**
-   * Handle when user selects a file from the file picker
-   */
   const handleInputChange = useCallback(
     (event) => {
       const file = event.target.files?.[0];
@@ -196,7 +167,7 @@ export default function useOWLImport() {
         handleFileSelection(file);
       }
     },
-    [handleFileSelection]
+    [handleFileSelection],
   );
 
   return {
@@ -207,6 +178,6 @@ export default function useOWLImport() {
     startFileSelect,
     fileInputRef,
     resetImport,
-    handleInputChange, // Internal use for connecting to input element
+    handleInputChange,
   };
 }

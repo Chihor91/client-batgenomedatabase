@@ -23,7 +23,6 @@ export default function InfoPanel({
 
   return (
     <SidePanel title={title}>
-      {/* Import Status / Instructions */}
       {!hasSuccess && !isImporting && !hasError && (
         <Typography
           variant="body2"
@@ -33,7 +32,7 @@ export default function InfoPanel({
             textAlign: "left",
           }}
         >
-          Click "Import File" to select an OWL, RDF, or XML file.
+          Click &quot;Import File&quot; to select an OWL, RDF, or XML file.
         </Typography>
       )}
 
@@ -51,7 +50,6 @@ export default function InfoPanel({
         </Typography>
       )}
 
-      {/* Metadata (Ontology Details) */}
       {hasSuccess && fileMetadata && (
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
           {fileMetadata.ontologyDescription && (
@@ -107,7 +105,6 @@ export default function InfoPanel({
         </Box>
       )}
 
-      {/* Selected Node Details */}
       {selectedNode && (
         <>
           <Divider sx={{ my: 1 }} />

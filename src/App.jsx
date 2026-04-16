@@ -30,9 +30,9 @@ import { AuthProvider } from "@/context/AuthContext";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import MUIThemeProvider from "@/components/Custom/MUIThemeProvider";
 
-import OntoGraph from "@/pages/Ontology/Visualizer/OntoGraph";
-import OntoDex from "@/pages/Ontology/LookupSearch/OntoDex";
-import SearchClass from "@/pages/Ontology/LookupSearch/SearchClass";
+import OntoGraph from "@/pages/Ontology/Explorer";
+import OntoDex from "@/pages/Ontology/Lookup";
+import SearchClass from "@/pages/Ontology/Lookup/SearchClass";
 
 // Style Imports
 import "./App.css";

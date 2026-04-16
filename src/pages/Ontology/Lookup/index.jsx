@@ -2,10 +2,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import OuterBox from "@/components/Custom/OuterBox.jsx";
 import { Grid } from "@mui/material";
-import { AuthProvider } from "@/context/AuthContext";
-import { ThemeProvider } from "@/components/ui/theme-provider";
-import MUIThemeProvider from "@/components/Custom/MUIThemeProvider";
-import { useSnackbar, SnackbarProvider } from "notistack";
+import { useSnackbar } from "notistack";
 import { PageHeader } from "@/components/Layout";
 import SearchPanel from "./SearchPanel.jsx";
 import SearchTable from "./SearchTable.jsx";
@@ -31,7 +28,8 @@ const ontologyOptions = [
   },
 ];
 
-export default function OntoDex() {
+// Ontology Lookup Page
+export default function Lookup() {
   const [searchTerm, setSearchTerm] = useState("");
   const [ontologyFilter, setOntologyFilter] = useState("");
   const [results, setResults] = useState([]);
@@ -61,8 +59,6 @@ export default function OntoDex() {
 
     try {
       setIsLoading(true);
-
-      // Define query parameters
       const params = new URLSearchParams({
         q: searchTerm,
         apikey: "fa2cbf3a-fbfc-45b5-bb1f-76ee601a0fe3",
@@ -73,7 +69,6 @@ export default function OntoDex() {
         params.append("ontologies", ontologyFilter.toUpperCase());
       }
 
-      // Make the API call
       const response = await fetch(
         `https://data.bioontology.org/search?${params}`,
       );
@@ -85,7 +80,7 @@ export default function OntoDex() {
         return;
       }
 
-      // Update results state with the API data
+      // Update search results state with the API data
       const data = await response.json();
       setResults(data.collection);
 
@@ -114,53 +109,41 @@ export default function OntoDex() {
   };
 
   return (
-    <>
-      <SnackbarProvider maxSnack={3}>
-        <MUIThemeProvider>
-          <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-            <AuthProvider>
-              <OuterBox>
-                <Grid container direction="column" sx={{ minHeight: "100vh" }}>
-                  <PageHeader title="Lookup" />
+    <OuterBox>
+      <Grid container direction="column" sx={{ minHeight: "100vh" }}>
+        <PageHeader title="Lookup" />
+        <Grid
+          item
+          container
+          sx={{
+            flexGrow: 1,
+            flexDirection: { xs: "column", md: "row" },
+            gap: 2,
+            flexWrap: "nowrap",
+            overflow: "hidden",
+            px: { xs: 1, md: 2 },
+          }}
+        >
+          {/* Left: Search Table */}
+          <SearchTable
+            results={results}
+            searchTerm={searchTerm}
+            ontologyFilter={ontologyFilter}
+            isLoading={isLoading}
+          />
 
-                  {/* Main Content Area */}
-                  <Grid
-                    item
-                    container
-                    sx={{
-                      flexGrow: 1,
-                      flexDirection: { xs: "column", md: "row" },
-                      gap: 2,
-                      flexWrap: "nowrap",
-                      overflow: "hidden",
-                      px: { xs: 1, md: 2 },
-                    }}
-                  >
-                    {/* Left: Search Table */}
-                    <SearchTable
-                      results={results}
-                      searchTerm={searchTerm}
-                      ontologyFilter={ontologyFilter}
-                      isLoading={isLoading}
-                    />
-
-                    {/* Right: Search Panel */}
-                    <SearchPanel
-                      searchTerm={searchTerm}
-                      setSearchTerm={setSearchTerm}
-                      ontologyFilter={ontologyFilter}
-                      setOntologyFilter={setOntologyFilter}
-                      ontologyOptions={ontologyOptions}
-                      onSearch={handleSearch}
-                      onReset={handleReset}
-                    />
-                  </Grid>
-                </Grid>
-              </OuterBox>
-            </AuthProvider>
-          </ThemeProvider>
-        </MUIThemeProvider>
-      </SnackbarProvider>
-    </>
+          {/* Right: Search Panel */}
+          <SearchPanel
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            ontologyFilter={ontologyFilter}
+            setOntologyFilter={setOntologyFilter}
+            ontologyOptions={ontologyOptions}
+            onSearch={handleSearch}
+            onReset={handleReset}
+          />
+        </Grid>
+      </Grid>
+    </OuterBox>
   );
 }

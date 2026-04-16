@@ -12,7 +12,7 @@ export default function SearchTable({
 }) {
   const navigate = useNavigate();
 
-  // Define columns for DataTable
+  // Define columns and some custom formatting for the DataTable
   const columns = useMemo(
     () => [
       {
@@ -25,6 +25,7 @@ export default function SearchTable({
             variant="body2"
             underline="hover"
             onClick={() =>
+              // Pass full class data to the class details page
               navigate("/ontodex/class", {
                 state: {
                   classData: row.original,
@@ -41,11 +42,13 @@ export default function SearchTable({
         ),
       },
       {
+        // Extract ontology name from the full API link
         accessorFn: (row) => row.links.ontology.split("/").pop(),
         header: "Ontology",
         size: 80,
       },
       {
+        // Extract class type
         accessorFn: (row) => row["@type"]?.split("#").pop() || "Class",
         header: "Type",
         size: 60,
@@ -55,6 +58,7 @@ export default function SearchTable({
         header: "Definition",
         grow: true,
         Cell: ({ cell }) => (
+          // Truncate definition to 2 lines
           <span
             style={{
               display: "-webkit-box",
@@ -71,6 +75,7 @@ export default function SearchTable({
     [],
   );
 
+  // Use the global ontology filter(s) selected from the search panel
   const columnFilters = useMemo(
     () => (ontologyFilter ? [{ id: "ontology", value: ontologyFilter }] : []),
     [ontologyFilter],
